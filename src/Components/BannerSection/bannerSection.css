@@ -1,0 +1,166 @@
+.BannerSection-container{
+    position: relative;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100vh;
+    background-color: #000;
+}
+
+.BannerSection-container .BannerAbout-section{
+    position: relative;
+    width : 300vw;
+    height : 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.BannerAbout-section .Banner-box{
+    position: relative;
+    top : 0;
+    left : 0;
+    width : 100vw;
+    height : 100%;
+    background-color: #000;
+    z-index: 10000;
+}
+
+.BannerSection-container .Banner-contentsBox{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    width : 50rem;
+    height : 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.Banner-contentsBox .Banner-content{
+    position: relative;
+    width : 100%;
+    height : 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Banner-content .Solid-Maintxt{
+    position: absolute;
+    top : 0;
+    width : 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 4rem;
+    font-weight: 100;
+    text-align: left;
+    font-family: var(--font-family-Alfa);
+    color : rgba(255,255,255,0.9);
+    letter-spacing: 1.5rem;
+}
+
+.Banner-content .Solid-Subtxt{
+    position: absolute;
+    top : 5%;
+    left : 5%;
+    width : 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color : rgba(255, 255, 255, 0.1);
+    font-size: 4rem;
+    font-weight: 100;
+    text-align: left;
+    font-family: var(--font-family-Alfa);
+    letter-spacing: 1.5rem;
+}
+
+.BannerSection-container .scroll-box{
+    position: absolute;
+    width : 20rem;
+    height : 10rem;
+    top : 50%;
+    transform: translateY(-50%);
+    color : #fff;
+    right : 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.scroll-box .scroll-arrow{
+    position: relative;
+    width : 10rem;
+    height : 5rem;
+}
+
+.scroll-arrow span{
+    display: inline-block;
+    width : 25px;
+    height : 25px;
+    background-color: #000;
+    margin : 10px;
+    transform: rotate(45deg);
+    border-right: 5px solid #fff;
+    border-top: 5px solid #fff;
+    animation: ScrollAnimation 2s infinite;
+}
+
+.scroll-arrow span:nth-child(2){
+    animation-delay: -0.2s;
+}
+
+.scroll-arrow span:nth-child(3){
+    animation-delay: -0.4s;
+}
+
+@keyframes ScrollAnimation{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+        transition: all 1s ease-in;
+    }
+
+    100%{
+        opacity: 0;
+        transition: all 1s ease-in;
+    }
+}
+
+.scroll-box .Scroll-txt{
+    font-size: 1.2rem;
+    font-family: var(--font-family-Bebas);
+    letter-spacing: 0.2rem;
+}
+
+.BannerSection-container .Owl-ImageBox{
+    position: absolute;
+    width : 90rem;
+    height : 10rem;
+    bottom : 0;
+    left : 50%;
+    transform: translateX(-50%);
+    background-image: url('../../asset/Image/coder.gif');
+    background-size: cover;
+    background-position: center;
+    transition: all 1s ease-out;
+    background-size: cover;
+    z-index: 10;
+}
+
+.Owl-ImageBox::before{
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    content : '';
+    background-color: rgba(0,0,0,0.3);
+}

@@ -1,0 +1,123 @@
+.BannerAbout-section .AboutSection-container{
+    position: relative;
+    top : 0;
+    left : 0;
+    width : 200vw;
+    height : 100vh;
+    scroll-snap-align: start;
+    background-color: #000;
+}
+
+.AboutSection-container .About-DeveloperBox{
+    position: relative;
+    width : 100%;
+    height : 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    z-index: 1000;
+}
+
+.About-DeveloperBox .PreviewBox{
+    position: relative;
+    width : 100%;
+    height : 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.PreviewBox .PreviewBox-title{
+    position: absolute;
+    left : 0;
+    width : 50%;
+    padding : 0 10rem;
+    height : 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-transform: uppercase;
+    color : #fff;
+    font-family: var(--font-family-Bebas);
+    z-index: 100;
+}
+
+.PreviewBox-title p{
+    font-size: 2rem;
+}
+
+.PreviewBox-title .strong-title{
+    font-size: 10rem;
+    color : #fff;
+    letter-spacing: 0.5rem;
+}
+
+.PreviewBox-title h1{
+    font-size: 5rem;
+    color : rgb(88, 88, 88);
+}
+
+.PreviewBox .PreviewBox-subtitle{
+   position: absolute;
+   right : 0;
+   bottom : 5rem; 
+   width : 50%;
+   height : 30vh;
+   padding : 0 10rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: flex-end;
+}
+
+.PreviewBox-subtitle h1{
+    font-size: 2.5rem;
+    color : #fff;
+    font-family: var(--font-family-Gugi);
+}
+
+.PreviewBox-subtitle p{
+    font-size: 1rem;
+    color : #fff;
+    font-family: var(--font-family-Gugi);
+}
+
+.About-DeveloperBox .About-content{
+    position: relative;
+    width : 100%;
+    height : 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.About-content h1{
+    color : #fff;
+    font-family: var(--font-family-Gugi);
+    font-size: 5rem;
+}
+
+.About-content p{
+    width : 50rem;
+    text-align : center;
+    word-break: keep-all;
+    color : #fff;
+    font-family: var(--font-family-Gugi);
+    font-size: 1.2rem;
+}
+
+.PreviewBox .developer-imgbox{
+    position: absolute;
+    top : 20%;
+    right: 2rem;
+    width : 20rem;
+    height : 20rem;
+    overflow: hidden;
+}
+
+.developer-imgbox img{
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+}
