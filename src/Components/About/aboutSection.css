@@ -1,0 +1,214 @@
+.AboutSection-container{
+    position: relative;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100vh;
+    background-color: #000;
+    z-index: 1000;
+}
+
+.AboutSection-container .About-DeveloperBox{
+    position: relative;
+    width : 100%;
+    height : 100%;
+    z-index: 1000;
+}
+
+.About-DeveloperBox .Preview-textBox{
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100vh;
+}
+
+.Preview-textBox .PreviewBox-title{
+    position: absolute;
+    left : 0;
+    top : 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    width : max-content;
+    height : 30rem;
+    color : rgb(172, 172, 172);
+    font-family: var(--font-family-Bebas);
+    z-index: 0;
+    font-size: 9rem;
+    letter-spacing: 0.5rem;
+    z-index: -1;
+}
+
+.Preview-textBox .PreviewBox-subTitle{
+   position: absolute;
+   left : 50%;
+   width : 30rem;
+   height : 30rem;
+}
+
+.PreviewBox-subTitle h1{
+    font-size: 9rem;
+    letter-spacing: 0.5rem;
+    color : rgb(172, 172, 172);
+    font-family: var(--font-family-Bebas);
+}
+
+.About-DeveloperBox .PreviewBox-contents{
+    position: relative;
+    left : 50%;
+    top : 50%;
+    width : 90%;
+    transform: translate(-50%, -50%);
+    height : 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.PreviewBox-contents .PreviewBox-Profile{
+    position: absolute;
+    top : 50%;
+    left : 5rem;
+    transform: translateY(-50%);
+    width : 30rem;
+    height : 50%;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.PreviewBox-Profile img{
+    position: absolute;
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+}
+
+.PreviewBox-contents .PreviewBox-subTxt{
+    position: absolute;
+    width : 50rem;
+    height : 50%;
+    right : 0;
+    top : 50%;
+    transform: translateY(-50%);
+    color : #fff;
+    font-size: 2rem;
+    font-family: var(--font-family-Hans);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+/*Profile introduce 영역 container css*/
+.BannerAbout-section .ProfileSection-container{
+    position: relative;
+    width : 100%;
+    height : 100%;
+    background-color: #000;
+    padding: 5rem;
+}
+
+.ProfileSection-container .Profile-Itembox{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    width : 90%;
+    height : 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Profile-Itembox .Profile-menuBox{
+    position: relative;
+    width : 20%;
+    height : 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 5px solid #fff;
+}
+
+.Profile-menuBox h1{
+    width : 100%;
+    padding: 2rem;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    color : #fff;
+    font-family: var(--font-family-Bebas);
+}
+
+.Profile-menuBox .Menubox-Img{
+    position: relative;
+    width : 100%;
+    height : 25rem;
+    overflow: hidden;
+    cursor : pointer;
+}
+
+.Menubox-Img img{
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+}
+
+.Profile-Itembox .Introduce-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    width : max-content;
+    color : #fff;
+    font-family: var(--font-family-Hans);
+}
+
+.Introduce-content .static-title{
+    font-size: 5rem;
+    font-weight: 100;
+    height: 90px;
+    line-height: 90px;
+}
+
+.Introduce-content .dynamic-subtitle{
+    margin-left: 2rem;
+    height : 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.Introduce-content .dynamic-subtitle li{
+    list-style: none;
+    font-size: 5rem;
+    position: relative;
+    top : 0;
+    animation: slide 4.5s steps(3) infinite;
+}
+
+.dynamic-subtitle li span{
+    position: relative;
+}
+
+.dynamic-subtitle li span::after{
+    position: absolute;
+    left : 0;
+    content: '';
+    width : 100%;
+    background-color: #000;
+    height: 100%;
+    border-left: 2px solid #fff;
+    animation: typing 1.5s steps(7) infinite;
+}
+
+@keyframes typing{
+    100%{
+        left : 110%;
+        margin : 0 -100px 0 35px;
+    }
+}
+
+@keyframes slide{
+    100%{
+        top : -270px;
+    }
+}

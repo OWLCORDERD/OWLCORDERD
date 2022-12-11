@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
 :root{
   --font-family : 'Poor Story', cursive;
@@ -12,12 +13,6 @@
   --font-family-Gugi : 'Gugi', cursive;
   --font-family-Marker : 'Permanent Marker', cursive;
   --font-family-Alfa : 'Alfa Slab One', cursive;
+  --font-family-Hans : 'Black Han Sans', sans-serif;
 }
 
-*{
-  box-sizing: border-box;
-}
-
-html::-webkit-scrollbar{
-  display: none;
-}

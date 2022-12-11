@@ -1,6 +1,6 @@
 import './App.css';
 import {Routes, BrowserRouter, Route} from "react-router-dom"
-import MainSection from "./Components/MainSection/MainSection"
+import MainSection from "./Components/Main/MainSection"
 
 function App() {
   return (

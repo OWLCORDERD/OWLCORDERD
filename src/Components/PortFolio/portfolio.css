@@ -1,0 +1,8 @@
+.Page-container .PortFolio-container{
+    position: absolute;
+    width : 100%;
+    height : 100vh;
+    background-color: #fff;
+    top : -5600px;
+    left : 0;
+}

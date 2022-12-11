@@ -1,63 +1,134 @@
 import React, { useRef, useState, useEffect } from 'react'
 import "./bannerSection.css"
-import {FaArrowDown} from "react-icons/fa"
-import BoxImg from "../../asset/Image/background.jpg"
-import Navigator from '../Navigator/Navigator'
-import AboutSection from '../AboutSection/AboutSection'
-import LocomotiveScroll from "locomotive-scroll"
+import {motion} from "framer-motion"
+import {gsap} from "gsap"
+import { ScrollTrigger } from 'gsap/all'
 
 const BannerSection = () => {
 
-    window.addEventListener('scroll', function(){
-        let co = window.scrollX;
-
-        console.log(co);
-
-        const owl = document.querySelector('.Owl-ImageBox');
-        console.log(co);
-
-        if(co > 30){
-            owl.classList.add('active')
-        }else{
-            owl.classList.remove('active')
-        }
-    })
-
-    const boxRef = useRef(null);
-
+    const imgRef = useRef(null);
 
     useEffect(()=>{
-      if(boxRef) {
-        new LocomotiveScroll({
-          el : boxRef.current,
-          smooth : true,
-          direction : "horizontal"
-        })
-      }
+    gsap.registerPlugin(ScrollTrigger);
+
+    let tl = gsap.timeline();
+
+    tl.to(imgRef.current, {
+       opacity : 0,
+       x : 0,
+       width : 0,
+       scrollTrigger : {
+        trigger : imgRef.current,
+        start : 'center center',
+        scrub : true
+       } 
     })
+
+    tl.to('.Banner-content', {
+        opacity : 0,
+        translateX : -100,
+        duration : 2,
+        scrollTrigger : {
+            trigger : '.Banner-content',
+            start : 'top top',
+            scrub : true
+        }
+    })
+}, [])
+
+    const textBox = {
+        initial : {
+            opacity : 1
+        },
+        animate : {
+            opacity : 1,
+            transition : {
+                staggerChildren : 0.5,
+                duration : 2
+            }
+        }
+    }
+
+    const textAnimated = {
+        initial : {
+            opacity : 0,
+            y : 100
+        },
+        animate : {
+            opacity : 1,
+            y : 0,
+            transition : {
+                duration : 1
+            }
+        }
+    }
 
   return (
     <div className= "BannerSection-container">
 
-        <div className = "BannerAbout-section" data-scroll-container ref={boxRef}>
+        <div className = "BannerAbout-section">
 
         <div className = "Banner-box">
 
         <div className = "Banner-contentsBox">
 
             <div className = "Banner-content">
-                <div className = "Solid-Maintxt" data-scroll data-scroll-speed={5}>
-                    <h1>FRONT END DESIGNER</h1>
+                <div className = "Maintxt-Box">
+                <motion.div className = "Solid-Maintxt" variants={textBox} animate = "animate" initial = "initial">
+                    <motion.h1 variants={textAnimated}>F</motion.h1>
+                    <motion.h1 variants={textAnimated}>R</motion.h1>
+                    <motion.h1 variants={textAnimated}>O</motion.h1>
+                    <motion.h1 variants={textAnimated}>N</motion.h1>
+                    <motion.h1 variants={textAnimated}>T</motion.h1>
+                </motion.div>
+                <motion.div className = "Solid-Maintxt" variants={textBox} animate = "animate" initial = "initial">
+                    <motion.h1 variants={textAnimated}>E</motion.h1>
+                    <motion.h1 variants={textAnimated}>N</motion.h1>
+                    <motion.h1 variants={textAnimated}>D</motion.h1>
+                </motion.div>
+                <motion.div className = "Solid-Maintxt" variants={textBox} animate = "animate" initial = "initial">
+                    <motion.h1 variants={textAnimated}>D</motion.h1>
+                    <motion.h1 variants={textAnimated}>E</motion.h1>
+                    <motion.h1 variants={textAnimated}>S</motion.h1>
+                    <motion.h1 variants={textAnimated}>I</motion.h1>
+                    <motion.h1 variants={textAnimated}>G</motion.h1>
+                    <motion.h1 variants={textAnimated}>N</motion.h1>
+                    <motion.h1 variants={textAnimated}>E</motion.h1>
+                    <motion.h1 variants={textAnimated}>R</motion.h1>
+                </motion.div>
                 </div>
 
-                <div className = "Solid-Subtxt" data-scroll data-scroll-speed={5}>
-                    <h1>FRONT END DESIGNER</h1>
+                <div className = "Subtxt-Box">
+                <motion.div className = "Solid-Subtxt" variants={textBox} animate = "animate" initial = "initial">
+                    <motion.h1 variants={textAnimated}>F</motion.h1>
+                    <motion.h1 variants={textAnimated}>R</motion.h1>
+                    <motion.h1 variants={textAnimated}>O</motion.h1>
+                    <motion.h1 variants={textAnimated}>N</motion.h1>
+                    <motion.h1 variants={textAnimated}>T</motion.h1>
+                </motion.div>
+
+                <motion.div className = "Solid-Subtxt" variants={textBox} animate = "animate" initial = "initial">
+                    <motion.h1 variants={textAnimated}>E</motion.h1>
+                    <motion.h1 variants={textAnimated}>N</motion.h1>
+                    <motion.h1 variants={textAnimated}>D</motion.h1>
+                </motion.div>
+
+                <motion.div className = "Solid-Subtxt" variants={textBox} animate = "animate" initial = "initial">
+                    <motion.h1 variants={textAnimated}>D</motion.h1>
+                    <motion.h1 variants={textAnimated}>E</motion.h1>
+                    <motion.h1 variants={textAnimated}>S</motion.h1>
+                    <motion.h1 variants={textAnimated}>I</motion.h1>
+                    <motion.h1 variants={textAnimated}>G</motion.h1>
+                    <motion.h1 variants={textAnimated}>N</motion.h1>
+                    <motion.h1 variants={textAnimated}>E</motion.h1>
+                    <motion.h1 variants={textAnimated}>R</motion.h1>
+                </motion.div>
                 </div>
             </div>
             
         </div>
 
-        <div className = "scroll-box" data-scroll data-scroll-speed={-1}>
+        <div className = "scroll-box">
             <div className = "scroll-arrow">
                 <span></span>
                 <span></span>
@@ -69,12 +140,10 @@ const BannerSection = () => {
             </div>
         </div>
 
-        <div className = "Owl-ImageBox">
+        <div className = "Owl-ImageBox" ref = {imgRef}>
         </div>
 
         </div>
-
-        <AboutSection />
         </div>
     </div>
   )
