@@ -1,20 +1,18 @@
 import React from 'react'
 import "./aboutSection.css";
 import ProfileImg from "../../asset/Image/프로필 사진.jpg";
+import {FaLocationArrow} from "react-icons/fa"
 
 const ProfileSection = () => {
 
   return (
     <div className = "ProfileSection-container">
-        <div className = "Profile-Itembox">
+        <div className = "Introduce-section">
 
-            <div className = "Profile-menuBox">
-                <h1>profile</h1>
-                <div className = "Menubox-Img">
-                <img src = {ProfileImg} alt = ""/>
-                </div>
-            </div>
-
+          <div className = "Introduce-comma">
+            <h1>'</h1>
+            <h1>'</h1>
+          </div>
             <div className = "Introduce-content">
 
               <div className = "static-title">
@@ -31,6 +29,38 @@ const ProfileSection = () => {
                 개발자를 소개합니다.
               </div>
             </div>
+
+            <div className="Introduce-menu">
+
+              <ul className = "Introduce-list">
+                <li>
+                  <div className = "Chapter-num">01</div>
+                  <span className = "Chapter-title">기술</span>
+                  <h1 className = "Chapter-Eng">Technology</h1>
+                  <div className = "arrow">
+                    <FaLocationArrow/>
+                  </div>
+                </li>
+                <li>
+                  <div className = "Chapter-num">02</div>
+                  <span className = "Chapter-title">프로필</span>
+                  <h1 className = "Chapter-Eng">profile</h1>
+                  <div className = "arrow">
+                    <FaLocationArrow/>
+                  </div>
+                </li>
+                <li>
+                  <div className = "Chapter-num">03</div>
+                  <span className = "Chapter-title">저장소</span>
+                  <h1 className = "Chapter-Eng">repository</h1>
+                  <div className = "arrow">
+                    <FaLocationArrow/>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+
         </div>
     </div>
   )

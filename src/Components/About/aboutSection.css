@@ -32,7 +32,7 @@
     height : 30rem;
     color : rgb(172, 172, 172);
     font-family: var(--font-family-Bebas);
-    z-index: 0;
+    z-index: 1000;
     font-size: 9rem;
     letter-spacing: 0.5rem;
     z-index: -1;
@@ -66,8 +66,8 @@
 .PreviewBox-contents .PreviewBox-Profile{
     position: absolute;
     top : 50%;
-    left : 5rem;
-    transform: translateY(-50%);
+    left : 10%;
+    transform: translate(-10%,-50%);
     width : 30rem;
     height : 50%;
     overflow: hidden;
@@ -107,58 +107,36 @@
     padding: 5rem;
 }
 
-.ProfileSection-container .Profile-Itembox{
+.ProfileSection-container .Introduce-section{
     position: absolute;
-    top : 50%;
-    left : 50%;
-    transform: translate(-50%, -50%);
-    width : 90%;
-    height : 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.Profile-Itembox .Profile-menuBox{
-    position: relative;
-    width : 20%;
-    height : 50rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 5px solid #fff;
-}
-
-.Profile-menuBox h1{
-    width : 100%;
-    padding: 2rem;
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
-    color : #fff;
-    font-family: var(--font-family-Bebas);
-}
-
-.Profile-menuBox .Menubox-Img{
-    position: relative;
-    width : 100%;
-    height : 25rem;
-    overflow: hidden;
-    cursor : pointer;
-}
-
-.Menubox-Img img{
+    top : 0;
+    left : 0;
     width : 100%;
     height : 100%;
-    object-fit: cover;
+    padding : 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.Profile-Itembox .Introduce-content{
+.Introduce-section .Introduce-comma{
+    position: absolute;
+    width : 5rem;
+    top : 10rem;
+    color : #fff;
+    font-size: 7rem;
+    font-family: var(--font-family-Hans);
+    display: flex;
+    justify-content: space-around;
+}
+
+.Introduce-section .Introduce-content{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    width : max-content;
+    width : 50rem;
     color : #fff;
     font-family: var(--font-family-Hans);
 }
@@ -211,4 +189,55 @@
     100%{
         top : -270px;
     }
+}
+
+.Introduce-section .Introduce-menu{
+    position: relative;
+    width : 50rem;
+    height : max-content;
+    color : #fff;
+}
+
+.Introduce-menu .Introduce-list{
+    width : 100%;
+    height : 100%;
+    display: inline-block;
+}
+
+.Introduce-list > li{
+    width : 100%;
+    padding : 2rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.Introduce-list > li .Chapter-num{
+    width : 5rem;
+    text-align: start;
+    font-family: var(--font-family-Hans);
+    font-size: 2rem;
+}
+
+.Introduce-list > li .Chapter-title{
+    width : 15rem;
+    text-align: center;
+    font-family: var(--font-family-Hans);
+    font-size: 3rem;
+}
+
+.Introduce-list > li .Chapter-Eng{
+    width : 15rem;
+    text-align: start;
+    font-family: var(--font-family-Hans);
+    font-size: 1.5rem;
+}
+
+.Introduce-list > li .arrow{
+    width : 10rem;
+    text-align: center;
+    font-size: 2rem;
 }
