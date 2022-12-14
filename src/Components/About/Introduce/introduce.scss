@@ -1,0 +1,160 @@
+@import "../../Variables/Variables.scss";
+
+.Introduce-container{
+    position: relative;
+    width : 100%;
+    height : 100%;
+    padding: 5rem;
+
+    .Introduce-section{
+        position: absolute;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100%;
+        padding : 5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .background-text{
+            position: absolute;
+            width : 50%;
+            height : 100%;
+            top : 0;
+            right : 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h1{
+                width : 100%;
+                text-align: start;
+                font-size: 8.5rem;
+                color : transparent;
+                -webkit-text-stroke: 1px #fff;
+                font-family: $font-Bebas;
+                &:nth-child(2){
+                    text-align: end;
+                }
+            }
+        }
+
+        .Introduce-comma{
+            position: absolute;
+            width : 5rem;
+            top : 10rem;
+            color : #fff;
+            font-size: 7rem;
+            font-family: $font-Hans;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .Introduce-content{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            width : 50rem;
+            color : #fff;
+            font-family: $font-Hans;
+
+            .static-title{
+                font-size: 5rem;
+                font-weight: 100;
+                height: 90px;
+                line-height: 90px;
+            }
+
+            .dynamic-subtitle{
+                margin-left: 2rem;
+                height : 90px;
+                line-height: 90px;
+                overflow: hidden;
+
+                li{
+                    list-style: none;
+                    font-size: 5rem;
+                    position: relative;
+                    top : 0;
+                    animation: slide 4.5s steps(3) infinite;
+
+                    span::after{
+                        position: absolute;
+                        left : 0;
+                        content: '';
+                        width : 100%;
+                        background-color: $black-color;
+                        height: 100%;
+                        border-left: 2px solid #fff;
+                        animation: typing 1.5s steps(7) infinite;
+                    }
+                }
+            }
+
+            @keyframes typing{
+                100%{
+                    left : 110%;
+                    margin : 0 -100px 0 35px;
+                }
+            }
+            
+            @keyframes slide{
+                100%{
+                    top : -270px;
+                }
+            }
+        }
+
+        .Introduce-menu{
+            position: relative;
+            width : 50rem;
+            height : max-content;
+            color : #fff;
+
+            .Introduce-list{
+                width : 100%;
+                height : 100%;
+                display: inline-block;
+
+                > li{
+                    width : 100%;
+                    padding : 2rem 0;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    border-bottom: 2px solid #fff;
+                    margin-bottom: 2rem;
+                    text-transform: uppercase;
+                    font-family: $font-Hans;
+
+                    .Chapter-num{
+                        width : 5rem;
+                        text-align: start;
+                        font-size: 2rem;
+                    }
+
+                    .Chapter-title{
+                        width : 15rem;
+                        text-align: center;
+                        font-size: 3rem;
+                    }
+
+                    .Chapter-Eng{
+                        width : 15rem;
+                        text-align: start;
+                        font-size: 1.5rem;
+                    }
+
+                    .arrow{
+                        width : 10rem;
+                        text-align: center;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

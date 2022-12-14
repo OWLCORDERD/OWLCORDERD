@@ -1,0 +1,103 @@
+/*font family variables*/
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Poor+Story&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+/*color variables*/
+/*transition event variables*/
+.Preview-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  z-index: 1000;
+}
+.Preview-container .Preview-DeveloperBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.Preview-container .Preview-DeveloperBox .Preview-textBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.Preview-container .Preview-DeveloperBox .Preview-textBox .PreviewBox-title {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 30rem;
+  color: rgb(172, 172, 172);
+  font-family: "Bebas Neue", cursive;
+  z-index: 1000;
+  font-size: 9rem;
+  letter-spacing: 0.5rem;
+  z-index: -1;
+}
+.Preview-container .Preview-DeveloperBox .Preview-textBox .PreviewBox-subTitle {
+  position: absolute;
+  left: 50%;
+  width: 30rem;
+  height: 30rem;
+}
+.Preview-container .Preview-DeveloperBox .Preview-textBox .PreviewBox-subTitle h1 {
+  font-size: 9rem;
+  letter-spacing: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Bebas Neue", cursive;
+}
+.Preview-container .Preview-DeveloperBox .PreviewBox-contents {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+.Preview-container .Preview-DeveloperBox .PreviewBox-contents .PreviewBox-Profile {
+  position: relative;
+  top: 50%;
+  left: 10%;
+  transform: translate(-10%, -50%);
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  z-index: 10;
+}
+.Preview-container .Preview-DeveloperBox .PreviewBox-contents .PreviewBox-Profile img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Preview-container .Preview-DeveloperBox .PreviewBox-contents .PreviewBox-subTxt {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Black Han Sans", sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}/*# sourceMappingURL=preview.css.map */

@@ -1,198 +1,215 @@
-.BannerSection-container{
-    position: relative;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100vh;
+@charset "UTF-8";
+/*font family variables*/
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Poor+Story&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+/*color variables*/
+/*transition event variables*/
+/*Banner section 최상위 부모 container*/
+.BannerSection-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /*Banner Section contents, ImageBox, scrollbox 부모 box*/
+  /*Preview Section으로 Scroll 할때 나오는 이미지 미리보기 container */
 }
-
-.BannerSection-container .BannerAbout-section{
-    position: relative;
-    width : 100%;
-    height : 100%;
+.BannerSection-container .Banner-box {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  /*메인로고, 뒷 그림자 로고 contents 부모 box*/
+  /*scrollbox 부모 위치 조정 container*/
+  /*메인 로고 뒤의 개발자 프로필 사진 container*/
 }
-
-.BannerAbout-section .Banner-box{
-    position: relative;
-    top : 0;
-    left : 0;
-    width : 100vw;
-    height : 100%;
-    background-color: #000;
-    z-index: 100;
+.BannerSection-container .Banner-box .Banner-contentsBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60rem;
+  height: 35rem;
+  z-index: 100;
+  /*메인로고, 그림자 로고 contents 부모 container*/
 }
-
-.BannerSection-container .Banner-contentsBox{
-    position: absolute;
-    top : 50%;
-    left : 50%;
-    transform: translate(-50%, -50%);
-    width : 60rem;
-    height : 35rem;
-    z-index: 100;
+.BannerSection-container .Banner-box .Banner-contentsBox .Banner-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*메인 로고 text box (flexbox column)*/
+  /*framer motion 한 글자마다 효과를 주기 위해 inline-flex로 <h1> 자식 글자들 정렬*/
+  /*메인 로고 그림자 text box (부모 메인 로고 요소에 absolute 속성으로 (5%,5%) 비스듬하게 위치)*/
+  /*메인 로고와 같이 inline-flex로 <h1> 자식 글자들 정렬*/
 }
-
-.Banner-contentsBox .Banner-content{
-    position: relative;
-    width : 100%;
-    height : 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.BannerSection-container .Banner-box .Banner-contentsBox .Banner-content .Maintxt-Box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
 }
-
-.Banner-content .Maintxt-Box{
-    position: absolute;
-    top : 0;
-    width : 100%;
-    height : 10rem;
-    display: flex;
-    flex-direction: column;
+.BannerSection-container .Banner-box .Banner-contentsBox .Banner-content .Solid-Maintxt {
+  position: relative;
+  top: 0;
+  width: 100%;
+  display: inline-flex;
+  font-size: 5rem;
+  font-weight: 100;
+  text-align: left;
+  font-family: "Alfa Slab One", cursive;
+  color: #fff;
+  letter-spacing: 1.5rem;
 }
-
-.Banner-content .Solid-Maintxt{
-    position: relative;
-    top : 0;
-    width : 100%;
-    display: inline-flex;
-    font-size: 5rem;
-    font-weight: 100;
-    text-align: left;
-    font-family: var(--font-family-Alfa);
-    color : #fff;
-    letter-spacing: 1.5rem;
+.BannerSection-container .Banner-box .Banner-contentsBox .Banner-content .Subtxt-Box {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
 }
-
-.Banner-content .Subtxt-Box{
-    position: absolute;
-    top : 5%;
-    left : 5%;
-    width : 100%;
-    height : 10rem;
-    display: flex;
-    flex-direction: column;
+.BannerSection-container .Banner-box .Banner-contentsBox .Banner-content .Solid-Subtxt {
+  position: relative;
+  width: 100%;
+  display: inline-flex;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 5rem;
+  font-weight: 100;
+  text-align: left;
+  font-family: "Alfa Slab One", cursive;
+  letter-spacing: 1.5rem;
 }
-
-.Banner-content .Solid-Subtxt{
-    position: relative;
-    width : 100%;
-    display: inline-flex;
-    color : rgba(255, 255, 255, 0.1);
-    font-size: 5rem;
-    font-weight: 100;
-    text-align: left;
-    font-family: var(--font-family-Alfa);
-    letter-spacing: 1.5rem;
+.BannerSection-container .Banner-box .scroll-box {
+  position: absolute;
+  width: 30rem;
+  height: 10rem;
+  transform: translateX(-10%);
+  color: #fff;
+  right: 0;
+  bottom: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /*scroll text 폰트 설정*/
+  /*스크롤 화살표 부모 크기*/
 }
-
-.BannerSection-container .scroll-box{
-    position: absolute;
-    width : 30rem;
-    height : 10rem;
-    transform: translateX(-10%);
-    color : #fff;
-    right : 0;
-    bottom : 5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.BannerSection-container .Banner-box .scroll-box .Scroll-txt {
+  font-size: 1.2rem;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.2rem;
 }
-
-.scroll-box .scroll-arrow{
-    position: relative;
-    width : 10rem;
-    height : 3rem;
+.BannerSection-container .Banner-box .scroll-box .scroll-arrow {
+  position: relative;
+  width: 10rem;
+  height: 3rem;
+  /*화살표 span 태그들 디자인 및 무한 애니메이션 적용*/
 }
-
-.scroll-arrow span{
-    display: inline-block;
-    width : 25px;
-    height : 25px;
-    background-color: #000;
-    margin : 10px;
-    transform: rotate(45deg);
-    border-right: 5px solid #fff;
-    border-top: 5px solid #fff;
-    animation: ScrollAnimation 2s infinite;
+.BannerSection-container .Banner-box .scroll-box .scroll-arrow span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #000;
+  margin: 10px;
+  transform: rotate(45deg);
+  border-right: 5px solid #fff;
+  border-top: 5px solid #fff;
+  -webkit-animation: ScrollAnimation 2s infinite;
+          animation: ScrollAnimation 2s infinite;
+  /*첫번째 span 요소 애니메이션 실행 0.2초 전에 실행되도록 설정*/
+  /*첫번째 span 요소 애니메이션 실행 0.4초 전에 실행되도록 설정*/
+  /*scroll arrow Animation*/
 }
-
-.scroll-arrow span:nth-child(2){
-    animation-delay: -0.2s;
+.BannerSection-container .Banner-box .scroll-box .scroll-arrow span:nth-child(2) {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
 }
-
-.scroll-arrow span:nth-child(3){
-    animation-delay: -0.4s;
+.BannerSection-container .Banner-box .scroll-box .scroll-arrow span:nth-child(3) {
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
 }
-
-@keyframes ScrollAnimation{
-    0%{
-        opacity: 0;
-    }
-
-    50%{
-        opacity: 1;
-        transition: all 1s ease-in;
-    }
-
-    100%{
-        opacity: 0;
-        transition: all 1s ease-in;
-    }
+@-webkit-keyframes ScrollAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transition: all 1s ease-in;
+  }
+  100% {
+    opacity: 0;
+    transition: all 1s ease-in;
+  }
 }
-
-.scroll-box .Scroll-txt{
-    font-size: 1.2rem;
-    font-family: var(--font-family-Bebas);
-    letter-spacing: 0.2rem;
+@keyframes ScrollAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transition: all 1s ease-in;
+  }
+  100% {
+    opacity: 0;
+    transition: all 1s ease-in;
+  }
 }
-
-.BannerSection-container .Owl-ImageBox{
-    position: absolute;
-    width : 30rem;
-    height : 30rem;
-    top : 50%;
-    transform: translate(-50%, -50%);
-    left : 50%;
-    background-image: url('../../asset/Image/프로필\ 사진.jpg');
-    background-size: cover;
-    background-position: center;
-    transition: all 1s ease-out;
-    background-size: cover;
-    background-position: left;
-    z-index: -1;
+.BannerSection-container .Banner-box .Owl-ImageBox {
+  position: absolute;
+  width: 30rem;
+  height: 30rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  background-image: url("../../asset/Image/프로필 사진.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: all 1s ease-out;
+  background-size: cover;
+  background-position: left;
+  z-index: -1;
+  /*메인로고의 시각적 부곽을 위해 사진에 투명도를 주기위한 컨텐츠 추가*/
 }
-
-.Owl-ImageBox::before{
-    position: absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    content : '';
-    background-color: rgba(0,0,0,0.3);
+.BannerSection-container .Banner-box .Owl-ImageBox::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.3);
 }
-
-.BannerAbout-section .Banner-PreviewImg{
-    position: absolute;
-    background-image: url('../../asset/Image/coder.gif');
-    background-size: cover;
-    background-position: center;
-    right : 0;
-    top : 50%;
-    transform: translateY(-50%);
-    width : 10rem;
-    height : 30rem;
-    background-color: #fff;
-    z-index: 100;
+.BannerSection-container .Banner-PreviewImg {
+  position: absolute;
+  background-image: url("../../asset/Image/coder.gif");
+  background-size: cover;
+  background-position: center;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10rem;
+  height: 30rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+  /*사진 투명도 설정*/
 }
-
-.Banner-PreviewImg::before{
-    position: absolute;
-    width : 100%;
-    height : 100%;
-    content : '';
-    top : 0;
-    left : 0;
-    background-color: rgba(0,0,0,0.5);
-}
+.BannerSection-container .Banner-PreviewImg::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}/*# sourceMappingURL=bannerSection.css.map */

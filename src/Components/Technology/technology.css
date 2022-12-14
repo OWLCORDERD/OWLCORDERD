@@ -1,0 +1,97 @@
+/*font family variables*/
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Poor+Story&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+/*color variables*/
+/*transition event variables*/
+.Technology-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+.Technology-container section {
+  display: inline-block;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Technology-container section .Technology-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.Technology-container section .Technology-banner::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.Technology-container section .Technology-banner .Tech-backImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Technology-container section .Technology-banner .Technology-title {
+  position: absolute;
+  width: 50rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: 3rem;
+  font-family: "Bebas Neue", cursive;
+  color: #fff;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 10;
+  text-align: center;
+}
+.Technology-container section .Technology-section {
+  position: relative;
+  width: 100%;
+  height: 200vh;
+}
+.Technology-container section .Technology-section .Technology-subtitle {
+  padding: 5rem;
+  position: relative;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 5rem;
+}
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt {
+  display: block;
+  width: 100%;
+  height: 10rem;
+  overflow: hidden;
+  text-align: center;
+}
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span {
+  position: relative;
+  font-size: 6rem;
+  color: #fff;
+  font-family: "Alfa Slab One", cursive;
+  text-transform: uppercase;
+}
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span:nth-child(2) {
+  font-family: "Bebas Neue", cursive;
+}/*# sourceMappingURL=technology.css.map */

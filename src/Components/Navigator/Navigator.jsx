@@ -1,27 +1,22 @@
 import React from 'react'
 import './navigator.css'
+import {GiOwl} from "react-icons/gi"
 
-const Navigator = () => {
+const Navigator = (props) => {
   return (
-    <div className = "Navigator-container">
-        <ul>
-            <li>
-                <a href = "/" className = "active">HOME</a>
-            </li>
+        <nav className = "Introduce-navigator">
+            <div className = "logo-icon">
+                <GiOwl/>
+            </div>
 
-            <li>
-                <a href = "/ABOUT">ABOUT</a>
-            </li>
+            <div className = "nav-title">
+                <h1>{props.title}</h1>
+            </div>
 
-            <li>
-                <a href = "/TECHNOLOGY">TECHNOLOGY</a>
-            </li>
-
-            <li>
-                <a href = "/PROFILE">PROFILE</a>
-            </li>
-        </ul>
-    </div>
+            <div className = "nav-comment">
+                <h1>OWLCODERD DEVELOPER</h1>
+            </div>
+        </nav>
   )
 }
 

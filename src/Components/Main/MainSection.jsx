@@ -1,15 +1,12 @@
 import React from 'react'
 import "./main.css"
 import BannerSection from '../BannerSection/BannerSection'
-import PreviewSection from "../About/PreviewSection"
-import ProfileSection from "../About/ProfileSection"
+import PreviewSection from "../About/Preview/PreviewSection"
+import IntroduceSection from "../About/Introduce/Introduce"
 import {useEffect, useRef} from "react"
-import AsideNav from '../Navigator/AsideNav'
-import LocomotiveScroll from "locomotive-scroll"
+import MainNav from '../Navigator/MainNav'
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 import {gsap} from "gsap"
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
-import PortFolio from '../PortFolio/PortFolio'
 
 const MainSection = () => {
   
@@ -50,7 +47,7 @@ const MainSection = () => {
 
   return (
     <>
-    <AsideNav/>
+    <MainNav/>
 
     <div id = "scroll">
       <main id = 'main'>
@@ -63,7 +60,7 @@ const MainSection = () => {
           <PreviewSection/>
         </section>
         <section id = "section">
-          <ProfileSection/>
+          <IntroduceSection/>
         </section>
       </div>
 

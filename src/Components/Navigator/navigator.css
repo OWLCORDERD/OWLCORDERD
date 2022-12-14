@@ -1,75 +1,83 @@
-.Navigator-container{
-    position: absolute;
-    left : 1rem;
-    top : 50%;
-    transform: translateY(-50%);
-    width : 10%;
-    height : 30rem;
-    padding : 2rem;
-    z-index: 100;
+/*font family variables*/
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Poor+Story&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+/*color variables*/
+/*transition event variables*/
+.Main-navigator {
+  position: fixed;
+  width: 100%;
+  height: 10rem;
+  padding: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  font-weight: bold;
+  font-family: "Bebas Neue", cursive;
+}
+.Main-navigator .logo-icon {
+  font-size: 3rem;
+  color: #fff;
+}
+.Main-navigator .MainNav-comment {
+  position: relative;
+  width: 15rem;
+  height: 2rem;
+  color: #fff;
 }
 
-.Navigator-container ul{
-    display: block;
-    width : 100%;
-    height : 100%;
+.Introduce-navigator {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 5px solid #fff;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", cursive;
+  z-index: 10;
+  background-color: #000;
 }
-
-.Navigator-container ul > li{
-    display: inline-block;
-    width : 100%;
-    height : 25%;
+.Introduce-navigator .logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  font-size: 3rem;
+  color: #fff;
 }
-
-.Navigator-container ul > li > a{
-    width : 100%;
-    height : 100%;
-    font-size: 1rem;
-    color : rgba(255, 255, 255, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--font-family-Bebas);
-    font-size: 1.5rem;
-    border-bottom: 5px solid transparent;
+.Introduce-navigator .nav-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  color: #fff;
+  font-size: 2rem;
 }
-
-.Navigator-container ul > li > a:hover{
-    border-bottom: 5px solid #fff;
-    color : #fff;
-    transition: all 0.5s ease-in;
-}
-
-.Navigator-container ul > li > a.active{
-    border-bottom: 5px solid #fff;
-    color : #fff;
-    transition: all 0.5s ease-in;
-}
-
-.aside-navigator{
-    position: fixed;
-    width : 100%;
-    height : 10rem;
-    padding : 5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    top : 0;
-    left : 0;
-    z-index: 100;
-    font-weight: bold;
-    font-family: var(--font-family-Bebas);
-}
-
-.aside-navigator .logo-icon{
-    font-size: 3rem;
-    color : #fff;
-}
-
-.aside-navigator .asideNav-comment{
-    position: relative;
-    width : 15rem;
-    height : 2rem;
-    color : #fff;
-}
+.Introduce-navigator .nav-comment {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 2rem;
+  color: #fff;
+  font-size: 1.5rem;
+}/*# sourceMappingURL=navigator.css.map */

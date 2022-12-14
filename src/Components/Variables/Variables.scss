@@ -1,0 +1,28 @@
+/*font family variables*/
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Poor+Story&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+$font-Poor : 'Poor Story', cursive;
+$font-Rubik : 'Rubik Glitch', cursive;
+$font-Bebas : 'Bebas Neue', cursive;
+$font-Gugi : 'Gugi', cursive;
+$font-Marker : 'Permanent Marker', cursive;
+$font-Alfa : 'Alfa Slab One', cursive;
+$font-Hans : 'Black Han Sans', sans-serif;
+
+/*color variables*/
+$white-color : #fff;
+$black-color : #000;
+$rgba-white : rgba(255,255,255,0.5);
+$rgba-black : rgba(0,0,0,0.5);
+
+/*transition event variables*/
+$transition-basic : all 0.5s ease-in;
+$centerTL-Y : translateY(-50%);
+$centerTL-X : translateX(-50%);
+$centerTL : translate(-50%, -50%);

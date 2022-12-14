@@ -82,11 +82,9 @@ const BannerSection = () => {
   return (
     <div className= "BannerSection-container">
 
-        <div className = "BannerAbout-section">
-
         <div className = "Banner-box">
 
-        <div className = "Banner-contentsBox">
+            <div className = "Banner-contentsBox">
 
             <div className = "Banner-content">
                 <div className = "Maintxt-Box">
@@ -165,7 +163,6 @@ const BannerSection = () => {
         <div className="Banner-PreviewImg">
         </div>
 
-        </div>
     </div>
   )
 }

@@ -1,43 +1,42 @@
-section{
-    position: relative;
-    width : 100vw;
-    height : 100vh;
-    background-color: #000;
-    box-sizing: border-box;
+#main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
-.container{
-    position: relative;
-    width : fit-content;
-    display: flex;
-    flex-wrap: nowrap;
-    height : 100vh;
+section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  box-sizing: border-box;
 }
 
-#main{
-    position: fixed;
-    top : 0;
-    left : 0;
-    width : 100vw;
-    height : 100vh;
+.container {
+  position: relative;
+  width: 300vw;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
 }
 
-#progress{
-    position: absolute;
-    content : '';
-    bottom : 5rem;
-    left : 50%;
-    width : 200px;
-    height : 5px;
-    background-color: rgba(255, 255, 255, 0.5);
-    transform: translateX(-50%);
-    overflow: hidden;
-    z-index: 10;
+#progress {
+  position: absolute;
+  content: "";
+  bottom: 5rem;
+  left: 50%;
+  width: 200px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translateX(-50%);
+  overflow: hidden;
+  z-index: 10;
 }
-
-#progress > div{
-    height : 5px;
-    width : 100%;
-    background-color: #fff;
-    transform: translateX(-100%);
-}
+#progress div {
+  height: 5px;
+  width: 100%;
+  background-color: #fff;
+  transform: translateX(-100%);
+}/*# sourceMappingURL=main.css.map */

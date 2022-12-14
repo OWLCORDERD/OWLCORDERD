@@ -1,0 +1,102 @@
+@import "../Variables/Variables.scss";
+
+.Preview-container{
+    position: relative;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100vh;
+    background-color: $black-color;
+    z-index: 1000;
+
+    .Preview-DeveloperBox{
+        position: relative;
+        width : 100%;
+        height : 100%;
+        z-index: 1000;
+
+        .Preview-textBox{
+            position: absolute;
+            top : 0;
+            left : 0;
+            width : 100%;
+            height : 100vh;
+
+            .PreviewBox-title{
+                position: absolute;
+                left : 0;
+                top : 50%;
+                transform: $centerTL-Y rotate(-90deg);
+                width : max-content;
+                height : 30rem;
+                color : rgb(172, 172, 172);
+                font-family: $font-Bebas;
+                z-index: 1000;
+                font-size: 9rem;
+                letter-spacing: 0.5rem;
+                z-index: -1;
+            }
+
+            .PreviewBox-subTitle{
+                position: absolute;
+                left : 50%;
+                width : 30rem;
+                height : 30rem;
+
+                h1{
+                    font-size: 9rem;
+                    letter-spacing: 0.5rem;
+                    color : $rgba-white;
+                    font-family: $font-Bebas;
+                }                
+             }
+        }
+
+        .PreviewBox-contents{
+            position: relative;
+            left : 50%;
+            top : 50%;
+            width : 90%;
+            transform: $centerTL;
+            height : 100vh;
+            display: flex;
+            overflow: hidden;
+
+            .PreviewBox-Profile{
+                position: relative;
+                top : 50%;
+                left : 10%;
+                transform: translate(-10%,-50%);
+                width : 50%;
+                height : 50%;
+                overflow: hidden;
+                z-index: 10;
+
+                img{
+                    position: absolute;
+                    width : 100%;
+                    height : 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .PreviewBox-subTxt{
+                position: relative;
+                width : 50%;
+                height : 50%;
+                right : 0;
+                top : 50%;
+                transform: translateY(-50%);
+                color : #fff;
+                font-size: 1.5rem;
+                font-family: $font-Hans;
+                text-transform: uppercase;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: flex-start;
+            }
+        }
+
+    }
+}

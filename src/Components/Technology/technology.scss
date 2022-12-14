@@ -1,0 +1,93 @@
+@import "../Variables/Variables.scss";
+
+.Technology-container{
+    position: relative;
+    width : 100%;
+    height : 100%;
+    background-color: $black-color;
+
+    section{
+        display: inline-block;
+        width : 100%;
+        height : max-content;
+        margin : 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        .Technology-banner{
+            position: relative;
+            width : 100%;
+            height : 100vh;
+
+            &::before{
+                position: absolute;
+                width : 100%;
+                height : 100%;
+                content : '';
+                top : 0;
+                left : 0;
+                background-color: $rgba-black;
+                z-index: 10;
+            }
+
+            .Tech-backImg{
+                position: absolute;
+                width : 100%;
+                height : 100%;
+                object-fit: cover;
+            }
+
+            .Technology-title{
+                position: absolute;
+                width : 50rem;
+                height : max-content;
+                font-size: 3rem;
+                font-family: $font-Bebas;
+                color : #fff;
+                top : 60%;
+                left : 50%;
+                transform: translate(-50%, -60%);
+                z-index: 10;
+                text-align: center;
+            }
+        }
+
+        .Technology-section{
+            position: relative;
+            width : 100%;
+            height : 200vh;
+
+            .Technology-subtitle{
+                padding : 5rem;
+                position: relative;
+                width : 100%;
+                height : max-content;
+                display: grid;
+                grid-template-columns: 1fr;
+                place-items: center;
+                gap : 5rem;
+
+                .Technology-dynamicTxt{
+                    display: block;
+                    width : 100%;
+                    height : 10rem;
+                    overflow: hidden;
+                    text-align: center;
+
+                    .dynamicTxt-span{
+                    position: relative;
+                    font-size: 6rem;
+                    color : $white-color;
+                    font-family: $font-Alfa;
+                    text-transform: uppercase;
+
+                    &:nth-child(2){
+                        font-family: $font-Bebas;
+                    }
+                    }
+                }
+            }
+
+        }
+    }
+}
