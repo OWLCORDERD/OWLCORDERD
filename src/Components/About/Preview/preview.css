@@ -86,7 +86,7 @@
      object-fit: cover;
 }
 .Preview-container .Preview-DeveloperBox .PreviewBox-contents .PreviewBox-subTxt {
-  position: absolute;
+  position: relative;
   width: 50%;
   height: 50%;
   right: 0;

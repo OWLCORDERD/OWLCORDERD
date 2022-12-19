@@ -48,7 +48,7 @@
   border-bottom: 5px solid #fff;
   text-transform: uppercase;
   font-family: "Bebas Neue", cursive;
-  z-index: 10;
+  z-index: 1000;
   background-color: #000;
 }
 .Introduce-navigator .logo-icon {
@@ -69,7 +69,7 @@
   height: -moz-max-content;
   height: max-content;
   color: #fff;
-  font-size: 2rem;
+  -webkit-text-stroke: 1px #fff;
 }
 .Introduce-navigator .nav-comment {
   position: relative;

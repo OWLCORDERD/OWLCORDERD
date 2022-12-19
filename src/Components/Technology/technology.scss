@@ -17,77 +17,334 @@
         .Technology-banner{
             position: relative;
             width : 100%;
-            height : 100vh;
+            height : 200vh;
 
-            &::before{
-                position: absolute;
-                width : 100%;
-                height : 100%;
-                content : '';
+            .TechBanner-contents{
+                position: relative;
                 top : 0;
                 left : 0;
-                background-color: $rgba-black;
-                z-index: 10;
-            }
-
-            .Tech-backImg{
-                position: absolute;
                 width : 100%;
-                height : 100%;
-                object-fit: cover;
+                height : 60vh;
+                z-index: 100;
+
+                &::before{
+                    position: absolute;
+                    top : 0;
+                    left : 0;
+                    width : 100%;
+                    height : 100%;
+                    content : '';
+                    background-color: $rgba-black;
+                }
+
+                .banner-title{
+                    position: absolute;
+                    width : max-content;
+                    height : max-content;
+                    font-size: 8rem;
+                    font-family: $font-Alfa;
+                    color : #fff;
+                    top : 40%;
+                    left : 50%;
+                    transform: translate(-50%, -40%);
+                    letter-spacing: 1rem;
+                    z-index: 10;
+                    text-align: center;
+                }
+    
+                .banner-subtitle{
+                    position: absolute;
+                    width : 40rem;
+                    height : max-content;
+                    font-size : 3rem;
+                    color : #fff;
+                    z-index: 10;
+                    top : 80%;
+                    left : 50%;
+                    transform: translate(-50%, -65%);
+                    font-family: $font-Alfa;
+                    text-transform: uppercase;
+                    font-weight: 10;
+                }
             }
 
-            .Technology-title{
-                position: absolute;
-                width : 50rem;
-                height : max-content;
-                font-size: 3rem;
-                font-family: $font-Bebas;
-                color : #fff;
-                top : 60%;
-                left : 50%;
-                transform: translate(-50%, -60%);
-                z-index: 10;
-                text-align: center;
+            .banner-background{
+                position: relative;
+                width : 100%;
+                height : 140vh;
+                background-image: url('../../asset/Image/document.jpg');
+                background-attachment: fixed;
+                background-size: cover;
+
+                &::before{
+                    position: absolute;
+                    top : 0;
+                    left : 0;
+                    content : '';
+                    width : 100%;
+                    height : 100%;
+                    background-color: rgba(0,0,0,0.7);
+                }
+
+                .FrontTECH-container{
+                    position: relative;
+                    top : 50%;
+                    transform: translateY(-50%);
+                    width : 100%;
+                    height : 100vh;
+                    z-index: 100;
+
+                    .FrontTECH-txtBox{
+                        position: relative;
+                        width : 100%;
+                        height : 20vh;
+
+                    .FrontTECH-title{
+                        position: relative;
+                        width : 100%;
+                        height : 10rem;
+                        display: flex;
+                        justify-content: center;
+                        opacity: 0;
+                        span{
+                            font-size: 6rem;
+                            font-family: $font-Hans;
+                            color : $white-color;
+                        }
+                    }
+                    }
+
+                    .FrontTECH-GridBox{
+                        position: relative;
+                        width : 100%;
+                        height : 80vh;
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        place-items: center;
+
+                        .TECH-Box{
+                            position: relative;
+                            width : 80%;
+                            height : 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            justify-content: space-around;
+
+                            .TECH-BoxTitle{
+                                width : 100%;
+                                height : 10vh;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                color : #fff;
+                                border-bottom: 5px solid $rgba-white;
+
+                                .BoxTitle-Num{
+                                    width : 20%;
+                                    height : 100%;
+                                    font-size: 5rem;
+                                    font-family: $font-Hans;
+                                }
+
+                                .BoxTitle-txt{
+                                    width : 80%;
+                                    padding : 1rem 0;
+                                    height : 100%;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+
+                                    p{
+                                        font-size: 1.5rem;
+                                        font-family: $font-Hans;
+                                        text-transform: uppercase;
+                                    }
+                                }
+                            }
+
+                            .Box-icon{
+                                width : 10rem;
+                                height : 10rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: rgba(255,255,255,0.3);
+                                border-radius: 2rem;
+
+                                .TECH-icon{
+                                    font-size: 5rem;
+                                    color : #fff;
+                                }
+                            }
+
+                            .TECH-Part{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-end;
+                                justify-content: space-around;
+                                width : 100%;
+                                height : 10rem;
+
+                                h1{
+                                    width : 20rem;
+                                    font-family: $font-Hans;
+                                    color: #fff;
+                                    font-size: 1.5rem;
+                                    text-align: end;
+                                    text-transform: uppercase;
+                                }
+                            }
+
+                            .TECH-SubHeading{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-end;
+                                justify-content: space-around;
+                                width : 100%;
+                                height : 10rem;
+
+                                h1{
+                                    width : 20rem;
+                                    font-family: $font-Hans;
+                                    color: $rgba-white;
+                                    text-align: end;
+                                    font-size: 1.2rem;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
             }
         }
 
         .Technology-section{
             position: relative;
             width : 100%;
-            height : 200vh;
+            height : 100vh;
 
             .Technology-subtitle{
-                padding : 5rem;
                 position: relative;
+                top : 5rem;
+                padding : 5rem;
                 width : 100%;
                 height : max-content;
                 display: grid;
                 grid-template-columns: 1fr;
                 place-items: center;
                 gap : 5rem;
+                z-index: 100;
 
-                .Technology-dynamicTxt{
+                .Technology-dynamicTxt,
+                .Technology-dynamicTxt-2,
+                .Technology-dynamicTxt-3{
                     display: block;
                     width : 100%;
                     height : 10rem;
                     overflow: hidden;
                     text-align: center;
 
-                    .dynamicTxt-span{
+                    .dynamicTxt-span,
+                    .dynamicTxt-span-2,
+                    .dynamicTxt-span-3{
                     position: relative;
                     font-size: 6rem;
                     color : $white-color;
                     font-family: $font-Alfa;
                     text-transform: uppercase;
-
-                    &:nth-child(2){
-                        font-family: $font-Bebas;
                     }
+                }
+            }
+        }
+        
+        .Technology-figma{
+            position: relative;
+            width : 100%;
+            height : 150vh;
+
+            .Order-Nav{
+            position: sticky;
+            top : 10rem;
+            left : 0;
+            width : 15%;
+            height : 20rem;
+            z-index: 1000;
+
+                ul{
+                    display: inline-block;
+                    width : 100%;
+                    height : 100%;
+
+                    li{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: center;
+                        width : 100%;
+                        height : 33.3%;
+
+                        .cursor{
+                        color : rgb(80, 80, 80);
+                        font-size: 2rem;
+                        }
+
+                        a{
+                        color : rgb(80, 80, 80);
+                        font-family: $font-Hans;
+                        text-transform: uppercase;
+                        font-size: 1.2rem;
+                        }
                     }
                 }
             }
 
+            .figma-bannerTxt{
+                position: absolute;
+                top : 0;
+                width : 100%;
+                height : 50rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                z-index: 100;
+
+                .Top-banner{
+                    position: absolute;
+                    top : 0;
+                    left : 0;
+                    width : 100%;
+                    height : 20rem;
+
+                    h1{
+                    font-family: $font-Alfa;
+                    text-transform: uppercase;
+                    font-size: 7rem;
+                    color : rgba(255,255,255,0.3);
+                    letter-spacing: 1rem;
+                    }
+                }
+
+                .Bottom-banner{
+                    position: absolute;
+                    bottom : 0;
+                    right : 0;
+                    width : 100%;
+                    height : 20rem;
+
+                    h1{
+                    font-family: $font-Alfa;
+                    text-transform: uppercase;
+                    font-size: 7rem;
+                    color : rgba(255,255,255,0.7);
+                    letter-spacing: 1rem;
+                    text-align: end;
+                    }
+                }
+            }
         }
+
     }
 }

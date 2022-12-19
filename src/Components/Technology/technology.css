@@ -27,48 +27,201 @@
 .Technology-container section .Technology-banner {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 200vh;
 }
-.Technology-container section .Technology-banner::before {
+.Technology-container section .Technology-banner .TechBanner-contents {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  z-index: 100;
+}
+.Technology-container section .Technology-banner .TechBanner-contents::before {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   content: "";
-  top: 0;
-  left: 0;
   background-color: rgba(0, 0, 0, 0.5);
+}
+.Technology-container section .Technology-banner .TechBanner-contents .banner-title {
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: 8rem;
+  font-family: "Alfa Slab One", cursive;
+  color: #fff;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  letter-spacing: 1rem;
   z-index: 10;
+  text-align: center;
 }
-.Technology-container section .Technology-banner .Tech-backImg {
+.Technology-container section .Technology-banner .TechBanner-contents .banner-subtitle {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.Technology-container section .Technology-banner .Technology-title {
-  position: absolute;
-  width: 50rem;
+  width: 40rem;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   font-size: 3rem;
-  font-family: "Bebas Neue", cursive;
   color: #fff;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -60%);
   z-index: 10;
-  text-align: center;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  font-family: "Alfa Slab One", cursive;
+  text-transform: uppercase;
+  font-weight: 10;
+}
+.Technology-container section .Technology-banner .banner-background {
+  position: relative;
+  width: 100%;
+  height: 140vh;
+  background-image: url("../../asset/Image/document.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+.Technology-container section .Technology-banner .banner-background::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-txtBox {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-txtBox .FrontTECH-title {
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-txtBox .FrontTECH-title span {
+  font-size: 6rem;
+  font-family: "Black Han Sans", sans-serif;
+  color: #fff;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .TECH-BoxTitle {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  border-bottom: 5px solid rgba(255, 255, 255, 0.5);
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .TECH-BoxTitle .BoxTitle-Num {
+  width: 20%;
+  height: 100%;
+  font-size: 5rem;
+  font-family: "Black Han Sans", sans-serif;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .TECH-BoxTitle .BoxTitle-txt {
+  width: 80%;
+  padding: 1rem 0;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .TECH-BoxTitle .BoxTitle-txt p {
+  font-size: 1.5rem;
+  font-family: "Black Han Sans", sans-serif;
+  text-transform: uppercase;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .Box-icon {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .Box-icon .TECH-icon {
+  font-size: 5rem;
+  color: #fff;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .TECH-Part {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100%;
+  height: 10rem;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .TECH-Part h1 {
+  width: 20rem;
+  font-family: "Black Han Sans", sans-serif;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: end;
+  text-transform: uppercase;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .TECH-SubHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100%;
+  height: 10rem;
+}
+.Technology-container section .Technology-banner .banner-background .FrontTECH-container .FrontTECH-GridBox .TECH-Box .TECH-SubHeading h1 {
+  width: 20rem;
+  font-family: "Black Han Sans", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: end;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 .Technology-container section .Technology-section {
   position: relative;
   width: 100%;
-  height: 200vh;
+  height: 100vh;
 }
 .Technology-container section .Technology-section .Technology-subtitle {
-  padding: 5rem;
   position: relative;
+  top: 5rem;
+  padding: 5rem;
   width: 100%;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -77,21 +230,105 @@
   grid-template-columns: 1fr;
   place-items: center;
   gap: 5rem;
+  z-index: 100;
 }
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt {
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-2,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-3 {
   display: block;
   width: 100%;
   height: 10rem;
   overflow: hidden;
   text-align: center;
 }
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span {
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span-2,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span-3,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-2 .dynamicTxt-span,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-2 .dynamicTxt-span-2,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-2 .dynamicTxt-span-3,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-3 .dynamicTxt-span,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-3 .dynamicTxt-span-2,
+.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-3 .dynamicTxt-span-3 {
   position: relative;
   font-size: 6rem;
   color: #fff;
   font-family: "Alfa Slab One", cursive;
   text-transform: uppercase;
 }
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span:nth-child(2) {
-  font-family: "Bebas Neue", cursive;
+.Technology-container section .Technology-figma {
+  position: relative;
+  width: 100%;
+  height: 150vh;
+}
+.Technology-container section .Technology-figma .Order-Nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10rem;
+  left: 0;
+  width: 15%;
+  height: 20rem;
+  z-index: 1000;
+}
+.Technology-container section .Technology-figma .Order-Nav ul {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.Technology-container section .Technology-figma .Order-Nav ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 33.3%;
+}
+.Technology-container section .Technology-figma .Order-Nav ul li .cursor {
+  color: rgb(80, 80, 80);
+  font-size: 2rem;
+}
+.Technology-container section .Technology-figma .Order-Nav ul li a {
+  color: rgb(80, 80, 80);
+  font-family: "Black Han Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.Technology-container section .Technology-figma .figma-bannerTxt {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+}
+.Technology-container section .Technology-figma .figma-bannerTxt .Top-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20rem;
+}
+.Technology-container section .Technology-figma .figma-bannerTxt .Top-banner h1 {
+  font-family: "Alfa Slab One", cursive;
+  text-transform: uppercase;
+  font-size: 7rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1rem;
+}
+.Technology-container section .Technology-figma .figma-bannerTxt .Bottom-banner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 20rem;
+}
+.Technology-container section .Technology-figma .figma-bannerTxt .Bottom-banner h1 {
+  font-family: "Alfa Slab One", cursive;
+  text-transform: uppercase;
+  font-size: 7rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1rem;
+  text-align: end;
 }/*# sourceMappingURL=technology.css.map */

@@ -1,0 +1,57 @@
+{
+    "TECHNOLOGY" : {
+        "React" : {
+            "title" : "Use React Library",
+            "TechPart1" : "Single Page App",
+            "TechPart2" : "Rest Api",
+            "TechPart3" : "ScrollTrigger & Framer Motion",
+            "PartHeading" : "React-Router-Dom",
+            "PartHeading2" : "UseEffect Fetch Json",
+            "PartHeading3" : "UseRef Scroll Area Trigger"
+        },
+        "Html5" : {
+            "title" : "Use Hyper Text MarkUp Language",
+            "TechPart1" : "MarkUp Language",
+            "TechPart2" : "UI/UX publishing",
+            "TechPart3" : "Html Web Layout",
+            "PartHeading" : "Layout 구조 세부화 디자인",
+            "PartHeading2" : "Sementic Layout Tag 활용"
+        },
+        "Js" : {
+            "title" : "Use JavaScript",
+            "TechPart1" : "DOM Event Listener ",
+            "TechPart2" : "DOM Document",
+            "TechPart3" : "Event Function",
+            "PartHeading" : "Scroll Event, click Event",
+            "PartHeading2" : "QuerySelector, getElementBy",
+            "PartHeading3" : "Class Toggle, if, Else 조건문"
+        },
+        "CSS" : {
+            "title" : "Use Cascading Style Sheet",
+            "TechPart1" : "CSS Properties",
+            "TechPart2" : "SCSS Properties",
+            "TechPart3" : "Properties Position",
+            "PartHeading" : "Variants, animation, style",
+            "PartHeading2" : "Compiler Css,  readability Css, nesting selectors",
+            "PartHeading3" : "absolute, relative, transfrom, translate"
+        },
+        "Figma" : {
+            "ProjectName" : "IYOU",
+            "SubHeading" : "IU PROFILE SITE",
+            "Tech" : "FIGMA",
+            "ProJectImg" : "../public/Figma/IYOU SITE Main.png"
+        },
+        "NHMC" : {
+            "ProjectName" : "NHMC",
+            "SubHeading" : "New Hottest Music Chart",
+            "Tech" : "FIGMA",
+            "ProJectImg" : "../public/Figma/NHMC Main.png"
+        },
+        "Owlcoder" : {
+            "ProjectName" : "OWLCODER",
+            "SubHeading" : "OwlCoderd Developer Profile Site",
+            "Tech" : "FIGMA",
+            "ProJectImg" : "../public/Figma/Owlcoder Main.png"
+        }
+    }
+}
