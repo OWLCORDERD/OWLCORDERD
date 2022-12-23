@@ -24,6 +24,43 @@
   padding: 0;
   box-sizing: border-box;
 }
+.Technology-container section .Order-Nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 15%;
+  height: 20rem;
+  z-index: 1000;
+}
+.Technology-container section .Order-Nav ul {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.Technology-container section .Order-Nav ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 33.3%;
+}
+.Technology-container section .Order-Nav ul li .cursor {
+  color: rgb(80, 80, 80);
+  font-size: 2rem;
+}
+.Technology-container section .Order-Nav ul li a {
+  color: rgb(80, 80, 80);
+  font-family: "Black Han Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.Technology-container section .Order-Nav ul li #Order-select.active {
+  color: #fff;
+  font-size: 2rem;
+}
 .Technology-container section .Technology-banner {
   position: relative;
   width: 100%;
@@ -213,12 +250,12 @@
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-.Technology-container section .Technology-section {
+.Technology-container section .Technology-Introduce {
   position: relative;
   width: 100%;
   height: 100vh;
 }
-.Technology-container section .Technology-section .Technology-subtitle {
+.Technology-container section .Technology-Introduce .Technology-subtitle {
   position: relative;
   top: 5rem;
   padding: 5rem;
@@ -232,25 +269,26 @@
   gap: 5rem;
   z-index: 100;
 }
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-2,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-3 {
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt-2,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt-3 {
   display: block;
   width: 100%;
   height: 10rem;
   overflow: hidden;
   text-align: center;
 }
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span-2,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span-3,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-2 .dynamicTxt-span,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-2 .dynamicTxt-span-2,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-2 .dynamicTxt-span-3,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-3 .dynamicTxt-span,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-3 .dynamicTxt-span-2,
-.Technology-container section .Technology-section .Technology-subtitle .Technology-dynamicTxt-3 .dynamicTxt-span-3 {
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span-2,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt .dynamicTxt-span-3,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt-2 .dynamicTxt-span,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt-2 .dynamicTxt-span-2,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt-2 .dynamicTxt-span-3,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt-3 .dynamicTxt-span,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt-3 .dynamicTxt-span-2,
+.Technology-container section .Technology-Introduce .Technology-subtitle .Technology-dynamicTxt-3 .dynamicTxt-span-3 {
   position: relative;
+  top: 0;
   font-size: 6rem;
   color: #fff;
   font-family: "Alfa Slab One", cursive;
@@ -259,76 +297,210 @@
 .Technology-container section .Technology-figma {
   position: relative;
   width: 100%;
-  height: 150vh;
+  height: 200vh;
 }
-.Technology-container section .Technology-figma .Order-Nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 10rem;
-  left: 0;
-  width: 15%;
-  height: 20rem;
-  z-index: 1000;
-}
-.Technology-container section .Technology-figma .Order-Nav ul {
-  display: inline-block;
+.Technology-container section .Technology-figma .figma-container {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 200vh;
+  overflow: hidden;
 }
-.Technology-container section .Technology-figma .Order-Nav ul li {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 33.3%;
-}
-.Technology-container section .Technology-figma .Order-Nav ul li .cursor {
-  color: rgb(80, 80, 80);
-  font-size: 2rem;
-}
-.Technology-container section .Technology-figma .Order-Nav ul li a {
-  color: rgb(80, 80, 80);
-  font-family: "Black Han Sans", sans-serif;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-}
-.Technology-container section .Technology-figma .figma-bannerTxt {
+.Technology-container section .Technology-figma .figma-container .figma-bannerTxt {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 50rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 100;
 }
-.Technology-container section .Technology-figma .figma-bannerTxt .Top-banner {
+.Technology-container section .Technology-figma .figma-container .figma-bannerTxt .Top-banner {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 20rem;
 }
-.Technology-container section .Technology-figma .figma-bannerTxt .Top-banner h1 {
+.Technology-container section .Technology-figma .figma-container .figma-bannerTxt .Top-banner h1 {
   font-family: "Alfa Slab One", cursive;
   text-transform: uppercase;
-  font-size: 7rem;
+  font-size: 9rem;
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: 1rem;
 }
-.Technology-container section .Technology-figma .figma-bannerTxt .Bottom-banner {
+.Technology-container section .Technology-figma .figma-container .figma-bannerTxt .Bottom-banner {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 100%;
   height: 20rem;
 }
-.Technology-container section .Technology-figma .figma-bannerTxt .Bottom-banner h1 {
+.Technology-container section .Technology-figma .figma-container .figma-bannerTxt .Bottom-banner h1 {
   font-family: "Alfa Slab One", cursive;
   text-transform: uppercase;
-  font-size: 7rem;
+  font-size: 9rem;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 1rem;
   text-align: end;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 80%;
+  height: 150vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 5rem;
+  z-index: 100;
+  overflow: hidden;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container .FigmaPJ-item {
+  position: relative;
+  width: 35rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container .FigmaPJ-item .PJ-imgBox {
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  background-color: #000;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container .FigmaPJ-item .PJ-imgBox img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container .FigmaPJ-item .PJ-contentBox {
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container .FigmaPJ-item .PJ-contentBox .PJ-title {
+  width: 25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container .FigmaPJ-item .PJ-contentBox .PJ-title h1 {
+  font-size: 3rem;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.5rem;
+  color: #fff;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container .FigmaPJ-item .PJ-contentBox .PJ-title p {
+  color: #fff;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5rem;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container .FigmaPJ-item .PJ-contentBox .PJ-Tool {
+  width: 10rem;
+  height: 100%;
+}
+.Technology-container section .Technology-figma .figma-container .FigmaPJ-container .FigmaPJ-item .PJ-contentBox .PJ-Tool img {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+.Technology-container section .Technology-React {
+  position: relative;
+  width: 100%;
+  height: 300vh;
+}
+.Technology-container section .Technology-React .ReactPJ-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item {
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  overflow: hidden;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ImgBox {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  left: 80%;
+  transform: translateX(-80%);
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ImgBox img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ContentBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ContentBox .ReactPJ-info {
+  position: relative;
+  width: 30%;
+  height: 80%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ContentBox .ReactPJ-info .PJ-Name {
+  font-size: 10rem;
+  letter-spacing: 1.5rem;
+  font-family: "Bebas Neue", cursive;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ContentBox .ReactPJ-info .PJ-SubName {
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  font-family: "Bebas Neue", cursive;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ContentBox .ReactPJ-info .ReactPJ-Tech {
+  font-size: 1.8rem;
+  font-family: "Bebas Neue", cursive;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ContentBox .Banner-content {
+  position: relative;
+  width: 20rem;
+  height: 100%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ContentBox .Banner-content h1 {
+  position: relative;
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  font-family: "Alfa Slab One", cursive;
 }/*# sourceMappingURL=technology.css.map */

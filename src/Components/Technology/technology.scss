@@ -14,6 +14,47 @@
         padding: 0;
         box-sizing: border-box;
 
+        .Order-Nav{
+            position: sticky;
+            top : 50%;
+            transform: translateY(-50%);
+            left : 0;
+            width : 15%;
+            height : 20rem;
+            z-index: 1000;
+
+                ul{
+                    display: inline-block;
+                    width : 100%;
+                    height : 100%;
+
+                    li{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: center;
+                        width : 100%;
+                        height : 33.3%;
+
+                        .cursor{
+                        color : rgb(80, 80, 80);
+                        font-size: 2rem;
+                        }
+
+                        a{
+                        color : rgb(80, 80, 80);
+                        font-family: $font-Hans;
+                        text-transform: uppercase;
+                        font-size: 1.2rem;
+                        }
+                        #Order-select.active{
+                            color : #fff;
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+
         .Technology-banner{
             position: relative;
             width : 100%;
@@ -221,7 +262,7 @@
             }
         }
 
-        .Technology-section{
+        .Technology-Introduce{
             position: relative;
             width : 100%;
             height : 100vh;
@@ -251,6 +292,7 @@
                     .dynamicTxt-span-2,
                     .dynamicTxt-span-3{
                     position: relative;
+                    top : 0;
                     font-size: 6rem;
                     color : $white-color;
                     font-family: $font-Alfa;
@@ -263,88 +305,243 @@
         .Technology-figma{
             position: relative;
             width : 100%;
-            height : 150vh;
+            height : 200vh;
 
-            .Order-Nav{
-            position: sticky;
-            top : 10rem;
-            left : 0;
-            width : 15%;
-            height : 20rem;
-            z-index: 1000;
-
-                ul{
-                    display: inline-block;
-                    width : 100%;
-                    height : 100%;
-
-                    li{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-around;
-                        align-items: center;
-                        width : 100%;
-                        height : 33.3%;
-
-                        .cursor{
-                        color : rgb(80, 80, 80);
-                        font-size: 2rem;
-                        }
-
-                        a{
-                        color : rgb(80, 80, 80);
-                        font-family: $font-Hans;
-                        text-transform: uppercase;
-                        font-size: 1.2rem;
-                        }
-                    }
-                }
-            }
-
-            .figma-bannerTxt{
-                position: absolute;
-                top : 0;
+            .figma-container{
+                position: relative;
                 width : 100%;
-                height : 50rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                z-index: 100;
+                height : 200vh;
+                overflow: hidden;
 
-                .Top-banner{
+                .figma-bannerTxt{
                     position: absolute;
                     top : 0;
                     left : 0;
                     width : 100%;
-                    height : 20rem;
+                    height : 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    z-index: 100;
 
-                    h1{
-                    font-family: $font-Alfa;
-                    text-transform: uppercase;
-                    font-size: 7rem;
-                    color : rgba(255,255,255,0.3);
-                    letter-spacing: 1rem;
+                    .Top-banner{
+                        position: absolute;
+                        top : 0;
+                        left : 0;
+                        width : 100%;
+                        height : 20rem;
+
+                        h1{
+                            font-family: $font-Alfa;
+                            text-transform: uppercase;
+                            font-size: 9rem;
+                            color : rgba(255,255,255,0.3);
+                            letter-spacing: 1rem;
+                        }
+                    }
+
+                    .Bottom-banner{
+                        position: absolute;
+                        bottom : 0;
+                        right : 0;
+                        width : 100%;
+                        height : 20rem;
+
+                        h1{
+                            font-family: $font-Alfa;
+                            text-transform: uppercase;
+                            font-size: 9rem;
+                            color : rgba(255,255,255,0.7);
+                            letter-spacing: 1rem;
+                            text-align: end;
+                        }
                     }
                 }
 
-                .Bottom-banner{
+                .FigmaPJ-container{
                     position: absolute;
-                    bottom : 0;
+                    top : 50%;
                     right : 0;
-                    width : 100%;
-                    height : 20rem;
+                    transform: $centerTL-Y;
+                    width : 80%;
+                    height : 150vh;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    place-items: center;
+                    gap : 5rem;
+                    z-index: 100;
+                    overflow: hidden;
 
-                    h1{
-                    font-family: $font-Alfa;
-                    text-transform: uppercase;
-                    font-size: 7rem;
-                    color : rgba(255,255,255,0.7);
-                    letter-spacing: 1rem;
-                    text-align: end;
+                    .FigmaPJ-item{
+                        position: relative;
+                        width : 35rem;
+                        height : 30rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .PJ-imgBox{
+                            position: relative;
+                            width : 100%;
+                            height : 20rem;
+                            background-color: #000;
+
+                            img{
+                            position: absolute;
+                            width : 100%;
+                            height : 100%;
+                            object-fit: cover;
+                            }
+                        }
+
+                        .PJ-contentBox{
+                            position: relative;
+                            width : 100%;
+                            height : 10rem;
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
+
+                            .PJ-title{
+                                width : 25rem;
+                                height : 100%;
+
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                justify-content: space-around;
+
+                                h1{
+                                    font-size: 3rem;
+                                    font-family: $font-Bebas;
+                                    letter-spacing: 0.5rem;
+                                    color : #fff;
+                                }
+
+                                p{
+                                    color : #fff;
+                                    font-family: $font-Bebas;
+                                    font-size: 1.5rem;
+                                }
+                            }
+
+                            .PJ-Tool{
+                                width : 10rem;
+                                height : 100%;
+
+                                img{
+                                position: relative;
+                                top : 50%;
+                                left : 50%;
+                                transform: $centerTL;
+                                width : 3rem;
+                                height : 3rem;
+                                object-fit: scale-down;
+                                }
+                            }
+                        }
                     }
+                }
+
+            }
+    }
+
+    .Technology-React{
+        position: relative;
+        width : 100%;
+        height : 300vh;
+
+        .ReactPJ-container{
+            position: absolute;
+            right : 0;
+            top : 0;
+            width : 80%;
+            height : 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            place-items: center;
+
+            .ReactPJ-item{
+                position: relative;
+                width : 100%;
+                height : 40rem;
+                overflow: hidden;
+
+                .ReactPJ-ImgBox{
+                    position: absolute;
+                    width : 60%;
+                    height : 100%;
+                    left : 80%;
+                    transform: translateX(-80%);
+
+                    img{
+                        position: absolute;
+                        width : 100%;
+                        height : 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .ReactPJ-ContentBox{
+                    width : 100%;
+                    height : 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    color : #fff;
+
+                    .ReactPJ-info{
+                        position: relative;
+                        width : 30%;
+                        height : 80%;
+                        top : 50%;
+                        transform: $centerTL-Y;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        
+                        .PJ-Name{
+                            font-size: 10rem;
+                            letter-spacing: 1.5rem;
+                            font-family: $font-Bebas;
+                        }
+
+                        .PJ-SubName{
+                            font-size: 3rem;
+                            letter-spacing: 0.1rem;
+                            font-family: $font-Bebas;
+                        }
+
+                        .ReactPJ-Tech{
+                            font-size: 1.8rem;
+                            font-family: $font-Bebas;
+                        }
+                    }
+
+                    .Banner-content{
+                        position: relative;
+                        width : 20rem;
+                        height : 100%;
+                        font-size: 2rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        h1{
+                        position: relative;
+                        transform: rotate(-90deg);
+                        text-transform: uppercase;
+                        font-family: $font-Alfa;
+                        }
+                    }
+
                 }
             }
+            
         }
+
+    }
 
     }
 }

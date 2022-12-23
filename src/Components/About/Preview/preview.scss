@@ -4,7 +4,7 @@
     position: relative;
     top : 0;
     left : 0;
-    width : 100%;
+    width : 100vw;
     height : 100vh;
     background-color: $black-color;
     z-index: 1000;
@@ -54,13 +54,11 @@
 
         .PreviewBox-contents{
             position: relative;
-            left : 50%;
-            top : 50%;
-            width : 90%;
-            transform: $centerTL;
+            width : 100%;
             height : 100vh;
             display: flex;
-            overflow: hidden;
+            flex-direction: row;
+            justify-content: space-between;
 
             .PreviewBox-Profile{
                 position: relative;
@@ -71,13 +69,9 @@
                 height : 50%;
                 overflow: hidden;
                 z-index: 10;
-
-                img{
-                    position: absolute;
-                    width : 100%;
-                    height : 100%;
-                    object-fit: cover;
-                }
+                background-image: url('../../../asset/Image/coder.gif');
+                background-attachment: fixed;
+                background-size: cover;
             }
 
             .PreviewBox-subTxt{

@@ -34,24 +34,66 @@
             "PartHeading" : "Variants, animation, style",
             "PartHeading2" : "Compiler Css,  readability Css, nesting selectors",
             "PartHeading3" : "absolute, relative, transfrom, translate"
-        },
-        "Figma" : {
+        }
+    },
+
+    "Project" : [
+        {
+            "Tool" : "Figma",
             "ProjectName" : "IYOU",
             "SubHeading" : "IU PROFILE SITE",
             "Tech" : "FIGMA",
-            "ProJectImg" : "../public/Figma/IYOU SITE Main.png"
+            "ToolImg" : "../Figma/figma-logo.png",
+            "ProjectImg" : "../Figma/IYOU SITE Main.png",
+            "link" : "https://www.figma.com/file/3T5r81YtQ02zXhhtNsTDll/I'YOU-PROJECT?node-id=0%3A1&t=UTiTCGw9HOK3cpB9-0"
         },
-        "NHMC" : {
+        {
+            "Tool" : "Figma",
             "ProjectName" : "NHMC",
             "SubHeading" : "New Hottest Music Chart",
             "Tech" : "FIGMA",
-            "ProJectImg" : "../public/Figma/NHMC Main.png"
+            "ToolImg" : "../Figma/figma-logo.png",
+            "ProjectImg" : "../Figma/NHMC Main.png",
+            "link" : "https://www.figma.com/file/vupgYgR0OvCivnaUTCRNei/MCIM-PROJECT?t=UTiTCGw9HOK3cpB9-0"
         },
-        "Owlcoder" : {
+        {
+            "Tool" : "Figma",
             "ProjectName" : "OWLCODER",
             "SubHeading" : "OwlCoderd Developer Profile Site",
             "Tech" : "FIGMA",
-            "ProJectImg" : "../public/Figma/Owlcoder Main.png"
+            "ToolImg" : "../Figma/figma-logo.png",
+            "ProjectImg" : "../Figma/Owlcoder Main.png",
+            "link" : "https://www.figma.com/file/WXD3wVGJRH56Xz9ViV1KTO/%5BOWLCODERD%5DPROFILE-SITE?t=UTiTCGw9HOK3cpB9-6"
+        },
+        {
+            "Tool" : "React",
+            "ProjectName" : "IYOU",
+            "SubHeading" : "IU PROFILE SITE",
+            "Tech" : "REST API Server",
+            "Tech2" : "React Hooks",
+            "Tech3" : "Props",
+            "Tech4" : "Variables",
+            "Banner" : "../ReactPJ/IYOU-Banner.jpg"
+        },
+        {
+            "Tool" : "React",
+            "ProjectName" : "IYOU",
+            "SubHeading" : "IU PROFILE SITE",
+            "Tech" : "REST API Server",
+            "Tech2" : "React Hooks",
+            "Tech3" : "Props",
+            "Tech4" : "Variables",
+            "Banner" : "../ReactPJ/IYOU-Banner.jpg"
+        },
+        {
+            "Tool" : "React",
+            "ProjectName" : "IYOU",
+            "SubHeading" : "IU PROFILE SITE",
+            "Tech" : "REST API Server",
+            "Tech2" : "React Hooks",
+            "Tech3" : "Props",
+            "Tech4" : "Variables",
+            "Banner" : "../ReactPJ/IYOU-Banner.jpg"
         }
-    }
+    ]
 }

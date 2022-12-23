@@ -25,7 +25,7 @@ const AboutSection = () => {
      duration : 2,
     scrollTrigger : {
         trigger : '.PreviewBox-subTxt',
-        start : `+=300px`,
+        start : `+=200px`,
         end : `+=500px`,
         scrub : true
     }
@@ -84,9 +84,7 @@ const AboutSection = () => {
           </div>
 
             <div className = "PreviewBox-contents" id = "PreviewId">
-              <div className = "PreviewBox-Profile" ref = {ref}>
-                <img src = {CoderImg} alt = ""/>
-              </div>
+              <div className = "PreviewBox-Profile" ref = {ref}></div>
 
               <div className = "PreviewBox-subTxt" id = "subTxt">
                 <h1>development ability</h1>
