@@ -450,12 +450,45 @@
   left: 80%;
   transform: translateX(-80%);
 }
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ImgBox::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  z-index: 100;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ImgBox:hover a {
+  opacity: 1;
+  transition: all 0.5s ease-in;
+}
 .Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ImgBox img {
   position: absolute;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ImgBox a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 5rem;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  background-color: #000;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  font-family: "Bebas Neue", cursive;
 }
 .Technology-container section .Technology-React .ReactPJ-container .ReactPJ-item .ReactPJ-ContentBox {
   width: 100%;

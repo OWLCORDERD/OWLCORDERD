@@ -69,31 +69,32 @@
             "Tool" : "React",
             "ProjectName" : "IYOU",
             "SubHeading" : "IU PROFILE SITE",
-            "Tech" : "REST API Server",
-            "Tech2" : "React Hooks",
-            "Tech3" : "Props",
-            "Tech4" : "Variables",
+            "Tech" : "Use Vanila JS Event Function",
+            "Tech2" : "Use React Hooks",
+            "Tech3" : "Use Framer Motion Loading Page",
+            "Tech4" : "REST API Server",
             "Banner" : "../ReactPJ/IYOU-Banner.jpg"
         },
         {
             "Tool" : "React",
-            "ProjectName" : "IYOU",
-            "SubHeading" : "IU PROFILE SITE",
-            "Tech" : "REST API Server",
-            "Tech2" : "React Hooks",
-            "Tech3" : "Props",
-            "Tech4" : "Variables",
-            "Banner" : "../ReactPJ/IYOU-Banner.jpg"
+            "ProjectName" : "NHMC",
+            "SubHeading" : "New Hottest Music Chart",
+            "Tech" : "Use React Hooks",
+            "Tech2" : "Use Framer Motion",
+            "Tech3" : "Sharing Variables Using Props",
+            "Tech4" : "toggle Class Animation",
+            "Banner" : "../ReactPJ/NEW-JEANS.jpg",
+            "Link" : "https://nhmc.netlify.app"
         },
         {
             "Tool" : "React",
-            "ProjectName" : "IYOU",
-            "SubHeading" : "IU PROFILE SITE",
-            "Tech" : "REST API Server",
+            "ProjectName" : "OWLCODERD",
+            "SubHeading" : "Developer Profile Site",
+            "Tech" : "ScrollTrigger Scroll Event",
             "Tech2" : "React Hooks",
-            "Tech3" : "Props",
-            "Tech4" : "Variables",
-            "Banner" : "../ReactPJ/IYOU-Banner.jpg"
+            "Tech3" : "Single Page App",
+            "Tech4" : "Use SCSS Compiler CSS",
+            "Banner" : "../ReactPJ/OwlCoderd.jpg"
         }
     ]
 }

@@ -24,6 +24,7 @@ const ReactTech = ({propsDB}) => {
         <div className = "ReactPJ-item">
             <div className = "ReactPJ-ImgBox">
                 <img src = {item.Banner} alt = ""/>
+                <a href = {item.Link} alt = "">View Page</a>
             </div>
 
             <div className = "ReactPJ-ContentBox">
