@@ -16,6 +16,8 @@ const FigmaTech = ({jsonDB, gsap, ScrollTrigger}) => {
     
     const filterFigma = test.filter(test => test.Tool === "Figma");
 
+    const ReactRef = useRef(null);
+
     useEffect(()=>{
 
         setTest(jsonDB.Project);
@@ -24,7 +26,14 @@ const FigmaTech = ({jsonDB, gsap, ScrollTrigger}) => {
             trigger : figmaRef.current,
             start : "-50% top",
             end : "bottom center",
-            toggleClass : {targets : "#Order-select", className : "active"}
+            toggleClass : {targets : "#Figma-select", className : "active"}
+        })
+
+        ScrollTrigger.create({
+            trigger : ReactRef.current,
+            start : "top top",
+            end : "bottom center",
+            toggleClass : {targets : "#React-select", className : "active"}
         })
     
         tl.to('.Top-banner',{
@@ -56,13 +65,13 @@ const FigmaTech = ({jsonDB, gsap, ScrollTrigger}) => {
     <nav className = "Order-Nav">
         <ul>
             <li>
-                <TiLocationArrow className="cursor" id = "Order-select"/>
-                <a href = "" id = "Order-select">FIGMA</a>
+                <TiLocationArrow className="cursor" id = "Figma-select"/>
+                <a href = "" id = "Figma-select">FIGMA</a>
             </li>
 
             <li>
-                <TiLocationArrow className="cursor"/>
-                <a href = "">React</a>
+                <TiLocationArrow className="cursor" id = "React-select"/>
+                <a href = "" id = "React-select">React</a>
             </li>
 
             <li>
@@ -113,7 +122,7 @@ const FigmaTech = ({jsonDB, gsap, ScrollTrigger}) => {
         </div>
     </div>
 
-    <ReactTech propsDB = {jsonDB}/>
+    <ReactTech propsDB = {jsonDB} ReactRef = {ReactRef}/>
     </section>
   )
 }

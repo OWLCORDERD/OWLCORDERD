@@ -57,7 +57,11 @@
   text-transform: uppercase;
   font-size: 1.2rem;
 }
-.Technology-container section .Order-Nav ul li #Order-select.active {
+.Technology-container section .Order-Nav ul li #Figma-select.active {
+  color: #fff;
+  font-size: 2rem;
+}
+.Technology-container section .Order-Nav ul li #React-select.active {
   color: #fff;
   font-size: 2rem;
 }

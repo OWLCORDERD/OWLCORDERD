@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import "./technology.css"
 
-const ReactTech = ({propsDB}) => {
+const ReactTech = ({propsDB, ReactRef}) => {
 
     const [ReactPJ, setReactPJ] = useState([]);
 
@@ -16,7 +16,7 @@ const ReactTech = ({propsDB}) => {
 
   return (
     <section>
-    <div className = "Technology-React">
+    <div className = "Technology-React" ref={ReactRef}>
         <div className="ReactPJ-container">
 
         {ReactFilter.map((item)=>{
