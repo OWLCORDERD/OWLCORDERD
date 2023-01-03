@@ -12,86 +12,154 @@
   position: relative;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
+  width: 100%;
+  height: 150vh;
   z-index: 1000;
+  padding: 5rem 0;
 }
-.Preview-container .Preview-DeveloperBox {
+.Preview-container .Preview-title {
   position: relative;
   width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  padding: 0 8rem;
+}
+.Preview-container .Preview-title .title-left {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.Preview-container .Preview-title .title-left h1 {
+  font-size: 7rem;
+  font-family: "Alfa Slab One", cursive;
+  color: #fff;
+  letter-spacing: 1rem;
+}
+.Preview-container .Preview-title .title-right {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.Preview-container .Preview-title .title-right h1 {
+  font-size: 7rem;
+  font-family: "Alfa Slab One", cursive;
+  color: #fff;
+  letter-spacing: 1rem;
+}
+.Preview-container .Preview-title .Preview-list {
+  position: relative;
+  width: 60%;
+  height: 20vh;
+  color: #fff;
+  line-height: 20vh;
+  z-index: 2000;
+}
+.Preview-container .Preview-title .Preview-list li {
+  display: inline-block;
+  width: 25%;
   height: 100%;
-  z-index: 1000;
 }
-.Preview-container .Preview-DeveloperBox .Preview-textBox {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+.Preview-container .Preview-title .Preview-list li.active h1 {
+  color: #fff;
 }
-.Preview-container .Preview-DeveloperBox .Preview-textBox .PreviewBox-title {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: 30rem;
-  color: rgb(172, 172, 172);
+.Preview-container .Preview-title .Preview-list li h1 {
+  font-size: 2rem;
   font-family: "Bebas Neue", cursive;
-  z-index: 1000;
-  font-size: 9rem;
-  letter-spacing: 0.5rem;
-  z-index: -1;
+  color: rgb(122, 122, 122);
+  text-align: center;
+  cursor: pointer;
 }
-.Preview-container .Preview-DeveloperBox .Preview-textBox .PreviewBox-subTitle {
+.Preview-container .Preview-React, .Preview-container .Preview-Figma, .Preview-container .Preview-Aws, .Preview-container .Preview-PhotoShop {
   position: absolute;
-  left: 50%;
-  width: 30rem;
-  height: 30rem;
+  width: 80%;
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.5s ease-out;
 }
-.Preview-container .Preview-DeveloperBox .Preview-textBox .PreviewBox-subTitle h1 {
-  font-size: 9rem;
-  letter-spacing: 0.5rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: "Bebas Neue", cursive;
+.Preview-container .Preview-React#active, .Preview-container .Preview-Figma#active, .Preview-container .Preview-Aws#active, .Preview-container .Preview-PhotoShop#active {
+  opacity: 1;
+  transition: all 0.5s ease-in;
 }
-.Preview-container .Preview-DeveloperBox .PreviewBox-contents {
+.Preview-container .Preview-React .Ability-content, .Preview-container .Preview-Figma .Ability-content, .Preview-container .Preview-Aws .Ability-content, .Preview-container .Preview-PhotoShop .Ability-content {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  width: 40rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.Preview-container .Preview-React .Ability-content .Ability-title, .Preview-container .Preview-Figma .Ability-content .Ability-title, .Preview-container .Preview-Aws .Ability-content .Ability-title, .Preview-container .Preview-PhotoShop .Ability-content .Ability-title {
+  width: 20rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.Preview-container .Preview-DeveloperBox .PreviewBox-contents .PreviewBox-Profile {
-  position: relative;
-  top: 50%;
-  left: 10%;
-  transform: translate(-10%, -50%);
-  width: 50%;
-  height: 50%;
-  overflow: hidden;
-  z-index: 10;
-  background-image: url("../../../asset/Image/coder.gif");
-  background-attachment: fixed;
-  background-size: cover;
-}
-.Preview-container .Preview-DeveloperBox .PreviewBox-contents .PreviewBox-subTxt {
-  position: relative;
-  width: 50%;
-  height: 50%;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.Preview-container .Preview-React .Ability-content .Ability-title h1, .Preview-container .Preview-Figma .Ability-content .Ability-title h1, .Preview-container .Preview-Aws .Ability-content .Ability-title h1, .Preview-container .Preview-PhotoShop .Ability-content .Ability-title h1 {
   color: #fff;
+  font-size: 4rem;
+  font-family: "Bebas Neue", cursive;
+}
+.Preview-container .Preview-React .Ability-content .Ability-info, .Preview-container .Preview-Figma .Ability-content .Ability-info, .Preview-container .Preview-Aws .Ability-content .Ability-info, .Preview-container .Preview-PhotoShop .Ability-content .Ability-info {
+  width: 40rem;
+  height: 20rem;
+}
+.Preview-container .Preview-React .Ability-content .Ability-info p, .Preview-container .Preview-Figma .Ability-content .Ability-info p, .Preview-container .Preview-Aws .Ability-content .Ability-info p, .Preview-container .Preview-PhotoShop .Ability-content .Ability-info p {
+  width: 100%;
+  word-break: keep-all;
   font-size: 1.5rem;
+  color: #fff;
   font-family: "Black Han Sans", sans-serif;
-  text-transform: uppercase;
+}
+.Preview-container .Preview-React .Ability-imgBox, .Preview-container .Preview-Figma .Ability-imgBox, .Preview-container .Preview-Aws .Ability-imgBox, .Preview-container .Preview-PhotoShop .Ability-imgBox {
+  position: relative;
+  width: 30rem;
+  height: 100%;
+  overflow: hidden;
+}
+.Preview-container .Preview-React .Ability-imgBox img, .Preview-container .Preview-Figma .Ability-imgBox img, .Preview-container .Preview-Aws .Ability-imgBox img, .Preview-container .Preview-PhotoShop .Ability-imgBox img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Preview-container .Preview-subtitle {
+  position: absolute;
+  right: 0;
+  width: 20%;
+  height: 70vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+.Preview-container .Preview-subtitle p {
+  position: absolute;
+  width: 100%;
+  height: 10rem;
+  transform: rotate(-90deg);
+  color: rgb(122, 122, 122);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  font-family: "Alfa Slab One", cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
 }/*# sourceMappingURL=preview.css.map */

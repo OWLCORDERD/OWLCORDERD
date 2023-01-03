@@ -13,11 +13,7 @@ const Introduce = () => {
             <h1>'</h1>
             <h1>'</h1>
           </div>
-
-          <div className = "background-text">
-            <h1>Web publishing</h1>
-            <h1>Front-end</h1>
-          </div>
+          
             <div className = "Introduce-content">
 
               <div className = "static-title">

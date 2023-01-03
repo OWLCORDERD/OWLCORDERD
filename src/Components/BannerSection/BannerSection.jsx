@@ -15,7 +15,7 @@ const BannerSection = () => {
 
     tl.to(imgRef.current, {
        opacity : 0,
-       x : 0,
+       y : 0,
        width : 0,
        scrollTrigger : {
         trigger : imgRef.current,
@@ -31,22 +31,6 @@ const BannerSection = () => {
         scrollTrigger : {
             trigger : '.Banner-content',
             start : 'top top',
-            scrub : true
-        }
-    })
-
-    tl.fromTo('.Banner-PreviewImg', {
-        opacity : 1,
-        width : '10rem',
-        transitionDuration : 1,
-    },
-    {
-        opacity : 0,
-        width : 0,
-        transitionDuration : 1,
-        scrollTrigger : {
-            trigger : '.Banner-PreviewImg',
-            start : 'center center',
             scrub : true
         }
     })
@@ -142,25 +126,9 @@ const BannerSection = () => {
             
         </div>
 
-        <div className = "scroll-box">
-
-            <div className = "Scroll-txt">
-                <h1>PRIVIEW DEVELOPER</h1>
-            </div>
-            
-            <div className = "scroll-arrow">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-
         <div className = "Owl-ImageBox" ref = {imgRef}>
         </div>
 
-        </div>
-
-        <div className="Banner-PreviewImg">
         </div>
 
     </div>

@@ -3,7 +3,7 @@
 .Introduce-container{
     position: relative;
     width : 100%;
-    height : 100%;
+    height : 100vh;
     padding: 5rem;
 
     .Introduce-section{
@@ -17,29 +17,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-
-        .background-text{
-            position: absolute;
-            width : 50%;
-            height : 100%;
-            top : 0;
-            right : 5%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            h1{
-                width : 100%;
-                text-align: start;
-                font-size: 8.5rem;
-                color : transparent;
-                -webkit-text-stroke: 1px #fff;
-                font-family: $font-Bebas;
-                &:nth-child(2){
-                    text-align: end;
-                }
-            }
-        }
 
         .Introduce-comma{
             position: absolute;

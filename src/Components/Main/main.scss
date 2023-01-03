@@ -1,25 +1,14 @@
-#main{
-    position: fixed;
-    top : 0;
-    left : 0;
-    width : 100vw;
-    height : 100vh;
-}
-
 section{
     position: relative;
-    width : 100vw;
-    height : 100vh;
+    width : 100%;
+    height : max-content;
     background-color: #000;
-    box-sizing: border-box;
 }
 
 .container{
     position: relative;
-    width : 300vw;
-    display: flex;
-    flex-wrap: nowrap;
-    height : 100vh;
+    width : 100%;
+    height : max-content;
 }
 
 #progress{

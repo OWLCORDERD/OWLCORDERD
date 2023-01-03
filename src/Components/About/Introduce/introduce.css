@@ -11,7 +11,7 @@
 .Introduce-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: 5rem;
 }
 .Introduce-container .Introduce-section {
@@ -25,27 +25,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-.Introduce-container .Introduce-section .background-text {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  right: 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.Introduce-container .Introduce-section .background-text h1 {
-  width: 100%;
-  text-align: start;
-  font-size: 8.5rem;
-  color: transparent;
-  -webkit-text-stroke: 1px #fff;
-  font-family: "Bebas Neue", cursive;
-}
-.Introduce-container .Introduce-section .background-text h1:nth-child(2) {
-  text-align: end;
 }
 .Introduce-container .Introduce-section .Introduce-comma {
   position: absolute;
