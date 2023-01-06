@@ -132,7 +132,7 @@ const AboutSection = () => {
       </div>
 
       <div className = "Preview-subtitle">
-        <p>Preview</p>
+        <h1>Preview</h1>
       </div>
 
 

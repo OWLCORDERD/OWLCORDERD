@@ -3,6 +3,7 @@ import "./bannerSection.css"
 import {motion} from "framer-motion"
 import {gsap} from "gsap"
 import { ScrollTrigger } from 'gsap/all'
+import BannerVideo from "../../asset/video/banner-video.mp4"
 
 const BannerSection = () => {
 
@@ -73,53 +74,34 @@ const BannerSection = () => {
             <div className = "Banner-content">
                 <div className = "Maintxt-Box">
                 <motion.div className = "Solid-Maintxt" variants={textBox} animate = "animate" initial = "initial">
-                    <motion.h1 variants={textAnimated}>F</motion.h1>
-                    <motion.h1 variants={textAnimated}>R</motion.h1>
                     <motion.h1 variants={textAnimated}>O</motion.h1>
-                    <motion.h1 variants={textAnimated}>N</motion.h1>
-                    <motion.h1 variants={textAnimated}>T</motion.h1>
-                </motion.div>
-                <motion.div className = "Solid-Maintxt" variants={textBox} animate = "animate" initial = "initial">
-                    <motion.h1 variants={textAnimated}>E</motion.h1>
-                    <motion.h1 variants={textAnimated}>N</motion.h1>
+                    <motion.h1 variants={textAnimated}>W</motion.h1>
+                    <motion.h1 variants={textAnimated}>L</motion.h1>
+                    <motion.h1 variants={textAnimated}>C</motion.h1>
+                    <motion.h1 variants={textAnimated}>O</motion.h1>
                     <motion.h1 variants={textAnimated}>D</motion.h1>
-                </motion.div>
-                <motion.div className = "Solid-Maintxt" variants={textBox} animate = "animate" initial = "initial">
-                    <motion.h1 variants={textAnimated}>D</motion.h1>
-                    <motion.h1 variants={textAnimated}>E</motion.h1>
-                    <motion.h1 variants={textAnimated}>S</motion.h1>
-                    <motion.h1 variants={textAnimated}>I</motion.h1>
-                    <motion.h1 variants={textAnimated}>G</motion.h1>
-                    <motion.h1 variants={textAnimated}>N</motion.h1>
                     <motion.h1 variants={textAnimated}>E</motion.h1>
                     <motion.h1 variants={textAnimated}>R</motion.h1>
+                    <motion.h1 variants={textAnimated}>D</motion.h1>
                 </motion.div>
                 </div>
 
                 <div className = "Subtxt-Box">
                 <motion.div className = "Solid-Subtxt" variants={textBox} animate = "animate" initial = "initial">
-                    <motion.h1 variants={textAnimated}>F</motion.h1>
+                    <motion.h1 variants={textAnimated}>P</motion.h1>
                     <motion.h1 variants={textAnimated}>R</motion.h1>
                     <motion.h1 variants={textAnimated}>O</motion.h1>
-                    <motion.h1 variants={textAnimated}>N</motion.h1>
-                    <motion.h1 variants={textAnimated}>T</motion.h1>
+                    <motion.h1 variants={textAnimated}>F</motion.h1>
+                    <motion.h1 variants={textAnimated}>I</motion.h1>
+                    <motion.h1 variants={textAnimated}>L</motion.h1>
+                    <motion.h1 variants={textAnimated}>E</motion.h1>
                 </motion.div>
 
                 <motion.div className = "Solid-Subtxt" variants={textBox} animate = "animate" initial = "initial">
-                    <motion.h1 variants={textAnimated}>E</motion.h1>
-                    <motion.h1 variants={textAnimated}>N</motion.h1>
-                    <motion.h1 variants={textAnimated}>D</motion.h1>
-                </motion.div>
-
-                <motion.div className = "Solid-Subtxt" variants={textBox} animate = "animate" initial = "initial">
-                    <motion.h1 variants={textAnimated}>D</motion.h1>
-                    <motion.h1 variants={textAnimated}>E</motion.h1>
                     <motion.h1 variants={textAnimated}>S</motion.h1>
                     <motion.h1 variants={textAnimated}>I</motion.h1>
-                    <motion.h1 variants={textAnimated}>G</motion.h1>
-                    <motion.h1 variants={textAnimated}>N</motion.h1>
+                    <motion.h1 variants={textAnimated}>T</motion.h1>
                     <motion.h1 variants={textAnimated}>E</motion.h1>
-                    <motion.h1 variants={textAnimated}>R</motion.h1>
                 </motion.div>
                 </div>
             </div>
@@ -127,6 +109,12 @@ const BannerSection = () => {
         </div>
 
         <div className = "Owl-ImageBox" ref = {imgRef}>
+            <video src = {BannerVideo} autoPlay muted loop/>
+        </div>
+
+        <div className = "Banner-SubContent">
+            <p>I am a job seeker majoring       
+            in web publishing and front end development.</p>
         </div>
 
         </div>

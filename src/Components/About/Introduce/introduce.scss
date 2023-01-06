@@ -2,136 +2,154 @@
 
 .Introduce-container{
     position: relative;
+    top : 0;
+    left : 0;
     width : 100%;
-    height : 100vh;
-    padding: 5rem;
+    height : 300vh;
+    z-index: 100;
 
     .Introduce-section{
-        position: absolute;
+        position: sticky;
         top : 0;
         left : 0;
         width : 100%;
-        height : 100%;
-        padding : 5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        height : 100vh;
 
-        .Introduce-comma{
+        .Video-background{
             position: absolute;
-            width : 5rem;
-            top : 10rem;
-            color : #fff;
-            font-size: 7rem;
-            font-family: $font-Hans;
-            display: flex;
-            justify-content: space-around;
-        }
+            width : 0;
+            height : 100vh;
+            left : 50%;
+            transform: $centerTL-X;
 
-        .Introduce-content{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-around;
-            width : 50rem;
-            color : #fff;
-            font-family: $font-Hans;
-
-            .static-title{
-                font-size: 5rem;
-                font-weight: 100;
-                height: 90px;
-                line-height: 90px;
-            }
-
-            .dynamic-subtitle{
-                margin-left: 2rem;
-                height : 90px;
-                line-height: 90px;
-                overflow: hidden;
-
-                li{
-                    list-style: none;
-                    font-size: 5rem;
-                    position: relative;
-                    top : 0;
-                    animation: slide 4.5s steps(3) infinite;
-
-                    span::after{
-                        position: absolute;
-                        left : 0;
-                        content: '';
-                        width : 100%;
-                        background-color: $black-color;
-                        height: 100%;
-                        border-left: 2px solid #fff;
-                        animation: typing 1.5s steps(7) infinite;
-                    }
-                }
-            }
-
-            @keyframes typing{
-                100%{
-                    left : 110%;
-                    margin : 0 -100px 0 35px;
-                }
-            }
-            
-            @keyframes slide{
-                100%{
-                    top : -270px;
-                }
-            }
-        }
-
-        .Introduce-menu{
-            position: relative;
-            width : 50rem;
-            height : max-content;
-            color : #fff;
-
-            .Introduce-list{
+            video{
+                position: absolute;
+                top : 0;
+                left : 0;
                 width : 100%;
                 height : 100%;
-                display: inline-block;
-
-                > li{
-                    width : 100%;
-                    padding : 2rem 0;
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    border-bottom: 2px solid #fff;
-                    margin-bottom: 2rem;
-                    text-transform: uppercase;
-                    font-family: $font-Hans;
-
-                    .Chapter-num{
-                        width : 5rem;
-                        text-align: start;
-                        font-size: 2rem;
-                    }
-
-                    .Chapter-title{
-                        width : 15rem;
-                        text-align: center;
-                        font-size: 3rem;
-                    }
-
-                    .Chapter-Eng{
-                        width : 15rem;
-                        text-align: start;
-                        font-size: 1.5rem;
-                    }
-
-                    .arrow{
-                        width : 10rem;
-                        text-align: center;
-                        font-size: 2rem;
-                    }
-                }
+                object-fit: cover;
             }
         }
+
+                .Introduce-Box{
+                    position: relative;
+                    width : 100%;
+                    height : 250vh;
+                    overflow: hidden;
+
+                    .Introduce-AboutTitle{
+                        position: relative;
+                        width : 100%;
+                        height : 20vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 3rem;
+                        color : #fff;
+                        font-family: $font-Bebas;
+                    }
+
+                    .Introduce-hr{
+                        position: relative;
+                        left : 50%;
+                        transform: $centerTL-X;
+                        width : 0.5rem;
+                        height : 50rem;
+                        background-color: transparent;
+
+                        .scroll-Massage{
+                            position: absolute;
+                            bottom: 0;
+                            left : 50%;
+                            transform: translateX(-50%);
+                            width : 30rem;
+                            height : 10rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 4rem;
+                            font-family: $font-Bebas;
+                            color : #fff;
+                        }
+                    }
+
+                    .Introduce-titleBox{
+                        position: relative;
+                        width : 50rem;
+                        height : 20rem;
+                        opacity: 0;
+                        left : 50%;
+                        transform: $centerTL-X;
+
+                        .Introduce-content{
+                            position: absolute;
+                            top : 50%;
+                            left : 50%;
+                            transform: $centerTL;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: space-around;
+                            width : 70rem;
+                            color : #fff;
+                            font-family: $font-Hans;
+
+                            .static-title{
+                                font-size: 3rem;
+                                font-weight: 100;
+                                height: 100px;
+                                line-height: 100px;
+                            }
+
+                            .dynamic-subtitle{
+                                margin-left: 2rem;
+                                height : 100px;
+                                line-height: 100px;
+                                overflow: hidden;
+
+                                li{
+                                    list-style: none;
+                                    font-size: 5rem;
+                                    position: relative;
+                                    top : 0;
+                                    animation: slide 4.5s steps(3) infinite;
+                                }
+                            }
+
+                            @keyframes typing{
+                                100%{
+                                left : 110%;
+                                margin : 0 -100px 0 35px;
+                                }
+                            }
+            
+                            @keyframes slide{
+                                100%{
+                                top : -300px;
+                                }
+                            }
+                        }
+                    }
+
+                    .Introduce-profile{
+                        position: relative;
+                        left : 50%;
+                        transform: $centerTL-X;
+                        width : 30rem;
+                        height : 30rem;
+                        overflow: hidden;
+                        opacity: 0;
+                        transition: all 0.5s ease-out;
+                        border-radius: 2rem;
+
+                        img{
+                            position: absolute;
+                            width : 100%;
+                            height : 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
     }
 }

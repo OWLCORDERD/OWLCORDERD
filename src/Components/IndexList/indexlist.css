@@ -1,0 +1,15 @@
+/*font family variables*/
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Poor+Story&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+/*color variables*/
+/*transition event variables*/
+.IndexList-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}/*# sourceMappingURL=indexlist.css.map */

@@ -24,8 +24,8 @@
             top : 50%;
             left : 50%;
             transform: $centerTL;
-            width : 60rem;
-            height : 35rem;
+            width : 100rem;
+            height : 60rem;
             z-index: 100;
         
             /*메인로고, 그림자 로고 contents 부모 container*/
@@ -33,15 +33,16 @@
                 position: relative;
                 width : 100%;
                 height : 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
             
                 /*메인 로고 text box (flexbox column)*/
                 .Maintxt-Box{
-                    position: absolute;
+                    position: relative;
                     top : 0;
                     width : 100%;
-                    height : 10rem;
-                    display: flex;
-                    flex-direction: column;
+                    height : max-content;
                 }
                 /*framer motion 한 글자마다 효과를 주기 위해 inline-flex로 <h1> 자식 글자들 정렬*/
                 .Solid-Maintxt{
@@ -49,33 +50,30 @@
                     top : 0;
                     width : 100%;
                     display: inline-flex;
-                    font-size: 5rem;
+                    font-size: 10rem;
                     font-weight: 100;
-                    text-align: left;
-                    font-family: $font-Alfa;
+                    font-family: $font-Bebas;
                     color : $white-color;
                     letter-spacing: 1.5rem;
                 }
                 /*메인 로고 그림자 text box (부모 메인 로고 요소에 absolute 속성으로 (5%,5%) 비스듬하게 위치)*/
                 .Subtxt-Box{
-                    position: absolute;
-                    top : 5%;
-                    left : 5%;
+                    position: relative;
                     width : 100%;
-                    height : 10rem;
+                    height : max-content;
                     display: flex;
-                    flex-direction: column;
+                    justify-content: space-evenly;
+                    align-items: flex-end;
                 }
                 /*메인 로고와 같이 inline-flex로 <h1> 자식 글자들 정렬*/
                 .Solid-Subtxt{
                     position: relative;
-                    width : 100%;
+                    width : max-content;
                     display: inline-flex;
-                    color : rgba(255, 255, 255, 0.2);
-                    font-size: 5rem;
+                    color : #fff;
+                    font-size: 10rem;
                     font-weight: 100;
-                    text-align: left;
-                    font-family: $font-Alfa;
+                    font-family: $font-Bebas;
                     letter-spacing: 1.5rem;
                 }
             }
@@ -152,28 +150,37 @@
         /*메인 로고 뒤의 개발자 프로필 사진 container*/
         .Owl-ImageBox{
             position: absolute;
-            width : 30rem;
-            height : 30rem;
+            width : 50rem;
+            height : 40rem;
             top : 50%;
             transform: translate(-50%, -50%);
             left : 50%;
-            background-image: url('../../asset/Image/프로필\ 사진.jpg');
-            background-size: cover;
-            background-position: center;
-            transition: all 1s ease-out;
-            background-size: cover;
-            background-position: left;
             z-index: -1;
-            
-            /*메인로고의 시각적 부곽을 위해 사진에 투명도를 주기위한 컨텐츠 추가*/
-            &::before{
+        
+
+            video{
                 position: absolute;
-                top : 0;
-                left : 0;
                 width : 100%;
                 height : 100%;
-                content : '';
-                background-color: rgba(0,0,0,0.3);
+                top : 0;
+                left : 0;
+                object-fit: cover;
+            }
+        }
+
+        .Banner-SubContent{
+            position: absolute;
+            width : 25rem;
+            height : max-content;
+            top : 50%;
+            right : 5rem;
+
+            p{
+                color : #fff;
+                font-size: 2rem;
+                font-family: $font-Alfa;
+                font-weight: 300;
+                word-break: normal;
             }
         }
     }

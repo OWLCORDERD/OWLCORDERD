@@ -5,8 +5,7 @@ import PreviewSection from "../About/Preview/PreviewSection"
 import IntroduceSection from "../About/Introduce/Introduce"
 import {useEffect, useRef} from "react"
 import MainNav from '../Navigator/MainNav'
-import {ScrollTrigger} from "gsap/ScrollTrigger"
-import {gsap} from "gsap"
+import IndexList from '../IndexList/IndexList'
 
 const MainSection = () => {
 
@@ -19,10 +18,13 @@ const MainSection = () => {
           <BannerSection/>
         </section>
         <section id = "section">
+          <IntroduceSection/>
+        </section>
+        <section id = "section">
           <PreviewSection/>
         </section>
         <section id = "section">
-          <IntroduceSection/>
+          <IndexList/>
         </section>
       </div>
 

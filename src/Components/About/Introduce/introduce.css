@@ -10,71 +10,115 @@
 /*transition event variables*/
 .Introduce-container {
   position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
-  padding: 5rem;
+  height: 300vh;
+  z-index: 100;
 }
 .Introduce-container .Introduce-section {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.Introduce-container .Introduce-section .Video-background {
+  position: absolute;
+  width: 0;
+  height: 100vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Introduce-container .Introduce-section .Video-background video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.Introduce-container .Introduce-section .Introduce-comma {
-  position: absolute;
-  width: 5rem;
-  top: 10rem;
-  color: #fff;
-  font-size: 7rem;
-  font-family: "Black Han Sans", sans-serif;
-  display: flex;
-  justify-content: space-around;
-}
-.Introduce-container .Introduce-section .Introduce-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
-  width: 50rem;
-  color: #fff;
-  font-family: "Black Han Sans", sans-serif;
-}
-.Introduce-container .Introduce-section .Introduce-content .static-title {
-  font-size: 5rem;
-  font-weight: 100;
-  height: 90px;
-  line-height: 90px;
-}
-.Introduce-container .Introduce-section .Introduce-content .dynamic-subtitle {
-  margin-left: 2rem;
-  height: 90px;
-  line-height: 90px;
+.Introduce-container .Introduce-section .Introduce-Box {
+  position: relative;
+  width: 100%;
+  height: 250vh;
   overflow: hidden;
 }
-.Introduce-container .Introduce-section .Introduce-content .dynamic-subtitle li {
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-AboutTitle {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #fff;
+  font-family: "Bebas Neue", cursive;
+}
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-hr {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.5rem;
+  height: 50rem;
+  background-color: transparent;
+}
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-hr .scroll-Massage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-family: "Bebas Neue", cursive;
+  color: #fff;
+}
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-titleBox {
+  position: relative;
+  width: 50rem;
+  height: 20rem;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-titleBox .Introduce-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 70rem;
+  color: #fff;
+  font-family: "Black Han Sans", sans-serif;
+}
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-titleBox .Introduce-content .static-title {
+  font-size: 3rem;
+  font-weight: 100;
+  height: 100px;
+  line-height: 100px;
+}
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-titleBox .Introduce-content .dynamic-subtitle {
+  margin-left: 2rem;
+  height: 100px;
+  line-height: 100px;
+  overflow: hidden;
+}
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-titleBox .Introduce-content .dynamic-subtitle li {
   list-style: none;
   font-size: 5rem;
   position: relative;
   top: 0;
   -webkit-animation: slide 4.5s steps(3) infinite;
           animation: slide 4.5s steps(3) infinite;
-}
-.Introduce-container .Introduce-section .Introduce-content .dynamic-subtitle li span::after {
-  position: absolute;
-  left: 0;
-  content: "";
-  width: 100%;
-  background-color: #000;
-  height: 100%;
-  border-left: 2px solid #fff;
-  -webkit-animation: typing 1.5s steps(7) infinite;
-          animation: typing 1.5s steps(7) infinite;
 }
 @-webkit-keyframes typing {
   100% {
@@ -90,55 +134,29 @@
 }
 @-webkit-keyframes slide {
   100% {
-    top: -270px;
+    top: -300px;
   }
 }
 @keyframes slide {
   100% {
-    top: -270px;
+    top: -300px;
   }
 }
-.Introduce-container .Introduce-section .Introduce-menu {
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-profile {
   position: relative;
-  width: 50rem;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30rem;
+  height: 30rem;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  border-radius: 2rem;
 }
-.Introduce-container .Introduce-section .Introduce-menu .Introduce-list {
+.Introduce-container .Introduce-section .Introduce-Box .Introduce-profile img {
+  position: absolute;
   width: 100%;
   height: 100%;
-  display: inline-block;
-}
-.Introduce-container .Introduce-section .Introduce-menu .Introduce-list > li {
-  width: 100%;
-  padding: 2rem 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 2px solid #fff;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  font-family: "Black Han Sans", sans-serif;
-}
-.Introduce-container .Introduce-section .Introduce-menu .Introduce-list > li .Chapter-num {
-  width: 5rem;
-  text-align: start;
-  font-size: 2rem;
-}
-.Introduce-container .Introduce-section .Introduce-menu .Introduce-list > li .Chapter-title {
-  width: 15rem;
-  text-align: center;
-  font-size: 3rem;
-}
-.Introduce-container .Introduce-section .Introduce-menu .Introduce-list > li .Chapter-Eng {
-  width: 15rem;
-  text-align: start;
-  font-size: 1.5rem;
-}
-.Introduce-container .Introduce-section .Introduce-menu .Introduce-list > li .arrow {
-  width: 10rem;
-  text-align: center;
-  font-size: 2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=introduce.css.map */
