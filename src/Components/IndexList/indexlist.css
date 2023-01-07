@@ -11,5 +11,93 @@
 .IndexList-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
+}
+.IndexList-container .IndexList-box {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 60vh;
+  margin-bottom: 5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.IndexList-container .IndexList-box .Index-ImageBox {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+  overflow: hidden;
+}
+.IndexList-container .IndexList-box .Index-ImageBox img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.IndexList-container .IndexList-box .Index-ContentBox {
+  position: relative;
+  width: 40rem;
+  height: 100%;
+}
+.IndexList-container .IndexList-box .Index-ContentBox .Index-titleBox {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.IndexList-container .IndexList-box .Index-ContentBox .Index-titleBox .Index-chapter {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  line-height: 5rem;
+  color: #fff;
+}
+.IndexList-container .IndexList-box .Index-ContentBox .Index-titleBox .Index-chapter h1 {
+  font-size: 3rem;
+  font-family: "Bebas Neue", cursive;
+}
+.IndexList-container .IndexList-box .Index-ContentBox .Index-titleBox .Index-title {
+  position: relative;
+  width: 70%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.IndexList-container .IndexList-box .Index-ContentBox .Index-titleBox .Index-title h1 {
+  font-size: 4rem;
+  color: #fff;
+  font-family: "Bebas Neue", cursive;
+}
+.IndexList-container .IndexList-box .Index-ContentBox .Index-titleBox .Index-title p {
+  font-size: 2.5rem;
+  font-family: "Black Han Sans", sans-serif;
+  color: #fff;
+}
+.IndexList-container .IndexList-box .Index-ContentBox .Index-ListBox {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  color: #fff;
+}
+.IndexList-container .IndexList-box .Index-ContentBox .Index-ListBox ul {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.IndexList-container .IndexList-box .Index-ContentBox .Index-ListBox ul li {
+  width: 100%;
+  height: 33.3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.8rem;
 }/*# sourceMappingURL=indexlist.css.map */

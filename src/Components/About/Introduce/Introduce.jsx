@@ -29,18 +29,29 @@ const Introduce = () => {
       scrollTrigger : {
         trigger : test,
         start : 'top top',
-        end : '20% top',
+        end : '10% top',
         scrub : 1
       }
     })
 
     tl.to('.Introduce-hr',{
       height : '0',
-      transitionDuration : 2,
+      transitionDuration : 1,
       scrollTrigger : {
         trigger : test2,
-        start : '30% top',
+        start : '20% top',
         end : 'center bottom',
+        scrub : 1
+      }
+    })
+
+    tl.to('.scroll-hr',{
+      display : 'none',
+      transitionDuration : 0.5,
+      scrollTrigger : {
+        trigger : test2,
+        start : '10% top',
+        end : '20% top',
         scrub : 1
       }
     })
@@ -50,8 +61,8 @@ const Introduce = () => {
       transitionDuration : 0.5,
       scrollTrigger : {
         trigger : test2,
-        start : '30% top',
-        end : 'center bottom',
+        start : '20% top',
+        end : '30% top',
         scrub : 1
       }
     })
@@ -70,12 +81,12 @@ const Introduce = () => {
     tl.to('.scroll-Massage', {
       opacity : 0,
       translateY : -100,
-      duration : 1,
+      duration : 0.5,
       scrollTrigger : {
           trigger : test2,
           start : '20% top',
           end : '30% top',
-          scrub : true
+          scrub : 1
       }
   })
 
@@ -96,6 +107,11 @@ const Introduce = () => {
             </div>
 
             <div className = "Introduce-hr">
+              <div className = "scroll-hr">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
               <div className = "scroll-Massage">
                 <h1>Scroll-Down</h1>
               </div>

@@ -32,105 +32,153 @@
             }
         }
 
-                .Introduce-Box{
+            .Introduce-Box{
+                position: relative;
+                width : 100%;
+                height : 250vh;
+                overflow: hidden;
+
+                .Introduce-AboutTitle{
                     position: relative;
                     width : 100%;
-                    height : 250vh;
-                    overflow: hidden;
+                    height : 20vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 3rem;
+                    color : #fff;
+                    font-family: $font-Bebas;
+                }
 
-                    .Introduce-AboutTitle{
-                        position: relative;
-                        width : 100%;
-                        height : 20vh;
+                .Introduce-hr{
+                    position: relative;
+                    left : 50%;
+                    transform: $centerTL-X;
+                    width : 0.5rem;
+                    height : 50rem;
+                    background-color: transparent;
+
+                    .scroll-hr{
+                        position: absolute;
+                        top : 50%;
+                        left : 50%;
+                        transform: $centerTL;
+                        width : 20rem;
+                        height : 15rem;
                         display: flex;
-                        justify-content: center;
+                        flex-direction: column;
+                        justify-content: space-around;
                         align-items: center;
-                        font-size: 3rem;
-                        color : #fff;
+                        z-index: 100;
+
+                        span{
+                            position: relative;
+                            width : 4rem;
+                            height : 4rem;
+                            transform: rotate(45deg);
+                            border-bottom: 8px solid #fff;
+                            border-right: 8px solid #fff;
+                            animation: animate 1s infinite;
+
+                            &:nth-child(1){
+                                animation-delay: 0.2s;
+                            }
+
+                            &:nth-child(2){
+                                animation-delay: 0.5s;
+                            }
+
+                            &:nth-child(3){
+                                animation-delay: 0.8s;
+                            }
+                        }
+
+                        @keyframes animate {
+                            0%{
+                                border-bottom : 8px solid transparent;
+                                border-right: 8px solid transparent;
+                            }
+
+                            100%{
+                                border-bottom: 8px solid #fff;
+                                border-right : 8px solid #fff;
+                            }
+                        }
+                    }
+
+                    .scroll-Massage{
+                        position: absolute;
+                        bottom: 0;
+                        left : 50%;
+                        transform: translateX(-50%);
+                        width : 30rem;
+                        height : 10rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 4rem;
                         font-family: $font-Bebas;
+                        color : #fff;
                     }
+                }
 
-                    .Introduce-hr{
-                        position: relative;
+                .Introduce-titleBox{
+                    position: relative;
+                    width : 50rem;
+                    height : 20rem;
+                    opacity: 0;
+                    left : 50%;
+                    transform: $centerTL-X;
+
+                    .Introduce-content{
+                        position: absolute;
+                        top : 50%;
                         left : 50%;
-                        transform: $centerTL-X;
-                        width : 0.5rem;
-                        height : 50rem;
-                        background-color: transparent;
+                        transform: $centerTL;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-around;
+                        width : 70rem;
+                        color : #fff;
+                        font-family: $font-Hans;
 
-                        .scroll-Massage{
-                            position: absolute;
-                            bottom: 0;
-                            left : 50%;
-                            transform: translateX(-50%);
-                            width : 30rem;
-                            height : 10rem;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 4rem;
-                            font-family: $font-Bebas;
-                            color : #fff;
+                        .static-title{
+                            font-size: 3rem;
+                            font-weight: 100;
+                            height: 100px;
+                            line-height: 100px;
                         }
-                    }
 
-                    .Introduce-titleBox{
-                        position: relative;
-                        width : 50rem;
-                        height : 20rem;
-                        opacity: 0;
-                        left : 50%;
-                        transform: $centerTL-X;
+                        .dynamic-subtitle{
+                            margin-left: 2rem;
+                            height : 100px;
+                            line-height: 100px;
+                            overflow: hidden;
 
-                        .Introduce-content{
-                            position: absolute;
-                            top : 50%;
-                            left : 50%;
-                            transform: $centerTL;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: space-around;
-                            width : 70rem;
-                            color : #fff;
-                            font-family: $font-Hans;
-
-                            .static-title{
-                                font-size: 3rem;
-                                font-weight: 100;
-                                height: 100px;
-                                line-height: 100px;
+                            li{
+                                list-style: none;
+                                font-size: 5rem;
+                                position: relative;
+                                top : 0;
+                                animation: slide 4.5s steps(3) infinite;
                             }
+                        }
 
-                            .dynamic-subtitle{
-                                margin-left: 2rem;
-                                height : 100px;
-                                line-height: 100px;
-                                overflow: hidden;
-
-                                li{
-                                    list-style: none;
-                                    font-size: 5rem;
-                                    position: relative;
-                                    top : 0;
-                                    animation: slide 4.5s steps(3) infinite;
-                                }
+                        @keyframes typing{
+                            100%{
+                            left : 110%;
+                            margin : 0 -100px 0 35px;
                             }
-
-                            @keyframes typing{
-                                100%{
-                                left : 110%;
-                                margin : 0 -100px 0 35px;
-                                }
-                            }
+                        }
             
-                            @keyframes slide{
-                                100%{
-                                top : -300px;
-                                }
+                        @keyframes slide{
+                            100%{
+                            top : -300px;
                             }
                         }
                     }
+                }
 
                     .Introduce-profile{
                         position: relative;
@@ -150,6 +198,6 @@
                             object-fit: cover;
                         }
                     }
-                }
+            }
     }
 }
