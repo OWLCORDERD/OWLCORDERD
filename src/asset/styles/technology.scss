@@ -1,0 +1,423 @@
+@import '../../asset/Variables.scss';
+
+/*Technology 최상위 부모 container*/
+.Technology-container{
+    position: relative;
+    width : 100%;
+    height : 210rem;
+    background-color: $black-color;
+    overflow: hidden;
+    padding : 5%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 100px;
+    
+    /*Development Skills container*/
+    .DevelopSkills-container{
+        position: relative;
+        width : 100%;
+        height : 57rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 2rem;
+
+        /*Development Skills Index & tabMenu*/
+        .DevelopSkill-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            height: 12rem;
+
+            .DevelopSkill-Index{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 40%;
+                height: 100%;
+                color: #fff;
+                border-top: 2px solid #fff;
+
+                .Index-no{
+                    width: 100%;
+                    height: 8rem;
+                    line-height: 8rem;
+                    font-size: 6rem;
+                    font-family: $font-Mont;
+                    font-weight: bold;
+                }
+
+                .Index-title{
+                    width: 100%;
+                    height: 3rem;
+                    line-height: 3rem;
+                    font-size: 1.8rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            .Skills-TabMenu{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width : 50%;
+                height: 6rem;
+
+                ul{
+                    width: 22rem;
+                    height: 100%;
+
+                    li{
+                        display: inline-block;
+                        width: 8rem;
+                        height: 100%;
+                        text-align: center;
+                        margin-left: 2rem;
+
+                        button{
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            color: rgba($color: #ffffff, $alpha: 0.5);
+                            font-weight: bold;
+                            font-family: $font-Mont;
+                            background : transparent;
+                            font-size: 1.2rem;
+                            border : none;
+                            cursor: pointer;
+                        }
+
+                        &:nth-child(1){
+                            margin-left: 0;
+                        }
+
+                        &.active{
+                            border-bottom: 2px solid #fff;
+                        }
+
+                        &.active button{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*Development skill Develop&Design Items container*/
+        .DevelopSkill-contents{
+            position: relative;
+            width: 100%;
+            height: 40rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            place-items: center;
+
+            .skill-item{
+                position: relative;
+                width: 20rem;
+                height: 18rem;
+                border : 2px solid #fff;
+
+                h2{
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 5rem;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    font-family: $font-Mont;
+                    color: #fff;
+                    line-height: 5rem;
+                }
+
+                img{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50% ,-50%);
+                    width: 100px;
+                    height: 100px;
+                }
+
+                p{
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    color: #fff;
+                    height: 3rem;
+                    text-align: center;
+                    font-weight: 100;
+                    font-family: $font-Mont;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+    
+    /*Certificate container*/
+    .Certificate-container{
+        position: relative;
+        width: 100%;
+        height: 50rem;
+        padding: 0 2rem;
+
+        .Certificate-header{
+            position: relative;
+            width: 100%;
+            height: 12rem;
+
+            .Certificate-Index{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 40%;
+                height: 100%;
+                color: #fff;
+                border-top: 2px solid #fff;
+    
+                .Index-no{
+                    width: 100%;
+                    height: 8rem;
+                    line-height: 8rem;
+                    font-size: 6rem;
+                    font-family: $font-Mont;
+                    font-weight: bold;
+                }
+    
+                .Index-title{
+                    width: 100%;
+                    height: 3rem;
+                    line-height: 3rem;
+                    font-size: 1.8rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .certificate-Info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 33rem;
+            margin-top: 5rem;
+
+            .certificate-item{
+                width: 20rem;
+                height: 100%;
+                text-align: center;
+
+                a{
+                    text-align: center;
+                    color: #fff;
+                }
+
+                img{
+                    width: 100px;
+                    height: 100px;
+                    margin-top: 8rem;
+                }
+
+                .certificate-title{
+                    width: 100%;
+                    height: 8rem;
+                    line-height: 8rem;
+                    font-size: 1.2rem;
+                    font-family: $font-Noto;
+                    font-weight: bold;
+                }
+
+                .certificate-info{
+                    width: 100%;
+                    height: 5rem;
+                    font-size: 1rem;
+                    font-family: $font-Noto;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+
+    /*Developer container*/
+    .Developer-container{
+        position: relative;
+        width: 100%;
+        height: 75rem;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        overflow: hidden;
+
+        .Developer-header{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 40%;
+            height: 100%;
+
+            .Developer-Index{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                height: 12rem;
+                color: #fff;
+                border-top: 2px solid #fff;
+
+                .Index-no{
+                    width: 100%;
+                    height: 8rem;
+                    font-size: 6rem;
+                    line-height: 8rem;
+                    font-family: $font-Mont;
+                    font-weight: bold;
+                }
+
+                .Index-title{
+                    width: 100%;
+                    height: 3rem;
+                    line-height: 3rem;
+                    font-size: 1.8rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            .Advantages-contents{
+                width: 100%;
+                height: 60rem;
+                color: #fff;
+
+                .Advantages-title{
+                    width: 100%;
+                    height: 7rem;
+                    font-size: 1.5rem;
+                    font-family: $font-Mont;
+                    text-transform: uppercase;
+                    line-height: 7rem;
+                    margin-top: 5rem;
+                }
+
+                .Advantages-info{
+                    width: 100%;
+                    height: 45rem;
+
+                    .Advantage-item{
+                        display: block;
+                        width: 100%;
+                        height: calc(45rem / 3);
+
+                        .Advantage-titleBox{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            width: 100%;
+                            height: 7.5rem;
+
+                            .title-Index{
+                                width: max-content;
+                                line-height: 7.5rem;
+                                text-align: center;
+                                font-size: 2rem;
+                            }
+
+                            .title{
+                                width: max-content;
+                                line-height: 7.5rem;
+                                margin-left: 5rem;
+                                font-size: 2rem;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                font-family: $font-Mont;
+                                text-align: center;
+                            }
+                        }
+
+                        .Advantage-info{
+                            width: 100%;
+                            height: 7.5rem;
+
+                            p{
+                                width: 100%;
+                                line-height: 7.5rem;
+                                text-align: start;
+                                font-size: 1.1rem;
+                                font-family: $font-Noto;
+                                color: #fff;
+                                font-weight: 100;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .Developer-profile{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 40rem;
+            height: 50rem;
+            opacity: 0;
+            transition: all 0.5s ease-out;
+
+            &.active{
+                position: fixed;
+                right: 6.5%;
+                top : 5%;
+                opacity: 1;
+                transition: all 0.5s ease-in;
+            }
+
+            .profile-img{
+                width: 30rem;
+                height: 35rem;
+                background-image: url("../Image/프로필\ 사진.jpg");
+                background-position: center;
+                background-size: cover;
+            }
+
+            .view-report{
+                display: block;
+                color: #000;
+                text-align: center;
+                width: 30rem;
+                height: 3rem;
+                background-color: #fff;
+                font-family: $font-Noto;
+                font-size: 1rem;
+                font-weight: bold;
+                line-height: 3rem;
+                cursor: pointer;
+            }
+
+            .profile-Repository{
+                width: 100%;
+                height: 8rem;
+
+                .Repository-title{
+                    width: 100%;
+                    height: 2rem;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    color: #fff;
+                }
+
+                .Repository{
+                    width: 100%;
+                    height: 5rem;
+
+                    a{
+                        font-size: 2rem;
+                        color: #fff;
+                        line-height: 5rem;
+                    }
+                }
+            }
+        }
+    }
+}

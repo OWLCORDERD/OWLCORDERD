@@ -1,0 +1,81 @@
+@import "../Variables.scss";
+
+.Main-Nav{
+    position: absolute;
+    top : 0;
+    left : 5%;
+    width : 90%;
+    height: 25vh;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Static-title{
+        border-top: 2px solid #fff;
+        width: 20%;
+        height: 8rem;
+
+        h2{
+            width: 100%;
+            height: max-content;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-family: $font-Mont;
+            font-weight: bold;
+            color: #fff;
+            word-break: keep-all;
+        }
+    }
+
+    .Nav-menu{
+        display: inline-flex;
+        width : 50%;
+        height: 8rem;
+
+        li{
+            width : 25%;
+            margin-left: 12.5%;
+            height: 100%;
+            border-top: 2px solid rgba(255,255,255,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            font-family: $font-Mont;
+            color: rgba(255,255,255,0.5);
+
+            &:first-child{
+                margin-left: 0;
+            }
+
+            &.active{
+                border-top: 2px solid #fff;
+            }
+
+            &.active a{
+                color: #fff;
+            }
+
+            &.active .menu-info{
+                color: #fff;
+            }
+
+            a{
+                width: max-content;
+                height: 3rem;
+                font-size: 1.5rem;
+                line-height: 3rem;
+                font-weight: bold;
+                color : rgba(255,255,255,0.5);;
+            }
+
+            .menu-info{
+                width: 80%;
+                height: 5rem;
+                font-size: 12px;
+                font-family: $font-Mont;
+            }
+        }
+    }
+}

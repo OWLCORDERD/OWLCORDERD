@@ -1,0 +1,159 @@
+@import '../../asset/Variables.scss';
+
+.Banner-container{
+    position: relative;
+    width : 100%;
+    height : 100vh;
+    padding : 0 5%;
+
+    .Banner-Index{
+        position: relative;
+        top : 50%;
+        width : 100%;
+        height : 40%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding : 0 50px;
+
+        .Index-contentBox{
+            position: relative;
+            width : 60%;
+            height : 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            color: #fff;
+
+            .Index-title{
+                width: 100%;
+                height: 150px;
+                font-size: 80px;
+                font-family: $font-Mont;
+                font-weight: bold;
+                line-height: 150px;
+            }
+
+            .Dynamic-TxtBox{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 150px;
+
+                .Dynamic-txt{
+                    display: block;
+                    width: 50%;
+                    height: 150px;
+                    line-height: 150px;
+                    overflow: hidden;
+
+                    li{
+                        font-size: 60px;
+                        font-family: $font-Mont;
+                        font-weight: bold;
+                        position: relative;
+                        top: 0;
+                        animation: Dynamic 4.5s steps(2) infinite;
+
+                        @keyframes Dynamic{
+                            100%{
+                                top : -300px;
+                            }
+                        }
+                    }
+                }
+
+                .Static-txt{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    width : 50%;
+                    height: 100%;
+
+                    h2{
+                        width : 100%;
+                        line-height: 150px;
+                        font-size: 1.5rem;
+                        font-family: $font-Noto;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+
+        .Banner-img{
+            position: relative;
+            width : 40%;
+            height: 100%;
+            overflow: hidden;
+
+            img{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width : 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &::before{
+                position: absolute;
+                width : 100%;
+                height : 100%;
+                content: '';
+                top: 0;
+                left : 0;
+                background-color: rgba($color: #000000, $alpha: 0.5);
+                z-index: 1;
+            }
+        }
+    }
+
+    .scroll-down{
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 6rem;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .scroll-icon{
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            animation: scrollAnimate 2s infinite;
+            opacity: 0;
+
+            @keyframes scrollAnimate{
+                50%{
+                    opacity: 1;
+                    transition-duration: 1s;
+                    margin-top: 1rem;
+                }
+
+                100%{
+                    opacity: 1;
+                    transition-duration: 1s;
+                    margin-top: 2rem;
+                }
+            }
+        }
+
+        h2{
+            font-size: 1rem;
+            font-family: $font-Mont;
+            font-weight: bold;
+        }
+    }
+}

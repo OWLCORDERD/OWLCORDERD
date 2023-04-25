@@ -1,0 +1,422 @@
+@import "../../asset/Variables.scss";
+
+.FrontTech-container{
+    position: relative;
+    width : 100%;
+    height : 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .FrontTech-title{
+        position: relative;
+        right : 0;
+        width : 80%;
+        height : 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $font-Noto;
+        font-size: 4rem;
+        color : #fff;
+    }
+
+    .FrontTech-selectBox{
+        position: relative;
+        width : 80%;
+        height : 50rem;
+        top : 50%;
+        right : 0;
+        transform: translateY(-50%);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        gap : 2rem;
+
+        .Select-item{
+            position: relative;
+            width : 25rem;
+            height : 23rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+
+            .item-background{
+                position: relative;
+                width : 100%;
+                height : 100%;
+                font-size: 4.5rem;
+                color: #fff;
+                border-radius: 2rem;
+                overflow: hidden;
+
+                img{
+                    position: absolute;
+                    width : 100%;
+                    height : 100%;
+                    top : 0;
+                    left : 0;
+                    object-fit: cover;
+                }
+            }
+
+            .Select-info{
+                position: relative;
+                display: flex;
+                width : 100%;
+                height : 8rem;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: flex-start;
+                padding : 2rem 0;
+                color : #fff;
+
+                span{
+                    height : 3rem;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    font-family: $font-Noto;
+                    text-transform: uppercase;
+                }
+
+                h1{
+                    height : 5rem;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    font-family: $font-Noto;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    /*FrontTech id 값 부여 받은 FrontTechInfo 컴포넌트 렌더링 시 배경 overlay*/
+    .overlay{
+        position: fixed;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100%;
+        background-color: rgba($color: #000000, $alpha: 0.8);
+        z-index: 100;
+        cursor: pointer;
+    }
+
+    /*FrontTechInfo 컴포넌트 마운트 되기 전 로딩 아이콘*/
+    .Loading-Icon{
+        position: fixed;
+        width : 8rem;
+        height : 8rem;
+        border-radius: 50%;
+        overflow: hidden;
+        top : 50%;
+        left : 50%;
+        transform: translate(-50%, -50%);
+        z-index: 300;
+        animation: IconScale 2s infinite;
+
+        img{
+            position: absolute;
+            width : 100%;
+            height : 100%;
+            object-fit: cover;
+        }
+
+        /*로딩 아이콘 회전 애니메이션*/
+        @keyframes IconScale{
+            0%{
+                transform: translate(-50%, -50%) rotate(-90deg);
+            }
+
+            50%{
+                transform: translate(-50%, -50%) rotate(-180deg);
+            }
+
+            100%{
+                transform: translate(-50%, -50%) rotate(-360deg);
+            }
+        }
+    }
+
+    /*부여 받은 id값을 Technology 데이터에서 find 함수로 같은 id 값의 데이터를 뿌려주는 자식 컴포넌트*/
+    .FrontTechInfo-container{
+        position: fixed;
+        top : 50%;
+        left : 50%;
+        transform: $centerTL;
+        background-color: #fff;
+        border-radius: 2rem;
+        z-index: 200;
+        border : 4px solid #fff;
+        overflow: hidden;
+
+        /*FrontTechInfo 소개 Banner*/
+        .Info-banner{
+            position: sticky;
+            width : 100%;
+            height : 40%;
+
+            /*선택된 id 값의 TechBackground 데이터를 banner 배경화면으로 사용*/
+            .banner-background{
+                position: relative;
+                top : 0;
+                left : 0;
+                width : 100%;
+                height : 100%;
+
+                img{
+                    position: absolute;
+                    left : 50%;
+                    transform: translateX(-50%);
+                    width : 100%;
+                    height : 100%;
+                    object-fit: cover;
+                }
+
+                /*폰트 강조를 위해 overlay 씌움*/
+                &::before{
+                    position: absolute;
+                    width : 100%;
+                    height : 100%;
+                    top : 0;
+                    left : 0;
+                    background-color: rgba($color: #000000, $alpha: 0.5);
+                    content: '';
+                    z-index: 1;
+                }
+            }
+
+            /*선택된 id 값의 TechName, title 데이터를 사용한 소개 Title*/
+            .banner-title{
+                position: absolute;
+                top : 0;
+                left : 0;
+                z-index: 10;
+                width : 100%;
+                height : 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                color: #fff;
+
+                .TechName{
+                    font-size: 5rem;
+                    text-transform: uppercase;
+                    font-family: $font-Noto;
+                }
+
+                .subtitle{
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    font-family: $font-Noto;
+                }
+            }
+        }
+
+        /*선택된 id 값의 Technology를 소개하는 Use Tech Part*/
+        .Tech-Txt{
+            position: absolute;
+            width : 100%;
+            height : 60%;
+            bottom: 0;
+            left : 0;
+            overflow-y: auto;
+            padding : 2rem;
+
+            /*overflow-y 속성으로 컨텐츠 양에 따라 조절되는 스크롤 바 디자인*/
+            &::-webkit-scrollbar{
+                display: block;
+            }
+
+            &::-webkit-scrollbar-thumb{
+                width : 1rem;
+                background-color: #fff;
+            }
+
+            /*UseTech Default Title*/
+            .UseTech-title{
+                width : 100%;
+                height : 15vh;
+                line-height: 10vh;
+                font-size: 3rem;
+                font-family: $font-Noto;
+                color : #fff;
+            }
+
+            /*id 값과 매칭하여 UseTech Part1 ~ Part3 데이터 뿌려주는 section 영역 */
+            .UseTech-part{
+                position: relative;
+                width : 100%;
+                height : max-content;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap : 2rem;
+
+                /*Part1~ Part3 flexbox column 왼쪽 정렬*/
+                .Part-item{
+                    width : 100%;
+                    height : max-content;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    font-family: $font-Noto;
+
+                    h1{
+                        height: 5rem;
+                        font-size: 1.5rem;
+                        color : #fff;
+                    }
+
+                    p{
+                        width : 80%;
+                        word-break: keep-all;
+                        font-size: 1.2rem;
+                        color : #fff;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1200px){
+    .FrontTech-container{
+        position: relative;
+        width : 100%;
+        height : 220vh;
+        margin : 3rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .FrontTech-title{
+            position: relative;
+            width : 80%;
+            height : 10vh;
+            font-size: 2rem;
+            text-align: center;
+        }
+    
+        .FrontTech-selectBox{
+            position: relative;
+            width : 100%;
+            height : 200vh;
+            top : 50%;
+            right : 0;
+            transform: translateY(-50%);
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            gap : 2rem;
+    
+            .Select-item{
+                position: relative;
+                width : 80%;
+                height : 18rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                cursor: pointer;
+    
+                .Select-info{
+                    position: relative;
+                    display: flex;
+                    width : 100%;
+                    height : 8rem;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    padding : 2rem 0;
+                    color : #fff;
+    
+                    span{
+                        height : 3rem;
+                        font-size: 0.9rem;
+                        font-weight: bold;
+                        font-family: $font-Noto;
+                        text-transform: uppercase;
+                    }
+    
+                    h1{
+                        height : 5rem;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        font-family: $font-Noto;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    
+        .FrontTechInfo-container{
+            border-radius: 0;
+            z-index: 1000;
+    
+            .Info-banner{
+                height : 40%;
+    
+                .banner-title{
+    
+                    .TechName{
+                        font-size: 3rem;
+                        text-transform: uppercase;
+                        font-family: $font-Noto;
+                    }
+    
+                    .subtitle{
+                        font-size: 1.2rem;
+                        text-transform: uppercase;
+                        font-family: $font-Noto;
+                    }
+                }
+            }
+    
+            .Tech-Txt{
+                height : 60%;
+                padding : 1rem;
+    
+                .UseTech-title{
+                    height : 15vh;
+                    line-height: 15vh;
+                    font-size: 2.5rem;
+                    text-align: center;
+                }
+    
+                .UseTech-part{
+                    grid-template-columns: repeat(1, 1fr);
+                    gap : 5rem;
+    
+                    .Part-item{
+                        width : 100%;
+                        height : max-content;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-around;
+                        font-family: $font-Noto;
+    
+                        h1{
+                            height: 5rem;
+                            font-size: 1.3rem;
+                            color : #fff;
+                        }
+    
+                        p{
+                            width : 100%;
+                            font-size: 1rem;
+                            text-align: center;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,118 @@
+@import "../Variables.scss";
+
+.Loading-container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+
+    .Loading-RotateBox{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30rem;
+        height: 30rem;
+
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: fit-content;
+            animation: Rotate 10s linear infinite;
+            
+            @keyframes Rotate{
+                100%{
+                    transform: translate(-50%, -50%) rotate(360deg);
+                }
+            }
+        }
+
+        .Loading-Owl{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            content: '';
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            background-image: url('../Image/logo/logo.png');
+            background-size: contain;
+            background-position: center;
+        }
+    }
+
+    .Loading-Txt{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 30rem;
+        height: 10rem;
+        bottom: 20%;
+        left: 50%;
+        transform: translate(-50%, -20%);
+        color: #fff;
+
+        h2{
+            width: 16rem;
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: $font-Mont;
+            line-height: 10rem;
+        }
+
+        .Loading-dot{
+            display: flex;
+            width: 10rem;
+            height: 10rem;
+
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(10rem / 3);
+                height: 10rem;
+                font-size: 10rem;
+                opacity: 0;
+
+                &:nth-child(1){
+                    animation: dot1 infinite;
+                    animation-duration: 1s;
+                    @keyframes dot1{
+                        100%{
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &:nth-child(2){
+                    animation: dot2 infinite;
+                    animation-delay: 1s;
+                    animation-duration: 1s;
+                    @keyframes dot2{
+                        100%{
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &:nth-child(3){
+                    animation: dot3 infinite;
+                    animation-delay: 2s;
+                    animation-duration: 1s;
+                    @keyframes dot3{
+                        100%{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
