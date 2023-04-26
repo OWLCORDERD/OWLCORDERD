@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../../asset/styles/navigator.scss';
 import { AiOutlineClose } from 'react-icons/ai';
+import { SiGmail, SiGithub, SiInstagram, SiNotion } from 'react-icons/si';
+import logo from '../../asset/Image/logo/logo.png';
 
 function SideNav() {
   const [navToggle, setNavToggle] = useState<boolean>(false);
@@ -26,9 +28,13 @@ function SideNav() {
       </div>
 
       <div className="Nav-menuBox" id={navToggle === true ? 'active' : ''}>
-        <button className="close-btn" type="button" onClick={e => navClick(e)}>
-          <AiOutlineClose className="close-icon" />
-        </button>
+        <div className="menu-header">
+          <button className="close-btn" type="button" onClick={e => navClick(e)}>
+            <AiOutlineClose className="close-icon" />
+          </button>
+
+          <img src={logo} alt="Menulogo" className="Menulogo" />
+        </div>
 
         <ul className="Nav-menu">
           <li>
@@ -41,6 +47,29 @@ function SideNav() {
 
           <li>
             <a href="#">Workspace</a>
+          </li>
+        </ul>
+
+        <ul className="social-menu">
+          <li>
+            <a href="#">
+              <SiGithub />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <SiNotion />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <SiGmail />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <SiInstagram />
+            </a>
           </li>
         </ul>
       </div>

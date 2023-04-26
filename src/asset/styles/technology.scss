@@ -4,7 +4,7 @@
 .Technology-container{
     position: relative;
     width : 100%;
-    height : 210rem;
+    height : 200rem;
     background-color: $black-color;
     overflow: hidden;
     padding : 5%;
@@ -16,7 +16,7 @@
     .DevelopSkills-container{
         position: relative;
         width : 100%;
-        height : 57rem;
+        height : 50rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -108,15 +108,15 @@
         .DevelopSkill-contents{
             position: relative;
             width: 100%;
-            height: 40rem;
+            height: 35rem;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             place-items: center;
 
             .skill-item{
                 position: relative;
-                width: 20rem;
-                height: 18rem;
+                width: 18rem;
+                height: 15rem;
                 border : 2px solid #fff;
 
                 h2{
@@ -136,8 +136,8 @@
                     top: 50%;
                     left: 50%;
                     transform: translate(-50% ,-50%);
-                    width: 100px;
-                    height: 100px;
+                    width: 70px;
+                    height: 70px;
                 }
 
                 p{
@@ -149,7 +149,7 @@
                     text-align: center;
                     font-weight: 100;
                     font-family: $font-Mont;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                 }
             }
         }
@@ -159,7 +159,7 @@
     .Certificate-container{
         position: relative;
         width: 100%;
-        height: 50rem;
+        height: 37rem;
         padding: 0 2rem;
 
         .Certificate-header{
@@ -200,8 +200,8 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            height: 33rem;
-            margin-top: 5rem;
+            height: 20rem;
+            margin-top: 10rem;
 
             .certificate-item{
                 width: 20rem;
@@ -214,9 +214,8 @@
                 }
 
                 img{
-                    width: 100px;
-                    height: 100px;
-                    margin-top: 8rem;
+                    width: 70px;
+                    height: 70px;
                 }
 
                 .certificate-title{
@@ -234,6 +233,7 @@
                     font-size: 1rem;
                     font-family: $font-Noto;
                     font-weight: 100;
+                    line-height: 5rem;
                 }
             }
         }

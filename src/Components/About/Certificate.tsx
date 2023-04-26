@@ -25,7 +25,7 @@ function Certificate() {
     <div className="Certificate-container">
       <div className="Certificate-header">
         <div className="Certificate-Index">
-          <h2 className="Index-no">02</h2>
+          <h2 className="Index-no">03</h2>
           <div className="Index-title">
             <h2>Certificate</h2>
           </div>

@@ -7,9 +7,9 @@ import Developer from './Developer';
 function Technology() {
   return (
     <div className="Technology-container">
+      <Developer />
       <DevelopSkills />
       <Certificate />
-      <Developer />
     </div>
   );
 }
