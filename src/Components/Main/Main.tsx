@@ -7,6 +7,7 @@ import Banner from '../BannerSection/Banner';
 import Technology from '../About/Technology';
 import Contact from '../Contact/Contact';
 import Loading from '../CustomHook/Loading';
+import ProjectSlide from '../ProjectSlide/ProjectSlide';
 
 function Main() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -33,6 +34,10 @@ function Main() {
 
           <section id="technology">
             <Technology />
+          </section>
+
+          <section id="technology">
+            <ProjectSlide />
           </section>
 
           <section id="contact">

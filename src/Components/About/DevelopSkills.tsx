@@ -29,7 +29,6 @@ function DevelopSkills() {
     <div className="DevelopSkills-container">
       <div className="DevelopSkill-header">
         <div className="DevelopSkill-Index">
-          <h2 className="Index-no">02</h2>
           <div className="Index-title">
             <h2>Development Skills</h2>
           </div>

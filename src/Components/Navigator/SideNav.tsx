@@ -52,12 +52,12 @@ function SideNav() {
 
         <ul className="social-menu">
           <li>
-            <a href="#">
+            <a href="https://github.com/OWLCORDERD">
               <SiGithub />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://owlcoderd.notion.site/eec4489447c4429ab6fa963e5fc7b344">
               <SiNotion />
             </a>
           </li>

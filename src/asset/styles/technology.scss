@@ -39,19 +39,10 @@
                 color: #fff;
                 border-top: 2px solid #fff;
 
-                .Index-no{
-                    width: 100%;
-                    height: 8rem;
-                    line-height: 8rem;
-                    font-size: 6rem;
-                    font-family: $font-Mont;
-                    font-weight: bold;
-                }
-
                 .Index-title{
                     width: 100%;
-                    height: 3rem;
-                    line-height: 3rem;
+                    height: 100%;
+                    line-height: 12rem;
                     font-size: 1.8rem;
                     text-transform: uppercase;
                 }
@@ -176,19 +167,10 @@
                 color: #fff;
                 border-top: 2px solid #fff;
     
-                .Index-no{
-                    width: 100%;
-                    height: 8rem;
-                    line-height: 8rem;
-                    font-size: 6rem;
-                    font-family: $font-Mont;
-                    font-weight: bold;
-                }
-    
                 .Index-title{
                     width: 100%;
-                    height: 3rem;
-                    line-height: 3rem;
+                    height: 100%;
+                    line-height: 12rem;
                     font-size: 1.8rem;
                     text-transform: uppercase;
                 }
@@ -201,7 +183,7 @@
             align-items: center;
             width: 100%;
             height: 20rem;
-            margin-top: 10rem;
+            margin-top: 5rem;
 
             .certificate-item{
                 width: 20rem;
@@ -263,25 +245,26 @@
                 flex-direction: column;
                 justify-content: space-between;
                 width: 100%;
-                height: 12rem;
+                height: 15rem;
                 color: #fff;
                 border-top: 2px solid #fff;
 
-                .Index-no{
-                    width: 100%;
-                    height: 8rem;
-                    font-size: 6rem;
-                    line-height: 8rem;
-                    font-family: $font-Mont;
-                    font-weight: bold;
-                }
-
                 .Index-title{
                     width: 100%;
-                    height: 3rem;
-                    line-height: 3rem;
+                    height: 10rem;
+                    line-height: 8rem;
                     font-size: 1.8rem;
                     text-transform: uppercase;
+                }
+
+                .Index-subTitle{
+                    width: 100%;
+                    height: 5rem;
+                    line-height: 5rem;
+                    font-size: 1.2rem;
+                    font-family: $font-Noto;
+                    text-transform: uppercase;
+                    font-weight: bold;
                 }
             }
 
@@ -289,6 +272,7 @@
                 width: 100%;
                 height: 60rem;
                 color: #fff;
+                margin-top: 5rem;
 
                 .Advantages-title{
                     width: 100%;
@@ -297,7 +281,6 @@
                     font-family: $font-Mont;
                     text-transform: uppercase;
                     line-height: 7rem;
-                    margin-top: 5rem;
                 }
 
                 .Advantages-info{
@@ -362,15 +345,11 @@
             align-items: flex-start;
             width: 40rem;
             height: 50rem;
-            opacity: 0;
-            transition: all 0.5s ease-out;
 
             &.active{
                 position: fixed;
                 right: 6.5%;
                 top : 5%;
-                opacity: 1;
-                transition: all 0.5s ease-in;
             }
 
             .profile-img{

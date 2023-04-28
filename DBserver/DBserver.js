@@ -12,7 +12,7 @@ app.get('/Advantage', (req, res) => {
     if (err) {
       throw err;
     } else {
-      console.log('IndexList db is :', data);
+      console.log('Advantage :', data);
     }
     res.send(data);
   });
@@ -25,7 +25,20 @@ app.get('/Technology', (req, res) => {
     if (err) {
       throw err;
     } else {
-      console.log('Technology db is :', data);
+      console.log('Technology:', data);
+    }
+    res.send(data);
+  });
+});
+
+app.get('/WorkSiteList', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+
+  db.query('select * from WorkSite_List', (err, data) => {
+    if (err) {
+      throw err;
+    } else {
+      console.log('WorkSite_List: ', data);
     }
     res.send(data);
   });

@@ -33,9 +33,12 @@ function Developer() {
     <div className="Developer-container" ref={developRef}>
       <div className="Developer-header">
         <div className="Developer-Index">
-          <h2 className="Index-no">01</h2>
           <div className="Index-title">
             <h2>Developer</h2>
+          </div>
+
+          <div className="Index-subTitle">
+            <p>저는 개발할때, 아래 3가지의 강점을 가지고 있습니다.</p>
           </div>
         </div>
 

@@ -21,6 +21,6 @@ http://lim5570.cafe24.com:3700
 <br/>
 <br/>
 
-## 🎖️ BAEKJOON TIER & MOST LANGUAGE
+## 🎖️ MOST DEVELOP LANGUAGE
 
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=lim5570)](https://solved.ac/lim5570/) [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=OWLCORDERD&layout=compact)](https://github.com/OWLCORDERD/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=OWLCORDERD&layout=compact)](https://github.com/OWLCORDERD/github-readme-stats)
