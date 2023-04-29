@@ -1,11 +1,12 @@
 @import '../../asset/Variables.scss';
 
-.Banner-container{
+/*Main Page Banner*/
+.Main-Banner{
     position: relative;
     width : 100%;
     height : 100vh;
     padding : 0 5%;
-
+    
     .Banner-Index{
         position: relative;
         top : 50%;
@@ -154,6 +155,111 @@
             font-size: 1rem;
             font-family: $font-Mont;
             font-weight: bold;
+        }
+    }
+}
+
+/*Project Page Banner*/
+.Project-Banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding : 0 5%;
+    z-index: 10;
+
+    .bg-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        video{
+            width : 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content : '';
+            background-color: rgba($color: #000000, $alpha: 0.5);
+        }
+    }
+
+    .Project-Index{
+        position: relative;
+        width: 100%;
+        height: 50%;
+        top : 50%;
+        transform: translateY(-50%);
+        padding : 0 50px;
+
+        .Index-contentBox{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .Index-title{
+                width: 100%;
+                height: 150px;
+                line-height: 150px;
+                font-size: 4rem;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-family: $font-Mont;
+                color: #fff;
+            }
+
+            .Dynamic-TxtBox{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 60%;
+                height: 150px;
+
+                .Dynamic-txt{
+                    display: block;
+                    width: 50%;
+                    height: 150px;
+                    line-height: 150px;
+                    overflow: hidden;
+
+                    li{
+                        position: relative;
+                        font-size: 4rem;
+                        font-weight: bold;
+                        top : 0;
+                        font-family: $font-Mont;
+                        animation: txtAnimation 4.5s steps(2) infinite;
+                        color: #fff;
+
+                        @keyframes txtAnimation {
+                            100%{
+                                top : -300px;
+                            }
+                        }
+                    }
+                }
+
+                .Static-txt{
+                    font-size: 1.2rem;
+                    font-family: $font-Noto;
+                    color: #fff;
+                    font-weight: 100;
+                    width: 50%;
+                    height: 150px;
+                    line-height: 150px;
+                }
+            }
         }
     }
 }

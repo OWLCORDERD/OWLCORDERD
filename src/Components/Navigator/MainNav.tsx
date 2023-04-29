@@ -1,8 +1,15 @@
 import React from 'react';
 import '../../asset/styles/mainNav.scss';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../Hooks/index';
+import { about, project } from '../reducer/counter';
 
 function MainNav() {
+  const dynamicTxt = useAppSelector(state => state.counter.value);
+
+  const dispatch = useAppDispatch();
+
   const NavAniBox = {
     initial: {
       opacity: 0,
@@ -36,21 +43,25 @@ function MainNav() {
       </div>
 
       <ul className="Nav-menu">
-        <motion.li className="active" variants={menuAni}>
-          <a href="#">About</a>
+        <motion.li variants={menuAni} className={dynamicTxt === 'About' ? 'active' : ''}>
+          <Link to="/" onClick={e => dispatch(about())}>
+            About
+          </Link>
           <div className="menu-info">
             <p>ABOUT DEVELOPER AND DEVELOPER SKILLS</p>
           </div>
         </motion.li>
 
-        <motion.li className="active" variants={menuAni}>
-          <a href="#">Project</a>
+        <motion.li variants={menuAni} className={dynamicTxt === 'Project' ? 'active' : ''}>
+          <Link to="/Project" onClick={e => dispatch(project())}>
+            Project
+          </Link>
           <div className="menu-info">
             <p>USED MY PUBLISHING & FRONT END SKILLS TO MADE PROJECT SITE</p>
           </div>
         </motion.li>
 
-        <motion.li className="active" variants={menuAni}>
+        <motion.li variants={menuAni} className={dynamicTxt === 'WorkSpace' ? 'active' : ''}>
           <a href="#">Workspace</a>
           <div className="menu-info">
             <p>Introducing the curriculum of the skillsI studied.</p>

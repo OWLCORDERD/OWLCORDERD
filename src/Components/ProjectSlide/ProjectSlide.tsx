@@ -52,8 +52,6 @@ function ProjectSlide() {
     } else if (currentSlide === 3) {
       setStatusTitle('first project');
     }
-
-    console.log(currentSlide);
   };
 
   useEffect(() => {

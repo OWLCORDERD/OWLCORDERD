@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../asset/styles/footer.scss';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -10,7 +11,9 @@ function Footer() {
         </div>
 
         <div className="NextChapter-title">
-          <h2>Project</h2>
+          <Link to="/Project">
+            <h2>Project</h2>
+          </Link>
           <p>Click to Next !</p>
         </div>
 

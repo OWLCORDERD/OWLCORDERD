@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 import '../../asset/styles/navigator.scss';
 import { AiOutlineClose } from 'react-icons/ai';
 import { SiGmail, SiGithub, SiInstagram, SiNotion } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 import logo from '../../asset/Image/logo/logo.png';
+import { useAppSelector, useAppDispatch } from '../Hooks/index';
+import { about, project } from '../reducer/counter';
 
 function SideNav() {
   const [navToggle, setNavToggle] = useState<boolean>(false);
+
+  const dispatch = useAppDispatch();
 
   const navClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -38,11 +43,15 @@ function SideNav() {
 
         <ul className="Nav-menu">
           <li>
-            <a href="#">About</a>
+            <Link to="/" onClick={e => dispatch(about())}>
+              About
+            </Link>
           </li>
 
           <li>
-            <a href="#">Project</a>
+            <Link to="/Project" onClick={e => dispatch(project())}>
+              Project
+            </Link>
           </li>
 
           <li>
