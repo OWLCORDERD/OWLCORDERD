@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import '../../asset/styles/projectSlide.scss';
 
-interface project {
+export interface project {
   id: number;
   SiteTitle: string;
+  SiteSubTitle: string;
   SiteInfo: string;
   SiteImg: string;
   SiteUrl: string;
@@ -15,6 +16,8 @@ interface project {
   UseTech4: string;
   UseTech5: string;
   madeState: string;
+  designState: string;
+  type: string;
 }
 
 function ProjectSlide() {

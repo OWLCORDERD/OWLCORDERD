@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import MainNav from '../Navigator/MainNav';
 import bannerVideo from '../../asset/video/Project-Banner.mp4';
 
