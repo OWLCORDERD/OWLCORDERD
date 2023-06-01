@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.74342e30.css",
+    "main.js": "/static/js/main.0841b6fe.js",
+    "static/media/Project-Banner.mp4": "/static/media/Project-Banner.275341433b0545a1fc55.mp4",
+    "static/media/document.jpg": "/static/media/document.36a53701533473d9d16c.jpg",
+    "static/media/coder.gif": "/static/media/coder.18bcba89d4290c3f7580.gif",
+    "static/media/프로필 사진.jpg": "/static/media/프로필 사진.587e71e4f04c4e3ed363.jpg",
+    "static/media/IMAC_vector.png": "/static/media/IMAC_vector.ae760f55bae5963d3e51.png",
+    "index.html": "/index.html",
+    "main.74342e30.css.map": "/static/css/main.74342e30.css.map",
+    "main.0841b6fe.js.map": "/static/js/main.0841b6fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74342e30.css",
+    "static/js/main.0841b6fe.js"
+  ]
+}
