@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import MainNav from '../Navigator/MainNav';
 import bannerVideo from '../../asset/video/Project-Banner.mp4';
 
@@ -18,7 +17,7 @@ function ProjectBanner() {
 
           <div className="Dynamic-TxtBox">
             <ul className="Dynamic-txt">
-              <li>FRONT END</li>
+              <li>FRONT-END</li>
               <li>PUBLISHING</li>
             </ul>
 

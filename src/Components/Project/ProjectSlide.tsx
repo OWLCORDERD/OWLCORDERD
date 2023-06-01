@@ -1,9 +1,12 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import '../../asset/styles/projectSlide.scss';
+import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../Hooks/index';
+import { project } from '../reducer/counter';
+import { CommonService } from '../service';
 
-export interface project {
+export interface projectDB {
   id: number;
   SiteTitle: string;
   SiteSubTitle: string;
@@ -21,7 +24,7 @@ export interface project {
 }
 
 function ProjectSlide() {
-  const [projectDB, setProjectDB] = useState<project[]>([]);
+  const [projectDB, setProjectDB] = useState<projectDB[]>([]);
 
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
@@ -58,11 +61,12 @@ function ProjectSlide() {
   };
 
   useEffect(() => {
-    axios
-      .get('http://localhost:4000/WorkSiteList')
-      .then(res => res.data)
-      .then(data => setProjectDB(data));
+    CommonService.getWorkSiteList().then(res => {
+      setProjectDB(res);
+    });
   }, []);
+
+  const dispatch = useAppDispatch();
 
   return (
     <div className="ProjectSlide-container">
@@ -72,7 +76,9 @@ function ProjectSlide() {
         </div>
 
         <div className="view-more">
-          <a href="#">+ View More</a>
+          <Link to="/Project" onClick={e => dispatch(project())}>
+            + View More
+          </Link>
         </div>
       </div>
 
@@ -90,7 +96,7 @@ function ProjectSlide() {
                 </div>
 
                 <div className="Project-status">
-                  <p>{item.SiteInfo}</p>
+                  <p>{item.SiteSubTitle}</p>
 
                   <div className="Made-state">
                     <span>{item.madeState}</span>

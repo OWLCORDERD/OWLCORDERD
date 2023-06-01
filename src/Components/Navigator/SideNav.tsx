@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { SiGmail, SiGithub, SiInstagram, SiNotion } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import logo from '../../asset/Image/logo/logo.png';
-import { useAppSelector, useAppDispatch } from '../Hooks/index';
+import { useAppDispatch } from '../Hooks/index';
 import { about, project } from '../reducer/counter';
 
 function SideNav() {

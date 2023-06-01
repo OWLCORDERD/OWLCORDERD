@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { CommonService } from '../service';
 
 interface techData {
   id: number;
@@ -19,10 +19,9 @@ function DevelopSkills() {
   const DesignData = TechData.filter((item: techData) => item.Type === 'Design');
 
   useEffect(() => {
-    axios
-      .get('http://localhost:4000/Technology')
-      .then(res => res.data)
-      .then(data => setTechData(data));
+    CommonService.getTechnology().then(res => {
+      setTechData(res);
+    });
   }, []);
 
   return (

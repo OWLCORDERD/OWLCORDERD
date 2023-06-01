@@ -22,27 +22,25 @@
         .DevelopProject-nhmc,
         .DevelopProject-owlstore,
         .DevelopProject-portfolio{
-            position: absolute;
+            position: relative;
             top : 0;
             left: 0;
             width: 100%;
             height: 100vh;
             padding : 5% 0;
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
+
+            &.active{
+                display: flex;
+            }
 
             .Project-infoBox{
                 width: 50%;
                 height: 80%;
                 padding: 0 50px;
-                opacity: 0;
-                transition : all 0.5s ease-out;
-
-                &.active{
-                    transition : all 0.5s ease-in;
-                    opacity: 1;
-                }
+                transition : all 1s ease-out;
 
                 .Project-type{
                     width: 100%;
@@ -71,6 +69,7 @@
                 .Project-status{
                     display: inline-flex;
                     width: 100%;
+                    margin: 2rem 0;
                     color: #fff;
 
                     li{
@@ -86,9 +85,9 @@
                 }
 
                 .Project-info{
-                    margin-top: 10rem;
                     width: 100%;
-                    height: 20rem;
+                    margin-top: 3rem;
+                    height: 10rem;
                     color: #fff;
 
                     p{
@@ -96,6 +95,41 @@
                         word-break: keep-all;
                         font-size: 1rem;
                         font-family: $font-Noto;
+                    }
+                }
+
+                .Project-view{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 50%;
+                    height: 10rem;
+
+                    .view-figma{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        width: 12rem;
+                        line-height: 3rem;
+                        font-family: $font-Mont;
+                        font-weight: bold;
+                        font-size: 1.3rem;
+                        color: #fff;
+                        background-color: #F24E1E;
+                    }
+
+                    .view-site{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        text-transform: uppercase;
+                        width: 12rem;
+                        line-height: 3rem;
+                        font-family: $font-Mont;
+                        font-weight: bold;
+                        font-size: 1.3rem;
+                        color: #fff;
+                        background-color: #474747;
                     }
                 }
             }
@@ -110,7 +144,6 @@
                     top : 5rem;
                     left : 50%;
                     transform: translateX(-50%);
-                    display: block;
                     width: 750px;
                     height: 430px;
                     overflow: hidden;
@@ -118,34 +151,15 @@
                     transition: all 0.5s ease-out;
                     border-radius: 20px 20px 0px 0px;
 
-                    &.active img{
-                        opacity: 1;
-                        height: 100%;
-                        transition: all 0.5s ease-in;
-                        z-index: 1000;
-                    }
-
                     img{
-                        opacity: 0;
                         position: absolute;
                         width: 100%;
-                        height: 1px;
+                        height: 100%;
                         top: 50%;
                         transform: translateY(-50%);
                         object-fit: cover;
                         transition: all 0.5s ease-out;
-                        z-index: 1000;
-
-                        &::before{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            content: '';
-                            background-color: #000;
-                            z-index: 0;
-                        }
+                        z-index: 10;
                     }
                 }
 

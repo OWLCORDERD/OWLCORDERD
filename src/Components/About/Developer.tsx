@@ -1,7 +1,7 @@
-import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { ScrollTrigger, gsap } from 'gsap/all';
+import { CommonService } from '../service';
 
 interface advantage {
   id: number;
@@ -12,15 +12,12 @@ interface advantage {
 function Developer() {
   const [advanData, setAdvanData] = useState<advantage[]>([]);
 
-  const developRef = useRef(null);
-
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    axios
-      .get('http://localhost:4000/Advantage')
-      .then(res => res.data)
-      .then(data => setAdvanData(data));
+    CommonService.getAdvantage().then(res => {
+      setAdvanData(res);
+    });
 
     ScrollTrigger.create({
       trigger: '.Developer-container',
@@ -30,7 +27,7 @@ function Developer() {
     });
   }, []);
   return (
-    <div className="Developer-container" ref={developRef}>
+    <div className="Developer-container">
       <div className="Developer-header">
         <div className="Developer-Index">
           <div className="Index-title">

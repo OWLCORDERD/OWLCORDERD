@@ -50,26 +50,20 @@
                     height: 150px;
                     line-height: 150px;
                     overflow: hidden;
+                    font-size: 3rem;
+                    font-family: $font-Mont;
+                    text-transform: uppercase;
 
-                    li{
-                        font-size: 60px;
-                        font-family: $font-Mont;
-                        font-weight: bold;
-                        position: relative;
-                        top: 0;
-                        animation: Dynamic 4.5s steps(2) infinite;
-
-                        @keyframes Dynamic{
-                            100%{
-                                top : -300px;
-                            }
-                        }
+                    &::after{
+                        content: '';
+                        margin-left: .6rem;
+                        border-right: 2px solid #777;
+                        animation: cursor .9s infinite steps(2);
                     }
                 }
 
                 .Static-txt{
                     display: flex;
-                    flex-direction: column;
                     align-items: flex-end;
                     justify-content: flex-end;
                     width : 50%;
@@ -212,7 +206,7 @@
                 width: 100%;
                 height: 150px;
                 line-height: 150px;
-                font-size: 4rem;
+                font-size: 3rem;
                 text-transform: uppercase;
                 font-weight: bold;
                 font-family: $font-Mont;
@@ -235,7 +229,7 @@
 
                     li{
                         position: relative;
-                        font-size: 4rem;
+                        font-size: 3rem;
                         font-weight: bold;
                         top : 0;
                         font-family: $font-Mont;
@@ -251,7 +245,7 @@
                 }
 
                 .Static-txt{
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     font-family: $font-Noto;
                     color: #fff;
                     font-weight: 100;

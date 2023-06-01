@@ -7,6 +7,7 @@ import DevelopProject from '../Project/DevelopProject';
 
 function Project() {
   const [loading, setLoading] = useState<boolean>(false);
+
   useEffect(() => {
     setLoading(!loading);
 
@@ -14,6 +15,7 @@ function Project() {
       setLoading(false);
     }, 3000);
   }, []);
+
   return (
     <div className="container" id="container">
       <SideNav />
