@@ -104,9 +104,13 @@ function Banner(): JSX.Element {
     }, 2000);
   };
 
-  setTimeout(() => {
-    typing();
-  }, 4500);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      typing();
+    }, 4500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="Main-Banner">

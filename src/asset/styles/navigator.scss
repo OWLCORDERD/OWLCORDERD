@@ -122,8 +122,9 @@
 
             .Menulogo{
                 position: relative;
-                width: 40px;
-                height: 40px;
+                width: 35px;
+                height: 35px;
+                margin-bottom: 0.5rem;
             }
     
             .close-btn{
@@ -159,7 +160,7 @@
                 text-align: center;
 
                 a{
-                    font-size: 2.5rem;
+                    font-size: 2rem;
                     color: #fff;
                     text-transform: uppercase;
                     line-height: calc(39rem / 3);
@@ -187,6 +188,46 @@
                     line-height: 3rem;
                     color: #fff;
                     font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1440px){
+    .SideNav-container{
+    
+        .SideNav-txt{
+    
+            h2{
+                font-size: 1rem;
+            }
+        }
+    
+        .Nav-menuBox{
+    
+            .Nav-menu{
+                width: max-content;
+                height: 30rem;
+    
+                li{
+                    height: calc(30rem / 3);
+    
+                    a{
+                        font-size: 1.8rem;
+                        line-height: calc(30rem / 3);
+                    }
+                }
+            }
+    
+            .social-menu{
+                right: 2rem;
+    
+                li{
+    
+                    a{
+                        font-size: 1.1rem;
+                    }
                 }
             }
         }

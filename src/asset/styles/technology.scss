@@ -4,10 +4,10 @@
 .Technology-container{
     position: relative;
     width : 100%;
-    height : 200rem;
+    height : 190rem;
     background-color: $black-color;
     overflow: hidden;
-    padding : 5%;
+    padding : 0 5%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 100px;
@@ -28,7 +28,7 @@
             justify-content: space-between;
             align-items: flex-end;
             width: 100%;
-            height: 12rem;
+            height: 10rem;
 
             .DevelopSkill-Index{
                 display: flex;
@@ -41,9 +41,8 @@
 
                 .Index-title{
                     width: 100%;
-                    height: 100%;
-                    line-height: 12rem;
-                    font-size: 1.8rem;
+                    line-height: 10rem;
+                    font-size: 1.5rem;
                     text-transform: uppercase;
                 }
             }
@@ -53,18 +52,17 @@
                 justify-content: flex-end;
                 align-items: center;
                 width : 50%;
-                height: 6rem;
+                height: 5rem;
 
                 ul{
-                    width: 22rem;
+                    width: 20rem;
                     height: 100%;
 
                     li{
                         display: inline-block;
-                        width: 8rem;
+                        width: calc(20rem / 2);
                         height: 100%;
                         text-align: center;
-                        margin-left: 2rem;
 
                         button{
                             display: block;
@@ -74,7 +72,7 @@
                             font-weight: bold;
                             font-family: $font-Mont;
                             background : transparent;
-                            font-size: 1.2rem;
+                            font-size: 1.1rem;
                             border : none;
                             cursor: pointer;
                         }
@@ -156,7 +154,7 @@
         .Certificate-header{
             position: relative;
             width: 100%;
-            height: 12rem;
+            height: 10rem;
 
             .Certificate-Index{
                 display: flex;
@@ -170,8 +168,8 @@
                 .Index-title{
                     width: 100%;
                     height: 100%;
-                    line-height: 12rem;
-                    font-size: 1.8rem;
+                    line-height: 10rem;
+                    font-size: 1.5rem;
                     text-transform: uppercase;
                 }
             }
@@ -225,7 +223,7 @@
     .Developer-container{
         position: relative;
         width: 100%;
-        height: 75rem;
+        height: 70rem;
         padding: 0 2rem;
         display: flex;
         justify-content: space-between;
@@ -251,9 +249,9 @@
 
                 .Index-title{
                     width: 100%;
-                    height: 10rem;
+                    height: 8rem;
                     line-height: 8rem;
-                    font-size: 1.8rem;
+                    font-size: 1.5rem;
                     text-transform: uppercase;
                 }
 
@@ -261,7 +259,7 @@
                     width: 100%;
                     height: 5rem;
                     line-height: 5rem;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     font-family: $font-Noto;
                     text-transform: uppercase;
                     font-weight: bold;
@@ -270,22 +268,22 @@
 
             .Advantages-contents{
                 width: 100%;
-                height: 60rem;
+                height: 50rem;
                 color: #fff;
-                margin-top: 5rem;
 
                 .Advantages-title{
                     width: 100%;
-                    height: 7rem;
+                    height: 5rem;
                     font-size: 1.5rem;
                     font-family: $font-Mont;
                     text-transform: uppercase;
-                    line-height: 7rem;
+                    line-height: 5rem;
                 }
 
                 .Advantages-info{
                     width: 100%;
                     height: 45rem;
+                    margin-top: 3rem;
 
                     .Advantage-item{
                         display: block;
@@ -297,20 +295,20 @@
                             justify-content: flex-start;
                             align-items: center;
                             width: 100%;
-                            height: 7.5rem;
+                            height: 7rem;
 
                             .title-Index{
                                 width: max-content;
-                                line-height: 7.5rem;
+                                line-height: 7rem;
                                 text-align: center;
-                                font-size: 2rem;
+                                font-size: 1.5rem;
                             }
 
                             .title{
                                 width: max-content;
-                                line-height: 7.5rem;
+                                line-height: 7rem;
                                 margin-left: 5rem;
-                                font-size: 2rem;
+                                font-size: 1.5rem;
                                 text-transform: uppercase;
                                 font-weight: bold;
                                 font-family: $font-Mont;
@@ -320,13 +318,13 @@
 
                         .Advantage-info{
                             width: 100%;
-                            height: 7.5rem;
+                            height: 7rem;
 
                             p{
                                 width: 100%;
-                                line-height: 7.5rem;
+                                line-height: 7rem;
                                 text-align: start;
-                                font-size: 1.1rem;
+                                font-size: 1rem;
                                 font-family: $font-Noto;
                                 color: #fff;
                                 font-weight: 100;
@@ -343,18 +341,18 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
-            width: 40rem;
-            height: 50rem;
+            width: 25rem;
+            height: 45rem;
 
             &.active{
                 position: fixed;
-                right: 6.5%;
+                right: 6.7%;
                 top : 5%;
             }
 
             .profile-img{
-                width: 30rem;
-                height: 35rem;
+                width: 100%;
+                height: 30rem;
                 background-image: url("../Image/프로필\ 사진.jpg");
                 background-position: center;
                 background-size: cover;
@@ -364,7 +362,7 @@
                 display: block;
                 color: #000;
                 text-align: center;
-                width: 30rem;
+                width: 25rem;
                 height: 3rem;
                 background-color: #fff;
                 font-family: $font-Noto;
@@ -394,6 +392,235 @@
                         font-size: 2rem;
                         color: #fff;
                         line-height: 5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1440px){
+    .Technology-container{
+        height : 160rem;
+        
+        /*Development Skills container*/
+        .DevelopSkills-container{
+            height : 45rem;
+    
+            /*Development Skills Index & tabMenu*/
+            .DevelopSkill-header{
+                width: 100%;
+                height: 10rem;
+    
+                .DevelopSkill-Index{
+    
+                    .Index-title{
+                        line-height: 8rem;
+                        font-size: 1.5rem;
+                    }
+                }
+    
+                .Skills-TabMenu{
+                    height: 2.5rem;
+    
+                    ul{
+                        width: 15rem;
+                        height: 100%;
+    
+                        li{
+                            display: inline-block;
+                            width: calc(15rem / 2);
+                            height: 100%;
+                            text-align: center;
+    
+                            button{
+                                background : rgba($color: #ffffff, $alpha: 0.2);
+                                font-size: 1.1rem;
+                                border : none;
+                                cursor: pointer;
+                            }
+    
+                            &.active{
+                                background: #fff;
+                                color: #000;
+                            }
+    
+                            &.active button{
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            /*Development skill Develop&Design Items container*/
+            .DevelopSkill-contents{
+                height: 30rem;
+    
+                .skill-item{
+                    width: 16rem;
+                    height: 13rem;
+    
+                    h2{
+                        font-size: 1.2rem;
+                    }
+    
+                    img{
+                        width: 60px;
+                        height: 60px;
+                    }
+    
+                    p{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        
+        /*Certificate container*/
+        .Certificate-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 35rem;
+    
+            .Certificate-header{
+                height: 10rem;
+    
+                .Certificate-Index{
+        
+                    .Index-title{
+                        line-height: 10rem;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+    
+            .certificate-Info{
+                height: 20rem;
+                margin-top: 0;
+    
+                .certificate-item{
+                    width: 20rem;
+                    height: 100%;
+                    text-align: center;
+    
+                    img{
+                        width: 50px;
+                        height: 50px;
+                    }
+    
+                    .certificate-title{
+                        height: 6rem;
+                        line-height: 6rem;
+                        font-size: 1.1rem;
+                    }
+    
+                    .certificate-info{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    
+        /*Developer container*/
+        .Developer-container{
+            height: 60rem;
+    
+            .Developer-header{
+    
+                .Developer-Index{
+                    height: 12rem;
+    
+                    .Index-title{
+                        height: 9rem;
+                        line-height: 9rem;
+                        font-size: 1.5rem;
+                    }
+    
+                    .Index-subTitle{
+                        height: 3rem;
+                        line-height: 3rem;
+                        font-size: 1rem;
+                    }
+                }
+    
+                .Advantages-contents{
+                    height: 45rem;
+    
+                    .Advantages-title{
+                        height: 8rem;
+                        font-size: 1.2rem;
+                        line-height: 8rem;
+                    }
+    
+                    .Advantages-info{
+                        height: 30rem;
+    
+                        .Advantage-item{
+                            height: calc(30rem / 3);
+    
+                            .Advantage-titleBox{
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                width: 100%;
+                                height: 5rem;
+    
+                                .title-Index{
+                                    line-height: 7rem;
+                                    font-size: 1.2rem;
+                                }
+    
+                                .title{
+                                    line-height: 7rem;
+                                    margin-left: 5rem;
+                                    font-size: 1.2rem;
+                                }
+                            }
+    
+                            .Advantage-info{
+                                height: 5rem;
+    
+                                p{
+                                    line-height: 5rem;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .Developer-profile{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 30rem;
+                height: 40rem;
+    
+                &.active{
+                    position: fixed;
+                    right: 7%;
+                    top : 5%;
+                }
+    
+                .profile-img{
+                    width: 20rem;
+                    height: 25rem;
+                }
+    
+                .view-report{
+                    width: 20rem;
+                }
+    
+                .profile-Repository{
+                    width: 20rem;
+    
+                    .Repository-title{
+                        font-size: 1.2rem;
                     }
                 }
             }

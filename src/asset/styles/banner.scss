@@ -31,7 +31,7 @@
             .Index-title{
                 width: 100%;
                 height: 150px;
-                font-size: 80px;
+                font-size: 4rem;
                 font-family: $font-Mont;
                 font-weight: bold;
                 line-height: 150px;
@@ -50,7 +50,7 @@
                     height: 150px;
                     line-height: 150px;
                     overflow: hidden;
-                    font-size: 3rem;
+                    font-size: 2.5rem;
                     font-family: $font-Mont;
                     text-transform: uppercase;
 
@@ -72,7 +72,7 @@
                     h2{
                         width : 100%;
                         line-height: 150px;
-                        font-size: 1.5rem;
+                        font-size: 1.2rem;
                         font-family: $font-Noto;
                         font-weight: 100;
                     }
@@ -206,7 +206,7 @@
                 width: 100%;
                 height: 150px;
                 line-height: 150px;
-                font-size: 3rem;
+                font-size: 2.5rem;
                 text-transform: uppercase;
                 font-weight: bold;
                 font-family: $font-Mont;
@@ -229,7 +229,7 @@
 
                     li{
                         position: relative;
-                        font-size: 3rem;
+                        font-size: 2.5rem;
                         font-weight: bold;
                         top : 0;
                         font-family: $font-Mont;
@@ -252,6 +252,68 @@
                     width: 50%;
                     height: 150px;
                     line-height: 150px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1440px){
+    .Main-Banner{
+        
+        .Banner-Index{
+    
+            .Index-contentBox{
+                width : 55%;
+    
+                .Index-title{
+                    font-size: 3rem;
+                }
+    
+                .Dynamic-TxtBox{
+    
+                    .Dynamic-txt{
+                        font-size: 2rem;
+                    }
+    
+                    .Static-txt{
+    
+                        h2{
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+    
+            .Banner-img{
+                width : 45%;
+            }
+        }
+    }
+    
+    /*Project Page Banner*/
+    .Project-Banner{
+    
+        .Project-Index{
+    
+            .Index-contentBox{
+    
+                .Index-title{
+                    font-size: 2rem;
+                }
+    
+                .Dynamic-TxtBox{
+    
+                    .Dynamic-txt{
+    
+                        li{
+                            font-size: 2rem;
+                        }
+                    }
+    
+                    .Static-txt{
+                        font-size: 12px;
+                    }
                 }
             }
         }

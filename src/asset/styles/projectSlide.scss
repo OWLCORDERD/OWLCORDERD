@@ -20,7 +20,7 @@
             width : 40%;
             height: 100%;
             line-height: 10rem;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #fff;
             font-weight: bold;
             text-transform: uppercase;
@@ -40,7 +40,7 @@
                 line-height: 5rem;
                 text-align: center;
                 color: #fff;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 font-weight: bold;
                 border-bottom: 2px solid transparent;
 
@@ -55,7 +55,7 @@
     .slider-wrap{
         position: relative;
         width: 100%;
-        height: 40rem;
+        height: 35rem;
         overflow: hidden;
         z-index: 0;
         
@@ -64,7 +64,7 @@
             display: inline-flex;
             left: 0;
             width: 400%;
-            height: 40rem;
+            height: 35rem;
 
             .slide-box{
                 position: relative;
@@ -76,8 +76,8 @@
 
                 .Project-Img{
                     position: relative;
-                    width: 56rem;
-                    height: 30rem;
+                    width: 50rem;
+                    height: 28rem;
                     overflow: hidden;
 
                     img{
@@ -103,6 +103,7 @@
                         font-size: 2.5rem;
                         font-family: $font-Mont;
                         line-height: 5rem;
+                        text-transform: uppercase;
                         color: #fff;
                     }
 
@@ -171,7 +172,7 @@
         top : 10rem;
         left: 0;
         width: 100%;
-        padding : 0 2rem;
+        padding : 0 1rem;
         height: 40rem;
         display: flex;
         justify-content: space-between;
@@ -243,6 +244,140 @@
                     font-family: $font-Mont;
                     line-height: 5rem;
                     text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1440px){
+    .ProjectSlide-container{
+    
+        .ProjectSlide-header{
+            height: 5rem;
+    
+            .Slide-title{
+                line-height: 5rem;
+                font-size: 1.5rem;
+            }
+        }
+    
+        .slider-wrap{
+            height: 35rem;
+            
+            .slider-container{
+                position: relative;
+                display: inline-flex;
+                left: 0;
+                width: 400%;
+                height: 100%;
+    
+                .slide-box{
+    
+                    .Project-Img{
+                        width: 45%;
+                        height: 18rem;
+    
+                        img{
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+    
+                    .Project-contents{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        padding: 50px 0;
+                        width: 50%;
+                        height: 35rem;
+    
+                        .Project-title{
+                            width: 100%;
+                            height: 3rem;
+                            font-size: 2rem;
+                            font-family: $font-Mont;
+                            line-height: 3rem;
+                            color: #fff;
+                        }
+    
+                        .Project-status{
+    
+                            p{
+                                font-size: 1rem;
+                            }
+    
+                            .Made-state{
+                                border : 2px solid #fff;
+                                font-size: 14px;
+    
+                                span{
+                                    width: 100%;
+                                    line-height: 2rem;
+                                }
+                            }
+                        }
+    
+                        .Project-tag{
+                            width: 100%;
+                            height: 12rem;
+                            color: #fff;
+    
+                            .tag{
+                                width: 40rem;
+                                height: 100%;
+                            
+                                span{
+                                    display: inline-block;
+                                    width: max-content;
+                                    text-align: center;
+                                    margin-right: 5rem;
+                                    margin-bottom: 2rem;
+                                    line-height: 2rem;
+                                    border : 2px solid #fff;
+                                    font-family: $font-Mont;
+                                    font-weight: bold;
+                                    font-size: 12px;
+                                    padding: 0 1rem;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .slider-control{
+            top : 5rem;
+            height: 35rem;
+            z-index: 10000;
+        }
+    
+        .slide-status{
+            position: relative;
+            width: 100%;
+            height: 5rem;
+    
+            .status-Box{
+                height: 10px;
+    
+                .status-bar{
+                    height: 100%;
+                }
+    
+                .status-info{
+                    height: 3rem;
+    
+                    h2{
+                        font-size: 1rem;
+                        color: #fff;
+                        font-family: $font-Mont;
+                        line-height: 3rem;
+                        text-transform: uppercase;
+                    }
                 }
             }
         }

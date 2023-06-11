@@ -20,7 +20,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 100%;
-            max-width: fit-content;
+            max-width: 150px;
             animation: Rotate 10s linear infinite;
             
             @keyframes Rotate{
@@ -37,8 +37,8 @@
             transform: translate(-50%, -50%);
             display: block;
             content: '';
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             color: #fff;
             background-image: url('../Image/logo/logo.png');
             background-size: contain;
@@ -51,16 +51,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 30rem;
+        width: 25rem;
         height: 10rem;
-        bottom: 20%;
+        bottom: 10%;
         left: 50%;
-        transform: translate(-50%, -20%);
+        transform: translate(-50%, -10%);
         color: #fff;
 
         h2{
             width: 16rem;
-            font-size: 3rem;
+            font-size: 2rem;
             text-transform: uppercase;
             font-weight: bold;
             font-family: $font-Mont;
