@@ -4,7 +4,6 @@ import { MdWebAsset } from 'react-icons/md';
 import '../../asset/styles/project.scss';
 import { ScrollTrigger, gsap } from 'gsap/all';
 import { projectDB } from './ProjectSlide';
-import PCImg from '../../asset/Image/IMAC_vector.png';
 import { CommonService } from '../service';
 
 function DevelopProject() {
@@ -99,7 +98,7 @@ function DevelopProject() {
 
           <div className="Project-ImgBox">
             <div className="IMAC-Img">
-              <img src={PCImg} alt="IMACImg" />
+              <img src={`${process.env.PUBLIC_URL}/Images/IMAC_vector.png`} alt="IMACImg" />
             </div>
 
             <div className="Project-Img">
@@ -143,7 +142,7 @@ function DevelopProject() {
 
           <div className="Project-ImgBox">
             <div className="IMAC-Img">
-              <img src={PCImg} alt="IMACImg" />
+              <img src={`${process.env.PUBLIC_URL}/Images/IMAC_vector.png`} alt="IMACImg" />
             </div>
 
             <div className="Project-Img">
@@ -181,7 +180,7 @@ function DevelopProject() {
 
           <div className="Project-ImgBox">
             <div className="IMAC-Img">
-              <img src={PCImg} alt="IMACImg" />
+              <img src={`${process.env.PUBLIC_URL}/Images/IMAC_vector.png`} alt="IMACImg" />
             </div>
 
             <div className="Project-Img">
@@ -219,7 +218,7 @@ function DevelopProject() {
 
           <div className="Project-ImgBox">
             <div className="IMAC-Img">
-              <img src={PCImg} alt="IMACImg" />
+              <img src={`${process.env.PUBLIC_URL}/Images/IMAC_vector.png`} alt="IMACImg" />
             </div>
 
             <div className="Project-Img">

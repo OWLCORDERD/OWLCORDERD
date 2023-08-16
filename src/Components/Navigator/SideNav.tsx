@@ -3,7 +3,6 @@ import '../../asset/styles/navigator.scss';
 import { AiOutlineClose } from 'react-icons/ai';
 import { SiGmail, SiGithub, SiInstagram, SiNotion } from 'react-icons/si';
 import { Link } from 'react-router-dom';
-import logo from '../../asset/Image/logo/logo.png';
 import { useAppDispatch } from '../Hooks/index';
 import { about, project } from '../reducer/counter';
 
@@ -38,7 +37,7 @@ function SideNav() {
             <AiOutlineClose className="close-icon" />
           </button>
 
-          <img src={logo} alt="Menulogo" className="Menulogo" />
+          <img src={`${process.env.PUBLIC_URL}/Images/logo/logo.png`} alt="Menulogo" className="Menulogo" />
         </div>
 
         <ul className="Nav-menu">

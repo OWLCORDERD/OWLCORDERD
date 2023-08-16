@@ -3,7 +3,6 @@ import '../../asset/styles/banner.scss';
 import { TfiMouse } from 'react-icons/tfi';
 import { motion } from 'framer-motion';
 import MainNav from '../Navigator/MainNav';
-import BannerImg from '../../asset/Image/coder.gif';
 
 function Banner(): JSX.Element {
   const ImgAnimation = {
@@ -132,7 +131,7 @@ function Banner(): JSX.Element {
 
         <div className="Banner-img">
           <motion.img
-            src={BannerImg}
+            src={`${process.env.PUBLIC_URL}Image/coder.gif`}
             alt="BannerImg"
             variants={ImgAnimation}
             initial="initial"

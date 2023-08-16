@@ -1,13 +1,12 @@
 import React from 'react';
 import MainNav from '../Navigator/MainNav';
-import bannerVideo from '../../asset/video/Project-Banner.mp4';
 
 function ProjectBanner() {
   return (
     <div className="Project-Banner">
       <MainNav />
       <div className="bg-video">
-        <video src={bannerVideo} autoPlay muted loop />
+        <video src={`${process.env.PUBLIC_URL}/video/Project-Banner.mp4`} autoPlay muted loop />
       </div>
       <div className="Project-Index">
         <div className="Index-contentBox">

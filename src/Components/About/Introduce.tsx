@@ -1,8 +1,6 @@
 import React from 'react';
 import '../../asset/styles/introduce.scss';
 
-import AboutCircleTxt from '../../asset/Image/Circle/About-CircleTxtBox.png';
-
 function Introduce() {
   return (
     <div className="Introduce-container">
@@ -20,7 +18,7 @@ function Introduce() {
 
       <div className="Introduce-infoBox">
         <div className="Introduce-RotateTxt">
-          <img src={AboutCircleTxt} alt="IntroduceCircleTxt" />
+          <img src={`${process.env.PUBLIC_URL}/Image/Circle/About-CircleTxtBox.png`} alt="IntroduceCircleTxt" />
           <span>소개 원형텍스트</span>
         </div>
 
