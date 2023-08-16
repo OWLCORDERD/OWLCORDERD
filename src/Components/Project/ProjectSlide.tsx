@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import '../../asset/styles/projectSlide.scss';
-import { Link } from 'react-router-dom';
-import { useAppDispatch } from '../Hooks/index';
-import { project } from '../reducer/counter';
 import { CommonService } from '../service';
 
 export interface projectDB {
@@ -66,8 +63,6 @@ function ProjectSlide() {
     });
   }, []);
 
-  const dispatch = useAppDispatch();
-
   return (
     <div className="ProjectSlide-container">
       <div className="ProjectSlide-header">
@@ -75,10 +70,13 @@ function ProjectSlide() {
           <h2>Project</h2>
         </div>
 
-        <div className="view-more">
-          <Link to="/Project" onClick={e => dispatch(project())}>
-            + View More
-          </Link>
+        <div className="slider-control">
+          <button type="button" className="back-button" onClick={e => beforeSlide(e)}>
+            <IoIosArrowBack />
+          </button>
+          <button type="button" className="front-button" onClick={e => nextSlide(e)}>
+            <IoIosArrowForward />
+          </button>
         </div>
       </div>
 
@@ -116,15 +114,6 @@ function ProjectSlide() {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="slider-control">
-        <button type="button" className="back-button" onClick={e => beforeSlide(e)}>
-          <IoIosArrowBack />
-        </button>
-        <button type="button" className="front-button" onClick={e => nextSlide(e)}>
-          <IoIosArrowForward />
-        </button>
       </div>
 
       <div className="slide-status">

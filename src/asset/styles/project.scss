@@ -86,14 +86,14 @@
 
                 .Project-info{
                     width: 100%;
-                    margin-top: 3rem;
-                    height: 8rem;
+                    margin-top: 2rem;
+                    height: 10rem;
                     color: #fff;
 
                     p{
                         width: 70%;
                         word-break: keep-all;
-                        font-size: 1rem;
+                        font-size: 15px;
                         font-family: $font-Noto;
                     }
                 }
@@ -259,17 +259,19 @@
     
                     .Project-info{
                         margin-top: 2rem;
-                        height: 8rem;
+                        height: 10rem;
                         color: #fff;
     
                         p{
-                            font-size: 14px;
+                            width: 80%;
+                            font-size: 13px;
                         }
                     }
     
                     .Project-view{
+                        margin-top: 2rem;
                         width: 60%;
-                        height: 8rem;
+                        height: 3rem;
     
                         .view-figma{
                             width: 9rem;

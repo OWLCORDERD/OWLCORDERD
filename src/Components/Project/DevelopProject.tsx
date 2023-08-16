@@ -13,7 +13,7 @@ function DevelopProject() {
 
   const iyou = projectDB.filter(item => item.SiteTitle === 'IYOU');
   const nhmc = projectDB.filter(item => item.SiteTitle === 'NHMC');
-  const owlstore = projectDB.filter(item => item.SiteTitle === 'OWL STORE');
+  const wish = projectDB.filter(item => item.SiteTitle === 'WISH SITE');
   const portfolio = projectDB.filter(item => item.SiteTitle === 'Portfolio Site');
 
   gsap.registerPlugin(ScrollTrigger);
@@ -98,7 +98,7 @@ function DevelopProject() {
 
           <div className="Project-ImgBox">
             <div className="IMAC-Img">
-              <img src={`${process.env.PUBLIC_URL}/Images/IMAC_vector.png`} alt="IMACImg" />
+              <img src={`${process.env.PUBLIC_URL}/Image/IMAC_vector.png`} alt="IMACImg" />
             </div>
 
             <div className="Project-Img">
@@ -142,7 +142,7 @@ function DevelopProject() {
 
           <div className="Project-ImgBox">
             <div className="IMAC-Img">
-              <img src={`${process.env.PUBLIC_URL}/Images/IMAC_vector.png`} alt="IMACImg" />
+              <img src={`${process.env.PUBLIC_URL}/Image/IMAC_vector.png`} alt="IMACImg" />
             </div>
 
             <div className="Project-Img">
@@ -151,18 +151,18 @@ function DevelopProject() {
           </div>
         </div>
 
-        <div className="DevelopProject-owlstore" key={owlstore[0]?.id}>
+        <div className="DevelopProject-owlstore" key={wish[0]?.id}>
           <div className="Project-infoBox">
-            <div className="Project-type">{owlstore[0]?.type}</div>
+            <div className="Project-type">{wish[0]?.type}</div>
             <div className="Project-title">
-              <h2>{owlstore[0]?.SiteTitle}</h2>
+              <h2>{wish[0]?.SiteTitle}</h2>
             </div>
             <ul className="Project-status">
-              <li className="made-status">{owlstore[0]?.madeState}</li>
-              <li className="design-status">{owlstore[0]?.designState}</li>
+              <li className="made-status">{wish[0]?.madeState}</li>
+              <li className="design-status">{wish[0]?.designState}</li>
             </ul>
             <div className="Project-info">
-              <p>{owlstore[0]?.SiteInfo}</p>
+              <p>{wish[0]?.SiteInfo}</p>
             </div>
 
             <div className="Project-view">
@@ -175,16 +175,21 @@ function DevelopProject() {
                 <IoLogoFigma />
                 FIGMA
               </a>
+
+              <a href="https://wish.netlify.app/" className="view-site" target="_blank" rel="noreferrer">
+                <MdWebAsset />
+                View Site
+              </a>
             </div>
           </div>
 
           <div className="Project-ImgBox">
             <div className="IMAC-Img">
-              <img src={`${process.env.PUBLIC_URL}/Images/IMAC_vector.png`} alt="IMACImg" />
+              <img src={`${process.env.PUBLIC_URL}/Image/IMAC_vector.png`} alt="IMACImg" />
             </div>
 
             <div className="Project-Img">
-              <img src={owlstore[0]?.SiteImg} alt="SiteImg" />
+              <img src={wish[0]?.SiteImg} alt="SiteImg" />
             </div>
           </div>
         </div>
@@ -218,7 +223,7 @@ function DevelopProject() {
 
           <div className="Project-ImgBox">
             <div className="IMAC-Img">
-              <img src={`${process.env.PUBLIC_URL}/Images/IMAC_vector.png`} alt="IMACImg" />
+              <img src={`${process.env.PUBLIC_URL}/Image/IMAC_vector.png`} alt="IMACImg" />
             </div>
 
             <div className="Project-Img">

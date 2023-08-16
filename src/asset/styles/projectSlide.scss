@@ -26,27 +26,45 @@
             text-transform: uppercase;
         }
 
-        .view-more{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .slider-control{
+            position: relative;
+            top : 0;
+            left: 0;
             width: 10rem;
-            height: 100%;
-
-            a{
+            height: max-content;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 0;
+    
+            .back-button{
+                border: none;
+                background : transparent;
                 display: block;
-                width: 10rem;
-                height: 5rem;
-                line-height: 5rem;
-                text-align: center;
-                color: #fff;
-                font-size: 1.1rem;
-                font-weight: bold;
-                border-bottom: 2px solid transparent;
-
+                width: 50px;
+                color: rgba($color: #ffffff, $alpha: 0.5);
+                cursor: pointer;
+                font-size: 2.5rem;
+    
                 &:hover{
+                    color: #fff;
                     transition: all 0.5s ease-in;
-                    border-bottom: 2px solid #fff;
+                }
+            }
+    
+            .front-button{
+                border: none;
+                background : transparent;
+                display: block;
+                width: 50px;
+                height: 50px;
+                color: rgba($color: #ffffff, $alpha: 0.5);
+                cursor: pointer;
+                font-size: 2.5rem;
+    
+                &:hover{
+                    color: #fff;
+                    transition: all 0.5s ease-in;
                 }
             }
         }
@@ -55,7 +73,7 @@
     .slider-wrap{
         position: relative;
         width: 100%;
-        height: 35rem;
+        height: 30rem;
         overflow: hidden;
         z-index: 0;
         
@@ -64,7 +82,7 @@
             display: inline-flex;
             left: 0;
             width: 400%;
-            height: 35rem;
+            height: 100%;
 
             .slide-box{
                 position: relative;
@@ -73,11 +91,12 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                padding : 0 2rem;
 
                 .Project-Img{
                     position: relative;
                     width: 50rem;
-                    height: 28rem;
+                    height: 25rem;
                     overflow: hidden;
 
                     img{
@@ -89,18 +108,13 @@
                 }
 
                 .Project-contents{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: flex-start;
                     padding: 50px 0;
                     width: 45rem;
-                    height: 35rem;
+                    height: 100%;
 
                     .Project-title{
                         width: 100%;
-                        height: 5rem;
-                        font-size: 2.5rem;
+                        font-size: 2rem;
                         font-family: $font-Mont;
                         line-height: 5rem;
                         text-transform: uppercase;
@@ -113,12 +127,13 @@
                         display: inline-flex;
                         align-items: center;
                         color: #fff;
+                        margin-top: 2rem;
 
                         p{
                             width: 15rem;
                             height: 100%;
                             line-height: 5rem;
-                            font-size: 1.2rem;
+                            font-size: 1rem;
                             font-family: $font-Noto;
                         }
 
@@ -128,7 +143,7 @@
                             font-family: $font-Noto;
                             border : 3px solid #fff;
                             font-weight: bold;
-                            font-size: 15px;
+                            font-size: 14px;
                             text-align: center;
 
                             span{
@@ -140,7 +155,8 @@
 
                     .Project-tag{
                         width: 100%;
-                        height: 15rem;
+                        height: 10rem;
+                        margin-top: 5rem;
                         color: #fff;
 
                         .tag{
@@ -153,7 +169,7 @@
                                 text-align: center;
                                 margin-right: 5rem;
                                 margin-bottom: 2rem;
-                                line-height: 3rem;
+                                line-height: 2rem;
                                 border : 3px solid #fff;
                                 font-family: $font-Mont;
                                 font-weight: bold;
@@ -167,55 +183,12 @@
             }
         }
     }
-    .slider-control{
-        position: absolute;
-        top : 10rem;
-        left: 0;
-        width: 100%;
-        padding : 0 1rem;
-        height: 40rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 0;
-
-        .back-button{
-            border: none;
-            background : transparent;
-            display: block;
-            width: 50px;
-            height: 50px;
-            color: rgba($color: #ffffff, $alpha: 0.5);
-            cursor: pointer;
-            font-size: 3rem;
-
-            &:hover{
-                color: #fff;
-                transition: all 0.5s ease-in;
-            }
-        }
-
-        .front-button{
-            border: none;
-            background : transparent;
-            display: block;
-            width: 50px;
-            height: 50px;
-            color: rgba($color: #ffffff, $alpha: 0.5);
-            cursor: pointer;
-            font-size: 3rem;
-
-            &:hover{
-                color: #fff;
-                transition: all 0.5s ease-in;
-            }
-        }
-    }
 
     .slide-status{
         position: relative;
         width: 100%;
         height: 10rem;
+        margin-top: 2rem;
 
         .status-Box{
             width: 100%;
@@ -261,99 +234,49 @@
                 font-size: 1.5rem;
             }
         }
-    
+
         .slider-wrap{
-            height: 35rem;
             
             .slider-container{
-                position: relative;
-                display: inline-flex;
-                left: 0;
-                width: 400%;
-                height: 100%;
     
                 .slide-box{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding : 0 2rem;
     
                     .Project-Img{
-                        width: 45%;
-                        height: 18rem;
-    
-                        img{
-                            position: absolute;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
+                        position: relative;
+                        width: 50%;
+                        height: 25rem;
+                        overflow: hidden;
                     }
     
                     .Project-contents{
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        align-items: flex-start;
-                        padding: 50px 0;
-                        width: 50%;
-                        height: 35rem;
+                        width: 45%;
     
                         .Project-title{
                             width: 100%;
-                            height: 3rem;
                             font-size: 2rem;
                             font-family: $font-Mont;
-                            line-height: 3rem;
+                            line-height: 5rem;
+                            text-transform: uppercase;
                             color: #fff;
                         }
     
                         .Project-status{
-    
-                            p{
-                                font-size: 1rem;
-                            }
-    
-                            .Made-state{
-                                border : 2px solid #fff;
-                                font-size: 14px;
-    
-                                span{
-                                    width: 100%;
-                                    line-height: 2rem;
-                                }
-                            }
+                            margin-top: 1rem;
                         }
     
                         .Project-tag{
-                            width: 100%;
-                            height: 12rem;
-                            color: #fff;
-    
-                            .tag{
-                                width: 40rem;
-                                height: 100%;
-                            
-                                span{
-                                    display: inline-block;
-                                    width: max-content;
-                                    text-align: center;
-                                    margin-right: 5rem;
-                                    margin-bottom: 2rem;
-                                    line-height: 2rem;
-                                    border : 2px solid #fff;
-                                    font-family: $font-Mont;
-                                    font-weight: bold;
-                                    font-size: 12px;
-                                    padding: 0 1rem;
-                                    text-transform: uppercase;
-                                }
-                            }
+                            margin-top: 3rem;
                         }
                     }
                 }
             }
-        }
-        .slider-control{
-            top : 5rem;
-            height: 35rem;
-            z-index: 10000;
         }
     
         .slide-status{
