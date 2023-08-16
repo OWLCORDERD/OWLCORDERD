@@ -3,7 +3,7 @@ import service from './index';
 const getDB = {
   getAdvantage: () =>
     service({
-      url: '/Advantage',
+      url: '/advantage',
     }).then(res => res.data),
   getTechnology: () =>
     service({
