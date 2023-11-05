@@ -1,15 +1,13 @@
 import React from 'react';
 import '../../asset/styles/technology.scss';
 import DevelopSkills from './DevelopSkills';
-import Certificate from './Certificate';
-import Developer from './Developer';
+import Advantage from './Advantage';
 
 function Technology() {
   return (
     <div className="Technology-container">
-      <Developer />
+      <Advantage />
       <DevelopSkills />
-      <Certificate />
     </div>
   );
 }

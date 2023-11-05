@@ -1,331 +1,299 @@
 @import "../Variables.scss";
 
-.DevelopProject-container{
+.CurrentProject-container {
     position: relative;
     width: 100%;
-    height: 400vh;
-    background-color: #000;
-    padding : 0 5%;
+    height: 100%;
+    padding : 0 8.25rem;
 
-    .DevelopProject-wrap{
+    .Current-Banner{
         position: relative;
-        top: 0;
-        left: 0;
+        display: flex;
+        justify-content: space-between;
         width: 100%;
-        height: 100vh;
+        height: max-content;
+        padding-top : 25vh;
 
-        &.active{
-            position: sticky;
-        }
+        .CurrentInfo-container{
+            width: 60%;
+            height: 100%;
 
-        .DevelopProject-iyou,
-        .DevelopProject-nhmc,
-        .DevelopProject-owlstore,
-        .DevelopProject-portfolio{
-            position: relative;
-            top : 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            padding : 5% 0;
-            display: none;
-            justify-content: space-between;
-            align-items: center;
+            .Project-ImgBox{
+                position: relative;
+                width: 90%;
+                height: 35rem;
 
-            &.active{
-                display: flex;
+                img{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
 
             .Project-infoBox{
-                width: 50%;
-                height: 80%;
-                padding: 0 50px;
-                transition : all 1s ease-out;
+                margin-top: 4rem;
+                width: 90%;
+                height: 20rem;
+                color: #fff;
+                font-family: $font-Noto;
 
-                .Project-type{
+                .Project-subTitle{
                     width: 100%;
-                    height: 5rem;
-                    font-size: 1.5rem;
-                    line-height: 5rem;
-                    font-family: $font-Mont;
+                    line-height: 2rem;
+                    font-size: 1rem;
                     text-transform: uppercase;
-                    color: #fff;
                 }
 
                 .Project-title{
                     width: 100%;
-                    height: 10rem;
-                    color: #fff;
-
-                    h2{
-                        font-size: 4rem;
-                        font-family: $font-Mont;
-                        font-weight: bold;
-                        text-transform: uppercase;
-                        line-height: 10rem;
-                    }
-                }
-
-                .Project-status{
-                    display: inline-flex;
-                    width: 100%;
-                    margin: 2rem 0;
-                    color: #fff;
-
-                    li{
-                        margin-right: 2rem;
-                        width: 8rem;
-                        line-height: 2rem;
-                        text-align: center;
-                        border : 2px solid #fff;
-                        font-family: $font-Noto;
-                        font-weight: bold;
-                        font-size: 1rem;
-                    }
+                    font-size: 1.3rem;
+                    line-height: 8rem;
+                    font-weight: 300;
                 }
 
                 .Project-info{
-                    width: 100%;
+                    width: 80%;
                     margin-top: 2rem;
-                    height: 10rem;
-                    color: #fff;
+                    height: 8rem;
+                    word-break: keep-all;
+                    font-size: 15px;
+                    color: #b4b4b4;
+                }
+            }
 
-                    p{
-                        width: 70%;
-                        word-break: keep-all;
-                        font-size: 15px;
-                        font-family: $font-Noto;
+            .Count-menu{
+                width: 25rem;
+                height: 5rem;
+
+                li{
+                    display: inline-block;
+                    width: 10rem;
+                    height: 100%;
+                    margin-right: 5rem;
+
+                    &:nth-child(2){
+                        margin-right: 0;
+                    }
+
+                    .view-count{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        color: #fff;
+
+                        span{
+                            font-size: 1rem;
+                            font-family: $font-Noto;
+                        }
+                    }
+
+                    .like-count{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        color: #fff;
+
+                        span{
+                            font-size: 1rem;
+                            font-family: $font-Noto;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ProjectSkills-container{
+            position: sticky;
+            top: 2rem;
+            right: 0;
+            width: 40%;
+            height: 30rem;
+
+            .Design-menu{
+                position: relative;
+                width: 100%;
+                height: 15rem;
+
+                .menu-title{
+                    width: 100%;
+                    height: 5rem;
+
+                    h2{
+                        line-height: 5rem;
+                        font-size: 1.2rem;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-family: $font-Mont;
                     }
                 }
 
-                .Project-view{
+                .menu-button{
                     display: flex;
-                    justify-content: space-between;
                     align-items: center;
-                    width: 50%;
-                    height: 10rem;
+                    justify-content: center;
+                    width: 100%;
+                    height: 3.5rem;
+                    background-color: rgba($color: #3d3d3d, $alpha: 0.8);
+                    transition: all 0.5s ease-out;
 
-                    .view-figma{
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-evenly;
-                        width: 10rem;
-                        line-height: 3rem;
+                    span{
+                        margin-left: 2rem;
+                        font-size: 1rem;
+                        color: #fff;
+                        text-transform: uppercase;
                         font-family: $font-Mont;
                         font-weight: bold;
-                        font-size: 1.2rem;
-                        color: #fff;
-                        background-color: #F24E1E;
                     }
 
-                    .view-site{
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-evenly;
-                        text-transform: uppercase;
-                        width: 10rem;
-                        line-height: 3rem;
-                        font-family: $font-Mont;
-                        font-weight: bold;
-                        font-size: 1.2rem;
-                        color: #fff;
-                        background-color: #474747;
+                    &:hover{
+                        background-color: #F24E1E;
+                        transition: all 0.5s ease-in;
                     }
                 }
             }
 
-            .Project-ImgBox{
-                position: relative;
-                width: 50%;
-                height: 80%;
+            .Skill-menu{
+                width: 100%;
+                height : 15rem;
 
-                .Project-Img{
-                    position: absolute;
-                    top : 5rem;
-                    left : 50%;
-                    transform: translateX(-50%);
-                    width: 700px;
-                    height: 400px;
-                    overflow: hidden;
-                    z-index: 10;
-                    transition: all 0.5s ease-out;
-                    border-radius: 20px 20px 0px 0px;
+                .menu-title{
+                    width: 100%;
+                    height: 5rem;
 
-                    img{
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        object-fit: cover;
-                        transition: all 0.5s ease-out;
-                        z-index: 10;
+                    h2{
+                        font-size: 1.2rem;
+                        color: #fff;
+                        font-family: $font-Mont;
+                        text-transform: uppercase;
                     }
                 }
 
-                .IMAC-Img{
-                    position: relative;
-                    top : 5rem;
-                    left : 50%;
-                    transform: translateX(-50%);
-                    width : 700px;
-                    height: 550px;
+                .Skill-list{
+                    width: 100%;
+                    height: 10rem;
 
-                    img{
-                        position: absolute;
-                        top : 0;
-                        left : 0;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                    li{
+                        display: inline-block;
+                        width: max-content;
+                        height: 3rem;
+                        margin-top: 2rem;
+                        margin-right: 2rem;
+
+                        .Skill-item{
+                            border: 2px solid rgba($color: #fff, $alpha: 0.7);
+                            width: max-content;
+                            height: 3rem;
+                            padding : 0 1rem;
+
+                            span{
+                                font-family: $font-Mont;
+                                font-weight: bold;
+                                line-height: 3rem;
+                                color: rgba($color: #fff, $alpha: 0.7);
+                            }
+
+                            &:hover{
+                                background-color: #565656;
+                                color: #fff;
+                                cursor: pointer;
+                            }
+                        }
                     }
                 }
             }
         }
     }
 
-}
-
-@media screen and (max-width : 1440px){
-    .DevelopProject-container{
+    .CurrentBoard-container{
         position: relative;
+        display: flex;
         width: 100%;
-        height: 400vh;
-        background-color: #000;
-        padding : 0 5%;
-    
-        .DevelopProject-wrap{
+        height: max-content;
+        margin-top: 5rem;
+
+        .Project-category{
             position: relative;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 100vh;
-    
-            &.active{
+            flex : 2;
+
+            ul{
                 position: sticky;
-            }
-    
-            .DevelopProject-iyou,
-            .DevelopProject-nhmc,
-            .DevelopProject-owlstore,
-            .DevelopProject-portfolio{
-                position: relative;
-                top : 0;
+                top: 2rem;
                 left: 0;
                 width: 100%;
-                height: 100vh;
-                padding : 5% 0;
-                display: none;
-                justify-content: space-between;
-                align-items: center;
-    
-                &.active{
-                    display: flex;
-                }
-    
-                .Project-infoBox{
-                    width: 50%;
-                    height: 90%;
-                    padding: 0 50px;
-                    transition : all 1s ease-out;
-    
-                    .Project-type{
-                        height: 5rem;
+                height: 10rem;
+
+                li{
+                    width: 100%;
+                    height: 5rem;
+                    
+                    a{
                         font-size: 1.2rem;
+                        font-family: $font-Mont;
+                        color: rgb(107, 107, 107);
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        line-height: 5rem;
+
+                        &.active{
+                            color: #fff;
+                        }
+                    }
+
+                    span{
+                        font-size: 1.5rem;
+                        font-family: $font-Mont;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-weight: bold;
                         line-height: 5rem;
                     }
-    
-                    .Project-title{
-                        width: 100%;
-                        height: 8rem;
-                        color: #fff;
-    
-                        h2{
-                            font-size: 3rem;
-                            line-height: 8rem;
-                        }
-                    }
-    
-                    .Project-status{
-                        display: inline-flex;
-                        width: 100%;
-                        margin: 2rem 0;
-                        color: #fff;
-    
-                        li{
-                            font-size: 14px;
-                        }
-                    }
-    
-                    .Project-info{
-                        margin-top: 2rem;
-                        height: 10rem;
-                        color: #fff;
-    
-                        p{
-                            width: 80%;
-                            font-size: 13px;
-                        }
-                    }
-    
-                    .Project-view{
-                        margin-top: 2rem;
-                        width: 60%;
-                        height: 3rem;
-    
-                        .view-figma{
-                            width: 9rem;
-                            font-size: 1rem;
-                        }
-    
-                        .view-site{
-                            width: 9rem;
-                            font-size: 1rem;
-                        }
-                    }
                 }
-    
-                .Project-ImgBox{
-                    position: relative;
-                    width: 50%;
-                    height: 90%;
-    
-                    .Project-Img{
-                        position: absolute;
-                        top : 5rem;
-                        left : 50%;
-                        transform: translateX(-50%);
-                        width: 650px;
-                        height: 360px;
-                        overflow: hidden;
-                        z-index: 10;
-                        transition: all 0.5s ease-out;
-                        border-radius: 20px 20px 0px 0px;
-    
-                        img{
-                            position: absolute;
-                            width: 100%;
-                            height: 100%;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            object-fit: cover;
-                            transition: all 0.5s ease-out;
-                            z-index: 10;
-                        }
+            }
+        }
+
+        .Project-Board{
+            flex : 8;
+            width: 80%;
+            height: max-content;
+
+            .Main-Board,.Sub-Board{
+                width: 100%;
+                height: max-content;
+                padding : 0 5rem;
+
+                .Main-title{
+                    width: 100%;
+                    line-height: 5rem;
+                    margin-bottom: 2rem;
+                    text-transform: uppercase;
+                    font-family: $font-Mont;
+                    color: #fff;
+                }
+
+                .Board-item{
+                    width: 100%;
+                    height: 50rem;
+
+                    .page-info{
+                        width: 100%;
+                        line-height: 8rem;
+                        text-transform: uppercase;
+                        font-family: $font-Mont;
+                        color: #fff;
                     }
-    
-                    .IMAC-Img{
-                        position: relative;
-                        top : 5rem;
-                        left : 50%;
-                        transform: translateX(-50%);
-                        width : 650px;
-                        height: 500px;
-    
+
+                    .page-ImgBox{
+                        width: 100%;
+                        height: 36rem;
+
                         img{
-                            position: absolute;
-                            top : 0;
-                            left : 0;
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
@@ -334,6 +302,232 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width : 1040px) {
+    .CurrentProject-container {
+        padding : 0;
     
+        .Current-Banner{
+            flex-direction: column;
+            height: 100%;
+            padding-top : 5rem;
+    
+            .CurrentInfo-container{
+                width: 100%;
+                height: 42rem;
+    
+                .Project-ImgBox{
+                    position: relative;
+                    width: 100%;
+                    height: 15rem;
+    
+                    img{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+    
+                .Project-infoBox{
+                    margin-top: 4rem;
+                    width: 100%;
+                    height: 18rem;
+                    padding: 0 2rem;
+                    color: #fff;
+                    font-family: $font-Noto;
+    
+                    .Project-subTitle{
+                        width: 100%;
+                        line-height: 2rem;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                    }
+    
+                    .Project-title{
+                        width: 100%;
+                        font-size: 1.2rem;
+                        line-height: 6rem;
+                        font-weight: 300;
+                    }
+    
+                    .Project-info{
+                        width: 100%;
+                        margin-top: 2rem;
+                        height: 8rem;
+                        word-break: keep-all;
+                        font-size: 12px;
+                        color: #b4b4b4;
+                    }
+                }
+    
+                .Count-menu{
+                    width: 100%;
+                    height: 5rem;
+    
+                    li{
+                        display: inline-block;
+                        width: 50%;
+                        height: 100%;
+                        margin-right: 0;
+    
+                        .view-count{
+                            justify-content: space-around;
+                        }
+    
+                        .like-count{
+                            justify-content: space-around;
+                        }
+                    }
+                }
+            }
+    
+            .ProjectSkills-container{
+                position: relative;
+                top: 2rem;
+                right: 0;
+                width: 100%;
+                height: 30rem;
+                padding: 0 2rem;
+    
+                .Design-menu{
+                    position: relative;
+                    width: 100%;
+                    height: 15rem;
+    
+                    .menu-title{
+                        width: 100%;
+                        height: 5rem;
+    
+                        h2{
+                            line-height: 5rem;
+                            font-size: 1.2rem;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-family: $font-Mont;
+                        }
+                    }
+    
+                    .menu-button{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 3.5rem;
+                        background-color: #F24E1E;
+                        transition: all 0.5s ease-out;
+                    }
+                }
+    
+                .Skill-menu{
+                    width: 100%;
+                    height : max-content;
+    
+                    .menu-title{
+                        width: 100%;
+                        height: 5rem;
+    
+                        h2{
+                            font-size: 1.2rem;
+                            color: #fff;
+                            font-family: $font-Mont;
+                            text-transform: uppercase;
+                        }
+                    }
+    
+                    .Skill-list{
+                        width: 100%;
+                        height: max-content;
+    
+                        li{
+                            display: inline-block;
+                            width: max-content;
+                            height: 3rem;
+                            margin-top: 1rem;
+                            margin-right: 1rem;
+    
+                            .Skill-item{
+                                border: 2px solid rgba($color: #fff, $alpha: 0.7);
+                                width: max-content;
+                                height: 3rem;
+                                padding : 0 1rem;
+    
+                                span{
+                                    font-family: $font-Mont;
+                                    font-weight: bold;
+                                    line-height: 3rem;
+                                    color: rgba($color: #fff, $alpha: 0.7);
+                                    font-size: 13px;
+                                }
+    
+                                &:hover{
+                                    background-color: #565656;
+                                    color: #fff;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .CurrentBoard-container{
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: max-content;
+            margin-top: 5rem;
+    
+            .Project-category{
+                display: none;
+            }
+    
+            .Project-Board{
+                width: 100%;
+    
+                .Main-Board,.Sub-Board{
+                    padding : 0 2rem;
+    
+                    .Main-title{
+                        width: 100%;
+                        line-height: 5rem;
+                        margin-bottom: 2rem;
+                        text-transform: uppercase;
+                        font-family: $font-Mont;
+                        color: #fff;
+                    }
+    
+                    .Board-item{
+                        width: 100%;
+                        height: 17rem;
+                        margin-bottom: 5rem;
+    
+                        .page-info{
+                            width: 100%;
+                            line-height: 2rem;
+                            text-transform: uppercase;
+                            font-family: $font-Mont;
+                            color: #fff;
+                            font-size: 10px;
+                            margin-bottom: 2rem;
+                        }
+    
+                        .page-ImgBox{
+                            width: 100%;
+                            height: 13rem;
+    
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

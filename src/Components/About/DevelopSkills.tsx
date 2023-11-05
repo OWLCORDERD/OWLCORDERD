@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CommonService } from '../service';
+import { CommonService } from '../../api';
 
 interface techData {
   id: number;

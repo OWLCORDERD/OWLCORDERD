@@ -1,83 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import { AiFillGithub } from 'react-icons/ai';
-import { ScrollTrigger, gsap } from 'gsap/all';
-import { CommonService } from '../service';
-
-interface advantage {
-  id: number;
-  title: string;
-  info: string;
-}
+import React from 'react';
+import '../../asset/styles/introduce.scss';
 
 function Developer() {
-  const [advanData, setAdvanData] = useState<advantage[]>([]);
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  useEffect(() => {
-    CommonService.getAdvantage().then(res => {
-      setAdvanData(res);
-    });
-
-    ScrollTrigger.create({
-      trigger: '.Developer-container',
-      start: '-10% top',
-      end: '40% top',
-      toggleClass: { targets: '.Developer-profile', className: 'active' },
-    });
-  }, []);
   return (
-    <div className="Developer-container">
-      <div className="Developer-header">
-        <div className="Developer-Index">
-          <div className="Index-title">
-            <h2>Developer</h2>
-          </div>
-
-          <div className="Index-subTitle">
-            <p>저는 개발할때, 아래 3가지의 강점을 가지고 있습니다.</p>
-          </div>
-        </div>
-
-        <div className="Advantages-contents">
-          <div className="Advantages-title">
-            <h2>Advantages</h2>
-          </div>
-
-          <div className="Advantages-info">
-            {advanData.map(item => (
-              <div className="Advantage-item" key={item.id}>
-                <div className="Advantage-titleBox">
-                  <h2 className="title-Index">0{item.id}</h2>
-                  <h2 className="title">{item.title}</h2>
-                </div>
-
-                <div className="Advantage-info">
-                  <p>{item.info}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+    <div className="Introduce-container">
+      <div className="Introduce-titleBox">
+        <div className="Introduce-title">
+          <h1>about developer</h1>
         </div>
       </div>
 
-      <div className="Developer-profile">
-        <div className="profile-img" />
-        <a
-          href="https://owlcoderd.notion.site/eec4489447c4429ab6fa963e5fc7b344"
-          target="_blank"
-          className="view-report"
-          rel="noreferrer"
-        >
-          이력서 보기
-        </a>
-        <div className="profile-Repository">
-          <h2 className="Repository-title">code repository</h2>
-          <div className="Repository">
-            <a href="https://github.com/OWLCORDERD" target="_blank" rel="noreferrer">
-              <AiFillGithub />
-            </a>
-          </div>
+      <div className="Introduce-infoBox">
+        <div className="Developer-ImgBox">
+          <img src={`${process.env.PUBLIC_URL}/Image/프로필 사진.jpg`} alt="개발자 사진" />
+        </div>
+
+        <div className="Introduce-info">
+          <h2>트렌드를 찾아보고 시도해보는 퍼블리싱 프론트앤드 개발자 임민혁입니다.</h2>
+          <p>
+            웹 퍼블리싱부터 프론트앤드 개발까지 발돋움을 진행중인 개발자 임민혁입니다. 저는 개발을 하면서 계속해서
+            새로운 기술들을 배우며 더 나은 사이트를 만들어가는 그 과정이 아름답고 재밌다고 느낍니다.
+            <br />
+            <br />
+            사용자 입장에서 어떠한 UI와 기능을 적절히 융화하여 이목을 끌고 사이트 주제에 적합할지 고민하고 웹 표준과
+            접근성을 고려하기 위해 노력합니다. <br />
+            <br />
+            사용성이 편리하고 사이트 하나만으로 키워드를 여러 방면으로 다양하게 소개할 수 있게 더 나은 기술과 트렌드를
+            찾아보고 지식을 결과물로 만들어내는 것. 이러한 것이 제가 하는 일이라고 생각합니다.
+          </p>
+
+          <a
+            href="https://owlcoderd.notion.site/eec4489447c4429ab6fa963e5fc7b344"
+            target="_blank"
+            className="view-report"
+            rel="noreferrer"
+          >
+            이력서 보기
+          </a>
         </div>
       </div>
     </div>

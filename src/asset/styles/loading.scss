@@ -5,6 +5,7 @@
     width: 100%;
     height: 100vh;
     background-color: #000;
+    overflow: hidden;
 
     .Loading-RotateBox{
         position: absolute;
@@ -111,6 +112,50 @@
                             opacity: 1;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1040px) {
+    .Loading-container{
+        overflow: hidden;
+    
+        .Loading-RotateBox{
+            width: 30rem;
+            height: 30rem;
+    
+            .Loading-Owl{
+                width: 30px;
+                height: 30px;
+            }
+        }
+    
+        .Loading-Txt{
+            width: 60%;
+    
+            h2{
+                width: 70%;
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-family: $font-Mont;
+                line-height: 10rem;
+            }
+    
+            .Loading-dot{
+                display: flex;
+                width: 30%;
+                height: 10rem;
+    
+                span{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: calc(100% / 3);
+                    height: 10rem;
+                    opacity: 0;
                 }
             }
         }

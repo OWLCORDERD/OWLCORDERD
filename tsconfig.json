@@ -20,11 +20,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "preserveValueImports": false,
+    "baseUrl": "src"
   },
   "include": [
     "src"
 , "server"  ],
   "ts-node" : {
     "esm" : true
-  }
+  },
 }

@@ -1,8 +1,11 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import '../../asset/styles/contact.scss';
+import { useNavigate } from 'react-router-dom';
 
 function Contact() {
+  const navigate = useNavigate();
+
   const formRef = useRef(null);
 
   const [inputs, setInputs] = useState({
@@ -43,7 +46,7 @@ function Contact() {
       emailjs.sendForm('service_k0hnyfp', 'template_5a2kqd9', formRef.current, 'UhbB3PcGFHDMDqlgt').then(
         result => {
           alert(`메일을 성공적으로 보냈습니다. [Post Status : ${result.text}]`);
-          window.location.replace('/');
+          navigate('/');
         },
         error => {
           alert(error.text);
