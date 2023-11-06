@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import 'asset/styles/main.scss';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import ScrollToTop from 'CustomHook/ScrollToTop';
 import Loading from 'CustomHook/Loading';
-import { main } from 'reducer/counter';
+import { main } from 'reducer/nextIndex';
 import ResponsiveNav from 'Components/Navigator/ResponsiveNav';
+import MainNav from 'Components/Navigator/MainNav';
+import ResponsiveMenu from 'Components/ResponsiveMenu/ResponsiveMenu';
+import { MenuActiveContext } from 'App';
 import Footer from '../Components/Footer/Footer';
 import MainBanner from '../Components/Banner/MainBanner';
 import Technology from '../Components/About/Technology';
@@ -25,35 +28,49 @@ function Main() {
       setLoading(false);
     }, 3000);
   }, []);
+
   return (
-    <div className="container" id="container">
-      <header>
-        <ResponsiveNav />
-      </header>
+    <>
       <ScrollToTop />
-      {loading === false ? (
+      {loading ? (
         <>
-          <section id="main-banner">
-            <MainBanner />
-          </section>
+          <header>
+            <ResponsiveNav />
+            <MainNav />
+          </header>
 
-          <section id="introduce">
-            <Developer />
-          </section>
-
-          <section id="technology">
-            <Technology />
-          </section>
-
-          <section id="contact">
-            <Contact />
-          </section>
-          <Footer />
+          <Loading />
+          <ResponsiveMenu />
         </>
       ) : (
-        <Loading />
+        <main>
+          <header>
+            <ResponsiveNav />
+            <MainNav />
+          </header>
+
+          <ResponsiveMenu />
+          <div className="container" id="container">
+            <section id="main-banner">
+              <MainBanner />
+            </section>
+
+            <section id="introduce">
+              <Developer />
+            </section>
+
+            <section id="technology">
+              <Technology />
+            </section>
+
+            <section id="contact">
+              <Contact />
+            </section>
+          </div>
+          <Footer />
+        </main>
       )}
-    </div>
+    </>
   );
 }
 

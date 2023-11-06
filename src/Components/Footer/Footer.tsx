@@ -31,7 +31,7 @@ function Footer() {
   const NextIndex = chapter.filter(item => item.currentChapter === chapterTitle);
 
   return (
-    <div className="footer-container">
+    <footer className="footer-container">
       <div className="Next-Chapter">
         <div className="NextChapter-Index">
           <p>{NextIndex[0]?.index}</p>
@@ -80,7 +80,7 @@ function Footer() {
           </li>
         </ul>
       </div>
-    </div>
+    </footer>
   );
 }
 

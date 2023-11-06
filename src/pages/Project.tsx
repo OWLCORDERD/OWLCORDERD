@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { CommonService } from 'api';
 import { useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { project } from 'reducer/counter';
+import { useDispatch } from 'react-redux';
+import { project } from 'reducer/nextIndex';
 import ResponsiveNav from 'Components/Navigator/ResponsiveNav';
+import { MenuActiveContext } from 'App';
+import ResponsiveMenu from 'Components/ResponsiveMenu/ResponsiveMenu';
 import ProjectBanner from '../Components/Banner/ProjectBanner';
 import Footer from '../Components/Footer/Footer';
 import Loading from '../CustomHook/Loading';
@@ -43,10 +45,6 @@ function Project() {
     if (location.pathname === '/Project') {
       dispatch(project('Project'));
     }
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
   }, []);
 
   return (
@@ -54,14 +52,16 @@ function Project() {
       <header>
         <ResponsiveNav />
       </header>
+
+      <ResponsiveMenu />
       {loading === false ? (
-        <>
+        <main>
           <section id="project-banner">
             <ProjectBanner projectDB={projectData} />
           </section>
 
           <Footer />
-        </>
+        </main>
       ) : (
         <Loading />
       )}

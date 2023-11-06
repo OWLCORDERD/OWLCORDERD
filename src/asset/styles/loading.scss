@@ -123,12 +123,42 @@
         overflow: hidden;
     
         .Loading-RotateBox{
-            width: 30rem;
-            height: 30rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+    
+            img{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                max-width: 150px;
+                animation: Rotate 10s linear infinite;
+                
+                @keyframes Rotate{
+                    100%{
+                        transform: translate(-50%, -50%) rotate(360deg);
+                    }
+                }
+            }
     
             .Loading-Owl{
-                width: 30px;
-                height: 30px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: block;
+                content: '';
+                width: 25px;
+                height: 25px;
+                color: #fff;
+                background-image: url('../../../public/Image/logo/logo.png');
+                background-size: contain;
+                background-position: center;
             }
         }
     

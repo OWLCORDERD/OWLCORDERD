@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import 'asset/styles/navbar.scss';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { MenuActiveContext } from 'App';
 
 function ResponsiveNav() {
+  const { clickMenuActive } = useContext(MenuActiveContext);
+
   return (
     <nav className="Responsive-navbar">
       <div className="navbar-logo">
-        <img src={`${process.env.PUBLIC_URL}/Image/logo/logo.png`} alt="logo" />
+        <h1>Owlcoderd</h1>
       </div>
       <div className="menu-button">
-        <span />
-        <span />
-        <span />
+        <RxHamburgerMenu onClick={clickMenuActive} />
       </div>
     </nav>
   );

@@ -113,7 +113,6 @@ function Banner(): JSX.Element {
 
   return (
     <div className="Main-Banner">
-      <MainNav />
       <div className="Banner-Index">
         <motion.div className="Index-contentBox" variants={TxtBoxAnimation} animate="animate" initial="initial">
           <motion.div className="Index-title" variants={TxtAnimation}>

@@ -471,7 +471,7 @@
                         h2{
                             width : 100%;
                             line-height: 150px;
-                            font-size: 1.2rem;
+                            font-size: 1rem;
                             text-align: center;
                             font-family: $font-Noto;
                             font-weight: 500;
@@ -527,8 +527,8 @@
 
             .scroll-icon{
                 display: block;
-                width: 2rem;
-                height: 2rem;
+                width: 1.5rem;
+                height: 1.5rem;
                 animation: scrollAnimate 2s infinite;
                 opacity: 0;
 
@@ -548,7 +548,7 @@
             }
 
             h2{
-                font-size: 1rem;
+                font-size: 12px;
                 font-family: $font-Mont;
                 font-weight: bold;
             }

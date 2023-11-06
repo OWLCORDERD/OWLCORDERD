@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from 'reducer/counter';
+import nextIndexReducer from 'reducer/nextIndex';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    counter: nextIndexReducer,
   },
 });
 
