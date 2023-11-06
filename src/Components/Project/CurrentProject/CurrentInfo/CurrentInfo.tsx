@@ -32,7 +32,7 @@ function CurrentBanner({ currentData }: propsDataType) {
 
         <li>
           <div className="like-count">
-            <AiFillLike fontSize="1.2rem" />
+            <AiFillLike fontSize="1rem" />
             <span>0</span>
           </div>
         </li>

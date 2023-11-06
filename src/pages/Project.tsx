@@ -6,6 +6,8 @@ import { project } from 'reducer/nextIndex';
 import ResponsiveNav from 'Components/Navigator/ResponsiveNav';
 import { MenuActiveContext } from 'App';
 import ResponsiveMenu from 'Components/ResponsiveMenu/ResponsiveMenu';
+import ScrollToTop from 'CustomHook/ScrollToTop';
+import MainNav from 'Components/Navigator/MainNav';
 import ProjectBanner from '../Components/Banner/ProjectBanner';
 import Footer from '../Components/Footer/Footer';
 import Loading from '../CustomHook/Loading';
@@ -45,27 +47,47 @@ function Project() {
     if (location.pathname === '/Project') {
       dispatch(project('Project'));
     }
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
   }, []);
 
   return (
-    <div className="container" id="container">
-      <header>
-        <ResponsiveNav />
-      </header>
+    <>
+      <ScrollToTop />
+      {loading ? (
+        <>
+          <header>
+            <ResponsiveNav />
+          </header>
 
-      <ResponsiveMenu />
-      {loading === false ? (
-        <main>
-          <section id="project-banner">
-            <ProjectBanner projectDB={projectData} />
-          </section>
-
-          <Footer />
-        </main>
+          <main>
+            <div className="container" id="container">
+              <Loading />
+            </div>
+          </main>
+        </>
       ) : (
-        <Loading />
+        <>
+          <header>
+            <MainNav />
+            <ResponsiveNav />
+          </header>
+
+          <ResponsiveMenu />
+          <main>
+            <div className="container" id="container">
+              <section id="project-banner">
+                <ProjectBanner projectDB={projectData} />
+              </section>
+            </div>
+
+            <Footer />
+          </main>
+        </>
       )}
-    </div>
+    </>
   );
 }
 

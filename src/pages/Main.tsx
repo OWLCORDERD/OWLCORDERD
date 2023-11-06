@@ -36,39 +36,46 @@ function Main() {
         <>
           <header>
             <ResponsiveNav />
-            <MainNav />
           </header>
 
-          <Loading />
           <ResponsiveMenu />
+
+          <main>
+            <div className="container" id="container">
+              <Loading />
+            </div>
+          </main>
         </>
       ) : (
-        <main>
+        <>
           <header>
             <ResponsiveNav />
             <MainNav />
           </header>
 
           <ResponsiveMenu />
-          <div className="container" id="container">
-            <section id="main-banner">
-              <MainBanner />
-            </section>
 
-            <section id="introduce">
-              <Developer />
-            </section>
+          <main>
+            <div className="container" id="container">
+              <section id="main-banner">
+                <MainBanner />
+              </section>
 
-            <section id="technology">
-              <Technology />
-            </section>
+              <section id="introduce">
+                <Developer />
+              </section>
 
-            <section id="contact">
-              <Contact />
-            </section>
-          </div>
-          <Footer />
-        </main>
+              <section id="technology">
+                <Technology />
+              </section>
+
+              <section id="contact">
+                <Contact />
+              </section>
+            </div>
+            <Footer />
+          </main>
+        </>
       )}
     </>
   );

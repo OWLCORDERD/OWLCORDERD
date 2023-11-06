@@ -21,7 +21,7 @@
             .Project-ImgBox{
                 position: relative;
                 width: 90%;
-                height: 35rem;
+                height: 32rem;
 
                 img{
                     position: absolute;
@@ -196,6 +196,7 @@
                                 font-weight: bold;
                                 line-height: 3rem;
                                 color: rgba($color: #fff, $alpha: 0.7);
+                                font-size: 13px;
                             }
 
                             &:hover{
@@ -375,10 +376,18 @@
     
                         .view-count{
                             justify-content: space-around;
+
+                            span{
+                                font-size: 12px;
+                            }
                         }
     
                         .like-count{
                             justify-content: space-around;
+
+                            span{
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
@@ -389,13 +398,14 @@
                 top: 2rem;
                 right: 0;
                 width: 100%;
-                height: 30rem;
+                height: 28rem;
                 padding: 0 2rem;
     
                 .Design-menu{
                     position: relative;
                     width: 100%;
-                    height: 15rem;
+                    height: 8.5rem;
+                    margin-bottom: 1.5rem;
     
                     .menu-title{
                         width: 100%;
@@ -423,7 +433,7 @@
     
                 .Skill-menu{
                     width: 100%;
-                    height : max-content;
+                    height : 18rem;
     
                     .menu-title{
                         width: 100%;
@@ -434,6 +444,7 @@
                             color: #fff;
                             font-family: $font-Mont;
                             text-transform: uppercase;
+                            line-height: 5rem;
                         }
                     }
     
@@ -449,7 +460,7 @@
                             margin-right: 1rem;
     
                             .Skill-item{
-                                border: 2px solid rgba($color: #fff, $alpha: 0.7);
+                                border: 1px solid rgba($color: #fff, $alpha: 0.5);
                                 width: max-content;
                                 height: 3rem;
                                 padding : 0 1rem;
@@ -459,7 +470,7 @@
                                     font-weight: bold;
                                     line-height: 3rem;
                                     color: rgba($color: #fff, $alpha: 0.7);
-                                    font-size: 13px;
+                                    font-size: 12px;
                                 }
     
                                 &:hover{
@@ -498,6 +509,7 @@
                         text-transform: uppercase;
                         font-family: $font-Mont;
                         color: #fff;
+                        font-size: 17px;
                     }
     
                     .Board-item{
@@ -510,7 +522,7 @@
                             line-height: 2rem;
                             text-transform: uppercase;
                             font-family: $font-Mont;
-                            color: #fff;
+                            color: rgba($color: #fff, $alpha: 0.7);
                             font-size: 10px;
                             margin-bottom: 2rem;
                         }

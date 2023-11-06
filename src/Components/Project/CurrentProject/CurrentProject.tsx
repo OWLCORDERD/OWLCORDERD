@@ -7,6 +7,7 @@ import CurrentInfo from 'Components/Project/CurrentProject/CurrentInfo/CurrentIn
 import MainNav from 'Components/Navigator/MainNav';
 import ResponsiveNav from 'Components/Navigator/ResponsiveNav';
 import Footer from 'Components/Footer/Footer';
+import ResponsiveMenu from 'Components/ResponsiveMenu/ResponsiveMenu';
 import ProjectSkills from './ProjectSkills/ProjectSkills';
 import CurrentBoard from './CurrentBoard/CurrentBoard';
 
@@ -23,6 +24,8 @@ function DevelopProject() {
         <MainNav />
         <ResponsiveNav />
       </header>
+
+      <ResponsiveMenu />
       <main>
         <section className="CurrentProject-container">
           <div className="Current-Banner">
