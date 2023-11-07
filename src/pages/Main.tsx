@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'asset/styles/main.scss';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -8,7 +8,6 @@ import { main } from 'reducer/nextIndex';
 import ResponsiveNav from 'Components/Navigator/ResponsiveNav';
 import MainNav from 'Components/Navigator/MainNav';
 import ResponsiveMenu from 'Components/ResponsiveMenu/ResponsiveMenu';
-import { MenuActiveContext } from 'App';
 import Footer from '../Components/Footer/Footer';
 import MainBanner from '../Components/Banner/MainBanner';
 import Technology from '../Components/About/Technology';

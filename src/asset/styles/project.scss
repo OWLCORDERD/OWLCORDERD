@@ -216,7 +216,7 @@
         display: flex;
         width: 100%;
         height: max-content;
-        margin-top: 5rem;
+        margin: 5rem 0;
 
         .Project-category{
             position: relative;
@@ -287,7 +287,8 @@
                         line-height: 8rem;
                         text-transform: uppercase;
                         font-family: $font-Mont;
-                        color: #fff;
+                        color: rgba($color: #fff, $alpha: 0.7);
+                        font-size: 14px;
                     }
 
                     .page-ImgBox{
@@ -298,6 +299,202 @@
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer-subMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
+    border-top : 2px solid #fff;
+
+    .footer-copyright{
+        width: 30rem;
+        height: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2rem;
+        margin: 0 2rem;
+        
+        h2{
+            font-size: 1.2rem;
+            font-family: $font-Mont;
+            color: #fff;
+        }
+    }
+
+    .social-menu{
+        width: max-content;
+
+        li{
+            display: inline-block;
+            margin-right: 4rem;
+
+            &:nth-child(4){
+                margin-right: 0;
+            }
+
+            a{
+                width: 5rem;
+                font-size: 1.5rem;
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1440px){
+    .CurrentProject-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding : 0 5rem;
+    
+        .Current-Banner{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: max-content;
+            padding-top : 25vh;
+    
+            .CurrentInfo-container{
+                width: 60%;
+                height: 100%;
+    
+                .Project-ImgBox{
+                    position: relative;
+                    width: 90%;
+                    height: 25rem;
+    
+                    img{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+    
+                .Project-infoBox{
+                    margin-top: 4rem;
+                    width: 90%;
+                    height: 20rem;
+                    color: #fff;
+                    font-family: $font-Noto;
+    
+                    .Project-subTitle{
+                        width: 100%;
+                        line-height: 2rem;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                    }
+    
+                    .Project-title{
+                        width: 100%;
+                        font-size: 1.3rem;
+                        line-height: 8rem;
+                        font-weight: 300;
+                    }
+    
+                    .Project-info{
+                        width: 90%;
+                        margin-top: 2rem;
+                        height: 8rem;
+                        word-break: keep-all;
+                        font-size: 15px;
+                        color: #b4b4b4;
+                    }
+                }
+            }
+        }
+    
+        .CurrentBoard-container{
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: max-content;
+            margin-top: 5rem;
+    
+            .Project-category{
+    
+                ul{
+    
+                    li{
+                        
+                        a{
+                            font-size: 1rem;
+                            font-family: $font-Mont;
+                            color: rgb(107, 107, 107);
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            line-height: 5rem;
+    
+                            &.active{
+                                color: #fff;
+                            }
+                        }
+    
+                        span{
+                            font-size: 1.2rem;
+                            font-family: $font-Mont;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            line-height: 5rem;
+                        }
+                    }
+                }
+            }
+    
+            .Project-Board{
+                flex : 8;
+                width: 80%;
+                height: max-content;
+    
+                .Main-Board,.Sub-Board{
+                    width: 100%;
+                    height: max-content;
+                    padding : 0 5rem;
+    
+                    .Main-title{
+                        width: 100%;
+                        line-height: 5rem;
+                        margin-bottom: 2rem;
+                        text-transform: uppercase;
+                        font-family: $font-Mont;
+                        color: #fff;
+                    }
+    
+                    .Board-item{
+                        width: 100%;
+                        height: 38rem;
+    
+                        .page-info{
+                            width: 100%;
+                            line-height: 8rem;
+                            text-transform: uppercase;
+                            font-family: $font-Mont;
+                            color: rgba($color: #fff, $alpha: 0.7);
+                            font-size: 12px;
+                        }
+    
+                        .page-ImgBox{
+                            width: 100%;
+                            height: 30rem;
+    
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
                         }
                     }
                 }
@@ -538,6 +735,52 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    .footer-subMenu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 10rem;
+        border-top : 2px solid #fff;
+
+        .footer-copyright{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+            margin: 0;
+            
+            h2{
+                font-size: 1rem;
+                font-family: $font-Mont;
+                color: #fff;
+                word-break: keep-all;
+            }
+        }
+
+        .social-menu{
+            width: max-content;
+
+            li{
+                display: inline-block;
+                margin-right: 4rem;
+
+                &:nth-child(4){
+                    margin-right: 0;
+                }
+
+                a{
+                    width: 5rem;
+                    font-size: 1.5rem;
+                    color: #fff;
                 }
             }
         }

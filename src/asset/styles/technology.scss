@@ -246,6 +246,64 @@
     }
 }
 
+@media screen and (max-width : 1440px){
+    /*Technology 최상위 부모 container*/
+.Technology-container{
+    padding : 5rem 2rem;
+
+    /*Advantage container*/
+    .Advantage-container{
+
+            .Advantages-contents{
+
+                .Advantages-list{
+
+                    .Advantage-item{
+
+                        .Advantage-icon{
+                        }
+
+                        .Advantage-titleBox{
+
+                            .title-Index{
+                                width: max-content;
+                                text-align: center;
+                                font-size: 1rem;
+                            }
+
+                            .title{
+                                width: max-content;
+                                margin-left: 5rem;
+                                font-size: 1rem;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                font-family: $font-Mont;
+                                text-align: center;
+                            }
+                        }
+
+                        .Advantage-info{
+                            width: 100%;
+                            height: 4.25rem;
+
+                            p{
+                                width: 100%;
+                                line-height: 4.25rem;
+                                text-align: start;
+                                font-size: 12px;
+                                font-family: $font-Noto;
+                                color: #fff;
+                                font-weight: 100;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}
+}
+
 @media screen and (max-width : 1040px){
    /*Technology 최상위 부모 container*/
     .Technology-container{

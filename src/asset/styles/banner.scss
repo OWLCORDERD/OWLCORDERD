@@ -410,7 +410,8 @@
     }
 }
 
-@media screen and (max-width : 1040px){
+/* 모바일 반응형 */
+@media screen and (min-width : 360px) and (max-width : 1024px){
     /*Main Page Banner*/
     .Main-Banner{
         position: relative;
@@ -438,13 +439,6 @@
 
                 .Index-title{
                     display: none;
-                    width: 100%;
-                    height: 150px;
-                    font-size: 1.8rem;
-                    font-family: $font-Mont;
-                    font-weight: bold;
-                    line-height: 150px;
-                    text-align: center;
                 }
 
                 .Dynamic-TxtBox{
@@ -497,17 +491,6 @@
                     height: 100%;
                     object-fit: cover;
                 }
-
-                &::before{
-                    position: absolute;
-                    width : 100%;
-                    height : 100%;
-                    content: '';
-                    top: 0;
-                    left : 0;
-                    background-color: rgba($color: #000000, $alpha: 0.5);
-                    z-index: 1;
-                }
             }
         }
 
@@ -531,20 +514,6 @@
                 height: 1.5rem;
                 animation: scrollAnimate 2s infinite;
                 opacity: 0;
-
-                @keyframes scrollAnimate{
-                    50%{
-                        opacity: 1;
-                        transition-duration: 1s;
-                        margin-top: 1rem;
-                    }
-
-                    100%{
-                        opacity: 1;
-                        transition-duration: 1s;
-                        margin-top: 2rem;
-                    }
-                }
             }
 
             h2{
@@ -709,29 +678,6 @@
                             width: 100%;
                             height: 15rem;
                             overflow: hidden;
-            
-                            img{
-                                object-fit: cover;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                            }
-
-                            &::before{
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                                content: '';
-                                background-color: rgba($color: #000000, $alpha: 0.8);
-                                z-index: 10;
-                                opacity: 1;
-                                transition: all 0.5s ease-in;
-                                font-size: 2rem;
-                            }
                         }
         
                         .Project-infoBox{
@@ -803,15 +749,6 @@
                             width: 100%;
                             height: 15rem;
                             overflow: hidden;
-            
-                            img{
-                                object-fit: cover;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                            }
 
                             &::before{
                                 transition: all 0.5s ease-out;
@@ -822,19 +759,664 @@
                                 cursor: pointer;
                             }
                         }
+                        
+                    .Project-infoBox{
+                        opacity: 1;
+                        transition: all 0.5s ease-in;
+                    }
 
-                        .Project-infoBox{
-                            opacity: 1;
-                            transition: all 0.5s ease-in;
-                        }
-
-                        .slide-status{
-                            opacity: 1;
-                            transition: all 0.5s ease-in;
-                        }
+                    .slide-status{
+                        opacity: 1;
+                        transition: all 0.5s ease-in;
+                    }
                     }
                 }
             }
         }
     }
+}
+
+/* 테블릿 반응형 */
+@media screen and (min-width : 1040px) and (max-width : 1299px){
+    /*Main Page Banner*/
+    .Main-Banner{
+        position: relative;
+        width : 100%;
+        height : 100vh;
+        padding : 0 2%;
+    
+        .Banner-Index{
+
+            .Index-contentBox{
+                width : 50%;
+                height : 100%;
+
+                .Index-title{
+                    font-size: 25px;
+                }
+
+                .Dynamic-TxtBox{
+
+                    .Dynamic-txt{
+                        font-size: 1.5rem;
+                    }
+
+                    .Static-txt{
+
+                        h2{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .Banner-img{
+                position: relative;
+                width : 50%;
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+
+    .scroll-down{
+
+        .scroll-icon{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        h2{
+            font-size: 15px;
+            font-family: $font-Mont;
+            font-weight: bold;
+        }
+    }
+}
+/*Project Page Banner*/
+.Project-Banner{
+    position: relative;
+    width: 100%;
+    height: 90rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .Project-Index{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40rem;
+
+        .bg-video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+    
+            video{
+                width : 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &::before{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                content: '';
+                background-color: rgba($color: #000000, $alpha: 0.5);
+                z-index: 10;
+            }
+        }
+
+        .Index-infoBox{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 10rem;
+            z-index: 10;
+
+            .Index-subTitle{
+                width: 100%;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                color: #fff;
+                font-family: $font-Mont;
+                font-weight: 100;
+                text-align: center;
+            }
+
+            .Index-title{
+                width: 100%;
+                font-size: 2rem;
+                text-transform: uppercase;
+                color: #fff;
+                font-family: $font-Mont;
+                text-align: center;
+            }
+        }
+    }
+
+    .Slider-wrap{
+        position: relative;
+        width: 100%;
+        height: 65rem;
+        overflow: hidden;
+
+        .Slider-title{
+            display: block;
+            position: absolute;
+            margin-top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+            line-height: 50px;
+            font-size: 15px;
+            text-align: center;
+            color: #fff;
+            font-family: $font-Mont;
+            text-transform: uppercase;
+        }
+
+        .slick-slider{
+            position: relative;
+            width: 100%;
+            height: calc(42rem + 10px);
+            top: 60%;
+            transform: translateY(-60%);
+
+            .NextArrow{
+                position: absolute;
+                right: 5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: transparent;
+                border: none;
+                width: 50px;
+                height: 50px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                font-size: 2.5rem;
+                color: #fff;
+                cursor: pointer;
+            }
+    
+            .PrevArrow{
+                position: absolute;
+                left: 5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: transparent;
+                border: none;
+                width: 50px;
+                height: 50px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                font-size: 2.5rem;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .slick-slide{
+                transform: scale(0.9);
+    
+                .Project-item{
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: calc(42rem + 10px);
+                    color: #fff;
+                    padding: 0 5rem;
+        
+                    .Project-ImgBox{
+                        position: relative;
+                        width: 100%;
+                        height: 30rem;
+                        overflow: hidden;
+        
+                        img{
+                            object-fit: cover;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+    
+                    .Project-infoBox{
+                        position: relative;
+                        width: 100%;
+                        height: 10rem;
+                        padding : 2rem 0 0 0;
+                        opacity: 0;
+                        transition: all 0.5s ease-out;
+    
+                        .Project-type{
+                            width: 100%;
+                            line-height: 2rem;
+                            font-size: 12px;
+                            font-family: $font-Mont;
+                        }
+    
+                        .title-category{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-end;
+    
+                            .title{
+                                font-size : 1.5rem;
+                                font-family: $font-Mont;
+                                line-height: 4rem;
+                            }
+    
+                            .category{
+                                font-size: 12px;
+                                font-family: $font-Noto;
+                                line-height: 4rem;
+                            }
+                        }
+                    }
+
+                    .slide-status{
+                        position: relative;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        margin-top: 2rem;
+                        width: 100%;
+                        height: 10px;
+                        background-color: rgb(77, 77, 77);
+                        opacity: 0;
+                        transition: all 0.5s ease-out;
+                        
+            
+                        .status-bar{
+                            position: absolute;
+                            left: 0;
+                            width: 25%;
+                            height: 100%;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slick-center{
+
+            &.slick-slide{
+
+                .Project-item{
+        
+                    .Project-ImgBox{
+                        position: relative;
+                        width: 100%;
+                        height: 30rem;
+                        overflow: hidden;
+        
+                        img{
+                            object-fit: cover;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+
+                    .Project-infoBox{
+                        opacity: 1;
+                        transition: all 0.5s ease-in;
+                    }
+
+                    .slide-status{
+                        opacity: 1;
+                        transition: all 0.5s ease-in;
+                    }
+                }
+            }
+        }
+    }
+}
+}
+
+/* 맥북 pc 반응형*/
+@media screen and (min-width : 1300px) and (max-width : 1640px){
+
+    /*Main Page Banner*/
+.Main-Banner{
+    
+    .Banner-Index{
+
+        .Index-contentBox{
+            width : 50%;
+
+            .Index-title{
+                font-size: 30px;
+            }
+
+            .Dynamic-TxtBox{
+
+                .Dynamic-txt{
+                    font-size: 1.5rem;
+                }
+
+                .Static-txt{
+
+                    h2{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .Banner-img{
+            width : 50%;
+        }
+    }
+
+    .scroll-down{
+
+        .scroll-icon{
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            animation: scrollAnimate 2s infinite;
+            opacity: 0;
+
+            @keyframes scrollAnimate{
+                50%{
+                    opacity: 1;
+                    transition-duration: 1s;
+                    margin-top: 1rem;
+                }
+
+                100%{
+                    opacity: 1;
+                    transition-duration: 1s;
+                    margin-top: 2rem;
+                }
+            }
+        }
+
+        h2{
+            font-size: 1rem;
+            font-family: $font-Mont;
+            font-weight: bold;
+        }
+    }
+}
+/*Project Page Banner*/
+.Project-Banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+
+    .Project-Index{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+
+        .bg-video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+    
+            video{
+                width : 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &::before{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                content: '';
+                background-color: rgba($color: #000000, $alpha: 0.5);
+                z-index: 10;
+            }
+        }
+
+        .Index-infoBox{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 10rem;
+            z-index: 10;
+
+            .Index-subTitle{
+                width: 100%;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                color: #fff;
+                font-family: $font-Mont;
+                font-weight: 100;
+                text-align: center;
+            }
+
+            .Index-title{
+                width: 100%;
+                font-size: 2rem;
+                text-transform: uppercase;
+                color: #fff;
+                font-family: $font-Mont;
+                text-align: center;
+            }
+        }
+    }
+
+    .Slider-wrap{
+        position: relative;
+        width: 60%;
+        height: 100%;
+        overflow: hidden;
+
+        .Slider-title{
+            display: none;
+        }
+
+        .slick-slider{
+            position: relative;
+            width: 100%;
+            height: calc(32rem + 10px);
+            top: 60%;
+            transform: translateY(-60%);
+
+            .NextArrow{
+                position: absolute;
+                right: 5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: transparent;
+                border: none;
+                width: 50px;
+                height: 50px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                font-size: 2.5rem;
+                color: #fff;
+                cursor: pointer;
+            }
+    
+            .PrevArrow{
+                position: absolute;
+                left: 5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: transparent;
+                border: none;
+                width: 50px;
+                height: 50px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                font-size: 2.5rem;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .slick-slide{
+                transform: scale(0.9);
+    
+                .Project-item{
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: calc(32rem + 10px);
+                    color: #fff;
+                    padding: 0 5rem;
+        
+                    .Project-ImgBox{
+                        position: relative;
+                        width: 100%;
+                        height: 20rem;
+                        overflow: hidden;
+        
+                        img{
+                            object-fit: cover;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+    
+                    .Project-infoBox{
+                        position: relative;
+                        width: 100%;
+                        height: 10rem;
+                        padding : 2rem 0 0 0;
+                        opacity: 0;
+                        transition: all 0.5s ease-out;
+    
+                        .Project-type{
+                            width: 100%;
+                            line-height: 2rem;
+                            font-size: 12px;
+                            font-family: $font-Mont;
+                        }
+    
+                        .title-category{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-end;
+    
+                            .title{
+                                font-size : 1.5rem;
+                                font-family: $font-Mont;
+                                line-height: 4rem;
+                            }
+    
+                            .category{
+                                font-size: 12px;
+                                font-family: $font-Noto;
+                                line-height: 4rem;
+                            }
+                        }
+                    }
+
+                    .slide-status{
+                        position: relative;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        margin-top: 2rem;
+                        width: 100%;
+                        height: 10px;
+                        background-color: rgb(77, 77, 77);
+                        opacity: 0;
+                        transition: all 0.5s ease-out;
+                        
+            
+                        .status-bar{
+                            position: absolute;
+                            left: 0;
+                            width: 25%;
+                            height: 100%;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slick-center{
+
+            &.slick-slide{
+
+                .Project-item{
+        
+                    .Project-ImgBox{
+                        position: relative;
+                        width: 100%;
+                        height: 20rem;
+                        overflow: hidden;
+        
+                        img{
+                            object-fit: cover;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        &::before{
+                            transition: all 0.5s ease-out;
+                            opacity: 0;
+                        }
+
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+
+                    .Project-infoBox{
+                        opacity: 1;
+                        transition: all 0.5s ease-in;
+                    }
+
+                    .slide-status{
+                        opacity: 1;
+                        transition: all 0.5s ease-in;
+                    }
+                }
+            }
+        }
+    }
+}
 }

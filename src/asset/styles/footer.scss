@@ -157,7 +157,7 @@
     
                 h2{
                     position: relative;
-                    font-size: 3rem;
+                    font-size: 3.5rem;
                     line-height: 18rem;
                     text-transform: uppercase;
                     text-align: center;
@@ -205,7 +205,7 @@
             border-top : 2px solid #fff;
     
             .footer-copyright{
-                width: 100%;
+                width: 70%;
                 height: max-content;
                 display: flex;
                 align-items: center;
@@ -225,7 +225,7 @@
     
                 li{
                     display: inline-block;
-                    margin-right: 0;
+                    margin-right: 2rem;
     
                     &:nth-child(4){
                         margin-right: 0;
@@ -301,4 +301,3 @@
         }
     }
 }
-
