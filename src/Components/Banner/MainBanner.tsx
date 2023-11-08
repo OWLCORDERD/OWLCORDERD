@@ -26,9 +26,9 @@ function Banner(): JSX.Element {
       opacity: 1,
       transition: {
         staggerChildren: 0.5,
-        delayChildren: 4,
+        delayChildren: 2,
         duration: 2,
-        delay: 4,
+        delay: 2,
       },
     },
   };
@@ -106,7 +106,7 @@ function Banner(): JSX.Element {
   useEffect(() => {
     const timer = setTimeout(() => {
       typing();
-    }, 4500);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -130,12 +130,12 @@ function Banner(): JSX.Element {
 
         <div className="Banner-img">
           <motion.img
-            src={`${process.env.PUBLIC_URL}Image/coder.gif`}
+            src={`${process.env.PUBLIC_URL}/Image/coder.gif`}
             alt="BannerImg"
             variants={ImgAnimation}
             initial="initial"
             animate="animate"
-            transition={{ opacity: 0, duration: 2, delay: 2 }}
+            transition={{ opacity: 0, duration: 2 }}
           />
         </div>
       </div>
@@ -144,7 +144,7 @@ function Banner(): JSX.Element {
         className="scroll-down"
         initial={{ y: 50, opacity: 0, x: '-50%' }}
         animate={{ y: 0, opacity: 1, x: '-50%' }}
-        transition={{ duration: 1, delay: 4.5 }}
+        transition={{ duration: 1, delay: 2.5 }}
       >
         <TfiMouse className="scroll-icon" />
         <h2>Scroll Down</h2>

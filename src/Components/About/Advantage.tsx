@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { ScrollTrigger, gsap } from 'gsap/all';
 import { CommonService } from '../../api';
 
@@ -53,15 +53,55 @@ const advantageSvg = [
 function Advantage() {
   const [advanData, setAdvanData] = useState<advantage[]>([]);
 
+  const AdctnRef = useRef(null);
+
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     CommonService.getAdvantage().then(res => {
       setAdvanData(res);
     });
+
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      '.Advantage-Index',
+      {
+        x: -100,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: AdctnRef.current,
+          start: '-40% top',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+      },
+    );
+
+    tl.fromTo(
+      '.Advantages-list',
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: AdctnRef.current,
+          start: '-20% top',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+      },
+    );
   }, []);
   return (
-    <div className="Advantage-container">
+    <div className="Advantage-container" ref={AdctnRef}>
       <div className="Advantage-Index">
         <div className="Index-title">
           <h2>Development Advantage</h2>

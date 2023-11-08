@@ -6,8 +6,8 @@ import { SiGithub, SiInstagram, SiNotion, SiGmail } from 'react-icons/si';
 import { projectDB } from 'pages/Project';
 import CurrentInfo from 'Components/Project/CurrentProject/CurrentInfo/CurrentInfo';
 import MainNav from 'Components/Navigator/MainNav';
-import ResponsiveNav from 'Components/Navigator/ResponsiveNav';
-import ResponsiveMenu from 'Components/ResponsiveMenu/ResponsiveMenu';
+import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
+import ResponsiveMenu from 'Components/MobileResponsive/ResponsiveMenu';
 import ProjectSkills from './ProjectSkills/ProjectSkills';
 import CurrentBoard from './CurrentBoard/CurrentBoard';
 

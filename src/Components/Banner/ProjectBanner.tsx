@@ -2,6 +2,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { projectDB } from 'pages/Project';
 import MainNav from '../Navigator/MainNav';
 import '../../asset/styles/slick/slick.css';
@@ -26,8 +27,42 @@ function ProjectBanner({ projectDB }: propsDBType) {
     prevArrow: <PrevArrow />,
   };
 
+  const AnimateBox = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+
+      transition: {
+        delayChildren: 0.5,
+        delay: 1,
+        duration: 2,
+      },
+    },
+  };
+
+  const SlideAnimate = {
+    initial: {
+      opacity: 0,
+      x: '-100%',
+      zIndex: -10,
+    },
+
+    animate: {
+      opacity: 1,
+      x: 0,
+      zIndex: -10,
+
+      transition: {
+        delay: 1.5,
+        duration: 2,
+      },
+    },
+  };
+
   return (
-    <div className="Project-Banner">
+    <motion.div className="Project-Banner" variants={AnimateBox} initial="initial" animate="animate">
       <MainNav />
       <div className="Project-Index">
         <div className="bg-video">
@@ -40,7 +75,7 @@ function ProjectBanner({ projectDB }: propsDBType) {
         </div>
       </div>
 
-      <div className="Slider-wrap">
+      <motion.div className="Slider-wrap" variants={SlideAnimate} animate="animate" initial="initial">
         <div className="Slider-title">
           <h2>Develop Project</h2>
         </div>
@@ -67,8 +102,8 @@ function ProjectBanner({ projectDB }: propsDBType) {
             </div>
           ))}
         </Slider>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

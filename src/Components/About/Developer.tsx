@@ -1,9 +1,70 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../../asset/styles/introduce.scss';
+import { ScrollTrigger, gsap } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Developer() {
+  const ctnRef = useRef(null);
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      '.Introduce-titleBox',
+      {
+        y: 200,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ctnRef.current,
+          start: '-40% top',
+          end: '20% bottom',
+          scrub: 2,
+        },
+      },
+    );
+
+    tl.fromTo(
+      '.Developer-ImgBox',
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ctnRef.current,
+          start: '-20% top',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+      },
+    );
+
+    tl.fromTo(
+      '.Introduce-info',
+      {
+        y: 200,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: ctnRef.current,
+          start: '-20% top',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+      },
+    );
+  }, []);
   return (
-    <div className="Introduce-container">
+    <div className="Introduce-container" ref={ctnRef}>
       <div className="Introduce-titleBox">
         <div className="Introduce-title">
           <h1>about developer</h1>

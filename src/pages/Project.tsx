@@ -3,8 +3,8 @@ import { CommonService } from 'api';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { project } from 'reducer/nextIndex';
-import ResponsiveNav from 'Components/Navigator/ResponsiveNav';
-import ResponsiveMenu from 'Components/ResponsiveMenu/ResponsiveMenu';
+import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
+import ResponsiveMenu from 'Components/MobileResponsive/ResponsiveMenu';
 import ScrollToTop from 'CustomHook/ScrollToTop';
 import MainNav from 'Components/Navigator/MainNav';
 import ProjectBanner from '../Components/Banner/ProjectBanner';
@@ -51,7 +51,7 @@ function Project() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2500);
   }, [projectData]);
 
   return (
