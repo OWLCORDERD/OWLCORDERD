@@ -176,10 +176,19 @@
             height: 100%;
             z-index: -1;
     
-            video{
+            img{
                 width : 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+
+            &::before{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                content: '';
+                background-color: rgba($color: #000000, $alpha: 0.5);
+                z-index: 10;
             }
         }
 
@@ -915,7 +924,7 @@
             height: 100%;
             z-index: -1;
     
-            video{
+            img{
                 width : 100%;
                 height: 100%;
                 object-fit: cover;
@@ -1130,7 +1139,7 @@
 }
 
 /* 맥북 pc 반응형*/
-@media screen and (min-width : 1440px) and (max-width : 1920px){
+@media screen and (min-width : 1440px) and (max-width : 1700px){
 
     /*Main Page Banner*/
 .Main-Banner{

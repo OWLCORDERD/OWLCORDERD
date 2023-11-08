@@ -31,7 +31,7 @@ function ProjectBanner({ projectDB }: propsDBType) {
       <MainNav />
       <div className="Project-Index">
         <div className="bg-video">
-          <video src={`${process.env.PUBLIC_URL}/video/Project-Banner.mp4`} autoPlay muted loop />
+          <img src={`${process.env.PUBLIC_URL}/Image/document.jpg`} alt="" />
         </div>
 
         <div className="Index-infoBox">
