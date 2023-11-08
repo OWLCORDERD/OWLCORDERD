@@ -67,12 +67,6 @@ function Project() {
             <div className="container" id="container">
               <Loading />
             </div>
-
-            <div className="container" id="container">
-              <section id="project-banner">
-                <ProjectBanner projectDB={projectData} />
-              </section>
-            </div>
           </main>
         </>
       ) : (
