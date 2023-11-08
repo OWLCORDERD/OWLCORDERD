@@ -31,51 +31,33 @@ function Main() {
   return (
     <>
       <ScrollToTop />
-      {loading ? (
-        <>
-          <header>
-            <ResponsiveNav />
-          </header>
+      <header>
+        <ResponsiveNav />
+        <MainNav />
+      </header>
 
-          <ResponsiveMenu />
+      <ResponsiveMenu />
 
-          <main>
-            <div className="container" id="container">
-              <Loading />
-            </div>
-          </main>
-        </>
-      ) : (
-        <>
-          <header>
-            <ResponsiveNav />
-            <MainNav />
-          </header>
+      <main>
+        <div className="container" id="container">
+          <section id="main-banner">
+            <MainBanner />
+          </section>
 
-          <ResponsiveMenu />
+          <section id="introduce">
+            <Developer />
+          </section>
 
-          <main>
-            <div className="container" id="container">
-              <section id="main-banner">
-                <MainBanner />
-              </section>
+          <section id="technology">
+            <Technology />
+          </section>
 
-              <section id="introduce">
-                <Developer />
-              </section>
-
-              <section id="technology">
-                <Technology />
-              </section>
-
-              <section id="contact">
-                <Contact />
-              </section>
-            </div>
-            <Footer />
-          </main>
-        </>
-      )}
+          <section id="contact">
+            <Contact />
+          </section>
+        </div>
+        <Footer />
+      </main>
     </>
   );
 }

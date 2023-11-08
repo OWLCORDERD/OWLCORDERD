@@ -28,7 +28,9 @@ function ResponsiveMenu() {
             </Link>
           </li>
           <li>
-            <a href="#">WorkSpace</a>
+            <Link to="/WorkSpace" onClick={clickMenuActive}>
+              WorkSpace
+            </Link>
           </li>
         </ul>
       </nav>

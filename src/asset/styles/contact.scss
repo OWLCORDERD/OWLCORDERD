@@ -189,110 +189,51 @@
 
 @media screen and (max-width : 1440px){
     .Contact-container{
-        position: relative;
-        width: 100%;
-        height: 100vh;
         padding: 5% 2rem;
     
         .Contact-Box{
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            height: 100%;
     
             .Contact-titleBox{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: flex-start;
-                width: 40%;
-                height: 100%;
-                border-top: 2px solid #fff;
     
                 .Contact-title{
-                    width: 100%;
-                    height: 10rem;
-                    font-size: 1.5rem;
-                    line-height: 10rem;
-                    color: #fff;
-                    text-transform: uppercase;
-                    font-family: $font-Mont;
+                    font-size: 1.3rem;
                 }
     
                 .Contact-subTxt{
-                    width: 100%;
-                    height: 25rem;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    justify-content: space-around;
-                    color: #fff;
-                    font-family: $font-Noto;
     
                     h2{
-                        font-size: 1.1rem;
-                        font-weight: bold;
+                        font-size: 1rem;
                     }
     
                     p{
-                        font-weight: 100;
-                        font-size: 1rem;
+                        font-size: 14px;
                     }
                 }
     
                 .Contact-info{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    justify-content: space-around;
-                    width: 100%;
-                    height: 10rem;
     
                     h3{
-                        font-size: 1.2rem;
-                        font-family: $font-Mont;
-                        color: #fff;
+                        font-size: 1rem;
                     }
                 }
             }
     
             .Contact-Form{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: flex-start;
-                width: 40%;
-                height: 100%;
     
                 .Name-Field{
-                    display: block;
-                    width: 100%;
                     height: 7rem;
                     margin-bottom: 1rem;
     
                     h2{
-                        width: 100%;
                         height: 2rem;
-                        font-size: 1.2rem;
-                        line-height: 2rem;
-                        color: #fff;
-                        font-family: $font-Mont;
+                        font-size: 1.1rem;
                     }
     
                     input{
                         width: 100%;
                         height: 3rem;
                         margin-top: 2rem;
-                        font-size: 1rem;
-                        font-family: $font-Noto;
-                        padding: 0 1rem;
-                        border: none;
-                        border-bottom: 2px solid rgba(255,255,255,0.5);
-                        background: none;
-                        font-weight: bold;
-                        color: #fff;
+                        font-size: 15px;
     
                         &:focus{
                             outline: none;
@@ -301,32 +242,19 @@
                 }
     
                 .Email-Field{
-                    display: block;
-                    width: 100%;
                     height: 7rem;
                     margin-bottom: 1rem;
     
                     h2{
-                        width: 100%;
                         height: 2rem;
                         font-size: 1.2rem;
-                        color: #fff;
-                        font-family: $font-Mont;
-                        line-height: 2rem;
                     }
     
                     input{
                         width: 100%;
                         height: 3rem;
                         margin-top: 2rem;
-                        font-size: 1rem;
-                        font-family: $font-Noto;
-                        padding: 0 1rem;
-                        font-weight: bold;
-                        background-color: transparent;
-                        border: none;
-                        border-bottom: 2px solid rgba(255,255,255,0.5);
-                        color: #fff;
+                        font-size: 15px;
     
                         &:focus{
                             outline: none;
@@ -342,36 +270,20 @@
                     h2{
                         width: 100%;
                         height: 3rem;
-                        line-height: 3rem;
                         font-size: 1.2rem;
-                        color: #fff;
-                        font-family: $font-Mont;
                     }
     
                     textarea{
-                        width: 100%;
                         height: 15rem;
-                        margin-top: 2rem;
-                        font-size: 1rem;
-                        font-family: $font-Noto;
-                        font-weight: bold;
-                        background-color: transparent;
-                        border: 2px solid rgba(255,255,255,0.5);
-                        color: #fff;
-                        padding : 1rem;
+                        font-size: 15px;
                     }
                 }
     
                 .submit-button{
                     display: block;
                     width: 100%;
-                    height: 3rem;
-                    background-color: #fff;
-                    font-size: 1.2rem;
-                    font-family: $font-Mont;
-                    font-weight: bold;
-                    border: none;
-                    cursor: pointer;
+                    height: 2.5rem;
+                    font-size: 1rem;
                 }
             }
         }

@@ -15,6 +15,7 @@ function Footer() {
       currentChapter: 'About',
       index: 'Next - Chapter 2',
       nextChapter: 'Project',
+      Link: '/Project',
       info: 'used my front-End skills',
       info2: 'with publishing to made project site',
     },
@@ -23,6 +24,7 @@ function Footer() {
       currentChapter: 'Project',
       index: 'Next - Chapter 3',
       nextChapter: 'WorkSpace',
+      Link: '/WorkSpace',
       info: 'introduce my full-stack skills',
       info2: 'for made web site project',
     },
@@ -38,7 +40,7 @@ function Footer() {
         </div>
 
         <div className="NextChapter-title">
-          <Link to="/Project">
+          <Link to={NextIndex[0]?.Link}>
             <h2>{NextIndex[0]?.nextChapter}</h2>
           </Link>
           <p>Click to Next !</p>

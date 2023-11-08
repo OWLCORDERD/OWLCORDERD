@@ -411,7 +411,7 @@
 }
 
 /* 모바일 반응형 */
-@media screen and (min-width : 360px) and (max-width : 1024px){
+@media screen and (max-width : 768px){
     /*Main Page Banner*/
     .Main-Banner{
         position: relative;
@@ -481,16 +481,6 @@
                 transform: translate(-50%, -50%);
                 width : 100%;
                 height: 100%;
-
-                img{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    transform: translate(0);
-                    width : 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
             }
         }
 
@@ -548,12 +538,6 @@
                 width: 100%;
                 height: 100%;
                 z-index: -1;
-        
-                video{
-                    width : 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
 
                 &::before{
                     position: absolute;
@@ -566,16 +550,12 @@
             }
 
             .Index-infoBox{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
                 position: absolute;
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
                 width: 100%;
-                height: 10rem;
+                height: 12rem;
                 z-index: 10;
 
                 .Index-subTitle{
@@ -630,35 +610,11 @@
                 .NextArrow{
                     position: absolute;
                     right: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    background-color: transparent;
-                    border: none;
-                    width: 50px;
-                    height: 50px;
-                    z-index: 10;
-                    display: flex;
-                    align-items: center;
-                    font-size: 2.5rem;
-                    color: #fff;
-                    cursor: pointer;
                 }
         
                 .PrevArrow{
                     position: absolute;
                     left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    background-color: transparent;
-                    border: none;
-                    width: 50px;
-                    height: 50px;
-                    z-index: 10;
-                    display: flex;
-                    align-items: center;
-                    font-size: 2.5rem;
-                    color: #fff;
-                    cursor: pointer;
                 }
 
                 .slick-slide{
@@ -671,7 +627,7 @@
                         justify-content: space-between;
                         height: calc(27rem + 10px);
                         color: #fff;
-                        padding: 0;
+                        padding: 0 0;
             
                         .Project-ImgBox{
                             position: relative;
@@ -777,56 +733,158 @@
 }
 
 /* 테블릿 반응형 */
-@media screen and (min-width : 1040px) and (max-width : 1299px){
-    /*Main Page Banner*/
-    .Main-Banner{
-        position: relative;
-        width : 100%;
-        height : 100vh;
-        padding : 0 2%;
+@media screen and (min-width : 820px) and (max-width : 1439px){
+/*Main Page Banner*/
+.Main-Banner{
+    position: relative;
+    width : 100%;
+    height : 100vh;
+    padding : 0 0;
+    margin-top: 0;
     
-        .Banner-Index{
+    .Banner-Index{
+        position: relative;
+        top : 0;
+        width : 100%;
+        height : 100%;
+        transform: translateY(0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding : 0 0;
 
-            .Index-contentBox{
-                width : 50%;
-                height : 100%;
+        .Index-contentBox{
+            position: relative;
+            width : 100%;
+            height : 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 5rem;
+            padding-left: 5rem;
+            color: #fff;
 
-                .Index-title{
-                    font-size: 25px;
-                }
-
-                .Dynamic-TxtBox{
-
-                    .Dynamic-txt{
-                        font-size: 1.5rem;
-                    }
-
-                    .Static-txt{
-
-                        h2{
-                            font-size: 1rem;
-                        }
-                    }
-                }
+            .Index-title{
+                width: 100%;
+                height: 150px;
+                font-size: 35px;
+                font-family: $font-Mont;
+                font-weight: bold;
+                line-height: 150px;
             }
 
-            .Banner-img{
-                position: relative;
-                width : 50%;
-                height: 100%;
-                overflow: hidden;
+            .Dynamic-TxtBox{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 150px;
+
+                .Dynamic-txt{
+                    display: block;
+                    width: 50%;
+                    height: 150px;
+                    line-height: 150px;
+                    overflow: hidden;
+                    font-size: 2rem;
+                    font-family: $font-Mont;
+                    text-transform: uppercase;
+
+                    &::after{
+                        content: '';
+                        margin-left: .6rem;
+                        border-right: 2px solid #777;
+                        animation: cursor .9s infinite steps(2);
+                    }
+                }
+
+                .Static-txt{
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    width : 50%;
+                    height: 100%;
+
+                    h2{
+                        width : 100%;
+                        line-height: 150px;
+                        font-size: 1.2rem;
+                        font-family: $font-Noto;
+                        font-weight: 100;
+                    }
+                }
             }
         }
 
+        .Banner-img{
+            position: relative;
+            width : 100%;
+            height: 50%;
+            overflow: hidden;
+
+            img{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width : 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &::before{
+                position: absolute;
+                width : 100%;
+                height : 100%;
+                content: '';
+                top: 0;
+                left : 0;
+                background-color: rgba($color: #000000, $alpha: 0.5);
+                z-index: 1;
+            }
+        }
+    }
+
     .scroll-down{
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 6rem;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
 
         .scroll-icon{
-            width: 1.5rem;
-            height: 1.5rem;
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            animation: scrollAnimate 2s infinite;
+            opacity: 0;
+
+            @keyframes scrollAnimate{
+                50%{
+                    opacity: 1;
+                    transition-duration: 1s;
+                    margin-top: 1rem;
+                }
+
+                100%{
+                    opacity: 1;
+                    transition-duration: 1s;
+                    margin-top: 2rem;
+                }
+            }
         }
 
         h2{
-            font-size: 15px;
+            font-size: 1rem;
             font-family: $font-Mont;
             font-weight: bold;
         }
@@ -936,37 +994,11 @@
             transform: translateY(-60%);
 
             .NextArrow{
-                position: absolute;
-                right: 5rem;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: transparent;
-                border: none;
-                width: 50px;
-                height: 50px;
-                z-index: 10;
-                display: flex;
-                align-items: center;
-                font-size: 2.5rem;
-                color: #fff;
-                cursor: pointer;
+                right: 3rem;
             }
     
             .PrevArrow{
-                position: absolute;
-                left: 5rem;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: transparent;
-                border: none;
-                width: 50px;
-                height: 50px;
-                z-index: 10;
-                display: flex;
-                align-items: center;
-                font-size: 2.5rem;
-                color: #fff;
-                cursor: pointer;
+                left: 3rem;
             }
 
             .slick-slide{
@@ -1098,7 +1130,7 @@
 }
 
 /* 맥북 pc 반응형*/
-@media screen and (min-width : 1300px) and (max-width : 1640px){
+@media screen and (min-width : 1440px) and (max-width : 1920px){
 
     /*Main Page Banner*/
 .Main-Banner{

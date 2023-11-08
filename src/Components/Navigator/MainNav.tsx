@@ -60,8 +60,8 @@ function MainNav() {
           </div>
         </motion.li>
 
-        <motion.li variants={menuAni} className={currentPath === '/Workspace' ? 'active' : ''}>
-          <a href="#">Workspace</a>
+        <motion.li variants={menuAni} className={currentPath === '/WorkSpace' ? 'active' : ''}>
+          <Link to="/WorkSpace">Workspace</Link>
           <div className="menu-info">
             <p>Introducing the curriculum of the skillsI studied.</p>
           </div>

@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { project } from 'reducer/nextIndex';
 import ResponsiveNav from 'Components/Navigator/ResponsiveNav';
-import { MenuActiveContext } from 'App';
 import ResponsiveMenu from 'Components/ResponsiveMenu/ResponsiveMenu';
 import ScrollToTop from 'CustomHook/ScrollToTop';
 import MainNav from 'Components/Navigator/MainNav';
@@ -47,11 +46,13 @@ function Project() {
     if (location.pathname === '/Project') {
       dispatch(project('Project'));
     }
+  }, []);
 
+  useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 3000);
-  }, []);
+  }, [projectData]);
 
   return (
     <>
@@ -65,6 +66,12 @@ function Project() {
           <main>
             <div className="container" id="container">
               <Loading />
+            </div>
+
+            <div className="container" id="container">
+              <section id="project-banner">
+                <ProjectBanner projectDB={projectData} />
+              </section>
             </div>
           </main>
         </>

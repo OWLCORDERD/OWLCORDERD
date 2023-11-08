@@ -253,6 +253,9 @@
 
     /*Advantage container*/
     .Advantage-container{
+        .Advantage-Index{
+            padding: 0 3rem;
+        }
 
             .Advantages-contents{
 
@@ -301,6 +304,11 @@
                 }
             }
         }
+
+        /*Development Skills container*/
+    .DevelopSkills-container{
+        padding: 0 3rem;
+    }
 }
 }
 
