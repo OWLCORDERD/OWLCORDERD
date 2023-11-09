@@ -8,8 +8,9 @@ import CurrentInfo from 'Components/Project/CurrentProject/CurrentInfo/CurrentIn
 import MainNav from 'Components/Navigator/MainNav';
 import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
 import ResponsiveMenu from 'Components/MobileResponsive/ResponsiveMenu';
-import ProjectSkills from './ProjectSkills/ProjectSkills';
-import CurrentBoard from './CurrentBoard/CurrentBoard';
+import { Helmet } from 'react-helmet-async';
+import ProjectSkills from '../Components/Project/CurrentProject/ProjectSkills/ProjectSkills';
+import CurrentBoard from '../Components/Project/CurrentProject/CurrentBoard/CurrentBoard';
 
 function DevelopProject() {
   const location = useLocation();
@@ -20,6 +21,19 @@ function DevelopProject() {
 
   return (
     <div className="container">
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content={`${projectDB.siteTitle} 프로젝트는 ${projectDB.siteSubTitle}입니다. 해당 프로젝트의 소개 및 구현된 페이지들을 상세히 확인하실 수 있습니다.`}
+        />
+        <meta
+          name="keywords"
+          content="Front-end, developer, 프론트엔드 개발자, 웹 개발자, Publisher, Publishing, 포트폴리오, 웹 사이트"
+        />
+
+        <title>{projectDB.siteTitle} Project</title>
+      </Helmet>
       <header>
         <MainNav />
         <ResponsiveNav />

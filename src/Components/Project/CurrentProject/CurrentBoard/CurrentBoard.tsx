@@ -30,14 +30,17 @@ function CurrentBoard({ currentData }: titleProps) {
 
   const mainPage = [
     {
+      id: 1,
       name: 'Main Page Function Chapter.1',
       img: currentData.mainImg,
     },
     {
+      id: 2,
       name: 'Main Page Function Chapter.2',
       img: currentData.mainImg2,
     },
     {
+      id: 3,
       name: 'Main Page Function Chapter.3',
       img: currentData.mainImg3,
     },
@@ -45,18 +48,22 @@ function CurrentBoard({ currentData }: titleProps) {
 
   const subPage = [
     {
+      id: 4,
       name: 'Sub Page Function Chapter.1',
       img: currentData.subImg,
     },
     {
+      id: 5,
       name: 'Sub Page Function Chapter.2',
       img: currentData.subImg2,
     },
     {
+      id: 6,
       name: 'Sub Page Function Chapter.3',
       img: currentData.subImg3,
     },
     {
+      id: 7,
       name: 'Sub Page Function Chapter.4',
       img: currentData.subImg4,
     },
@@ -86,7 +93,7 @@ function CurrentBoard({ currentData }: titleProps) {
         <div className="Main-Board" ref={mainRef}>
           <h1 className="Main-title">Main page</h1>
           {mainPage.map(item => (
-            <div className="Board-item">
+            <div className="Board-item" key={item.id}>
               <div className="page-info">
                 <h1>{item.name}</h1>
               </div>
@@ -100,7 +107,7 @@ function CurrentBoard({ currentData }: titleProps) {
         <div className="Sub-Board" ref={subRef}>
           <h1 className="Main-title">Sub page</h1>
           {subPage.map(item => (
-            <div className="Board-item">
+            <div className="Board-item" key={item.id}>
               <div className="page-info">
                 <h1>{item.name}</h1>
               </div>

@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import './App.css';
 import PageRoute from 'Route/PageRoute';
 import { Provider } from 'react-redux';
+import { HelmetProvider } from 'react-helmet-async';
 import { store } from './store/index';
 
 interface menuActiveType {
@@ -26,11 +27,13 @@ function App() {
     [responsiveMenuActive, clickMenuActive],
   );
   return (
-    <Provider store={store}>
-      <MenuActiveContext.Provider value={contextValue}>
-        <PageRoute />
-      </MenuActiveContext.Provider>
-    </Provider>
+    <HelmetProvider>
+      <Provider store={store}>
+        <MenuActiveContext.Provider value={contextValue}>
+          <PageRoute />
+        </MenuActiveContext.Provider>
+      </Provider>
+    </HelmetProvider>
   );
 }
 
