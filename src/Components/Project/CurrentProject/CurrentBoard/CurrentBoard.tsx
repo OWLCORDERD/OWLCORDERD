@@ -77,12 +77,12 @@ function CurrentBoard({ currentData }: titleProps) {
             <span>Category</span>
           </li>
           <li>
-            <a href="#" className="mainPage">
+            <a href="/Project-Mainpage" className="mainPage">
               - Main
             </a>
           </li>
           <li>
-            <a href="#" className="subPage">
+            <a href="/Project-Subpage" className="subPage">
               - SubPage
             </a>
           </li>

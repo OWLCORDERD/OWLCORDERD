@@ -61,22 +61,26 @@ function Footer() {
         </div>
         <ul className="social-menu">
           <li>
-            <a href="https://github.com/OWLCORDERD">
+            <a href="https://github.com/OWLCORDERD" target="_blank" rel="noreferrer">
               <SiGithub />
             </a>
           </li>
           <li>
-            <a href="https://owlcoderd.notion.site/eec4489447c4429ab6fa963e5fc7b344">
+            <a href="https://owlcoderd.notion.site/eec4489447c4429ab6fa963e5fc7b344" target="_blank" rel="noreferrer">
               <SiNotion />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a
+              href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kim461577@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <SiGmail />
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://www.instagram.com/min_telligent/" target="_blank" rel="noreferrer">
               <SiInstagram />
             </a>
           </li>
