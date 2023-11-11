@@ -2,7 +2,7 @@ import { projectDB } from 'pages/Project';
 import React from 'react';
 
 interface propsDataType {
-  currentData: projectDB;
+  currentData: projectDB | null;
 }
 
 function ProjectSkills({ currentData }: propsDataType) {

@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap, ScrollTrigger } from 'gsap/all';
 
 interface titleProps {
-  currentData: projectDB;
+  currentData: projectDB | null;
 }
 
 function CurrentBoard({ currentData }: titleProps) {

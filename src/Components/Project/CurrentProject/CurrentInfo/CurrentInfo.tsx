@@ -3,7 +3,7 @@ import React from 'react';
 import { AiFillLike } from 'react-icons/ai';
 
 interface propsDataType {
-  currentData: projectDB;
+  currentData: projectDB | null;
 }
 
 function CurrentBanner({ currentData }: propsDataType) {
