@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import '../../asset/styles/banner.scss';
 import { TfiMouse } from 'react-icons/tfi';
 import { motion } from 'framer-motion';
-import MainNav from '../Navigator/MainNav';
 
 function Banner(): JSX.Element {
   const ImgAnimation = {
@@ -45,16 +44,14 @@ function Banner(): JSX.Element {
     },
   };
 
-  const dynamicTxts = ['Front-End', 'Publishing'];
-
   const typingRef = useRef<number>(0);
 
   const DynamicRef = useRef<HTMLDivElement>(null);
 
-  const typing = async () => {
-    const dynamicTxt = dynamicTxts[typingRef.current].split('');
+  const typing = useCallback(() => {
+    const dynamicTxts = ['Front-End', 'Publishing'];
 
-    stillRun();
+    const dynamicTxt = dynamicTxts[typingRef.current].split('');
 
     function stillRun() {
       if (DynamicRef.current?.innerHTML !== undefined) {
@@ -68,40 +65,36 @@ function Banner(): JSX.Element {
       }
     }
 
-    setTimeout(() => {
-      remove();
-    }, 2000);
-  };
-
-  const remove = async () => {
-    const dynamicTxt = dynamicTxts[typingRef.current].split('');
-
-    stillRun2();
-
-    function stillRun2() {
-      if (DynamicRef.current?.innerHTML !== undefined) {
-        dynamicTxt.pop();
-
-        DynamicRef.current.innerHTML = dynamicTxt.join('');
-      }
-
-      if (dynamicTxt.length) {
-        setTimeout(() => {
-          stillRun2();
-        }, 200);
-      }
-    }
-
-    if (typingRef.current === 0) {
-      typingRef.current += 1;
-    } else {
-      typingRef.current = 0;
-    }
+    stillRun();
 
     setTimeout(() => {
-      typing();
+      const dynamicTxt = dynamicTxts[typingRef.current].split('');
+
+      function removeWord() {
+        if (DynamicRef.current?.innerHTML !== undefined) {
+          dynamicTxt.pop();
+
+          DynamicRef.current.innerHTML = dynamicTxt.join('');
+        }
+        if (dynamicTxt.length) {
+          setTimeout(() => {
+            removeWord();
+          }, 200);
+        }
+      }
+      removeWord();
+
+      if (typingRef.current === 0) {
+        typingRef.current += 1;
+      } else {
+        typingRef.current = 0;
+      }
+
+      setTimeout(() => {
+        typing();
+      }, 2000);
     }, 2000);
-  };
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -109,7 +102,7 @@ function Banner(): JSX.Element {
     }, 2500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [typing]);
 
   return (
     <div className="Main-Banner">
@@ -120,7 +113,9 @@ function Banner(): JSX.Element {
           </motion.div>
 
           <motion.div className="Dynamic-TxtBox" variants={TxtAnimation}>
-            <h1 className="Dynamic-txt" ref={DynamicRef} />
+            <h1 className="Dynamic-txt" ref={DynamicRef}>
+              {}
+            </h1>
 
             <div className="Static-txt">
               <h2>개발자를 소개합니다.</h2>

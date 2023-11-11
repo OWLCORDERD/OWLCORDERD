@@ -22,5 +22,7 @@ module.exports = {
     'react/require-default-props': 'off', // or "warn"
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'jsx-a11y/no-noninteractive-element-interactions': 0,
+    'no-alert': 'off',
+    '@typescript-eslint/no-explicit-any': ['off'],
   },
 };

@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import 'asset/styles/main.scss';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import ScrollToTop from 'CustomHook/ScrollToTop';
-import Loading from 'CustomHook/Loading';
 import { main } from 'reducer/nextIndex';
 import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
 import MainNav from 'Components/Navigator/MainNav';
@@ -23,7 +22,7 @@ function Main() {
     if (location.pathname === '/') {
       dispatch(main('About'));
     }
-  }, []);
+  }, [location.pathname, dispatch]);
 
   return (
     <>

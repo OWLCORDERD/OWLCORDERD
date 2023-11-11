@@ -45,17 +45,15 @@ function ProjectBanner({ projectDB }: propsDBType) {
   const SlideAnimate = {
     initial: {
       opacity: 0,
-      x: '-100%',
-      zIndex: -10,
+      y: 50,
     },
 
     animate: {
       opacity: 1,
-      x: 0,
-      zIndex: -10,
+      y: 0,
 
       transition: {
-        delay: 1.5,
+        delay: 2,
         duration: 2,
       },
     },

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CommonService } from 'api';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -47,7 +47,7 @@ function Project() {
     if (location.pathname === '/Project') {
       dispatch(project('Project'));
     }
-  }, []);
+  }, [location.pathname, dispatch]);
 
   useEffect(() => {
     setTimeout(() => {
