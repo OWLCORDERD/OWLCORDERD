@@ -37,7 +37,7 @@ export interface projectDB {
 
 function Project() {
   const [loading, setLoading] = useState<boolean>(true);
-  const [projectData, setProjectData] = useState<projectDB[]>([]);
+  const [projectData, setProjectData] = useState<projectDB[] | null>([]);
   const location = useLocation();
   const dispatch = useDispatch();
 

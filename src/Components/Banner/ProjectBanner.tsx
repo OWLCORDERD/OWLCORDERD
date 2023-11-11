@@ -11,7 +11,7 @@ import NextArrow from '../Project/slideButton/NextArrow';
 import PrevArrow from '../Project/slideButton/PrevArrow';
 
 interface propsDBType {
-  projectDB: projectDB[];
+  projectDB: projectDB[] | null;
 }
 
 function ProjectBanner({ projectDB }: propsDBType) {
@@ -78,7 +78,7 @@ function ProjectBanner({ projectDB }: propsDBType) {
           <h2>Develop Project</h2>
         </div>
         <Slider {...settings}>
-          {projectDB.map((item, index) => (
+          {projectDB?.map((item, index) => (
             <div className="Project-item" key={item.id}>
               <Link to="/CurrentProject" state={{ projectData: item }}>
                 <div className="Project-ImgBox">
