@@ -25,14 +25,14 @@ function DevelopProject() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content={`${projectDB.siteTitle} 프로젝트는 ${projectDB.siteSubTitle}입니다. 해당 프로젝트의 소개 및 구현된 페이지들을 상세히 확인하실 수 있습니다.`}
+          content={`${projectDB?.siteTitle} 프로젝트는 ${projectDB?.siteSubTitle}입니다. 해당 프로젝트의 소개 및 구현된 페이지들을 상세히 확인하실 수 있습니다.`}
         />
         <meta
           name="keywords"
           content="Front-end, developer, 프론트엔드 개발자, 웹 개발자, Publisher, Publishing, 포트폴리오, 웹 사이트"
         />
 
-        <title>{projectDB.siteTitle} Project</title>
+        <title>{projectDB?.siteTitle} Project</title>
       </Helmet>
       <header>
         <MainNav />

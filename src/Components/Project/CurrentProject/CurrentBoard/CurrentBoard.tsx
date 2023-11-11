@@ -32,17 +32,17 @@ function CurrentBoard({ currentData }: titleProps) {
     {
       id: 1,
       name: 'Main Page Function Chapter.1',
-      img: currentData.mainImg,
+      img: currentData?.mainImg,
     },
     {
       id: 2,
       name: 'Main Page Function Chapter.2',
-      img: currentData.mainImg2,
+      img: currentData?.mainImg2,
     },
     {
       id: 3,
       name: 'Main Page Function Chapter.3',
-      img: currentData.mainImg3,
+      img: currentData?.mainImg3,
     },
   ];
 
@@ -50,22 +50,22 @@ function CurrentBoard({ currentData }: titleProps) {
     {
       id: 4,
       name: 'Sub Page Function Chapter.1',
-      img: currentData.subImg,
+      img: currentData?.subImg,
     },
     {
       id: 5,
       name: 'Sub Page Function Chapter.2',
-      img: currentData.subImg2,
+      img: currentData?.subImg2,
     },
     {
       id: 6,
       name: 'Sub Page Function Chapter.3',
-      img: currentData.subImg3,
+      img: currentData?.subImg3,
     },
     {
       id: 7,
       name: 'Sub Page Function Chapter.4',
-      img: currentData.subImg4,
+      img: currentData?.subImg4,
     },
   ];
 
