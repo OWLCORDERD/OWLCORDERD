@@ -15,7 +15,7 @@ import CurrentBoard from '../Components/Project/CurrentProject/CurrentBoard/Curr
 function DevelopProject() {
   const location = useLocation();
 
-  const projectDB: projectDB | null = location.state.projectData;
+  const projectDB: projectDB = location?.state?.projectData;
 
   gsap.registerPlugin(ScrollTrigger);
 
