@@ -32,7 +32,7 @@ function DevelopProject() {
           content="Front-end, developer, 프론트엔드 개발자, 웹 개발자, Publisher, Publishing, 포트폴리오, 웹 사이트"
         />
 
-        <title>{projectDB?.siteTitle} Project</title>
+        <title>{`${projectDB?.siteTitle} Project`}</title>
       </Helmet>
       <header>
         <MainNav />

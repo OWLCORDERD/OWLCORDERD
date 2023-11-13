@@ -30,9 +30,7 @@ function Main() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Introducing Developer Lim Min Hyeok Profile Site - 퍼블리싱부터 프론트엔드 개발까지
-        html, css, scss, javascript, typescript 등 다양한 언어와 다양한 애니메이션 라이브러리를 활용한 퍼블리싱을 통해
-        인터렉티브한 페이지 구현을 매일 더 발전하기 위해 노력하는 개발자입니다. 현재 개발 중인 프로젝트들을 확인하실 수 있습니다."
+          content="퍼블리싱부터 프론트엔드 개발까지 html, css, scss, javascript, typescript 등 다양한 언어와 다양한 애니메이션 라이브러리를 활용한 퍼블리싱을 통해 인터렉티브한 페이지 구현을 매일 더 발전하기 위해 노력하는 개발자 OWLCODERD, 임민혁입니다. 현재 개발 중인 프로젝트들을 확인하실 수 있습니다."
         />
         <meta
           name="keywords"
