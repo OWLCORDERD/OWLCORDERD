@@ -10,6 +10,48 @@ interface techData {
 }
 
 function DevelopSkills() {
+  const fetchFailed = [
+    {
+      id: 1,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+    {
+      id: 2,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+    {
+      id: 3,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+    {
+      id: 4,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+    {
+      id: 5,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+    {
+      id: 6,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+    {
+      id: 7,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+    {
+      id: 8,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+  ];
   const [TechData, setTechData] = useState<techData[]>([]);
 
   const [tab, setTab] = useState<string>('Develop');
@@ -50,27 +92,32 @@ function DevelopSkills() {
         </div>
       </div>
 
-      {tab === 'Develop' ? (
-        <div className="DevelopSkill-contents">
-          {DevelopData.map(item => (
-            <div className="skill-item" key={item.id}>
-              <h2>{item.TechTitle}</h2>
-              <img src={item.TechImg} alt="TechImg" />
-              <p>{item.TechInfo}</p>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="DevelopSkill-contents">
-          {DesignData.map(item => (
-            <div className="skill-item" key={item.id}>
-              <h2>{item.TechTitle}</h2>
-              <img src={item.TechImg} alt="TechImg" />
-              <p>{item.TechInfo}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="DevelopSkill-contents">
+        {tab === 'Develop' && TechData !== undefined
+          ? DevelopData.map(item => (
+              <div className="skill-item" key={item.id}>
+                <h2>{item.TechTitle}</h2>
+                <img src={item.TechImg} alt="TechImg" />
+                <p>{item.TechInfo}</p>
+              </div>
+            ))
+          : DesignData.map(item => (
+              <div className="skill-item" key={item.id}>
+                <h2>{item.TechTitle}</h2>
+                <img src={item.TechImg} alt="TechImg" />
+                <p>{item.TechInfo}</p>
+              </div>
+            ))}
+        {TechData.length === 0
+          ? fetchFailed.map(item => (
+              <div className="skill-item" key={item.id}>
+                <h2>{item.title}</h2>
+                <img src="" alt="TechImg" />
+                <p>{item.info}</p>
+              </div>
+            ))
+          : null}
+      </div>
     </div>
   );
 }

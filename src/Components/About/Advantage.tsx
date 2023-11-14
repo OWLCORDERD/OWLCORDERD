@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ScrollTrigger, gsap } from 'gsap/all';
+import { FaHammer } from 'react-icons/fa';
 import { CommonService } from '../../api';
 
 interface advantage {
@@ -52,6 +53,24 @@ const advantageSvg = [
 
 function Advantage() {
   const [advanData, setAdvanData] = useState<advantage[]>([]);
+
+  const fetchFailed = [
+    {
+      id: 1,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+    {
+      id: 2,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+    {
+      id: 3,
+      title: 'Data Fetch Failed',
+      info: '',
+    },
+  ];
 
   const AdctnRef = useRef(null);
 
@@ -114,19 +133,35 @@ function Advantage() {
 
       <div className="Advantages-contents">
         <div className="Advantages-list">
-          {advanData.map(item => (
-            <div className="Advantage-item" key={item.id}>
-              <div className="Advantage-icon">{advantageSvg[item.id - 1]?.icon()}</div>
-              <div className="Advantage-titleBox">
-                <h2 className="title-Index">0{item.id}</h2>
-                <h2 className="title">{item.title}</h2>
-              </div>
+          {advanData.length === 0
+            ? fetchFailed.map(item => (
+                <div className="Advantage-item" key={item.id}>
+                  <div className="Advantage-icon">
+                    <FaHammer color="#fff" fontSize="2.5rem" />
+                  </div>
+                  <div className="Advantage-titleBox">
+                    <h2 className="title-Index">0{item.id}</h2>
+                    <h2 className="title">{item.title}</h2>
+                  </div>
 
-              <div className="Advantage-info">
-                <p>{item.info}</p>
-              </div>
-            </div>
-          ))}
+                  <div className="Advantage-info">
+                    <p>{item.info}</p>
+                  </div>
+                </div>
+              ))
+            : advanData.map(item => (
+                <div className="Advantage-item" key={item.id}>
+                  <div className="Advantage-icon">{advantageSvg[item.id - 1]?.icon()}</div>
+                  <div className="Advantage-titleBox">
+                    <h2 className="title-Index">0{item.id}</h2>
+                    <h2 className="title">{item.title}</h2>
+                  </div>
+
+                  <div className="Advantage-info">
+                    <p>{item.info}</p>
+                  </div>
+                </div>
+              ))}
         </div>
       </div>
     </div>
