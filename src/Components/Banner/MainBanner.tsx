@@ -4,13 +4,17 @@ import { TfiMouse } from 'react-icons/tfi';
 import { motion } from 'framer-motion';
 
 function Banner(): JSX.Element {
-  const ImgAnimation = {
+  const ImgBoxAnimation = {
     initial: {
-      width: '0%',
+      opacity: 0,
     },
 
     animate: {
-      width: '100%',
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        duration: 1,
+      },
     },
   };
 
@@ -25,9 +29,9 @@ function Banner(): JSX.Element {
       opacity: 1,
       transition: {
         staggerChildren: 0.5,
-        delayChildren: 2,
+        delayChildren: 2.5,
         duration: 2,
-        delay: 2,
+        delay: 2.5,
       },
     },
   };
@@ -109,7 +113,7 @@ function Banner(): JSX.Element {
       <div className="Banner-Index">
         <motion.div className="Index-contentBox" variants={TxtBoxAnimation} animate="animate" initial="initial">
           <motion.div className="Index-title" variants={TxtAnimation}>
-            <h2>PORTFOLIO</h2>
+            <h2>Min Hyeok PORTFOLIO</h2>
           </motion.div>
 
           <motion.div className="Dynamic-TxtBox" variants={TxtAnimation}>
@@ -123,23 +127,22 @@ function Banner(): JSX.Element {
           </motion.div>
         </motion.div>
 
-        <div className="Banner-img">
-          <motion.img
-            src={`${process.env.PUBLIC_URL}/Image/coder.gif`}
-            alt="BannerImg"
-            variants={ImgAnimation}
-            initial="initial"
-            animate="animate"
-            transition={{ opacity: 0, duration: 2 }}
-          />
-        </div>
+        <motion.div className="Banner-img" variants={ImgBoxAnimation} animate="animate" initial="initial">
+          <div className="circle-txtBox">
+            <img src={`${process.env.PUBLIC_URL}/Image/Circle/Banner-CircleTxtBox.png`} alt="BannerImg" />
+          </div>
+
+          <div className="owl-icon">
+            <img src={`${process.env.PUBLIC_URL}/Image/logo/logo.png`} alt="올빼미 로고 아이콘" />
+          </div>
+        </motion.div>
       </div>
 
       <motion.div
         className="scroll-down"
         initial={{ y: 50, opacity: 0, x: '-50%' }}
         animate={{ y: 0, opacity: 1, x: '-50%' }}
-        transition={{ duration: 1, delay: 2.5 }}
+        transition={{ duration: 1, delay: 3 }}
       >
         <TfiMouse className="scroll-icon" />
         <h2>Scroll Down</h2>

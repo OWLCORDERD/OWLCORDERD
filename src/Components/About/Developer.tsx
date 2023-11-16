@@ -48,7 +48,7 @@ function Developer() {
     tl.fromTo(
       '.Introduce-info',
       {
-        y: 200,
+        y: 100,
         opacity: 0,
       },
       {

@@ -10,184 +10,73 @@
     overflow: hidden;
     z-index: 10;
 
-    .Loading-RotateBox{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 30rem;
-        height: 30rem;
-
-        img{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 150px;
-            animation: Rotate 10s linear infinite;
-            
-            @keyframes Rotate{
-                100%{
-                    transform: translate(-50%, -50%) rotate(360deg);
-                }
-            }
-        }
-
-        .Loading-Owl{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: block;
-            content: '';
-            width: 35px;
-            height: 35px;
-            color: #fff;
-            background-image: url('../../../public/Image/logo/logo.png');
-            background-size: contain;
-            background-position: center;
-        }
-    }
-
     .Loading-Txt{
         position: absolute;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: space-between;
         width: 25rem;
-        height: 10rem;
-        bottom: 10%;
+        height: 20rem;
+        top : 50%;
         left: 50%;
-        transform: translate(-50%, -10%);
+        transform: translate(-50%, -50%);
         color: #fff;
 
         h2{
-            width: 16rem;
-            font-size: 2rem;
+            width: 100%;
+            font-size: 1.5rem;
             text-transform: uppercase;
             font-weight: bold;
             font-family: $font-Mont;
             line-height: 10rem;
+            text-align: center;
         }
 
-        .Loading-dot{
-            display: flex;
+        .Loading-spinner{
+            position: relative;
             width: 10rem;
             height: 10rem;
-
-            span{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: calc(10rem / 3);
-                height: 10rem;
-                font-size: 10rem;
-                opacity: 0;
-
-                &:nth-child(1){
-                    animation: dot1 infinite;
-                    animation-duration: 1s;
-                    @keyframes dot1{
-                        100%{
-                            opacity: 1;
-                        }
-                    }
-                }
-
-                &:nth-child(2){
-                    animation: dot2 infinite;
-                    animation-delay: 1s;
-                    animation-duration: 1s;
-                    @keyframes dot2{
-                        100%{
-                            opacity: 1;
-                        }
-                    }
-                }
-
-                &:nth-child(3){
-                    animation: dot3 infinite;
-                    animation-delay: 2s;
-                    animation-duration: 1s;
-                    @keyframes dot3{
-                        100%{
-                            opacity: 1;
-                        }
-                    }
-                }
-            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
 
 @media screen and (max-width : 1040px) {
     .Loading-container{
-        overflow: hidden;
-    
-        .Loading-RotateBox{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
-    
-            img{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                max-width: 150px;
-                animation: Rotate 10s linear infinite;
-                
-                @keyframes Rotate{
-                    100%{
-                        transform: translate(-50%, -50%) rotate(360deg);
-                    }
-                }
-            }
-    
-            .Loading-Owl{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: block;
-                content: '';
-                width: 25px;
-                height: 25px;
-                color: #fff;
-                background-image: url('../../../public/Image/logo/logo.png');
-                background-size: contain;
-                background-position: center;
-            }
-        }
     
         .Loading-Txt{
-            width: 60%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 25rem;
+            height: 20rem;
+            top : 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
     
             h2{
-                width: 70%;
-                font-size: 1rem;
+                width: 100%;
+                font-size: 1.2rem;
                 text-transform: uppercase;
                 font-weight: bold;
                 font-family: $font-Mont;
                 line-height: 10rem;
+                text-align: center;
             }
     
-            .Loading-dot{
-                display: flex;
-                width: 30%;
+            .Loading-spinner{
+                position: relative;
+                width: 10rem;
                 height: 10rem;
-    
-                span{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: calc(100% / 3);
-                    height: 10rem;
-                    opacity: 0;
-                }
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }

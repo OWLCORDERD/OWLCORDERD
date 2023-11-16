@@ -31,10 +31,14 @@
             .Index-title{
                 width: 100%;
                 height: 150px;
-                font-size: 45px;
-                font-family: $font-Mont;
-                font-weight: bold;
                 line-height: 150px;
+
+                h2{
+                    font-size: 3.5rem;
+                    font-family: $font-Mont;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                }
             }
 
             .Dynamic-TxtBox{
@@ -52,6 +56,7 @@
                     overflow: hidden;
                     font-size: 2rem;
                     font-family: $font-Mont;
+                    font-weight: 500;
                     text-transform: uppercase;
 
                     &::after{
@@ -82,29 +87,42 @@
 
         .Banner-img{
             position: relative;
-            width : 40%;
+            width : 30%;
             height: 100%;
-            overflow: hidden;
 
-            img{
+            .circle-txtBox{
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width : 100%;
-                height: 100%;
-                object-fit: cover;
+                width: 200px;
+                height: 200px;
+
+                img{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 200px;
+                    animation: rotateCircleTxt 10s linear infinite;
+    
+                    @keyframes rotateCircleTxt{
+                        100%{
+                            transform: translate(-50%, -50%) rotate(360deg);
+                        }
+                    }
+                }
             }
 
-            &::before{
+            .owl-icon{
                 position: absolute;
-                width : 100%;
-                height : 100%;
-                content: '';
-                top: 0;
-                left : 0;
-                background-color: rgba($color: #000000, $alpha: 0.5);
-                z-index: 1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                img{
+                    max-width: 35px;
+                }
             }
         }
     }
@@ -421,104 +439,109 @@
 
 /* 모바일 반응형 */
 @media screen and (max-width : 768px){
-    /*Main Page Banner*/
     .Main-Banner{
         position: relative;
         width : 100%;
-        height : 35rem;
-        padding : 0;
-        margin-top: 5rem;
-    
+        height : 100vh;
+        padding : 5rem 0 0 0;
+        
         .Banner-Index{
-            position: absolute;
+            position: relative;
             top : 0;
-            left: 0;
             width : 100%;
-            height : 100%;
+            height : calc(100% - 8rem);
             transform: translateY(0);
-            display: block;
-
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding : 0 50px;
+    
             .Index-contentBox{
+                position: relative;
                 width : 100%;
-                height : 100%;
+                height : 60%;
+                display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                z-index: 10;
-
+                color: #fff;
+    
                 .Index-title{
-                    display: none;
+                    width: 100%;
+                    height: 160px;
+                    line-height: 80px;
+    
+                    h2{
+                        text-align: center;
+                        font-size: 2.5rem;
+                        font-family: $font-Mont;
+                        font-weight: 200;
+                        text-transform: uppercase;
+                    }
                 }
-
+    
                 .Dynamic-TxtBox{
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
                     width: 100%;
-                    height: 300px;
-
+                    height: 130px;
+    
                     .Dynamic-txt{
+                        display: block;
                         width: 100%;
+                        height: 80px;
+                        line-height: 80px;
+                        overflow: hidden;
                         font-size: 2rem;
+                        font-family: $font-Mont;
+                        font-weight: 600;
+                        text-transform: uppercase;
                         text-align: center;
+    
+                        &::after{
+                            content: '';
+                            margin-left: .6rem;
+                            border-right: 2px solid #777;
+                            animation: cursor .9s infinite steps(2);
+                        }
                     }
-
+    
                     .Static-txt{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
                         width : 100%;
-                        height: 100%;
-
+                        height: max-content;
+    
                         h2{
-                            width : 100%;
-                            line-height: 150px;
-                            font-size: 1rem;
                             text-align: center;
-                            font-family: $font-Noto;
-                            font-weight: 500;
+                            line-height: 50px;
                         }
                     }
                 }
             }
-
+    
             .Banner-img{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width : 100%;
-                height: 100%;
-            }
-        }
-
-        .scroll-down{
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 10rem;
-            height: 6rem;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-
-            .scroll-icon{
-                display: block;
-                width: 1.5rem;
-                height: 1.5rem;
-                animation: scrollAnimate 2s infinite;
-                opacity: 0;
-            }
-
-            h2{
-                font-size: 12px;
-                font-family: $font-Mont;
-                font-weight: bold;
+                position: relative;
+                width : 30%;
+                height: 40%;
+    
+                .circle-txtBox{
+                    width: 150px;
+                    height: 150px;
+    
+                    img{
+                        width: 150px;
+                        animation: rotateCircleTxt 10s linear infinite;
+                    }
+                }
+    
+                .owl-icon{
+    
+                    img{
+                        max-width: 30px;
+                    }
+                }
             }
         }
     }
@@ -745,162 +768,113 @@
 
 /* 테블릿 반응형 */
 @media screen and (min-width : 820px) and (max-width : 1439px){
-/*Main Page Banner*/
-.Main-Banner{
-    position: relative;
-    width : 100%;
-    height : 100vh;
-    padding : 0 0;
-    margin-top: 0;
-    
-    .Banner-Index{
+    .Main-Banner{
         position: relative;
-        top : 0;
         width : 100%;
-        height : 100%;
-        transform: translateY(0);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding : 0 0;
-
-        .Index-contentBox{
+        height : 100vh;
+        padding : 5rem 0 0 0;
+        
+        .Banner-Index{
             position: relative;
+            top : 0;
             width : 100%;
-            height : 50%;
+            height : calc(100% - 8rem);
+            transform: translateY(0);
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
-            padding-top: 5rem;
-            padding-left: 5rem;
-            color: #fff;
-
-            .Index-title{
-                width: 100%;
-                height: 150px;
-                font-size: 35px;
-                font-family: $font-Mont;
-                font-weight: bold;
-                line-height: 150px;
-            }
-
-            .Dynamic-TxtBox{
+            padding : 0 50px;
+    
+            .Index-contentBox{
+                position: relative;
+                width : 100%;
+                height : 60%;
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                width: 100%;
-                height: 150px;
-
-                .Dynamic-txt{
-                    display: block;
-                    width: 50%;
-                    height: 150px;
-                    line-height: 150px;
-                    overflow: hidden;
-                    font-size: 2rem;
-                    font-family: $font-Mont;
-                    text-transform: uppercase;
-
-                    &::after{
-                        content: '';
-                        margin-left: .6rem;
-                        border-right: 2px solid #777;
-                        animation: cursor .9s infinite steps(2);
-                    }
-                }
-
-                .Static-txt{
-                    display: flex;
-                    align-items: flex-end;
-                    justify-content: flex-end;
-                    width : 50%;
-                    height: 100%;
-
+                color: #fff;
+    
+                .Index-title{
+                    width: 100%;
+                    height: 200px;
+                    line-height: 100px;
+    
                     h2{
-                        width : 100%;
+                        text-align: center;
+                        font-size: 3.2rem;
+                        font-family: $font-Mont;
+                        font-weight: 200;
+                        text-transform: uppercase;
+                    }
+                }
+    
+                .Dynamic-TxtBox{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    height: 300px;
+    
+                    .Dynamic-txt{
+                        display: block;
+                        width: 100%;
+                        height: 150px;
                         line-height: 150px;
-                        font-size: 1.2rem;
-                        font-family: $font-Noto;
-                        font-weight: 100;
+                        overflow: hidden;
+                        font-size: 2.8rem;
+                        font-family: $font-Mont;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        text-align: center;
+    
+                        &::after{
+                            content: '';
+                            margin-left: .6rem;
+                            border-right: 2px solid #777;
+                            animation: cursor .9s infinite steps(2);
+                        }
+                    }
+    
+                    .Static-txt{
+                        width : 100%;
+                        height: max-content;
+    
+                        h2{
+                            text-align: center;
+                            line-height: 150px;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+    
+            .Banner-img{
+                position: relative;
+                width : 30%;
+                height: 40%;
+    
+                .circle-txtBox{
+                    width: 200px;
+                    height: 200px;
+    
+                    img{
+                        width: 200px;
+                        animation: rotateCircleTxt 10s linear infinite;
+                    }
+                }
+    
+                .owl-icon{
+    
+                    img{
+                        max-width: 35px;
                     }
                 }
             }
         }
-
-        .Banner-img{
-            position: relative;
-            width : 100%;
-            height: 50%;
-            overflow: hidden;
-
-            img{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width : 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            &::before{
-                position: absolute;
-                width : 100%;
-                height : 100%;
-                content: '';
-                top: 0;
-                left : 0;
-                background-color: rgba($color: #000000, $alpha: 0.5);
-                z-index: 1;
-            }
-        }
     }
-
-    .scroll-down{
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 10rem;
-        height: 6rem;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-
-        .scroll-icon{
-            display: block;
-            width: 2rem;
-            height: 2rem;
-            animation: scrollAnimate 2s infinite;
-            opacity: 0;
-
-            @keyframes scrollAnimate{
-                50%{
-                    opacity: 1;
-                    transition-duration: 1s;
-                    margin-top: 1rem;
-                }
-
-                100%{
-                    opacity: 1;
-                    transition-duration: 1s;
-                    margin-top: 2rem;
-                }
-            }
-        }
-
-        h2{
-            font-size: 1rem;
-            font-family: $font-Mont;
-            font-weight: bold;
-        }
-    }
-}
 /*Project Page Banner*/
 .Project-Banner{
     position: relative;
@@ -1143,66 +1117,26 @@
 /* 맥북 pc 반응형*/
 @media screen and (min-width : 1440px) and (max-width : 1700px){
 
-    /*Main Page Banner*/
+/*Main Page Banner*/
 .Main-Banner{
+    position: relative;
+    width : 100%;
+    height : 100vh;
+    padding : 0 5%;
     
     .Banner-Index{
 
         .Index-contentBox{
-            width : 50%;
 
             .Index-title{
-                font-size: 30px;
-            }
 
-            .Dynamic-TxtBox{
-
-                .Dynamic-txt{
-                    font-size: 1.5rem;
-                }
-
-                .Static-txt{
-
-                    h2{
-                        font-size: 1rem;
-                    }
+                h2{
+                    font-size: 2.8rem;
+                    font-family: $font-Mont;
+                    font-weight: 300;
+                    text-transform: uppercase;
                 }
             }
-        }
-
-        .Banner-img{
-            width : 50%;
-        }
-    }
-
-    .scroll-down{
-
-        .scroll-icon{
-            display: block;
-            width: 1.5rem;
-            height: 1.5rem;
-            animation: scrollAnimate 2s infinite;
-            opacity: 0;
-
-            @keyframes scrollAnimate{
-                50%{
-                    opacity: 1;
-                    transition-duration: 1s;
-                    margin-top: 1rem;
-                }
-
-                100%{
-                    opacity: 1;
-                    transition-duration: 1s;
-                    margin-top: 2rem;
-                }
-            }
-        }
-
-        h2{
-            font-size: 1rem;
-            font-family: $font-Mont;
-            font-weight: bold;
         }
     }
 }

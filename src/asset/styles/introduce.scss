@@ -43,7 +43,7 @@
             position: relative;
             top: 0;
             left: 0;
-            width: 450px;
+            width: 50%;
             height: 100%;
             overflow: hidden;
 
@@ -51,7 +51,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
+                width: 450px;
                 height: 100%;
                 object-fit: cover;
             }
@@ -161,7 +161,7 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 100%;
+                    width: 450px;
                     height: 100%;
                     object-fit: cover;
                 }
