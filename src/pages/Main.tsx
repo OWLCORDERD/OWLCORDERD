@@ -22,11 +22,13 @@ function Main() {
   useEffect(() => {
     if (location.pathname === '/') {
       dispatch(main('About'));
+      window.scrollTo(0, 0);
     }
   }, [location.pathname, dispatch]);
 
   return (
     <>
+      <ScrollToTop />
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
@@ -40,7 +42,6 @@ function Main() {
 
         <title>임민혁 · OWLCODERD · Front-end Developer</title>
       </Helmet>
-      <ScrollToTop />
       <header>
         <ResponsiveNav />
         <MainNav />
