@@ -438,12 +438,12 @@
                     display: block;
                     width: 100%;
                     height: 2.5rem;
-                    background-color: transparent;
-                    border: 2px solid #fff;
-                    color: #fff;
+                    background-color: #fff;
+                    color: #000;
                     font-size: 1rem;
                     font-family: $font-Mont;
-                    font-weight: bold;
+                    font-weight: 800;
+                    text-transform: uppercase;
                     cursor: pointer;
                 }
             }

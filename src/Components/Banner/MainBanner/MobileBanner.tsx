@@ -1,37 +1,34 @@
-import React, { useCallback, useEffect, useRef } from 'react';
-import '../../asset/styles/banner.scss';
-import { TfiMouse } from 'react-icons/tfi';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { TfiMouse } from 'react-icons/tfi';
 
-function Banner(): JSX.Element {
+function MobileBanner() {
   const ImgBoxAnimation = {
     initial: {
-      opacity: 0,
+      y: '-50%',
     },
 
     animate: {
-      opacity: 1,
+      y: 0,
       transition: {
-        delay: 0.5,
-        duration: 1,
+        delay: 1,
+        duration: 2,
       },
     },
   };
 
   const TxtBoxAnimation = {
     initial: {
-      display: 'none',
       opacity: 0,
     },
 
     animate: {
-      display: 'flex',
       opacity: 1,
       transition: {
         staggerChildren: 0.5,
-        delayChildren: 2.5,
+        delayChildren: 3,
         duration: 2,
-        delay: 2.5,
+        delay: 3,
       },
     },
   };
@@ -109,7 +106,7 @@ function Banner(): JSX.Element {
   }, [typing]);
 
   return (
-    <div className="Main-Banner">
+    <div className="Mobile_MainBanner">
       <div className="Banner-Index">
         <motion.div className="Index-contentBox" variants={TxtBoxAnimation} animate="animate" initial="initial">
           <motion.div className="Index-title" variants={TxtAnimation}>
@@ -142,7 +139,7 @@ function Banner(): JSX.Element {
         className="scroll-down"
         initial={{ y: 50, opacity: 0, x: '-50%' }}
         animate={{ y: 0, opacity: 1, x: '-50%' }}
-        transition={{ duration: 1, delay: 3 }}
+        transition={{ duration: 1, delay: 4.5 }}
       >
         <TfiMouse className="scroll-icon" />
         <h2>Scroll Down</h2>
@@ -151,4 +148,4 @@ function Banner(): JSX.Element {
   );
 }
 
-export default Banner;
+export default MobileBanner;

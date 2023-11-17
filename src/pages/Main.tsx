@@ -8,11 +8,12 @@ import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
 import MainNav from 'Components/Navigator/MainNav';
 import ResponsiveMenu from 'Components/MobileResponsive/ResponsiveMenu';
 import { Helmet } from 'react-helmet-async';
+import MobileBanner from 'Components/Banner/MainBanner/MobileBanner';
 import Footer from '../Components/Footer/Footer';
-import MainBanner from '../Components/Banner/MainBanner';
 import Technology from '../Components/About/Technology';
 import Contact from '../Components/Contact/Contact';
 import Developer from '../Components/About/Developer';
+import PCBanner from '../Components/Banner/MainBanner/PCBanner';
 
 function Main() {
   const location = useLocation();
@@ -50,7 +51,8 @@ function Main() {
       <main>
         <div className="container" id="container">
           <section id="main-banner">
-            <MainBanner />
+            <PCBanner />
+            <MobileBanner />
           </section>
 
           <section id="introduce">

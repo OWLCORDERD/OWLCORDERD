@@ -86,11 +86,11 @@ function Advantage() {
     tl.fromTo(
       '.Advantage-Index',
       {
-        x: -100,
+        y: 100,
         opacity: 0,
       },
       {
-        x: 0,
+        y: 0,
         opacity: 1,
         scrollTrigger: {
           trigger: AdctnRef.current,

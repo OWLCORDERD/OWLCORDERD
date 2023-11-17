@@ -8,8 +8,8 @@ function Loading() {
       <div className="Loading-Txt">
         <div className="Loading-spinner">
           <Oval
-            height={80}
-            width={80}
+            height={50}
+            width={50}
             color="#fff"
             visible
             ariaLabel="oval-loading"
