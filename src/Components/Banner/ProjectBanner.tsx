@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { projectDB } from 'pages/Project';
+import { FaPlay } from 'react-icons/fa';
 import MainNav from '../Navigator/MainNav';
 import '../../asset/styles/slick/slick.css';
 import '../../asset/styles/slick/slick-theme.css';
@@ -59,6 +60,8 @@ function ProjectBanner({ projectDB }: propsDBType) {
     },
   };
 
+  const navigate = useNavigate();
+
   return (
     <motion.div className="Project-Banner" variants={AnimateBox} initial="initial" animate="animate">
       <MainNav />
@@ -78,20 +81,28 @@ function ProjectBanner({ projectDB }: propsDBType) {
           <h2>Develop Project</h2>
         </div>
         <Slider {...settings}>
-          {projectDB?.map((item, index) => (
-            <div className="Project-item" key={item.id}>
-              <Link to="/CurrentProject" state={{ projectData: item }}>
-                <div className="Project-ImgBox">
-                  <img src={item.mainImg} alt="" />
+          {projectDB?.map((project, index) => (
+            <div className="Project-item" key={project.id}>
+              <div className="Project-ImgBox">
+                <img src={project.mainImg} alt="" />
+
+                <div className="Project-viewButton">
+                  <FaPlay
+                    onClick={() =>
+                      navigate('/CurrentProject', {
+                        state: { projectDB: project },
+                      })
+                    }
+                  />
                 </div>
-              </Link>
+              </div>
 
               <div className="Project-infoBox">
-                <h2 className="Project-type">{item.useTech1} Project</h2>
+                <h2 className="Project-type">{project.useTech1} Project</h2>
 
                 <div className="title-category">
-                  <h1 className="title">{item.siteTitle}</h1>
-                  <span className="category">{item.siteSubTitle}</span>
+                  <h1 className="title">{project.siteTitle}</h1>
+                  <span className="category">{project.siteSubTitle}</span>
                 </div>
               </div>
               <div className="slide-status">
