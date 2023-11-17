@@ -125,10 +125,6 @@ function MobileBanner() {
         </motion.div>
 
         <motion.div className="Banner-img" variants={ImgBoxAnimation} animate="animate" initial="initial">
-          <div className="circle-txtBox">
-            <img src={`${process.env.PUBLIC_URL}/Image/Circle/Banner-CircleTxtBox.png`} alt="BannerImg" />
-          </div>
-
           <div className="owl-icon">
             <img src={`${process.env.PUBLIC_URL}/Image/logo/logo.png`} alt="올빼미 로고 아이콘" />
           </div>

@@ -499,11 +499,11 @@
 
                 .Index-title{
                     width: 100%;
-                    height: 160px;
-                    line-height: 80px;
+                    height: 140px;
+                    line-height: 70px;
 
                     h2{
-                        font-size: 2.5rem;
+                        font-size: 2rem;
                         font-family: $font-Mont;
                         font-weight: 300;
                         text-transform: uppercase;
@@ -517,15 +517,15 @@
                     justify-content: space-between;
                     align-items: center;
                     width: 100%;
-                    height: 180px;
+                    height: 170px;
 
                     .Dynamic-txt{
                         display: block;
                         width: 100%;
-                        height: 100px;
-                        line-height: 100px;
+                        height: 90px;
+                        line-height: 90px;
                         overflow: hidden;
-                        font-size: 2rem;
+                        font-size: 1.8rem;
                         font-family: $font-Mont;
                         font-weight: 500;
                         text-transform: uppercase;
@@ -562,30 +562,6 @@
                 position: relative;
                 width : 100%;
                 height: 40%;
-
-                .circle-txtBox{
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 150px;
-                    height: 150px;
-
-                    img{
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        max-width: 150px;
-                        animation: rotateCircleTxt 10s linear infinite;
-        
-                        @keyframes rotateCircleTxt{
-                            100%{
-                                transform: translate(-50%, -50%) rotate(360deg);
-                            }
-                        }
-                    }
-                }
 
                 .owl-icon{
                     position: absolute;
