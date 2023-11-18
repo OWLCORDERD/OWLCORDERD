@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import 'asset/styles/main.scss';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import ScrollToTop from 'CustomHook/ScrollToTop';
 import { main } from 'reducer/nextIndex';
 import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
 import MainNav from 'Components/Navigator/MainNav';
@@ -27,7 +26,6 @@ function Main() {
 
   return (
     <>
-      <ScrollToTop />
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta

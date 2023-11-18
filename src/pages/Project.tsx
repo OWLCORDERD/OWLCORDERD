@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { project } from 'reducer/nextIndex';
 import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
 import ResponsiveMenu from 'Components/MobileResponsive/ResponsiveMenu';
-import ScrollToTop from 'CustomHook/ScrollToTop';
 import MainNav from 'Components/Navigator/MainNav';
 import { Helmet } from 'react-helmet-async';
 import ProjectBanner from '../Components/Banner/ProjectBanner';
@@ -57,7 +56,6 @@ function Project() {
 
   return (
     <>
-      <ScrollToTop />
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
