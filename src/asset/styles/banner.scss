@@ -1,7 +1,7 @@
 @import '../../asset/Variables.scss';
 
 /*PC Main Page Banner*/
-.PC_MainBanner{
+.Main-Banner{
     position: relative;
     width : 100%;
     height : 100vh;
@@ -169,10 +169,6 @@
             font-weight: bold;
         }
     }
-}
-
-.Mobile_MainBanner{
-    display: none;
 }
 
 /*Project Page Banner*/
@@ -465,17 +461,11 @@
 
 /* 모바일 반응형 */
 @media screen and (max-width : 768px){
-    .PC_MainBanner{
-        display: none;
-    }
-
-    /*Mobile Page Banner*/
-    .Mobile_MainBanner{
-        display: block;
+    .Main-Banner{
         position: relative;
         width : 100%;
         height : 100vh;
-        padding-top: 5rem;
+        padding: 0;
     
         .Banner-Index{
             position: relative;
@@ -562,63 +552,67 @@
                 position: relative;
                 width : 100%;
                 height: 40%;
-
+    
+                .circle-txtBox{
+                    display: none;
+                }
+    
                 .owl-icon{
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-
+    
                     img{
                         max-width: 35px;
                     }
                 }
             }
         }
-
-    .scroll-down{
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 10rem;
-        height: 6rem;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-
-        .scroll-icon{
-            display: block;
-            width: 1.5rem;
-            height: 1.5rem;
-            animation: scrollAnimate 2s infinite;
-            opacity: 0;
-
-            @keyframes scrollAnimate{
-                50%{
-                    opacity: 1;
-                    transition-duration: 1s;
-                    margin-top: 1rem;
-                }
-
-                100%{
-                    opacity: 1;
-                    transition-duration: 1s;
-                    margin-top: 2rem;
+    
+        .scroll-down{
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10rem;
+            height: 6rem;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+    
+            .scroll-icon{
+                display: block;
+                width: 2rem;
+                height: 2rem;
+                animation: scrollAnimate 2s infinite;
+                opacity: 0;
+    
+                @keyframes scrollAnimate{
+                    50%{
+                        opacity: 1;
+                        transition-duration: 1s;
+                        margin-top: 1rem;
+                    }
+    
+                    100%{
+                        opacity: 1;
+                        transition-duration: 1s;
+                        margin-top: 2rem;
+                    }
                 }
             }
-        }
-
-        h2{
-            font-size: 1rem;
-            font-family: $font-Mont;
-            font-weight: 300;
+    
+            h2{
+                font-size: 1rem;
+                font-family: $font-Mont;
+                font-weight: bold;
+            }
         }
     }
-}
     
     /*Project Page Banner*/
     .Project-Banner{

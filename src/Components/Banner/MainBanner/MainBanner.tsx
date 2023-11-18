@@ -109,7 +109,7 @@ function PCBanner(): JSX.Element {
   }, [typing]);
 
   return (
-    <div className="PC_MainBanner">
+    <div className="Main-Banner">
       <div className="Banner-Index">
         <motion.div className="Index-contentBox" variants={TxtBoxAnimation} animate="animate" initial="initial">
           <motion.div className="Index-title" variants={TxtAnimation}>
