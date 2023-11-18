@@ -29,9 +29,9 @@ function PCBanner(): JSX.Element {
       opacity: 1,
       transition: {
         staggerChildren: 0.5,
-        delayChildren: 2.5,
+        delayChildren: 1.5,
         duration: 2,
-        delay: 2.5,
+        delay: 1,
       },
     },
   };
@@ -142,7 +142,7 @@ function PCBanner(): JSX.Element {
         className="scroll-down"
         initial={{ y: 50, opacity: 0, x: '-50%' }}
         animate={{ y: 0, opacity: 1, x: '-50%' }}
-        transition={{ duration: 1, delay: 3 }}
+        transition={{ duration: 1, delay: 2 }}
       >
         <TfiMouse className="scroll-icon" />
         <h2>Scroll Down</h2>
