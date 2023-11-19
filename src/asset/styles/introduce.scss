@@ -109,7 +109,8 @@
     }
 }
 
-@media screen and (min-width : 821px) and (max-width : 1440px){
+/* 테블릿 반응형 */
+@media screen and (min-width : 763px) and (max-width : 1439px){
     .Introduce-container{
         position: relative;
         top : 0;
@@ -120,11 +121,118 @@
     
         .Introduce-titleBox{
             display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
+            align-items: center;
+            justify-content: center;
+    
+            .Introduce-title{
+                width: max-content;
+                height: 100%;
+                line-height: 100px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                font-family: $font-Mont;
+                text-transform: uppercase;
+                color: #fff;
+                text-align: center;
+            }
+        }
+    
+        .Introduce-infoBox{
+            position: relative;
+            left: 0;
+            transform: translateX(0);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             width : 100%;
-            height : 5rem;
-            margin-bottom: 6.25rem;
+            height: 100%;
+    
+            .Developer-ImgBox{
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 420px;
+                height: 500px;
+                overflow: hidden;
+                margin-bottom: 4rem;
+    
+                img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+    
+            .Introduce-info{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                height: 30rem;
+    
+                h2{
+                    width: 25rem;
+                    word-break: keep-all;
+                    font-size: 1.3rem;
+                    font-family: $font-Noto;
+                    color: #fff;
+                    text-align: center;
+                }
+    
+                p{
+                    position: relative;
+                    width : 80%;
+                    height : max-content;
+                    color: #fff;
+                    font-family: $font-Noto;
+                    font-weight: 100;
+                    font-size: 16px;
+                    word-break: keep-all;
+                    text-align: center;
+                }
+    
+                .view-report{
+                    display: block;
+                    color: #fff;
+                    background-color: #2e2e2e;
+                    text-align: center;
+                    width: 80%;
+                    height: 3rem;
+                    font-family: $font-Noto;
+                    font-size: 15px;
+                    font-weight: bold;
+                    line-height: 3rem;
+                    cursor: pointer;
+                    transition: all 0.5s ease-out;
+    
+                    &:hover{
+                        background-color: #fff;
+                        transition: all 0.5s ease-in;
+                        color: #2e2e2e;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width : 1440px) and (max-width : 1700px){
+    .Introduce-container{
+        position: relative;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100vh;
+        padding: 3rem 6.25rem;
+    
+        .Introduce-titleBox{
+            margin-bottom: 4rem;
     
             .Introduce-title{
                 width: max-content;
@@ -146,8 +254,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width : 100%;
-            height: 500px;
+            width : 90%;
+            height: 550px;
     
             .Developer-ImgBox{
                 position: relative;
@@ -161,7 +269,7 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 100%;
+                    width: 450px;
                     height: 100%;
                     object-fit: cover;
                 }
@@ -171,27 +279,27 @@
                 position: relative;
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 justify-content: space-between;
-                width: 45%;
+                width: 50%;
                 height: 100%;
     
                 h2{
-                    width: 90%;
+                    width: 28rem;
                     word-break: keep-all;
-                    font-size: 1rem;
+                    font-size: 1.1rem;
                     font-family: $font-Noto;
                     color: #fff;
                 }
     
                 p{
                     position: relative;
-                    width : 100%;
+                    width : 28rem;
                     height : max-content;
                     color: #fff;
                     font-family: $font-Noto;
                     font-weight: 100;
-                    font-size: 14px;
+                    font-size: 15px;
                     word-break: keep-all;
                 }
     
@@ -200,7 +308,7 @@
                     color: #fff;
                     background-color: #2e2e2e;
                     text-align: center;
-                    width: 100%;
+                    width: 28rem;
                     height: 2.5rem;
                     font-family: $font-Noto;
                     font-size: 15px;
@@ -220,7 +328,7 @@
     }
 }
 
-@media screen and (max-width : 820px){
+@media screen and (max-width : 763px){
     .Introduce-container{
         position: relative;
         top : 0;

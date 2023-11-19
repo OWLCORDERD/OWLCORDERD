@@ -11,7 +11,7 @@ import Footer from '../Components/Footer/Footer';
 import Technology from '../Components/About/Technology';
 import Contact from '../Components/Contact/Contact';
 import Developer from '../Components/About/Developer';
-import MainBanner from '../Components/Banner/MainBanner/MainBanner';
+import MainBanner from '../Components/Banner/MainBanner';
 
 function Main() {
   const location = useLocation();

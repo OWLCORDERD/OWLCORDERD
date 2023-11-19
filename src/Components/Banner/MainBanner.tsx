@@ -1,23 +1,10 @@
-import React, { useEffect, useRef, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import React, { useCallback, useEffect, useRef } from 'react';
+import 'asset/styles/banner.scss';
 import { TfiMouse } from 'react-icons/tfi';
+import { motion } from 'framer-motion';
 
-function MobileBanner() {
+function PCBanner(): JSX.Element {
   const ImgBoxAnimation = {
-    initial: {
-      y: '-50%',
-    },
-
-    animate: {
-      y: 0,
-      transition: {
-        delay: 1,
-        duration: 2,
-      },
-    },
-  };
-
-  const TxtBoxAnimation = {
     initial: {
       opacity: 0,
     },
@@ -25,10 +12,25 @@ function MobileBanner() {
     animate: {
       opacity: 1,
       transition: {
+        duration: 1,
+      },
+    },
+  };
+
+  const TxtBoxAnimation = {
+    initial: {
+      display: 'none',
+      opacity: 0,
+    },
+
+    animate: {
+      display: 'flex',
+      opacity: 1,
+      transition: {
         staggerChildren: 0.5,
-        delayChildren: 3,
+        delayChildren: 2,
         duration: 2,
-        delay: 3,
+        delay: 1.5,
       },
     },
   };
@@ -106,7 +108,7 @@ function MobileBanner() {
   }, [typing]);
 
   return (
-    <div className="Mobile_MainBanner">
+    <div className="Main-Banner">
       <div className="Banner-Index">
         <motion.div className="Index-contentBox" variants={TxtBoxAnimation} animate="animate" initial="initial">
           <motion.div className="Index-title" variants={TxtAnimation}>
@@ -125,23 +127,22 @@ function MobileBanner() {
         </motion.div>
 
         <motion.div className="Banner-img" variants={ImgBoxAnimation} animate="animate" initial="initial">
+          <div className="circle-txtBox">
+            <img src={`${process.env.PUBLIC_URL}/Image/Circle/Banner-CircleTxtBox.png`} alt="BannerImg" />
+          </div>
+
           <div className="owl-icon">
             <img src={`${process.env.PUBLIC_URL}/Image/logo/logo.png`} alt="올빼미 로고 아이콘" />
           </div>
         </motion.div>
       </div>
 
-      <motion.div
-        className="scroll-down"
-        initial={{ y: 50, opacity: 0, x: '-50%' }}
-        animate={{ y: 0, opacity: 1, x: '-50%' }}
-        transition={{ duration: 1, delay: 4.5 }}
-      >
+      <div className="scroll-down">
         <TfiMouse className="scroll-icon" />
         <h2>Scroll Down</h2>
-      </motion.div>
+      </div>
     </div>
   );
 }
 
-export default MobileBanner;
+export default PCBanner;
