@@ -91,12 +91,9 @@ function Project() {
           <ResponsiveMenu />
           <main>
             <div className="container" id="container">
-              <section id="project-banner">
-                <ProjectBanner projectDB={projectData} />
-              </section>
+              <ProjectBanner projectDB={projectData} />
+              <Footer />
             </div>
-
-            <Footer />
           </main>
         </>
       )}

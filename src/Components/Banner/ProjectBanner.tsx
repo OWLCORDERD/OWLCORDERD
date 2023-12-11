@@ -5,7 +5,6 @@ import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 import { projectDB } from 'pages/Project';
 import { FaPlay } from 'react-icons/fa';
-import MainNav from '../Navigator/MainNav';
 import '../../asset/styles/slick/slick.css';
 import '../../asset/styles/slick/slick-theme.css';
 import NextArrow from '../Project/slideButton/NextArrow';
@@ -17,72 +16,60 @@ interface propsDBType {
 
 function ProjectBanner({ projectDB }: propsDBType) {
   const settings = {
-    className: 'center',
     centerMode: true,
     infinite: true,
     slideToShow: 3,
     slidesToScroll: 1,
-    centerPadding: '50px',
+    centerPadding: '25%',
     speed: 500,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
 
-  const AnimateBox = {
+  const SlideAnimate = {
     initial: {
       opacity: 0,
     },
+
     animate: {
       opacity: 1,
 
       transition: {
-        delayChildren: 0.5,
-        delay: 1,
         duration: 2,
+        staggerChildren: 0.5,
+        delayChildren: 0.5,
       },
     },
   };
 
-  const SlideAnimate = {
+  const itemAnimate = {
     initial: {
       opacity: 0,
-      y: 50,
     },
 
     animate: {
       opacity: 1,
-      y: 0,
-
-      transition: {
-        delay: 2,
-        duration: 2,
-      },
     },
   };
 
   const navigate = useNavigate();
 
   return (
-    <motion.div className="Project-Banner" variants={AnimateBox} initial="initial" animate="animate">
-      <MainNav />
-      <div className="Project-Index">
-        <div className="bg-video">
-          <img src={`${process.env.PUBLIC_URL}/Image/document.jpg`} alt="" />
-        </div>
-
-        <div className="Index-infoBox">
-          <h2 className="Index-subTitle">Project</h2>
-          <h1 className="Index-title">Portfolio site</h1>
-        </div>
-      </div>
-
+    <section className="Project-Banner">
       <motion.div className="Slider-wrap" variants={SlideAnimate} animate="animate" initial="initial">
-        <div className="Slider-title">
-          <h2>Develop Project</h2>
-        </div>
+        <motion.div className="Project-titleBox" variants={itemAnimate}>
+          <div className="title">
+            <h1>Develop project</h1>
+          </div>
+
+          <div className="sub-title">
+            <p>현재 개발중인 프로젝트들을 소개합니다.</p>
+          </div>
+        </motion.div>
+
         <Slider {...settings}>
-          {projectDB?.map((project, index) => (
-            <div className="Project-item" key={project.id}>
+          {projectDB?.map(project => (
+            <motion.div className="Project-item" key={project.id} variants={itemAnimate}>
               <div className="Project-ImgBox">
                 <img src={project.mainImg} alt="" />
 
@@ -105,14 +92,11 @@ function ProjectBanner({ projectDB }: propsDBType) {
                   <span className="category">{project.siteSubTitle}</span>
                 </div>
               </div>
-              <div className="slide-status">
-                <div className="status-bar" style={{ left: `calc(${index} * 25%)` }} />
-              </div>
-            </div>
+            </motion.div>
           ))}
         </Slider>
       </motion.div>
-    </motion.div>
+    </section>
   );
 }
 

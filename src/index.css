@@ -8,6 +8,10 @@ ul{
   list-style: none;
 }
 
+body{
+  background-color: #000;
+}
+
 a{
   text-decoration: none;
 }
@@ -20,4 +24,10 @@ html::-webkit-scrollbar-thumb{
   display: block;
   width: 100px;
   background-color: #000;
+}
+
+@media screen and (max-width : 1400px){
+  html::-webkit-scrollbar{
+    display: none;
+  }
 }

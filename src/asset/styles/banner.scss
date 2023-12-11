@@ -4,15 +4,15 @@
 .Main-Banner{
     position: relative;
     width : 100%;
-    height : 100vh;
-    padding : 0 5%;
+    height : 80vh;
+    padding : 0 8.25rem;
     
     .Banner-Index{
         position: relative;
-        top : 50%;
+        top : 30%;
         width : 100%;
         height : 40%;
-        transform: translateY(-50%);
+        transform: translateY(-30%);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -175,87 +175,56 @@
 .Project-Banner{
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: 10;
-    display: flex;
-
-    .Project-Index{
-        position: relative;
-        width: 40%;
-        top: 0;
-        left: 0;
-        height: 100%;
-
-        .bg-video{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-    
-            img{
-                width : 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            &::before{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                content: '';
-                background-color: rgba($color: #000000, $alpha: 0.5);
-                z-index: 10;
-            }
-        }
-
-        .Index-infoBox{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            position: absolute;
-            left: 20%;
-            bottom: 10rem;
-            width: 30rem;
-            height: 20rem;
-            z-index: 10;
-
-            .Index-subTitle{
-                width: 100%;
-                font-size: 1.4rem;
-                text-transform: uppercase;
-                color: #fff;
-                font-family: $font-Mont;
-                font-weight: 100;
-            }
-
-            .Index-title{
-                width: 100%;
-                font-size: 3rem;
-                text-transform: uppercase;
-                color: #fff;
-                font-family: $font-Mont;
-            }
-        }
-    }
 
     .Slider-wrap{
         position: relative;
-        width: 60%;
-        height: 100%;
+        top: 0;
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         overflow: hidden;
+        padding-bottom: 3rem;
 
-        .Slider-title{
-            display: none;
+        .Project-titleBox{
+            position: relative;
+            width: 100%;
+            height: 10rem;
+
+            .title{
+                width: 100%;
+
+                h1{
+                    font-size: 1.5rem;
+                    color: #fff;
+                    font-family: $font-Mont;
+                    text-align: center;
+                    text-transform: uppercase;
+                    line-height: 6rem;
+                }
+            }
+
+            .sub-title{
+                width: 100%;
+
+                p{
+                    font-size: 14px;
+                    color: #fff;
+                    font-family: $font-Noto;
+                    text-align: center;
+                    line-height: 4rem;
+                }
+            }
         }
 
         .NextArrow{
             position: absolute;
-            right: 2rem;
+            right: 10%;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translate(-10%, -50%);
             background-color: transparent;
             border: none;
             width: 50px;
@@ -270,9 +239,9 @@
 
         .PrevArrow{
             position: absolute;
-            left: 2rem;
+            left: 10%;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translate(-10%, -50%);
             background-color: transparent;
             border: none;
             width: 50px;
@@ -288,25 +257,24 @@
         .slick-slider{
             position: relative;
             width: 100%;
-            top: 60%;
-            transform: translateY(-60%);
+            height: 34rem;
 
             .slick-slide{
-                transform: scale(0.95);
+                transform: scale(1);
     
                 .Project-item{
                     position: relative;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    height: 40rem;
+                    height: 100%;
                     color: #fff;
                     padding: 0 100px;
         
                     .Project-ImgBox{
                         position: relative;
                         width: 100%;
-                        height: 28rem;
+                        height: 24rem;
                         overflow: hidden;
         
                         img{
@@ -342,7 +310,7 @@
                             width: 100%;
                             height: 100%;
                             content: '';
-                            background-color: rgba($color: #000000, $alpha: 0.8);
+                            background-color: rgba($color: #000000, $alpha: 0.6);
                             z-index: 10;
                             opacity: 1;
                             transition: all 0.5s ease-in;
@@ -361,7 +329,7 @@
                         .Project-type{
                             width: 100%;
                             line-height: 3rem;
-                            font-size: 1rem;
+                            font-size: 13px;
                             font-family: $font-Mont;
                         }
     
@@ -371,37 +339,16 @@
                             align-items: flex-end;
     
                             .title{
-                                font-size : 1.8rem;
+                                font-size : 1.5rem;
                                 font-family: $font-Mont;
                                 line-height: 5rem;
                             }
     
                             .category{
-                                font-size: 15px;
+                                font-size: 14px;
                                 font-family: $font-Noto;
                                 line-height: 5rem;
                             }
-                        }
-                    }
-
-                    .slide-status{
-                        position: relative;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        margin-top: 2rem;
-                        width: 100%;
-                        height: 10px;
-                        background-color: rgb(77, 77, 77);
-                        opacity: 0;
-                        transition: all 0.5s ease-out;
-                        
-            
-                        .status-bar{
-                            position: absolute;
-                            left: 0;
-                            width: 25%;
-                            height: 100%;
-                            background-color: #fff;
                         }
                     }
                 }
@@ -415,19 +362,6 @@
                 .Project-item{
         
                     .Project-ImgBox{
-                        position: relative;
-                        width: 100%;
-                        height: 28rem;
-                        overflow: hidden;
-        
-                        img{
-                            object-fit: cover;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                        }
 
                         &::before{
                             transition: all 0.5s ease-out;
@@ -596,183 +530,148 @@
             }
         }
     }
-    
+
     /*Project Page Banner*/
     .Project-Banner{
         position: relative;
         width: 100%;
-        height: 90rem;
+        height: 100%;
         z-index: 10;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .Project-Index{
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 40rem;
-
-            .bg-video{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-
-                &::before{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    content: '';
-                    background-color: rgba($color: #000000, $alpha: 0.5);
-                    z-index: 10;
-                }
-            }
-
-            .Index-infoBox{
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 100%;
-                height: 12rem;
-                z-index: 10;
-
-                .Index-subTitle{
-                    width: 100%;
-                    font-size: 1.2rem;
-                    text-transform: uppercase;
-                    color: #fff;
-                    font-family: $font-Mont;
-                    font-weight: 100;
-                    text-align: center;
-                }
-
-                .Index-title{
-                    width: 100%;
-                    font-size: 2rem;
-                    text-transform: uppercase;
-                    color: #fff;
-                    font-family: $font-Mont;
-                    text-align: center;
-                }
-            }
-        }
 
         .Slider-wrap{
             position: relative;
+            top: 0;
+            transform: translateY(0);
             width: 100%;
-            height: 50rem;
-            overflow: hidden;
+            height: 48rem;
+            padding : 5rem 0;
+            justify-content: space-around;
 
-            .Slider-title{
-                display: block;
+            .Project-titleBox{
+                position: relative;
+                width: 100%;
+                height: 8rem;
+
+                .title{
+
+                    h1{
+                        font-size: 1.2rem;
+                        line-height: 5rem;
+                    }
+                }
+
+                .sub-title{
+                    width: 100%;
+
+                    p{
+                        font-size: 12px;
+                        line-height: 3rem;
+                    }
+                }
+            }
+
+            .NextArrow{
                 position: absolute;
-                margin-top: 50px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: max-content;
-                line-height: 50px;
-                font-size: 12px;
-                text-align: center;
+                right: 5%;
+                top: 30%;
+                transform: translate(-5%, -30%);
+                background-color: transparent;
+                border: none;
+                width: 30px;
+                height: 30px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                font-size: 2rem;
                 color: #fff;
-                font-family: $font-Mont;
-                text-transform: uppercase;
+                cursor: pointer;
+            }
+    
+            .PrevArrow{
+                position: absolute;
+                left: 5%;
+                top: 30%;
+                transform: translate(-5%, -30%);
+                background-color: transparent;
+                border: none;
+                width: 30px;
+                height: 30px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                font-size: 2rem;
+                color: #fff;
+                cursor: pointer;
             }
 
             .slick-slider{
                 position: relative;
                 width: 100%;
-                height: calc(27rem + 10px);
-                top: 50%;
-                transform: translateY(-50%);
-
-                .NextArrow{
-                    position: absolute;
-                    right: 0;
-                    font-size: 2rem;
-                }
-        
-                .PrevArrow{
-                    position: absolute;
-                    left: 0;
-                    font-size: 2rem;
-                }
+                height: 20rem;
 
                 .slick-slide{
-                    transform: scale(0.9);
+                    transform: scale(1);
         
                     .Project-item{
                         position: relative;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
-                        height: calc(27rem + 10px);
+                        height: 100%;
                         color: #fff;
-                        padding: 0 0;
+                        padding: 0 5px;
             
                         .Project-ImgBox{
                             position: relative;
                             width: 100%;
-                            height: 15rem;
+                            height: 10rem;
                             overflow: hidden;
+
+                            .Project-viewButton {
+                                opacity: 0;
+                            }
+
+                            &::before{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                content: '';
+                                background-color: rgba($color: #000000, $alpha: 0.6);
+                                z-index: 10;
+                                opacity: 1;
+                                transition: all 0.5s ease-in;
+                                font-size: 2rem;
+                            }
                         }
         
                         .Project-infoBox{
                             position: relative;
                             width: 100%;
                             height: 10rem;
-                            padding : 2rem 0 0 0;
+                            padding : 1rem 0 0 0;
                             opacity: 0;
                             transition: all 0.5s ease-out;
         
                             .Project-type{
                                 width: 100%;
-                                line-height: 2rem;
-                                font-size: 12px;
+                                line-height: 3rem;
+                                font-size: 10px;
                                 font-family: $font-Mont;
                             }
         
                             .title-category{
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: flex-end;
         
                                 .title{
-                                    font-size : 1.5rem;
+                                    font-size : 1rem;
                                     font-family: $font-Mont;
-                                    line-height: 4rem;
+                                    line-height: 5rem;
                                 }
         
                                 .category{
-                                    font-size: 12px;
-                                    font-family: $font-Noto;
-                                    line-height: 4rem;
+                                    font-size: 10px;
                                 }
-                            }
-                        }
-
-                        .slide-status{
-                            position: relative;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            margin-top: 2rem;
-                            width: 100%;
-                            height: 10px;
-                            background-color: rgb(77, 77, 77);
-                            opacity: 0;
-                            transition: all 0.5s ease-out;
-                            
-                
-                            .status-bar{
-                                position: absolute;
-                                left: 0;
-                                width: 25%;
-                                height: 100%;
-                                background-color: #fff;
                             }
                         }
                     }
@@ -786,10 +685,6 @@
                     .Project-item{
             
                         .Project-ImgBox{
-                            position: relative;
-                            width: 100%;
-                            height: 15rem;
-                            overflow: hidden;
 
                             &::before{
                                 transition: all 0.5s ease-out;
@@ -797,19 +692,24 @@
                             }
 
                             &:hover{
-                                cursor: pointer;
+
+                                .Project-viewButton{
+                                    transition: all 0.5s ease-in;
+                                    opacity: 1;
+                                    cursor: pointer;
+                                }
                             }
                         }
-                        
-                    .Project-infoBox{
-                        opacity: 1;
-                        transition: all 0.5s ease-in;
-                    }
 
-                    .slide-status{
-                        opacity: 1;
-                        transition: all 0.5s ease-in;
-                    }
+                        .Project-infoBox{
+                            opacity: 1;
+                            transition: all 0.5s ease-in;
+                        }
+
+                        .slide-status{
+                            opacity: 1;
+                            transition: all 0.5s ease-in;
+                        }
                     }
                 }
             }
@@ -818,7 +718,7 @@
 }
 
 /* 테블릿 반응형 */
-@media screen and (min-width : 820px) and (max-width : 1439px){
+@media screen and (min-width : 820px) and (max-width : 1400px){
     .Main-Banner{
         position: relative;
         width : 100%;
@@ -907,243 +807,177 @@
             }
         }
     }
-/*Project Page Banner*/
-.Project-Banner{
-    position: relative;
-    width: 100%;
-    height: 90rem;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
-    .Project-Index{
+    /*Project Page Banner*/
+    .Project-Banner{
         position: relative;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 40rem;
+        height: 90vh;
+        z-index: 10;
 
-        .bg-video{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-    
-            img{
-                width : 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            &::before{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                content: '';
-                background-color: rgba($color: #000000, $alpha: 0.5);
-                z-index: 10;
-            }
-        }
-
-        .Index-infoBox{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            left: 0;
+        .Slider-wrap{
+            position: relative;
             top: 50%;
             transform: translateY(-50%);
             width: 100%;
-            height: 10rem;
-            z-index: 10;
+            height: 40rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            padding-bottom: 0;
 
-            .Index-subTitle{
+            .Project-titleBox{
+                position: relative;
                 width: 100%;
-                font-size: 1.2rem;
-                text-transform: uppercase;
-                color: #fff;
-                font-family: $font-Mont;
-                font-weight: 100;
-                text-align: center;
+                height: 10rem;
+
+                .title{
+                    width: 100%;
+
+                    h1{
+                        font-size: 1.5rem;
+                        color: #fff;
+                        font-family: $font-Mont;
+                        text-align: center;
+                        text-transform: uppercase;
+                        line-height: 6rem;
+                    }
+                }
+
+                .sub-title{
+                    width: 100%;
+
+                    p{
+                        font-size: 14px;
+                        color: #fff;
+                        font-family: $font-Noto;
+                        text-align: center;
+                        line-height: 4rem;
+                    }
+                }
             }
 
-            .Index-title{
+            .slick-slider{
+                position: relative;
                 width: 100%;
-                font-size: 2rem;
-                text-transform: uppercase;
-                color: #fff;
-                font-family: $font-Mont;
-                text-align: center;
-            }
-        }
-    }
+                height: 25rem;
 
-    .Slider-wrap{
-        position: relative;
-        width: 100%;
-        height: 65rem;
-        overflow: hidden;
-
-        .Slider-title{
-            display: block;
-            position: absolute;
-            margin-top: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: max-content;
-            line-height: 50px;
-            font-size: 15px;
-            text-align: center;
-            color: #fff;
-            font-family: $font-Mont;
-            text-transform: uppercase;
-        }
-
-        .slick-slider{
-            position: relative;
-            width: 100%;
-            height: calc(42rem + 10px);
-            top: 60%;
-            transform: translateY(-60%);
-
-            .NextArrow{
-                right: 3rem;
-            }
-    
-            .PrevArrow{
-                left: 3rem;
-            }
-
-            .slick-slide{
-                transform: scale(0.9);
-    
-                .Project-item{
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    height: calc(42rem + 10px);
-                    color: #fff;
-                    padding: 0 5rem;
+                .slick-slide{
+                    transform: scale(1);
         
-                    .Project-ImgBox{
+                    .Project-item{
                         position: relative;
-                        width: 100%;
-                        height: 30rem;
-                        overflow: hidden;
-        
-                        img{
-                            object-fit: cover;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
-    
-                    .Project-infoBox{
-                        position: relative;
-                        width: 100%;
-                        height: 10rem;
-                        padding : 2rem 0 0 0;
-                        opacity: 0;
-                        transition: all 0.5s ease-out;
-    
-                        .Project-type{
-                            width: 100%;
-                            line-height: 2rem;
-                            font-size: 12px;
-                            font-family: $font-Mont;
-                        }
-    
-                        .title-category{
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: flex-end;
-    
-                            .title{
-                                font-size : 1.5rem;
-                                font-family: $font-Mont;
-                                line-height: 4rem;
-                            }
-    
-                            .category{
-                                font-size: 12px;
-                                font-family: $font-Noto;
-                                line-height: 4rem;
-                            }
-                        }
-                    }
-
-                    .slide-status{
-                        position: relative;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        margin-top: 2rem;
-                        width: 100%;
-                        height: 10px;
-                        background-color: rgb(77, 77, 77);
-                        opacity: 0;
-                        transition: all 0.5s ease-out;
-                        
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
+                        color: #fff;
+                        padding: 0 20px;
             
-                        .status-bar{
-                            position: absolute;
-                            left: 0;
-                            width: 25%;
-                            height: 100%;
-                            background-color: #fff;
+                        .Project-ImgBox{
+                            position: relative;
+                            width: 100%;
+                            height: 15rem;
+                            overflow: hidden;
+            
+                            img{
+                                object-fit: cover;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            .Project-viewButton {
+                                opacity: 0;
+                            }
+
+                            &::before{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                content: '';
+                                background-color: rgba($color: #000000, $alpha: 0.6);
+                                z-index: 10;
+                                opacity: 1;
+                                transition: all 0.5s ease-in;
+                                font-size: 2rem;
+                            }
+                        }
+        
+                        .Project-infoBox{
+                            position: relative;
+                            width: 100%;
+                            height: 10rem;
+                            padding : 2rem 0 0 0;
+                            opacity: 0;
+                            transition: all 0.5s ease-out;
+        
+                            .Project-type{
+                                width: 100%;
+                                line-height: 3rem;
+                                font-size: 13px;
+                                font-family: $font-Mont;
+                            }
+        
+                            .title-category{
+        
+                                .title{
+                                    font-size : 1.3rem;
+                                    font-family: $font-Mont;
+                                    line-height: 5rem;
+                                }
+        
+                                .category{
+                                    font-size: 12px;
+                                }
+                            }
                         }
                     }
                 }
             }
-        }
 
-        .slick-center{
+            .slick-center{
 
-            &.slick-slide{
+                &.slick-slide{
 
-                .Project-item{
-        
-                    .Project-ImgBox{
-                        position: relative;
-                        width: 100%;
-                        height: 30rem;
-                        overflow: hidden;
-        
-                        img{
-                            object-fit: cover;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
+                    .Project-item{
+            
+                        .Project-ImgBox{
+
+                            &::before{
+                                transition: all 0.5s ease-out;
+                                opacity: 0;
+                            }
+
+                            &:hover{
+
+                                .Project-viewButton{
+                                    transition: all 0.5s ease-in;
+                                    opacity: 1;
+                                    cursor: pointer;
+                                }
+                            }
                         }
 
-                        &:hover{
-                            cursor: pointer;
+                        .Project-infoBox{
+                            opacity: 1;
+                            transition: all 0.5s ease-in;
                         }
-                    }
 
-                    .Project-infoBox{
-                        opacity: 1;
-                        transition: all 0.5s ease-in;
-                    }
-
-                    .slide-status{
-                        opacity: 1;
-                        transition: all 0.5s ease-in;
+                        .slide-status{
+                            opacity: 1;
+                            transition: all 0.5s ease-in;
+                        }
                     }
                 }
             }
         }
     }
-}
 }
 
 /* 맥북 pc 반응형*/
@@ -1172,260 +1006,89 @@
         }
     }
 }
-/*Project Page Banner*/
-.Project-Banner{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
+    /*Project Page Banner*/
+    .Project-Banner{
 
-    .Project-Index{
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 40%;
-        height: 100%;
-
-        .bg-video{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-    
-            video{
-                width : 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            &::before{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                content: '';
-                background-color: rgba($color: #000000, $alpha: 0.5);
-                z-index: 10;
-            }
-        }
-
-        .Index-infoBox{
+        .Slider-wrap{
+            height: 50rem;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            height: 10rem;
-            z-index: 10;
+            justify-content: space-around;
+            padding-bottom: 0;
 
-            .Index-subTitle{
+            .slick-slider{
+                position: relative;
                 width: 100%;
-                font-size: 1.2rem;
-                text-transform: uppercase;
-                color: #fff;
-                font-family: $font-Mont;
-                font-weight: 100;
-                text-align: center;
-            }
+                height: 30rem;
 
-            .Index-title{
-                width: 100%;
-                font-size: 2rem;
-                text-transform: uppercase;
-                color: #fff;
-                font-family: $font-Mont;
-                text-align: center;
-            }
-        }
-    }
-
-    .Slider-wrap{
-        position: relative;
-        width: 60%;
-        height: 100%;
-        overflow: hidden;
-
-        .Slider-title{
-            display: none;
-        }
-
-        .slick-slider{
-            position: relative;
-            width: 100%;
-            height: calc(32rem + 10px);
-            top: 60%;
-            transform: translateY(-60%);
-
-            .NextArrow{
-                position: absolute;
-                right: 5rem;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: transparent;
-                border: none;
-                width: 50px;
-                height: 50px;
-                z-index: 10;
-                display: flex;
-                align-items: center;
-                font-size: 2.5rem;
-                color: #fff;
-                cursor: pointer;
-            }
-    
-            .PrevArrow{
-                position: absolute;
-                left: 5rem;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: transparent;
-                border: none;
-                width: 50px;
-                height: 50px;
-                z-index: 10;
-                display: flex;
-                align-items: center;
-                font-size: 2.5rem;
-                color: #fff;
-                cursor: pointer;
-            }
-
-            .slick-slide{
-                transform: scale(0.9);
-    
-                .Project-item{
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    height: calc(32rem + 10px);
-                    color: #fff;
-                    padding: 0 5rem;
+                .slick-slide{
         
-                    .Project-ImgBox{
-                        position: relative;
-                        width: 100%;
-                        height: 20rem;
-                        overflow: hidden;
-        
-                        img{
-                            object-fit: cover;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
-    
-                    .Project-infoBox{
-                        position: relative;
-                        width: 100%;
-                        height: 10rem;
-                        padding : 2rem 0 0 0;
-                        opacity: 0;
-                        transition: all 0.5s ease-out;
-    
-                        .Project-type{
-                            width: 100%;
-                            line-height: 2rem;
-                            font-size: 12px;
-                            font-family: $font-Mont;
-                        }
-    
-                        .title-category{
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: flex-end;
-    
-                            .title{
-                                font-size : 1.5rem;
-                                font-family: $font-Mont;
-                                line-height: 4rem;
-                            }
-    
-                            .category{
-                                font-size: 12px;
-                                font-family: $font-Noto;
-                                line-height: 4rem;
-                            }
-                        }
-                    }
-
-                    .slide-status{
-                        position: relative;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        margin-top: 2rem;
-                        width: 100%;
-                        height: 10px;
-                        background-color: rgb(77, 77, 77);
-                        opacity: 0;
-                        transition: all 0.5s ease-out;
-                        
+                    .Project-item{
+                        padding: 0 50px;
             
-                        .status-bar{
-                            position: absolute;
-                            left: 0;
-                            width: 25%;
-                            height: 100%;
-                            background-color: #fff;
+                        .Project-ImgBox{
+                            position: relative;
+                            width: 100%;
+                            height: 20rem;
+                            overflow: hidden;
+
+                            .Project-viewButton {
+                                opacity: 0;
+                            }
+
+                            &::before{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                content: '';
+                                background-color: rgba($color: #000000, $alpha: 0.6);
+                                z-index: 10;
+                                opacity: 1;
+                                transition: all 0.5s ease-in;
+                                font-size: 2rem;
+                            }
                         }
                     }
                 }
             }
-        }
 
-        .slick-center{
+            .slick-center{
 
-            &.slick-slide{
+                &.slick-slide{
 
-                .Project-item{
-        
-                    .Project-ImgBox{
-                        position: relative;
-                        width: 100%;
-                        height: 20rem;
-                        overflow: hidden;
-        
-                        img{
-                            object-fit: cover;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
+                    .Project-item{
+            
+                        .Project-ImgBox{
+
+                            &::before{
+                                transition: all 0.5s ease-out;
+                                opacity: 0;
+                            }
+
+                            &:hover{
+
+                                .Project-viewButton{
+                                    transition: all 0.5s ease-in;
+                                    opacity: 1;
+                                    cursor: pointer;
+                                }
+                            }
                         }
 
-                        &::before{
-                            transition: all 0.5s ease-out;
-                            opacity: 0;
+                        .Project-infoBox{
+                            opacity: 1;
+                            transition: all 0.5s ease-in;
                         }
 
-                        &:hover{
-                            cursor: pointer;
+                        .slide-status{
+                            opacity: 1;
+                            transition: all 0.5s ease-in;
                         }
-                    }
-
-                    .Project-infoBox{
-                        opacity: 1;
-                        transition: all 0.5s ease-in;
-                    }
-
-                    .slide-status{
-                        opacity: 1;
-                        transition: all 0.5s ease-in;
                     }
                 }
             }
         }
     }
-}
 }
