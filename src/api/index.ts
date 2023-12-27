@@ -2,7 +2,7 @@ import axios from 'axios';
 import CommonService from './CommonService';
 
 const getService = axios.create({
-  baseURL: 'https://api.iuprofile.site',
+  baseURL: 'https://iuprofile.site',
   timeout: 60000,
 });
 
