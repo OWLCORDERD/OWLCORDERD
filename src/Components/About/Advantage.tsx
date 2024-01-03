@@ -81,6 +81,7 @@ function Advantage() {
       setAdvanData(res);
     });
 
+    /*
     const tl = gsap.timeline();
 
     tl.fromTo(
@@ -94,7 +95,7 @@ function Advantage() {
         opacity: 1,
         scrollTrigger: {
           trigger: AdctnRef.current,
-          start: '-40% top',
+          start: '-60% top',
           end: 'bottom bottom',
           scrub: 1,
         },
@@ -112,12 +113,13 @@ function Advantage() {
         opacity: 1,
         scrollTrigger: {
           trigger: AdctnRef.current,
-          start: '-20% top',
+          start: '-50% top',
           end: 'bottom bottom',
           scrub: 1,
         },
       },
     );
+    */
   }, []);
   return (
     <div className="Advantage-container" ref={AdctnRef}>

@@ -983,26 +983,134 @@
 /* 맥북 pc 반응형*/
 @media screen and (min-width : 1440px) and (max-width : 1700px){
 
-/*Main Page Banner*/
+/*PC Main Page Banner*/
 .Main-Banner{
     position: relative;
     width : 100%;
-    height : 100vh;
-    padding : 0 5%;
+    height : 80vh;
+    padding : 0 8.25rem;
     
     .Banner-Index{
+        position: relative;
+        top : 10%;
+        width : 100%;
+        height : 50%;
+        transform: translateY(0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding : 0;
 
         .Index-contentBox{
+            position: relative;
+            width : 60%;
+            height : 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            color: #fff;
 
             .Index-title{
+                width: 100%;
+                height: 150px;
+                line-height: 150px;
 
                 h2{
                     font-size: 2.5rem;
-                    font-family: $font-Mont;
-                    font-weight: 300;
-                    text-transform: uppercase;
                 }
             }
+
+            .Dynamic-TxtBox{
+
+                .Dynamic-txt{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .Banner-img{
+            position: relative;
+            width : 30%;
+            height: 100%;
+
+            .circle-txtBox{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 180px;
+                height: 180px;
+
+                img{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 180px;
+                    animation: rotateCircleTxt 10s linear infinite;
+    
+                    @keyframes rotateCircleTxt{
+                        100%{
+                            transform: translate(-50%, -50%) rotate(360deg);
+                        }
+                    }
+                }
+            }
+
+            .owl-icon{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                img{
+                    max-width: 30px;
+                }
+            }
+        }
+    }
+
+    .scroll-down{
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 6rem;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .scroll-icon{
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            animation: scrollAnimate 2s infinite;
+            opacity: 0;
+
+            @keyframes scrollAnimate{
+                50%{
+                    opacity: 1;
+                    transition-duration: 1s;
+                    margin-top: 1rem;
+                }
+
+                100%{
+                    opacity: 1;
+                    transition-duration: 1s;
+                    margin-top: 2rem;
+                }
+            }
+        }
+
+        h2{
+            font-size: 1rem;
+            font-family: $font-Mont;
+            font-weight: bold;
         }
     }
 }

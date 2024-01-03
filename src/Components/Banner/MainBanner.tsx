@@ -20,17 +20,15 @@ function PCBanner(): JSX.Element {
   const TxtBoxAnimation = {
     initial: {
       display: 'none',
-      opacity: 0,
     },
 
     animate: {
       display: 'flex',
-      opacity: 1,
       transition: {
         staggerChildren: 0.5,
-        delayChildren: 2,
+        delayChildren: 1,
         duration: 2,
-        delay: 1.5,
+        delay: 1,
       },
     },
   };
@@ -102,7 +100,7 @@ function PCBanner(): JSX.Element {
   useEffect(() => {
     const timer = setTimeout(() => {
       typing();
-    }, 2500);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [typing]);

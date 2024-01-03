@@ -255,6 +255,26 @@
     .Advantage-container{
         .Advantage-Index{
             padding: 0 3rem;
+
+            .Index-title{
+                width: 100%;
+                height: 8rem;
+                line-height: 8rem;
+                margin-bottom: 2rem;
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-family: $font-Mont;
+            }
+
+            .Index-subTitle{
+                width: 100%;
+                height: 4rem;
+                line-height: 4rem;
+                font-size: 14px;
+                font-family: $font-Noto;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
         }
 
             .Advantages-contents{
@@ -308,6 +328,15 @@
         /*Development Skills container*/
     .DevelopSkills-container{
         padding: 0 3rem;
+
+        .DevelopSkill-header{
+            .DevelopSkill-Index{
+    
+                .Index-title{
+                    font-size: 1rem;
+                }
+            }
+        }
     }
 }
 }

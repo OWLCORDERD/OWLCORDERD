@@ -6,6 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Developer() {
   const ctnRef = useRef(null);
+
+  /*
   useEffect(() => {
     const tl = gsap.timeline();
 
@@ -63,6 +65,7 @@ function Developer() {
       },
     );
   }, []);
+  */
   return (
     <div className="Introduce-container" ref={ctnRef}>
       <div className="Introduce-titleBox">
