@@ -1,9 +1,9 @@
-import { projectDB } from 'pages/Project';
 import React, { useEffect, useRef } from 'react';
 import { gsap, ScrollTrigger } from 'gsap/all';
+import { ProjectType } from 'api/CommonService';
 
 interface titleProps {
-  currentData: projectDB | null;
+  currentData: ProjectType;
 }
 
 function CurrentBoard({ currentData }: titleProps) {
@@ -28,46 +28,84 @@ function CurrentBoard({ currentData }: titleProps) {
     });
   }, []);
 
-  const mainPage = [
-    {
-      id: 1,
-      name: 'Main Page Function Chapter.1',
-      img: currentData?.mainImg,
-    },
-    {
-      id: 2,
-      name: 'Main Page Function Chapter.2',
-      img: currentData?.mainImg2,
-    },
-    {
-      id: 3,
-      name: 'Main Page Function Chapter.3',
-      img: currentData?.mainImg3,
-    },
-  ];
+  const mainPage =
+    currentData && currentData.main_Part3
+      ? [
+          {
+            id: 1,
+            name: 'Main Page Banner',
+            img: currentData.main_Banner,
+          },
+          {
+            id: 2,
+            name: 'Main Page Part.1',
+            img: currentData.main_Part1,
+          },
+          {
+            id: 3,
+            name: 'Main Page Part.2',
+            img: currentData.main_Part2,
+          },
+          {
+            id: 4,
+            name: 'Main Page Part.3',
+            img: currentData.main_Part3,
+          },
+        ]
+      : [
+          {
+            id: 1,
+            name: 'Main Page Banner',
+            img: currentData.main_Banner,
+          },
+          {
+            id: 2,
+            name: 'Main Page Part.1',
+            img: currentData.main_Part1,
+          },
+          {
+            id: 3,
+            name: 'Main Page Part.2',
+            img: currentData.main_Part2,
+          },
+        ];
 
-  const subPage = [
-    {
-      id: 4,
-      name: 'Sub Page Function Chapter.1',
-      img: currentData?.subImg,
-    },
-    {
-      id: 5,
-      name: 'Sub Page Function Chapter.2',
-      img: currentData?.subImg2,
-    },
-    {
-      id: 6,
-      name: 'Sub Page Function Chapter.3',
-      img: currentData?.subImg3,
-    },
-    {
-      id: 7,
-      name: 'Sub Page Function Chapter.4',
-      img: currentData?.subImg4,
-    },
-  ];
+  const subPage =
+    currentData && currentData.sub_Part3
+      ? [
+          {
+            id: 4,
+            name: 'Sub Page Part.1',
+            img: currentData.sub_Part1,
+          },
+          {
+            id: 5,
+            name: 'Sub Page Part.2',
+            img: currentData.sub_Part2,
+          },
+          {
+            id: 6,
+            name: 'Sub Page Part.3',
+            img: currentData.sub_Part3,
+          },
+          {
+            id: 7,
+            name: 'Sub Page Part.4',
+            img: currentData.sub_Part4,
+          },
+        ]
+      : [
+          {
+            id: 4,
+            name: 'Sub Page Part.1',
+            img: currentData.sub_Part1,
+          },
+          {
+            id: 5,
+            name: 'Sub Page Part.2',
+            img: currentData.sub_Part2,
+          },
+        ];
 
   return (
     <div className="CurrentBoard-container">
@@ -98,7 +136,7 @@ function CurrentBoard({ currentData }: titleProps) {
                 <h1>{item.name}</h1>
               </div>
               <div className="page-ImgBox">
-                <img src={item.img} alt="projectImg" />
+                <img src={item.img} alt="메인 페이지 이미지" />
               </div>
             </div>
           ))}
@@ -112,7 +150,7 @@ function CurrentBoard({ currentData }: titleProps) {
                 <h1>{item.name}</h1>
               </div>
               <div className="page-ImgBox">
-                <img src={item.img} alt="projectImg" />
+                <img src={item.img} alt="서브 페이지 이미지" />
               </div>
             </div>
           ))}

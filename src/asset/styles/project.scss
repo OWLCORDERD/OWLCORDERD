@@ -1,25 +1,180 @@
 @import "../Variables.scss";
 
-.CurrentProject-container {
+.Project-container{
     position: relative;
     width: 100%;
     height: 100%;
-    padding : 0 8.25rem;
+    padding: 5rem 6.25rem;
+
+    .Project-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 15rem;
+        margin-bottom: 2rem;
+
+        .Project-titleBox{
+            width: 40%;
+            height: max-content;
+
+            span{
+                width: 100%;
+                line-height: 3rem;
+                color: #fff;
+                font-family: $font-Noto;
+                font-size: 1rem;
+            }
+
+            h1{
+                width: 100%;
+                line-height: 7rem;
+                color: #fff;
+                font-family: $font-Mont;
+                font-size: 3rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .Project-List{
+        position: relative;
+        width: 100%;
+        height: 90rem;
+
+        .card-List{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap : 50px;
+
+            .Project-card{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background-color: $darkMode-button;
+
+                .Project-Banner{
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 50%;
+                    padding: 0 50px;
+
+                    .Project-titleBox{
+                        width: 100%;
+                        height: 8rem;
+                        margin-bottom: 2rem;
+
+                        .title{
+                            width: 100%;
+                            line-height: 6rem;
+                            color: #fff;
+                            font-family: $font-Mont;
+                            font-size: 2rem;
+                            text-transform: uppercase;
+                        }
+
+                        .subTitle{
+                            width: 100%;
+                            line-height: 2rem;
+                            color: #fff;
+                            font-family: $font-Noto;
+                            font-size: 1rem;
+                        }
+                    }
+
+                    .Project-info{
+                        width: 100%;
+                        height: 10rem;
+
+                        p{
+                            width: 70%;
+                            height: 100%;
+                            font-family: $font-Noto;
+                            color: $white-color;
+                            font-size: 14px;
+                            word-break: keep-all;
+                        }
+                    }
+
+                    .view-button{
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        right: 2rem;
+                        bottom: 2rem;
+
+                        svg{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+
+                        &:hover{
+                            cursor: pointer;
+                            svg{
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+
+                .Banner-imgBox{
+                    position: relative;
+                    width: 100%;
+                    height: 50%;
+
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    &::before{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        content: '';
+                        background-color: rgba($color: #000000, $alpha: 0.3);
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.CurrentProject-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding : 6.25rem 6.25rem 0 6.25rem;
 
     .Current-Banner{
-        position: relative;
         display: flex;
         justify-content: space-between;
         width: 100%;
-        height: max-content;
+        height: 65rem;
+        padding: 2rem 0 0 0;
 
         .CurrentInfo-container{
-            width: 60%;
+            width: 55%;
             height: 100%;
 
             .Project-ImgBox{
                 position: relative;
-                width: 90%;
+                width: 100%;
                 height: 32rem;
 
                 img{
@@ -32,7 +187,7 @@
 
             .Project-infoBox{
                 margin-top: 4rem;
-                width: 90%;
+                width: 100%;
                 height: 20rem;
                 color: #fff;
                 font-family: $font-Noto;
@@ -60,56 +215,11 @@
                     color: #b4b4b4;
                 }
             }
-
-            .Count-menu{
-                width: 25rem;
-                height: 5rem;
-
-                li{
-                    display: inline-block;
-                    width: 10rem;
-                    height: 100%;
-                    margin-right: 5rem;
-
-                    &:nth-child(2){
-                        margin-right: 0;
-                    }
-
-                    .view-count{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        width: 100%;
-                        height: 100%;
-                        color: #fff;
-
-                        span{
-                            font-size: 1rem;
-                            font-family: $font-Noto;
-                        }
-                    }
-
-                    .like-count{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        width: 100%;
-                        height: 100%;
-                        color: #fff;
-
-                        span{
-                            font-size: 1rem;
-                            font-family: $font-Noto;
-                            font-weight: bold;
-                        }
-                    }
-                }
-            }
         }
 
         .ProjectSkills-container{
             position: sticky;
-            top: 2rem;
+            top: 6.25rem;
             right: 0;
             width: 40%;
             height: 30rem;
@@ -185,21 +295,22 @@
                         margin-right: 2rem;
 
                         .Skill-item{
-                            border: 2px solid rgba($color: #fff, $alpha: 0.7);
                             width: max-content;
                             height: 3rem;
                             padding : 0 1rem;
+                            background-color: $darkMode-button;
 
                             span{
                                 font-family: $font-Mont;
+                                text-transform: uppercase;
                                 font-weight: bold;
                                 line-height: 3rem;
                                 color: rgba($color: #fff, $alpha: 0.7);
-                                font-size: 13px;
+                                font-size: 15px;
                             }
 
                             &:hover{
-                                background-color: #565656;
+                                background-color: $rgba-white;
                                 color: #fff;
                                 cursor: pointer;
                             }
@@ -214,20 +325,22 @@
         position: relative;
         display: flex;
         width: 100%;
-        height: max-content;
+        height: 100%;
         margin: 5rem 0;
 
         .Project-category{
             position: relative;
+            top: 0;
             left: 0;
+            height: 300rem;
             flex : 2;
 
             ul{
                 position: sticky;
-                top: 2rem;
+                top: 6.25rem;
                 left: 0;
                 width: 100%;
-                height: 10rem;
+                height: 15rem;
 
                 li{
                     width: 100%;
@@ -261,12 +374,13 @@
         .Project-Board{
             flex : 8;
             width: 80%;
-            height: max-content;
+            height: 100%;
 
             .Main-Board,.Sub-Board{
                 width: 100%;
-                height: max-content;
+                height: 100%;
                 padding : 0 5rem;
+                margin-top: 5rem;
 
                 .Main-title{
                     width: 100%;
@@ -279,11 +393,13 @@
 
                 .Board-item{
                     width: 100%;
-                    height: 50rem;
+                    height: 35rem;
+                    margin-bottom: 2rem;
 
                     .page-info{
                         width: 100%;
-                        line-height: 8rem;
+                        height: 3rem;
+                        line-height: 3rem;
                         text-transform: uppercase;
                         font-family: $font-Mont;
                         color: rgba($color: #fff, $alpha: 0.7);
@@ -291,8 +407,9 @@
                     }
 
                     .page-ImgBox{
-                        width: 100%;
-                        height: 36rem;
+                        margin-top: 2rem;
+                        width: max-content;
+                        height: 30rem;
 
                         img{
                             width: 100%;

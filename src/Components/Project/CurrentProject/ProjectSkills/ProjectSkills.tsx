@@ -1,8 +1,8 @@
-import { projectDB } from 'pages/Project';
+import { ProjectType } from 'api/CommonService';
 import React from 'react';
 
 interface propsDataType {
-  currentData: projectDB | null;
+  currentData: ProjectType | null;
 }
 
 function ProjectSkills({ currentData }: propsDataType) {
@@ -56,11 +56,21 @@ function ProjectSkills({ currentData }: propsDataType) {
             </div>
           </li>
 
-          <li>
-            <div className="Skill-item">
-              <span>{currentData?.useTech5}</span>
-            </div>
-          </li>
+          {currentData?.useTech5 ? (
+            <li>
+              <div className="Skill-item">
+                <span>{currentData?.useTech5}</span>
+              </div>
+            </li>
+          ) : null}
+
+          {currentData?.useTech6 ? (
+            <li>
+              <div className="Skill-item">
+                <span>{currentData?.useTech6}</span>
+              </div>
+            </li>
+          ) : null}
         </ul>
       </div>
     </div>

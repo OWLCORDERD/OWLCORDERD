@@ -1,28 +1,25 @@
 import React, { useEffect } from 'react';
 import 'asset/styles/main.scss';
 import { useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { main } from 'reducer/nextIndex';
 import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
 import MainNav from 'Components/Navigator/MainNav';
 import ResponsiveMenu from 'Components/MobileResponsive/ResponsiveMenu';
 import { Helmet } from 'react-helmet-async';
+import Project from 'Components/About/Project';
 import Footer from '../Components/Footer/Footer';
 import Technology from '../Components/About/Technology';
 import Contact from '../Components/Contact/Contact';
 import Developer from '../Components/About/Developer';
-import MainBanner from '../Components/Banner/MainBanner';
+import Banner from '../Components/Banner/Banner';
 
 function Main() {
   const location = useLocation();
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (location.pathname === '/') {
-      dispatch(main('About'));
       window.scrollTo(0, 0);
     }
-  }, [location.pathname, dispatch]);
+  }, [location.pathname]);
 
   return (
     <>
@@ -48,21 +45,25 @@ function Main() {
 
       <main>
         <div className="container" id="container">
-          <section id="main-banner">
-            <MainBanner />
-          </section>
+          <div id="Banner">
+            <Banner />
+          </div>
 
-          <section id="introduce">
+          <div id="About">
             <Developer />
-          </section>
+          </div>
 
-          <section id="technology">
+          <div id="Technology">
             <Technology />
-          </section>
+          </div>
 
-          <section id="contact">
+          <div id="Project">
+            <Project />
+          </div>
+
+          <div id="Contact">
             <Contact />
-          </section>
+          </div>
         </div>
         <Footer />
       </main>

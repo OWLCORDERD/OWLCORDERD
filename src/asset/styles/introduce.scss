@@ -6,56 +6,18 @@
     left : 0;
     width : 100%;
     height : 100vh;
-    padding: 6.25rem 10rem;
-
-    .Introduce-titleBox{
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        width : 100%;
-        height : 5rem;
-        margin-bottom: 6.25rem;
-
-        .Introduce-title{
-            width: max-content;
-            height: 100%;
-            line-height: 100px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            font-family: $font-Mont;
-            text-transform: uppercase;
-            color: #fff;
-            text-align: center;
-        }
-    }
+    padding: 5rem 6.25rem;
 
     .Introduce-infoBox{
         position: relative;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width : 90%;
-        height: 550px;
-
-        .Developer-ImgBox{
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            overflow: hidden;
-
-            img{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 450px;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
+        width : 100%;
+        height: 42rem;
 
         .Introduce-info{
             position: relative;
@@ -63,20 +25,20 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-between;
-            width: 50%;
+            width: 45%;
             height: 100%;
 
             h2{
-                width: 50%;
+                width: 60%;
                 word-break: keep-all;
-                font-size: 1.1rem;
+                font-size: 1.3rem;
                 font-family: $font-Noto;
                 color: #fff;
             }
 
             p{
                 position: relative;
-                width : 500px;
+                width : 60%;
                 height : max-content;
                 color: #fff;
                 font-family: $font-Noto;
@@ -97,12 +59,70 @@
                 font-weight: bold;
                 line-height: 2.5rem;
                 cursor: pointer;
-                transition: all 0.5s ease-out;
+                transition: all 0.3s ease-out;
 
                 &:hover{
                     background-color: #fff;
-                    transition: all 0.5s ease-in;
+                    transition: all 0.3s ease-in;
                     color: #2e2e2e;
+                }
+            }
+        }
+
+        .Advantages-list{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 55%;
+            height: 100%;
+            gap : 3rem 6.25rem;
+
+            .Advantage-item{
+                width: 100%;
+                height: 100%;
+
+                .Advantage-icon{
+                    width: 100%;
+                    height: 40%;
+                    
+                    img{
+                        position: relative;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                .Advantage-titleBox{
+                    width: 100%;
+                    padding-top: 2rem;
+                    height: 30%;
+
+                    .title{
+                        width: 100%;
+                        color: #fff;
+                        font-family: $font-Mont;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        text-align: center;
+                    }
+                }
+
+                .Advantage-info{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 30%;
+
+                    p{
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        font-family: $font-Noto;
+                        color: #fff;
+                        font-size: 12px;
+                        word-break: keep-all;
+                    }
                 }
             }
         }
@@ -111,333 +131,12 @@
 
 /* 테블릿 반응형 */
 @media screen and (min-width : 763px) and (max-width : 1439px){
-    .Introduce-container{
-        position: relative;
-        top : 0;
-        left : 0;
-        width : 100%;
-        height : max-content;
-        padding: 6.25rem 5rem;
-    
-        .Introduce-titleBox{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-    
-            .Introduce-title{
-                width: max-content;
-                height: 100%;
-                line-height: 100px;
-                font-size: 1.2rem;
-                font-weight: bold;
-                font-family: $font-Mont;
-                text-transform: uppercase;
-                color: #fff;
-                text-align: center;
-            }
-        }
-    
-        .Introduce-infoBox{
-            position: relative;
-            left: 0;
-            transform: translateX(0);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            width : 100%;
-            height: 100%;
-    
-            .Developer-ImgBox{
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 420px;
-                height: 500px;
-                overflow: hidden;
-                margin-bottom: 4rem;
-    
-                img{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-    
-            .Introduce-info{
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                height: 30rem;
-    
-                h2{
-                    width: 25rem;
-                    word-break: keep-all;
-                    font-size: 1.3rem;
-                    font-family: $font-Noto;
-                    color: #fff;
-                    text-align: center;
-                }
-    
-                p{
-                    position: relative;
-                    width : 80%;
-                    height : max-content;
-                    color: #fff;
-                    font-family: $font-Noto;
-                    font-weight: 100;
-                    font-size: 16px;
-                    word-break: keep-all;
-                    text-align: center;
-                }
-    
-                .view-report{
-                    display: block;
-                    color: #fff;
-                    background-color: #2e2e2e;
-                    text-align: center;
-                    width: 80%;
-                    height: 3rem;
-                    font-family: $font-Noto;
-                    font-size: 15px;
-                    font-weight: bold;
-                    line-height: 3rem;
-                    cursor: pointer;
-                    transition: all 0.5s ease-out;
-    
-                    &:hover{
-                        background-color: #fff;
-                        transition: all 0.5s ease-in;
-                        color: #2e2e2e;
-                    }
-                }
-            }
-        }
-    }
 }
 
+/* 맥북 반응형 */
 @media screen and (min-width : 1440px) and (max-width : 1700px){
-    .Introduce-container{
-        position: relative;
-        top : 0;
-        left : 0;
-        width : 100%;
-        height : 100vh;
-        padding: 3rem 6.25rem;
-    
-        .Introduce-titleBox{
-            margin-bottom: 4rem;
-    
-            .Introduce-title{
-                width: max-content;
-                height: 100%;
-                line-height: 100px;
-                font-size: 1rem;
-                font-weight: bold;
-                font-family: $font-Mont;
-                text-transform: uppercase;
-                color: #fff;
-                text-align: center;
-            }
-        }
-    
-        .Introduce-infoBox{
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width : 90%;
-            height: 550px;
-    
-            .Developer-ImgBox{
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 50%;
-                height: 100%;
-                overflow: hidden;
-    
-                img{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 450px;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-    
-            .Introduce-info{
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
-                width: 50%;
-                height: 100%;
-    
-                h2{
-                    width: 28rem;
-                    word-break: keep-all;
-                    font-size: 14px;
-                    font-family: $font-Noto;
-                    color: #fff;
-                }
-    
-                p{
-                    position: relative;
-                    width : 28rem;
-                    height : max-content;
-                    color: #fff;
-                    font-family: $font-Noto;
-                    font-weight: 100;
-                    font-size: 12px;
-                    word-break: keep-all;
-                }
-    
-                .view-report{
-                    display: block;
-                    color: #fff;
-                    background-color: #2e2e2e;
-                    text-align: center;
-                    width: 28rem;
-                    height: 2.5rem;
-                    font-family: $font-Noto;
-                    font-size: 15px;
-                    font-weight: bold;
-                    line-height: 2.5rem;
-                    cursor: pointer;
-                    transition: all 0.5s ease-out;
-    
-                    &:hover{
-                        background-color: #fff;
-                        transition: all 0.5s ease-in;
-                        color: #2e2e2e;
-                    }
-                }
-            }
-        }
-    }
 }
 
+/* 모바일 반응형 */
 @media screen and (max-width : 763px){
-    .Introduce-container{
-        position: relative;
-        top : 0;
-        left : 0;
-        width : 100%;
-        height : 85rem;
-        padding: 5rem 0;
-    
-        .Introduce-titleBox{
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width : 100%;
-            height : 5rem;
-            margin-bottom: 5rem;
-            padding : 0 2rem;
-    
-            .Introduce-title{
-                width: max-content;
-                height: 100%;
-                line-height: 100px;
-                font-size: 1rem;
-                font-weight: bold;
-                font-family: $font-Mont;
-                text-transform: uppercase;
-                color: #fff;
-                text-align: center;
-            }
-        }
-    
-        .Introduce-infoBox{
-            position: relative;
-            left: 0;
-            transform: translateX(0);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            width : 100%;
-            height: 65rem;
-    
-            .Developer-ImgBox{
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 300px;
-                height: 25rem;
-                overflow: hidden;
-    
-                img{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-    
-            .Introduce-info{
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: space-around;
-                width: 70%;
-                height: 35rem;
-    
-                h2{
-                    width: 100%;
-                    word-break: keep-all;
-                    font-size: 15px;
-                    font-family: $font-Noto;
-                    color: #fff;
-                }
-    
-                p{
-                    position: relative;
-                    width : 100%;
-                    height : max-content;
-                    color: #fff;
-                    font-family: $font-Noto;
-                    font-weight: 100;
-                    font-size: 13px;
-                    word-break: keep-all;
-                }
-    
-                .view-report{
-                    display: block;
-                    color: #fff;
-                    background-color: #2e2e2e;
-                    text-align: center;
-                    width: 100%;
-                    height: 2.5rem;
-                    font-family: $font-Noto;
-                    font-size: 15px;
-                    font-weight: bold;
-                    line-height: 2.5rem;
-                    cursor: pointer;
-                    transition: all 0.5s ease-out;
-    
-                    &:hover{
-                        background-color: #fff;
-                        transition: all 0.5s ease-in;
-                        color: #2e2e2e;
-                    }
-                }
-            }
-        }
-    }
 }

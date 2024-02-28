@@ -1,60 +1,10 @@
 import React from 'react';
 import '../../asset/styles/footer.scss';
 import { SiGithub, SiNotion, SiGmail, SiInstagram } from 'react-icons/si';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 function Footer() {
-  const currentChapter: any = useSelector(state => state);
-
-  const chapterTitle = currentChapter.counter.value;
-
-  const chapter = [
-    {
-      id: 1,
-      currentChapter: 'About',
-      index: 'Next - Chapter 2',
-      nextChapter: 'Project',
-      Link: '/Project',
-      info: 'used my front-End skills',
-      info2: 'with publishing to made project site',
-    },
-    {
-      id: 2,
-      currentChapter: 'Project',
-      index: 'Next - Chapter 3',
-      nextChapter: 'WorkSpace',
-      Link: '/WorkSpace',
-      info: 'introduce my full-stack skills',
-      info2: 'for made web site project',
-    },
-  ];
-
-  const NextIndex = chapter.filter(item => item.currentChapter === chapterTitle);
-
   return (
     <footer className="footer-container">
-      <div className="Next-Chapter">
-        <div className="NextChapter-Index">
-          <p>{NextIndex[0]?.index}</p>
-        </div>
-
-        <div className="NextChapter-title">
-          <Link to={NextIndex[0]?.Link}>
-            <h2>{NextIndex[0]?.nextChapter}</h2>
-          </Link>
-          <p>Click to Next !</p>
-        </div>
-
-        <div className="NextChapter-info">
-          <span>
-            {NextIndex[0]?.info}
-            <br />
-            {NextIndex[0]?.info2}
-          </span>
-        </div>
-      </div>
-
       <div className="footer-subMenu">
         <div className="footer-copyright">
           <h2>© 2022. Owlcoderd All rights reserved.</h2>

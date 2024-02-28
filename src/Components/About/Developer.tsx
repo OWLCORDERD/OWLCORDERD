@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import '../../asset/styles/introduce.scss';
 import { ScrollTrigger, gsap } from 'gsap/all';
+import Advantage from './Advantage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,17 +69,7 @@ function Developer() {
   */
   return (
     <div className="Introduce-container" ref={ctnRef}>
-      <div className="Introduce-titleBox">
-        <div className="Introduce-title">
-          <h1>about developer</h1>
-        </div>
-      </div>
-
       <div className="Introduce-infoBox">
-        <div className="Developer-ImgBox">
-          <img src={`${process.env.PUBLIC_URL}/Image/프로필 사진.jpg`} alt="개발자 사진" />
-        </div>
-
         <div className="Introduce-info">
           <h2>트렌드를 찾아보고 시도해보는 퍼블리싱 프론트앤드 개발자 임민혁입니다.</h2>
           <p>
@@ -102,6 +93,8 @@ function Developer() {
             이력서 보기
           </a>
         </div>
+
+        <Advantage />
       </div>
     </div>
   );

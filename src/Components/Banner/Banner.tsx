@@ -3,13 +3,14 @@ import 'asset/styles/banner.scss';
 import { TfiMouse } from 'react-icons/tfi';
 import { motion } from 'framer-motion';
 
-function PCBanner(): JSX.Element {
+function Banner(): JSX.Element {
   const ImgBoxAnimation = {
     initial: {
-      opacity: 0,
+      width: 0,
     },
 
     animate: {
+      width: '100%',
       opacity: 1,
       transition: {
         duration: 1,
@@ -54,7 +55,7 @@ function PCBanner(): JSX.Element {
 
     const dynamicTxt = dynamicTxts[typingRef.current].split('');
 
-    function stillRun() {
+    const stillRun = () => {
       if (DynamicRef.current?.innerHTML !== undefined) {
         DynamicRef.current.innerHTML += dynamicTxt.shift();
       }
@@ -63,38 +64,40 @@ function PCBanner(): JSX.Element {
         setTimeout(() => {
           stillRun();
         }, 200);
+      } else if (dynamicTxt.length === 0) {
+        const removeTxt = dynamicTxts[typingRef.current].split('');
+
+        const removeWord = () => {
+          if (DynamicRef.current?.innerHTML !== undefined) {
+            removeTxt.pop();
+
+            DynamicRef.current.innerHTML = removeTxt.join('');
+          }
+
+          if (removeTxt.length) {
+            setTimeout(() => {
+              removeWord();
+            }, 200);
+          }
+
+          if (removeTxt.length === 0) {
+            if (typingRef.current === 0) {
+              typingRef.current += 1;
+            } else {
+              typingRef.current = 0;
+            }
+
+            typing();
+          }
+        };
+
+        setTimeout(() => {
+          removeWord();
+        }, 200);
       }
-    }
+    };
 
     stillRun();
-
-    setTimeout(() => {
-      const dynamicTxt = dynamicTxts[typingRef.current].split('');
-
-      function removeWord() {
-        if (DynamicRef.current?.innerHTML !== undefined) {
-          dynamicTxt.pop();
-
-          DynamicRef.current.innerHTML = dynamicTxt.join('');
-        }
-        if (dynamicTxt.length) {
-          setTimeout(() => {
-            removeWord();
-          }, 200);
-        }
-      }
-      removeWord();
-
-      if (typingRef.current === 0) {
-        typingRef.current += 1;
-      } else {
-        typingRef.current = 0;
-      }
-
-      setTimeout(() => {
-        typing();
-      }, 2000);
-    }, 2000);
   }, []);
 
   useEffect(() => {
@@ -110,13 +113,13 @@ function PCBanner(): JSX.Element {
       <div className="Banner-Index">
         <motion.div className="Index-contentBox" variants={TxtBoxAnimation} animate="animate" initial="initial">
           <motion.div className="Index-title" variants={TxtAnimation}>
-            <h2>Min Hyeok PORTFOLIO</h2>
+            <h1>Lim Min Hyeok PORTFOLIO</h1>
           </motion.div>
 
           <motion.div className="Dynamic-TxtBox" variants={TxtAnimation}>
-            <h1 className="Dynamic-txt" ref={DynamicRef}>
+            <h2 className="Dynamic-txt" ref={DynamicRef}>
               {}
-            </h1>
+            </h2>
 
             <div className="Static-txt">
               <h2>개발자를 소개합니다.</h2>
@@ -124,15 +127,17 @@ function PCBanner(): JSX.Element {
           </motion.div>
         </motion.div>
 
-        <motion.div className="Banner-img" variants={ImgBoxAnimation} animate="animate" initial="initial">
-          <div className="circle-txtBox">
-            <img src={`${process.env.PUBLIC_URL}/Image/Circle/Banner-CircleTxtBox.png`} alt="BannerImg" />
+        <div className="Banner-imgBox">
+          <div className="Developer-imgBox">
+            <motion.img
+              src={`${process.env.PUBLIC_URL}/Image/프로필 사진.jpg`}
+              alt="프로필 이미지"
+              initial="initial"
+              animate="animate"
+              variants={ImgBoxAnimation}
+            />
           </div>
-
-          <div className="owl-icon">
-            <img src={`${process.env.PUBLIC_URL}/Image/logo/logo.png`} alt="올빼미 로고 아이콘" />
-          </div>
-        </motion.div>
+        </div>
       </div>
 
       <div className="scroll-down">
@@ -143,4 +148,4 @@ function PCBanner(): JSX.Element {
   );
 }
 
-export default PCBanner;
+export default Banner;
