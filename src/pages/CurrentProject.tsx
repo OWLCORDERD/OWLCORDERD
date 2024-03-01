@@ -1,23 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'asset/styles/project.scss';
 import { ScrollTrigger, gsap } from 'gsap/all';
 import { useLocation } from 'react-router-dom';
-import { SiGithub, SiInstagram, SiNotion, SiGmail } from 'react-icons/si';
-import CurrentInfo from 'Components/Project/CurrentProject/CurrentInfo/CurrentInfo';
-import MainNav from 'Components/Navigator/MainNav';
-import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
-import ResponsiveMenu from 'Components/MobileResponsive/ResponsiveMenu';
+import CurrentInfo from 'Components/CurrentProject/CurrentInfo/CurrentInfo';
+import Navbar from 'Components/Navigator/navbar';
+import ResponsiveMenu from 'Components/Navigator/MobileResponsive/ResponsiveMenu';
 import { Helmet } from 'react-helmet-async';
 import { ProjectType } from 'api/CommonService';
-import ProjectSkills from '../Components/Project/CurrentProject/ProjectSkills/ProjectSkills';
-import CurrentBoard from '../Components/Project/CurrentProject/CurrentBoard/CurrentBoard';
+import Footer from 'Components/Footer/Footer';
+import Loading from 'CustomHook/Loading';
+import ProjectSkills from '../Components/CurrentProject/ProjectSkills/ProjectSkills';
+import CurrentBoard from '../Components/CurrentProject/CurrentBoard/CurrentBoard';
 
 function DevelopProject() {
   const location = useLocation();
 
-  const projectDB: ProjectType = location?.state?.projectDB;
+  const projectDB: ProjectType = location.state ? location.state.projectDB : undefined;
+
+  const [loading, setLoading] = useState<boolean>(true);
 
   gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    if (projectDB !== undefined) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    }
+  }, [projectDB]);
 
   return (
     <div className="container">
@@ -35,53 +45,27 @@ function DevelopProject() {
         <title>{`${projectDB?.title} Project`}</title>
       </Helmet>
       <header>
-        <MainNav />
-        <ResponsiveNav />
+        <Navbar />
       </header>
 
       <ResponsiveMenu />
-      <main>
-        <section className="CurrentProject-container">
-          <div className="Current-Banner">
-            <CurrentInfo currentData={projectDB} />
-            <ProjectSkills currentData={projectDB} />
-          </div>
 
-          <CurrentBoard currentData={projectDB} />
-        </section>
+      {!loading ? (
+        <main>
+          <section className="CurrentProject-container">
+            <div className="Current-Banner">
+              <CurrentInfo currentData={projectDB} />
+              <ProjectSkills currentData={projectDB} />
+            </div>
 
-        <footer className="footer-subMenu">
-          <div className="footer-copyright">
-            <h2>© 2022. Owlcoderd All rights reserved.</h2>
-          </div>
-          <ul className="social-menu">
-            <li>
-              <a href="https://github.com/OWLCORDERD" target="_blank" rel="noreferrer">
-                <SiGithub />
-              </a>
-            </li>
-            <li>
-              <a href="https://owlcoderd.notion.site/eec4489447c4429ab6fa963e5fc7b344" target="_blank" rel="noreferrer">
-                <SiNotion />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kim461577@gmail.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <SiGmail fontSize="16px" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/min_telligent/" target="_blank" rel="noreferrer">
-                <SiInstagram fontSize="16px" />
-              </a>
-            </li>
-          </ul>
-        </footer>
-      </main>
+            <CurrentBoard currentData={projectDB} />
+          </section>
+
+          <Footer />
+        </main>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }

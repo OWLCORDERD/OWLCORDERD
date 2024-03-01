@@ -90,10 +90,9 @@
                 input{
                     width: 100%;
                     height: 3rem;
-                    margin-top: 2rem;
+                    margin-top: 1rem;
                     font-size: 1rem;
                     font-family: $font-Noto;
-                    padding: 0 1rem;
                     border: none;
                     border-bottom: 2px solid rgba(255,255,255,0.5);
                     background: none;
@@ -102,6 +101,7 @@
 
                     &:focus{
                         outline: none;
+                        border-bottom: 2px solid rgb(255,255,255);
                     }
                 }
             }
@@ -123,10 +123,9 @@
                 input{
                     width: 100%;
                     height: 3rem;
-                    margin-top: 2rem;
+                    margin-top: 1rem;
                     font-size: 1rem;
                     font-family: $font-Noto;
-                    padding: 0 1rem;
                     font-weight: bold;
                     background-color: transparent;
                     border: none;
@@ -135,6 +134,7 @@
 
                     &:focus{
                         outline: none;
+                        border-bottom: 2px solid rgb(255,255,255);
                     }
                 }
             }
@@ -156,14 +156,13 @@
                 textarea{
                     width: 100%;
                     height: 18rem;
-                    margin-top: 2rem;
+                    margin-top: 1rem;
                     font-size: 1rem;
                     font-family: $font-Noto;
                     font-weight: bold;
                     background-color: transparent;
                     border: 2px solid rgba(255,255,255,0.5);
                     color: #fff;
-                    padding : 1rem;
                 }
             }
 
@@ -171,149 +170,36 @@
                 display: block;
                 width: 100%;
                 height: 3rem;
-                background-color: #fff;
-                font-size: 1.2rem;
+                background-color: $darkMode-button;
+                font-size: 1rem;
                 font-family: $font-Mont;
                 font-weight: bold;
                 border: none;
                 cursor: pointer;
-            }
-        }
-    }
-}
+                text-transform: uppercase;
+                color: #fff;
 
-@media screen and (max-width : 1440px){
-    .Contact-container{
-        padding: 5% 2rem;
-    
-        .Contact-Box{
-    
-            .Contact-titleBox{
-    
-                .Contact-title{
-                    font-size: 1.3rem;
-                }
-    
-                .Contact-subTxt{
-    
-                    h2{
-                        font-size: 1rem;
-                    }
-    
-                    p{
-                        font-size: 14px;
-                    }
-                }
-    
-                .Contact-info{
-    
-                    h3{
-                        font-size: 1rem;
-                    }
-                }
-            }
-    
-            .Contact-Form{
-    
-                .Name-Field{
-                    height: 7rem;
-                    margin-bottom: 1rem;
-    
-                    h2{
-                        height: 2rem;
-                        font-size: 1.1rem;
-                    }
-    
-                    input{
-                        width: 100%;
-                        height: 3rem;
-                        margin-top: 2rem;
-                        font-size: 15px;
-    
-                        &:focus{
-                            outline: none;
-                        }
-                    }
-                }
-    
-                .Email-Field{
-                    height: 7rem;
-                    margin-bottom: 1rem;
-    
-                    h2{
-                        height: 2rem;
-                        font-size: 1.2rem;
-                    }
-    
-                    input{
-                        width: 100%;
-                        height: 3rem;
-                        margin-top: 2rem;
-                        font-size: 15px;
-    
-                        &:focus{
-                            outline: none;
-                        }
-                    }
-                }
-    
-                .Message-Field{
-                    display: block;
-                    width: 100%;
-                    height: 23rem;
-    
-                    h2{
-                        width: 100%;
-                        height: 3rem;
-                        font-size: 1.2rem;
-                    }
-    
-                    textarea{
-                        height: 15rem;
-                        font-size: 15px;
-                    }
-                }
-    
-                .submit-button{
-                    display: block;
-                    width: 100%;
-                    height: 2.5rem;
-                    font-size: 1rem;
+                &:hover{
+                    background-color: rgba($color: #a8a8a8, $alpha: 0.5);
                 }
             }
         }
     }
 }
 
-@media screen and (max-width : 1040px) {
+/* 노트북 ~ 맥북 반응형 */
+@media screen and (min-width : 1280px) and (max-width : 1440px){
     .Contact-container{
-        position: relative;
-        width: 100%;
-        height: max-content;
-        padding: 0 0 100px 0;
+        padding: 3rem 6.25rem;
     
         .Contact-Box{
-            padding: 0 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            height: 80rem;
     
             .Contact-titleBox{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: flex-start;
-                width: 100%;
-                height: 30rem;
-                border-top: none;
     
                 .Contact-title{
                     width: 100%;
                     height: 5rem;
-                    font-size: 17px;
+                    font-size: 1.2rem;
                     line-height: 5rem;
                     color: #fff;
                     text-transform: uppercase;
@@ -322,11 +208,11 @@
     
                 .Contact-subTxt{
                     width: 100%;
-                    height: 20rem;
+                    height: 15rem;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
-                    justify-content: space-around;
+                    justify-content: space-between;
                     color: #fff;
                     font-family: $font-Noto;
     
@@ -337,21 +223,17 @@
     
                     p{
                         font-weight: 100;
-                        font-size: 13px;
-                        word-break: keep-all;
+                        font-size: 14px;
                     }
                 }
     
                 .Contact-info{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    justify-content: space-between;
                     width: 100%;
-                    height: 5rem;
+                    height: 7rem;
     
                     h3{
-                        font-size: 1rem;
+                        font-size: 1.2rem;
+                        line-height: 3.5rem;
                         font-family: $font-Mont;
                         color: #fff;
                     }
@@ -359,87 +241,163 @@
             }
     
             .Contact-Form{
-                margin-top: 50px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: flex-start;
-                width: 100%;
-                height: 50rem;
+                width: 40%;
+                height: 100%;
     
                 .Name-Field{
-                    display: block;
-                    width: 100%;
                     height: 7rem;
     
                     h2{
-                        width: 100%;
-                        height: 3rem;
+                        height: 2rem;
                         font-size: 1rem;
-                        line-height: 3rem;
+                        line-height: 2rem;
                     }
-    
+
                     input{
-                        margin-top: 1rem;
-                        font-size: 13px;
-                        font-family: $font-Noto;
-                        padding: 0 1rem;
+                        margin-top: 0;
                     }
                 }
     
                 .Email-Field{
-                    display: block;
-                    width: 100%;
                     height: 7rem;
     
                     h2{
-                        width: 100%;
-                        height: 3rem;
-                        font-size: 1rem;
-                        line-height: 3rem;
+                        height: 2rem;
+                        font-size: 1.2rem;
+                        line-height: 2rem;
                     }
-    
+
                     input{
-                        width: 100%;
-                        height: 3rem;
-                        margin-top: 1rem;
-                        font-size: 13px;
+                        margin-top: 0;
                     }
                 }
     
                 .Message-Field{
-                    display: block;
-                    width: 100%;
-                    height: 22rem;
+                    height: 23rem;
     
                     h2{
-                        width: 100%;
-                        height: 3rem;
-                        line-height: 3rem;
+                        height: 2rem;
+                        line-height: 2rem;
                         font-size: 1rem;
-                        color: #fff;
-                        font-family: $font-Mont;
                     }
     
                     textarea{
-                        width: 100%;
-                        height: 18rem;
+                        height: 15rem;
                         margin-top: 1rem;
-                        font-size: 13px;
+                        font-size: 1rem;
                     }
                 }
     
                 .submit-button{
-                    display: block;
-                    width: 100%;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width : 1024px) and (max-width : 1279px){
+    .Contact-container{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding: 3rem;
+    
+        .Contact-Box{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 90%;
+    
+            .Contact-titleBox{
+    
+                .Contact-title{
+                    font-size: 1.1rem;
+                }
+    
+                .Contact-subTxt{
+                    height: 12rem;
+    
+                    h2{
+                        font-size: 14px;
+                    }
+    
+                    p{
+                        font-size: 12px;
+                    }
+                }
+    
+                .Contact-info{
+                    height: 6rem;
+    
+                    h3{
+                        font-size: 1rem;
+                        line-height: 3rem;
+                    }
+                }
+            }
+    
+            .Contact-Form{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 50%;
+                height: 95%;
+    
+                .Name-Field{
+                    height: 20%;
+    
+                    h2{
+                        height: 40%;
+                        font-size: 1rem;
+                    }
+
+                    input{
+                        height: 40%;
+                        font-size: 12px;
+                        margin-top: 1rem;
+                    }
+                }
+    
+                .Email-Field{
+                    height: 20%;
+    
+                    h2{
+                        height: 40%;
+                        font-size: 1rem;
+                    }
+
+                    input{
+                        height: 40%;
+                        font-size: 12px;
+                        margin-top: 1rem;
+                    }
+                }
+    
+                .Message-Field{
+                    height: 60%;
+    
+                    h2{
+                        height: 20%;
+                        font-size: 1rem;
+                    }
+    
+                    textarea{
+                        height: 60%;
+                        margin-top: 1rem;
+                        font-size: 12px;
+                    }
+                }
+    
+                .submit-button{
                     height: 2.5rem;
-                    background-color: #fff;
-                    color: #000;
-                    font-size: 1rem;
-                    font-family: $font-Mont;
-                    font-weight: 800;
-                    text-transform: uppercase;
-                    cursor: pointer;
+                    font-size: 14px;
                 }
             }
         }

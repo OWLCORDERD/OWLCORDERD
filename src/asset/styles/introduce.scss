@@ -129,14 +129,133 @@
     }
 }
 
-/* 테블릿 반응형 */
-@media screen and (min-width : 763px) and (max-width : 1439px){
+/* 맥북 반응형 */
+@media screen and (min-width : 1280px) and (max-width : 1440px){
+    .Introduce-container{
+        padding: 3rem 6.25rem;
+    
+        .Introduce-infoBox{
+            height: 32rem;
+    
+            .Introduce-info{
+                width: 40%;
+    
+                h2{
+                    width: 80%;
+                    font-size: 1.2rem;
+                }
+    
+                p{
+                    width : 80%;
+                    font-size: 14px;
+                }
+    
+                .view-report{
+                    font-size: 12px;
+                }
+            }
+    
+            .Advantages-list{
+                width: 50%;
+    
+                .Advantage-item{
+    
+                    .Advantage-info{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 30%;
+    
+                        p{
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* 맥북 반응형 */
-@media screen and (min-width : 1440px) and (max-width : 1700px){
-}
+@media screen and (min-width : 1024px) and (max-width : 1279px){
+    .Introduce-container{
+        padding: 3rem;
+    
+        .Introduce-infoBox{
+            height: 28rem;
+    
+            .Introduce-info{
+                width: 40%;
+    
+                h2{
+                    width: 80%;
+                    font-size: 1rem;
+                }
+    
+                p{
+                    width : 80%;
+                    font-size: 11px;
+                }
+    
+                .view-report{
+                    width: 18rem;
+                    font-size: 12px;
+                }
+            }
+    
+            .Advantages-list{
+                width: 55%;
+                height: 100%;
+                gap : 2rem;
+    
+                .Advantage-item{
+                    width: 100%;
+                    height: 100%;
+    
+                    .Advantage-titleBox{
+                        width: 100%;
+                        padding-top: 20px;
+                        height: 30%;
+    
+                        .title{
+                            width: 100%;
+                            color: #fff;
+                            font-family: $font-Mont;
+                            font-size: 15px;
+                            text-transform: uppercase;
+                            text-align: center;
+                        }
+                    }
 
-/* 모바일 반응형 */
-@media screen and (max-width : 763px){
+                    .Advantage-icon{
+                        height: 30%;
+
+                        img{
+                            width: 35px;
+                            height: 35px;
+                        }
+                    }
+    
+                    .Advantage-info{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 30%;
+    
+                        p{
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            font-family: $font-Noto;
+                            color: #fff;
+                            font-size: 10px;
+                            word-break: keep-all;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

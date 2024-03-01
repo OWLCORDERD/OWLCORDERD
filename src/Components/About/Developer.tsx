@@ -68,7 +68,7 @@ function Developer() {
   }, []);
   */
   return (
-    <div className="Introduce-container" ref={ctnRef}>
+    <section className="Introduce-container" ref={ctnRef}>
       <div className="Introduce-infoBox">
         <div className="Introduce-info">
           <h2>트렌드를 찾아보고 시도해보는 퍼블리싱 프론트앤드 개발자 임민혁입니다.</h2>
@@ -96,7 +96,7 @@ function Developer() {
 
         <Advantage />
       </div>
-    </div>
+    </section>
   );
 }
 

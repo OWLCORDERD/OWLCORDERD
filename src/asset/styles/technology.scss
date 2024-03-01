@@ -140,268 +140,118 @@
     }
 }
 
-@media screen and (max-width : 1440px){
+@media screen and (min-width : 1280px) and (max-width : 1440px){
     /*Technology 최상위 부모 container*/
-.Technology-container{
-    padding : 5rem 2rem;
+    .Technology-container{
+        padding : 0 6.25rem;
 
-    /*Advantage container*/
-    .Advantage-container{
-        .Advantage-Index{
-            padding: 0 3rem;
+        /*Development Skills container*/
+        .DevelopSkills-container{
+            height : 40rem;
 
-            .Index-title{
-                width: 100%;
-                height: 8rem;
-                line-height: 8rem;
-                margin-bottom: 2rem;
-                font-size: 1rem;
-                text-transform: uppercase;
-                font-family: $font-Mont;
+        /*Development Skills Index & tabMenu*/
+        .DevelopSkill-header{
+            height: 6rem;
+
+            .DevelopSkill-Index{
+
+                .Index-title{
+                    width: 100%;
+                    line-height: 6rem;
+                    font-size: 1.2rem;
+                    text-transform: uppercase;
+                }
             }
 
-            .Index-subTitle{
-                width: 100%;
-                height: 4rem;
-                line-height: 4rem;
-                font-size: 14px;
-                font-family: $font-Noto;
-                text-transform: uppercase;
-                font-weight: bold;
-            }
-        }
+            .Skills-TabMenu{
+                height: 2.5rem;
 
-            .Advantages-contents{
+                ul{
+                    width: 20rem;
 
-                .Advantages-list{
+                    li{
+                        width: calc(18rem / 2);
 
-                    .Advantage-item{
-
-                        .Advantage-icon{
-                        }
-
-                        .Advantage-titleBox{
-
-                            .title-Index{
-                                width: max-content;
-                                text-align: center;
-                                font-size: 1rem;
-                            }
-
-                            .title{
-                                width: max-content;
-                                margin-left: 5rem;
-                                font-size: 1rem;
-                                text-transform: uppercase;
-                                font-weight: bold;
-                                font-family: $font-Mont;
-                                text-align: center;
-                            }
-                        }
-
-                        .Advantage-info{
-                            width: 100%;
-                            height: 4.25rem;
-
-                            p{
-                                width: 100%;
-                                line-height: 4.25rem;
-                                text-align: start;
-                                font-size: 12px;
-                                font-family: $font-Noto;
-                                color: #fff;
-                                font-weight: 100;
-                                text-align: center;
-                            }
+                        button{
+                            font-size: 14px;
                         }
                     }
                 }
             }
         }
 
-        /*Development Skills container*/
-    .DevelopSkills-container{
-        padding: 0 3rem;
+            /*Development skill Develop&Design Items container*/
+            .DevelopSkill-contents{
+                position: relative;
+                width: 100%;
+                height: 28rem;
+                gap : 1rem;
 
-        .DevelopSkill-header{
-            .DevelopSkill-Index{
-    
-                .Index-title{
-                    font-size: 1rem;
+                .skill-item{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    border : 2px solid #fff;
+
+                    img{
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                    p{
+                        text-align: center;
+                        font-weight: 100;
+                        font-family: $font-Mont;
+                        font-size: 13px;
+                    }
                 }
             }
         }
     }
 }
-}
 
-@media screen and (max-width : 1040px){
-   /*Technology 최상위 부모 container*/
+@media screen and (min-width : 1024px) and (max-width : 1279px){
+    /*Technology 최상위 부모 container*/
     .Technology-container{
-        position: relative;
-        width : 100%;
-        height : max-content;
-        background-color: $black-color;
-        overflow: hidden;
-        padding : 0;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 100px;
-
-        /*Advantage container*/
-        .Advantage-container{
-            position: relative;
-            width: 100%;
-            height: max-content;
-            padding : 6.25rem 0 0 0;
-
-                .Advantage-Index{
-                    width: 100%;
-                    height: 12.5rem;
-                    padding: 0 2rem;
-                    color: #fff;
-
-                    .Index-title{
-                        width: 100%;
-                        height: max-content;
-                        line-height: 3rem;
-                        margin-bottom: 2rem;
-                        font-size: 17px;
-                        text-transform: uppercase;
-                        font-family: $font-Mont;
-                        word-break: keep-all;
-                        text-align: center;
-                    }
-
-                    .Index-subTitle{
-                        width: 100%;
-                        height: 4rem;
-                        line-height: 4rem;
-                        font-size: 12px;
-                        font-family: $font-Noto;
-                        text-transform: uppercase;
-                        font-weight: bold;
-                        text-align: center;
-                    }
-                }
-
-                .Advantages-contents{
-                    margin-top: 3rem;
-                    width: 100%;
-                    height: 60rem;
-                    color: #fff;
-
-                    .Advantages-list{
-                        width: 100%;
-                        height: 100%;
-
-                        .Advantage-item{
-                            display: block;
-                            width: 100%;
-                            height: calc(100% / 3);
-
-                            .Advantage-icon{
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                width: 100%;
-                                height: calc(20rem / 2);
-                            }
-
-                            .Advantage-titleBox{
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                width: 100%;
-                                height: 7rem;
-
-                                .title-Index{
-                                    width: max-content;
-                                    text-align: center;
-                                    font-size: 1.2rem;
-                                }
-
-                                .title{
-                                    width: max-content;
-                                    margin-left: 3rem;
-                                    font-size: 1.2rem;
-                                    text-transform: uppercase;
-                                    font-weight: bold;
-                                    font-family: $font-Mont;
-                                    text-align: center;
-                                }
-                            }
-
-                            .Advantage-info{
-                                width: 100%;
-                                height: 3rem;
-
-                                p{
-                                    width: 100%;
-                                    line-height: 3rem;
-                                    text-align: start;
-                                    font-size: 12px;
-                                    font-family: $font-Noto;
-                                    color: #fff;
-                                    font-weight: 100;
-                                    text-align: center;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        padding : 1rem 3rem;
 
         /*Development Skills container*/
         .DevelopSkills-container{
-            position: relative;
-            width : 100%;
-            height : 81.25rem;
-            padding : 0 0 6.25rem 0;
+            height : 35rem;
 
-            /*Development Skills Index & tabMenu*/
             .DevelopSkill-header{
                 display: flex;
-                flex-direction: column;
                 justify-content: space-between;
-                align-items: flex-start;
+                align-items: center;
                 width: 100%;
-                height: 10rem;
+                height: 8rem;
                 margin-bottom: 2rem;
-
+    
                 .DevelopSkill-Index{
-                    width: 100%;
-                    height: 7rem;
-                    padding: 0 2rem;
-
+                    width: 40%;
+                    height: 100%;
+                    font-family: $font-Mont;
+                    color: $white-color;
+    
                     .Index-title{
                         width: 100%;
-                        line-height: 7rem;
+                        line-height: 8rem;
                         font-size: 1rem;
-                        text-align: center;
+                        text-transform: uppercase;
                     }
                 }
-
+    
                 .Skills-TabMenu{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width : 100%;
-                    height: 3rem;
-
+                    height: 2.5rem;
+    
                     ul{
-                        width: 100%;
-                        height: 100%;
-
+                        width: 20rem;
+    
                         li{
-                            display: inline-block;
-                            width: calc(100% / 2);
-                            height: 100%;
-                            text-align: center;
-
-                            &.active{
-                                background-color: #505050;
-                                border: none;
+                            width: calc(18rem / 2);
+    
+                            button{
+                                font-size: 13px;
                             }
                         }
                     }
@@ -412,32 +262,29 @@
             .DevelopSkill-contents{
                 position: relative;
                 width: 100%;
-                height: 65rem;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                place-items: initial;
+                height: 30rem;
+                gap : 1rem;
 
                 .skill-item{
                     position: relative;
                     width: 100%;
-                    height: 15rem;
-                    border : transparent;
+                    height: 100%;
+                    border : 2px solid #fff;
 
                     h2{
                         font-size: 1rem;
                     }
 
                     img{
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50% ,-50%);
-                        width: 50px;
-                        height: 50px;
+                        width: 35px;
+                        height: 35px;
                     }
 
                     p{
-                        font-size: 12px;
+                        text-align: center;
+                        font-weight: 100;
+                        font-family: $font-Mont;
+                        font-size: 11px;
                     }
                 }
             }

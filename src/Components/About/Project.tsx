@@ -9,7 +9,7 @@ function Project() {
     getProject().then(res => setProjectDB(res));
   }, []);
   return (
-    <div className="Project-container">
+    <section className="Project-container">
       <div className="Project-header">
         <div className="Project-titleBox">
           <span>포트폴리오 프로젝트들을 소개합니다.</span>
@@ -59,7 +59,7 @@ function Project() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

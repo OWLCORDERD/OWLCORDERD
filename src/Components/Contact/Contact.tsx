@@ -55,7 +55,7 @@ function Contact() {
     }
   };
   return (
-    <div className="Contact-container">
+    <section className="Contact-container">
       <div className="Contact-Box">
         <div className="Contact-titleBox">
           <div className="Contact-title">
@@ -107,7 +107,7 @@ function Contact() {
           <input type="submit" value="Send Content" className="submit-button" />
         </form>
       </div>
-    </div>
+    </section>
   );
 }
 

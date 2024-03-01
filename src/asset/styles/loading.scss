@@ -15,13 +15,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         width: 25rem;
-        height: 20rem;
+        height: 15rem;
         top : 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: #fff;
+
+        .Loading-spinner{
+            max-width: fit-content;
+        }
 
         h2{
             width: 100%;
@@ -31,15 +35,6 @@
             font-family: $font-Mont;
             line-height: 10rem;
             text-align: center;
-        }
-
-        .Loading-spinner{
-            position: relative;
-            width: 10rem;
-            height: 10rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
     }
 }

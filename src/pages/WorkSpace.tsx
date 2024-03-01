@@ -1,15 +1,13 @@
 import Page404 from 'Components/404Page/Page404';
-import MainNav from 'Components/Navigator/MainNav';
-import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
-import ResponsiveMenu from 'Components/MobileResponsive/ResponsiveMenu';
+import Navbar from 'Components/Navigator/navbar';
+import ResponsiveMenu from 'Components/Navigator/MobileResponsive/ResponsiveMenu';
 import React from 'react';
 
 function WorkSpace() {
   return (
     <>
       <header>
-        <ResponsiveNav />
-        <MainNav />
+        <Navbar />
       </header>
 
       <ResponsiveMenu />

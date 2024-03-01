@@ -58,7 +58,7 @@ function Technology() {
   }, []);
 
   return (
-    <div className="Technology-container">
+    <section className="Technology-container">
       <div className="DevelopSkills-container">
         <div className="DevelopSkill-header">
           <div className="DevelopSkill-Index">
@@ -111,7 +111,7 @@ function Technology() {
             : null}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

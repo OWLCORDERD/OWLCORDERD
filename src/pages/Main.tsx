@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'asset/styles/main.scss';
 import { useLocation } from 'react-router-dom';
-import ResponsiveNav from 'Components/MobileResponsive/ResponsiveNav';
-import MainNav from 'Components/Navigator/MainNav';
-import ResponsiveMenu from 'Components/MobileResponsive/ResponsiveMenu';
+import Navbar from 'Components/Navigator/navbar';
+import ResponsiveMenu from 'Components/Navigator/MobileResponsive/ResponsiveMenu';
 import { Helmet } from 'react-helmet-async';
 import Project from 'Components/About/Project';
 import Footer from '../Components/Footer/Footer';
@@ -37,8 +36,7 @@ function Main() {
         <title>임민혁 · OWLCODERD · Front-end Developer</title>
       </Helmet>
       <header>
-        <ResponsiveNav />
-        <MainNav />
+        <Navbar />
       </header>
 
       <ResponsiveMenu />

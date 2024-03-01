@@ -109,7 +109,7 @@ function Banner(): JSX.Element {
   }, [typing]);
 
   return (
-    <div className="Main-Banner">
+    <section className="Main-Banner">
       <div className="Banner-Index">
         <motion.div className="Index-contentBox" variants={TxtBoxAnimation} animate="animate" initial="initial">
           <motion.div className="Index-title" variants={TxtAnimation}>
@@ -144,7 +144,7 @@ function Banner(): JSX.Element {
         <TfiMouse className="scroll-icon" />
         <h2>Scroll Down</h2>
       </div>
-    </div>
+    </section>
   );
 }
 
