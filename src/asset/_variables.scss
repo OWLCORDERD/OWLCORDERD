@@ -1,0 +1,27 @@
+/*font family variables*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap');
+
+/* font family */
+$font-Mont: 'Montserrat', sans-serif;
+$font-Noto: 'Noto Sans KR', sans-serif;
+
+/* element color variables */
+$white-color: #fff;
+$black-color: #000;
+$rgba-white: rgba(255,255,255,0.5);
+$rgba-black: rgba(0,0,0,0.5);
+$darkMode-button: rgba(89, 89, 89, 0.2);
+
+/* transition event variables */
+$ease-in: all 0.3s ease-in;
+$ease-out: all 0.3s ease-out;
+$centerTL-Y: translateY(-50%);
+$centerTL-X: translateX(-50%);
+$centerTL: translate(-50%, -50%);
+
+/* responsive screen width */
+$responsive-mobile: 480px;
+$responsive-tablet-vertical: 768px;
+$responsive-notebook: 1280px;
+$responsive-macbook: 1440px;

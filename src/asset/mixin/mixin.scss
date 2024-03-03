@@ -1,0 +1,29 @@
+@import "../variables";
+
+/* 모바일 반응형 */
+@mixin mobile {
+    @media (max-width : $responsive-mobile) {
+        @content;
+    }
+}
+
+/* 모바일 가로 ~ 테블릿 세로 반응형 */
+@mixin verticalTablet {
+    @media (min-width : #{$responsive-mobile + 1px}) and (max-width : $responsive-tablet-vertical){
+        @content;
+    }
+}
+
+/* 테블릿 가로 ~ 노트북 반응형 */
+@mixin horizontalTablet {
+    @media (min-width : #{$responsive-tablet-vertical + 1px}) and (max-width : $responsive-notebook){
+        @content;
+    }
+}
+
+/* 맥북 노트북 반응형 */
+@mixin macbook {
+    @media (min-width : $responsive-notebook) and (max-width : $responsive-macbook){
+        @content;
+    }
+}

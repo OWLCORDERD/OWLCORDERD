@@ -1,4 +1,5 @@
-@import '../../asset/Variables.scss';
+@import '../variables';
+@import '../mixin/mixin.scss';
 
 /*PC Main Page Banner*/
 .Main-Banner{
@@ -164,7 +165,7 @@
 }
 
 /* 맥북 반응형 */
-@media screen and (min-width : 1280px) and (max-width : 1440px) {
+@include macbook {
     .Main-Banner{
     
         .Banner-Index{
@@ -219,20 +220,20 @@
             }
         }
 
-    .scroll-down{
-        bottom: 2rem;
+        .scroll-down{
+            bottom: 2rem;
 
-        h2{
-            font-size: 12px;
-            font-family: $font-Mont;
-            font-weight: bold;
+            h2{
+                font-size: 12px;
+                font-family: $font-Mont;
+                font-weight: bold;
+            }
         }
     }
 }
-}
 
 /* 노트북, 테블릿 가로 반응형 */
-@media screen and (min-width : 1024px) and (max-width : 1279px){
+@include horizontalTablet {
     .Main-Banner{
         padding: 0 3rem;
     
@@ -279,6 +280,96 @@
                     width : 100%;
                     height : 100%;
                 }
+            }
+        }
+
+        .scroll-down{
+            bottom: 1rem;
+            width: 10rem;
+            height: 5rem;
+
+            .scroll-icon{
+                width: 25px;
+                height: 25px;
+                animation: scrollAnimate 2s infinite;
+
+                @keyframes scrollAnimate{
+                    50%{
+                        opacity: 1;
+                        transition-duration: 1s;
+                        margin-top: 10px;
+                    }
+
+                    100%{
+                        opacity: 1;
+                        transition-duration: 1s;
+                        margin-top: 20px;
+                    }
+                }
+            }
+
+            h2{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    /*PC Main Page Banner*/
+    .Main-Banner{
+        padding : 0;
+    
+        .Banner-Index{
+            position: relative;
+            top : 0;
+            width : 100%;
+            height : 100%;
+            transform: translateY(0);
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .Index-contentBox{
+                position: relative;
+                width : 100%;
+                height : 55%;
+                padding: 5rem 3.125rem 2rem 3.125rem;
+
+                .Index-title{
+
+                    h1{
+                        font-size: 1.8rem;
+                        line-height: 80px;
+                    }
+                }
+
+                .Dynamic-TxtBox{
+                    height: 50px;
+
+                    .Dynamic-txt{
+                        width: 60%;
+                        height: 50px;
+                        line-height: 50px;
+                        font-size: 1rem;
+                    }
+
+                    .Static-txt{
+                        width : 40%;
+                        height: 100%;
+
+                        h2{
+                            line-height: 50px;
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+
+            .Banner-imgBox{
+                position: relative;
+                width : 100%;
+                height: 40%;
             }
         }
 

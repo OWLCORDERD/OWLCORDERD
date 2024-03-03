@@ -1,4 +1,5 @@
-@import '../../asset/Variables.scss';
+@import '../variables';
+@import '../mixin/mixin.scss';
 
 .Introduce-container{
     position: relative;
@@ -130,7 +131,7 @@
 }
 
 /* 맥북 반응형 */
-@media screen and (min-width : 1280px) and (max-width : 1440px){
+@include macbook {
     .Introduce-container{
         padding: 3rem 6.25rem;
     
@@ -177,8 +178,8 @@
     }
 }
 
-/* 맥북 반응형 */
-@media screen and (min-width : 1024px) and (max-width : 1279px){
+/* 테블릿 가로 ~ 노트북 반응형 */
+@include horizontalTablet {
     .Introduce-container{
         padding: 3rem;
     
@@ -251,6 +252,139 @@
                             font-family: $font-Noto;
                             color: #fff;
                             font-size: 10px;
+                            word-break: keep-all;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .Introduce-container{
+        position: relative;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 130rem;
+        padding: 3.125rem;
+    
+        .Introduce-infoBox{
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width : 100%;
+            height: 100%;
+    
+            .Introduce-info{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                height: 30rem;
+    
+                h2{
+                    width: 100%;
+                    word-break: keep-all;
+                    font-size: 1rem;
+                    font-family: $font-Noto;
+                    color: #fff;
+                }
+    
+                p{
+                    position: relative;
+                    width : 100%;
+                    height : max-content;
+                    color: #fff;
+                    font-family: $font-Noto;
+                    font-weight: 100;
+                    font-size: 10px;
+                    word-break: keep-all;
+                }
+    
+                .view-report{
+                    display: block;
+                    color: #fff;
+                    background-color: #2e2e2e;
+                    text-align: center;
+                    width: 100%;
+                    height: 2.5rem;
+                    font-family: $font-Noto;
+                    font-size: 10px;
+                    font-weight: bold;
+                    line-height: 2.5rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease-out;
+    
+                    &:hover{
+                        background-color: #fff;
+                        transition: all 0.3s ease-in;
+                        color: #2e2e2e;
+                    }
+                }
+            }
+    
+            .Advantages-list{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                width: 100%;
+                height: 88rem;
+                gap : 2rem 0;
+    
+                .Advantage-item{
+                    width: 100%;
+                    height: 20rem;
+    
+                    .Advantage-icon{
+                        width: 100%;
+                        height: 40%;
+                        
+                        img{
+                            position: relative;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width : 40px;
+                        }
+                    }
+    
+                    .Advantage-titleBox{
+                        width: 100%;
+                        padding-top: 2rem;
+                        height: 30%;
+    
+                        .title{
+                            width: 100%;
+                            color: #fff;
+                            font-family: $font-Mont;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            text-align: center;
+                        }
+                    }
+    
+                    .Advantage-info{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 30%;
+    
+                        p{
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            font-family: $font-Noto;
+                            color: #fff;
+                            font-size: 9px;
                             word-break: keep-all;
                         }
                     }

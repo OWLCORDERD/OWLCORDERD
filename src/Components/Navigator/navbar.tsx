@@ -26,7 +26,7 @@ function MainNav() {
         </h2>
       </div>
 
-      <GiHamburgerMenu color="#fff" fontSize={35} cursor="pointer" />
+      <GiHamburgerMenu color="#fff" cursor="pointer" className="menu-svgIcon" />
     </motion.nav>
   );
 }

@@ -1,4 +1,5 @@
-@import "../Variables.scss";
+@import '../variables';
+@import '../mixin/mixin.scss';
 
 .Project-container{
     position: relative;
@@ -421,52 +422,8 @@
     }
 }
 
-.footer-subMenu{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 10rem;
-    border-top : 2px solid #fff;
-
-    .footer-copyright{
-        width: 30rem;
-        height: max-content;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 2rem;
-        margin: 0 2rem;
-        
-        h2{
-            font-size: 1.2rem;
-            font-family: $font-Mont;
-            color: #fff;
-        }
-    }
-
-    .social-menu{
-        width: max-content;
-
-        li{
-            display: inline-block;
-            margin-right: 4rem;
-
-            &:nth-child(4){
-                margin-right: 0;
-            }
-
-            a{
-                width: 5rem;
-                font-size: 1.5rem;
-                color: #fff;
-            }
-        }
-    }
-}
-
 /* 노트북 ~ 맥북 반응형 */
-@media screen and (min-width : 1280px) and (max-width : 1440px){
+@include macbook {
     .Project-container{
         position: relative;
         width: 100%;
@@ -657,8 +614,8 @@
     }
 }
 
-/* 소형 해상도 노트북, 테블릿 가로 반응형 */
-@media screen and (min-width : 1024px) and (max-width : 1279px){
+/* 테블릿 가로 ~ 노트북 반응형 */
+@include horizontalTablet {
     .Project-container{
         padding: 1rem 3rem;
     
@@ -883,6 +840,360 @@
     
                         .page-ImgBox{
                             height: 20rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .Project-container{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 2rem 3.125rem;
+    
+        .Project-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 8rem;
+            margin-bottom: 2rem;
+    
+            .Project-titleBox{
+                width: 100%;
+                height: 8rem;
+    
+                span{
+                    width: 100%;
+                    line-height: 2rem;
+                    color: #fff;
+                    font-family: $font-Noto;
+                    font-size: 12px;
+                }
+    
+                h1{
+                    width: 100%;
+                    line-height: 6rem;
+                    color: #fff;
+                    font-family: $font-Mont;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            svg{
+                width: 70px;
+                height: 50px;
+            }
+        }
+    
+        .Project-List{
+            position: relative;
+            width: 100%;
+            height: 100rem;
+    
+            .card-List{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap : 50px;
+    
+                .Project-card{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $darkMode-button;
+    
+                    .Project-Banner{
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 60%;
+                        padding: 0;
+    
+                        .Project-titleBox{
+                            width: 100%;
+                            height: 5rem;
+                            padding: 0 2rem;
+                            margin-bottom: 2rem;
+    
+                            .title{
+                                width: 100%;
+                                line-height: 3rem;
+                                color: #fff;
+                                font-family: $font-Mont;
+                                font-size: 1rem;
+                                text-transform: uppercase;
+                            }
+    
+                            .subTitle{
+                                width: 100%;
+                                line-height: 2rem;
+                                color: #fff;
+                                font-family: $font-Noto;
+                                font-size: 8px;
+                            }
+                        }
+    
+                        .Project-info{
+                            width: 100%;
+                            height: 10rem;
+                            padding: 0 2rem;
+    
+                            p{
+                                width: 100%;
+                                height: 100%;
+                                font-family: $font-Noto;
+                                color: $white-color;
+                                font-size: 8px;
+                                word-break: keep-all;
+                            }
+                        }
+    
+                        .view-button{
+                            position: absolute;
+                            width: 35px;
+                            height: 35px;
+                            right: 2rem;
+                            top: 2rem;
+    
+                            svg{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 35px;
+                                height: 35px;
+                            }
+    
+                            &:hover{
+                                cursor: pointer;
+                                svg{
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+                    }
+    
+                    .Banner-imgBox{
+                        position: relative;
+                        width: 100%;
+                        height: 40%;
+    
+                        img{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+    
+                        &::before{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            content: '';
+                            background-color: rgba($color: #000000, $alpha: 0.3);
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .CurrentProject-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding : 5rem 3.125rem 0 3.125rem;
+    
+        .Current-Banner{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 55rem;
+            padding: 2rem 0 0 0;
+    
+            .CurrentInfo-container{
+                width: 100%;
+                height: 30rem;
+    
+                .Project-ImgBox{
+                    position: relative;
+                    width: 100%;
+                    height: 10rem;
+    
+                    img{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+    
+                .Project-infoBox{
+                    margin-top: 2rem;
+                    width: 100%;
+                    height: 18rem;
+                    color: #fff;
+                    font-family: $font-Noto;
+    
+                    .Project-subTitle{
+                        width: 100%;
+                        line-height: 3rem;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                    }
+    
+                    .Project-title{
+                        width: 100%;
+                        height: 6rem;
+                        line-height: 2rem;
+                        font-size: 15px;
+                        font-weight: 300;
+                    }
+    
+                    .Project-info{
+                        width: 100%;
+                        margin-top: 1rem;
+                        height: 9rem;
+                        word-break: keep-all;
+                        font-size: 10px;
+                        color: #b4b4b4;
+                    }
+                }
+            }
+    
+            .ProjectSkills-container{
+                position: relative;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 25rem;
+    
+                .Design-menu{
+                    position: relative;
+                    width: 100%;
+                    height: 10rem;
+    
+                    .menu-title{
+                        width: 100%;
+                        height: 3rem;
+                        margin-bottom: 2rem;
+    
+                        h2{
+                            line-height: 3rem;
+                            font-size: 1rem;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-family: $font-Mont;
+                        }
+                    }
+    
+                    .menu-button{
+                        height: 2.5rem;
+    
+                        span{
+                            font-size: 12px;
+                        }
+                    }
+                }
+    
+                .Skill-menu{
+                    width: 100%;
+                    height : 15rem;
+    
+                    .menu-title{
+                        height: 3rem;
+                        margin-bottom: 2rem;
+    
+                        h2{
+                            font-size: 1rem;
+                        }
+                    }
+    
+                    .Skill-list{
+                        width: 100%;
+                        height: 10rem;
+    
+                        li{
+                            height: 2rem;
+                            margin-top: 10px;
+                            margin-right: 10px;
+    
+                            .Skill-item{
+                                height: 2rem;
+    
+                                span{
+                                    line-height: 2rem;
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .CurrentBoard-container{
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 2rem 0;
+    
+            .Project-category{
+                display: none;
+            }
+    
+            .Project-Board{
+                flex : none;
+                height: 100%;
+    
+                .Main-Board,.Sub-Board{
+                    width: 100%;
+                    height: 100%;
+                    padding : 0;
+    
+                    .Main-title{
+                        width: 100%;
+                        line-height: 5rem;
+                        margin-bottom: 2rem;
+                        text-transform: uppercase;
+                        font-family: $font-Mont;
+                        color: #fff;
+                        font-size: 1rem;
+                    }
+    
+                    .Board-item{
+                        width: 100%;
+                        height: 15rem;
+                        margin-bottom: 2rem;
+    
+                        .page-info{
+                            width: 100%;
+                            height: 3rem;
+                            line-height: 3rem;
+                            font-size: 10px;
+                        }
+    
+                        .page-ImgBox{
+                            margin-top: 2rem;
+                            width: 100%;
+                            height: 10rem;
                         }
                     }
                 }
