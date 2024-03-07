@@ -59,7 +59,7 @@ function Contact() {
       <div className="Contact-Box">
         <div className="Contact-titleBox">
           <div className="Contact-title">
-            <h2>Contact</h2>
+            <h1>Contact</h1>
           </div>
 
           <div className="Contact-subTxt">

@@ -1,5 +1,5 @@
 @import '../variables';
-@import '../mixin/mixin';
+@import '../ResponsiveMixin/mixin';
 
 .Contact-container{
     position: relative;
@@ -25,11 +25,14 @@
             .Contact-title{
                 width: 100%;
                 height: 5rem;
-                font-size: 1.5rem;
                 line-height: 5rem;
-                color: #fff;
-                text-transform: uppercase;
-                font-family: $font-Mont;
+
+                h1{
+                    font-size: 1.8rem;
+                    color: $white-color;
+                    text-transform: uppercase;
+                    font-family: $font-Mont;
+                }
             }
 
             .Contact-subTxt{
@@ -39,17 +42,17 @@
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: space-between;
-                color: #fff;
+                color: $white-color;
                 font-family: $font-Noto;
 
                 h2{
-                    font-size: 1.1rem;
+                    font-size: 13px;
                     font-weight: bold;
                 }
 
                 p{
                     font-weight: 100;
-                    font-size: 1rem;
+                    font-size: 12px;
                 }
             }
 
@@ -58,10 +61,10 @@
                 height: 10rem;
 
                 h3{
-                    font-size: 1.2rem;
+                    font-size: 13px;
                     line-height: 5rem;
                     font-family: $font-Mont;
-                    color: #fff;
+                    color: $white-color;
                 }
             }
         }
@@ -82,9 +85,9 @@
                 h2{
                     width: 100%;
                     height: 3rem;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     line-height: 3rem;
-                    color: #fff;
+                    color: $white-color;
                     font-family: $font-Mont;
                 }
 
@@ -98,7 +101,7 @@
                     border-bottom: 2px solid rgba(255,255,255,0.5);
                     background: none;
                     font-weight: bold;
-                    color: #fff;
+                    color: $white-color;
 
                     &:focus{
                         outline: none;
@@ -115,8 +118,8 @@
                 h2{
                     width: 100%;
                     height: 3rem;
-                    font-size: 1.2rem;
-                    color: #fff;
+                    font-size: 1rem;
+                    color: $white-color;
                     font-family: $font-Mont;
                     line-height: 3rem;
                 }
@@ -131,7 +134,7 @@
                     background-color: transparent;
                     border: none;
                     border-bottom: 2px solid rgba(255,255,255,0.5);
-                    color: #fff;
+                    color: $white-color;
 
                     &:focus{
                         outline: none;
@@ -149,8 +152,8 @@
                     width: 100%;
                     height: 3rem;
                     line-height: 3rem;
-                    font-size: 1.2rem;
-                    color: #fff;
+                    font-size: 1rem;
+                    color: $white-color;
                     font-family: $font-Mont;
                 }
 
@@ -163,7 +166,7 @@
                     font-weight: bold;
                     background-color: transparent;
                     border: 2px solid rgba(255,255,255,0.5);
-                    color: #fff;
+                    color: $white-color;
                 }
             }
 
@@ -178,10 +181,12 @@
                 border: none;
                 cursor: pointer;
                 text-transform: uppercase;
-                color: #fff;
+                color: $white-color;
+                transition: $ease-out;
 
                 &:hover{
-                    background-color: rgba($color: #a8a8a8, $alpha: 0.5);
+                    background-color: $button-hover;
+                    transition: $ease-in;
                 }
             }
         }
@@ -191,20 +196,27 @@
 /* 노트북 ~ 맥북 반응형 */
 @include macbook {
     .Contact-container{
+        position: relative;
+        width: 100%;
+        height: 100%;
         padding: 3rem 6.25rem;
     
         .Contact-Box{
+            height: 35rem;
     
             .Contact-titleBox{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 40%;
+                height: 100%;
     
                 .Contact-title{
-                    width: 100%;
-                    height: 5rem;
-                    font-size: 1.2rem;
-                    line-height: 5rem;
-                    color: #fff;
-                    text-transform: uppercase;
-                    font-family: $font-Mont;
+    
+                    h1{
+                        font-size: 1.5rem;
+                    }
                 }
     
                 .Contact-subTxt{
@@ -214,29 +226,29 @@
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: space-between;
-                    color: #fff;
+                    color: $white-color;
                     font-family: $font-Noto;
     
                     h2{
-                        font-size: 1rem;
+                        font-size: 13px;
                         font-weight: bold;
                     }
     
                     p{
                         font-weight: 100;
-                        font-size: 14px;
+                        font-size: 12px;
                     }
                 }
     
                 .Contact-info{
                     width: 100%;
-                    height: 7rem;
+                    height: 10rem;
     
                     h3{
-                        font-size: 1.2rem;
-                        line-height: 3.5rem;
+                        font-size: 13px;
+                        line-height: 5rem;
                         font-family: $font-Mont;
-                        color: #fff;
+                        color: $white-color;
                     }
                 }
             }
@@ -250,51 +262,119 @@
                 height: 100%;
     
                 .Name-Field{
-                    height: 7rem;
+                    display: block;
+                    width: 100%;
+                    height: 6rem;
+                    margin-bottom: 1rem;
     
                     h2{
+                        width: 100%;
                         height: 2rem;
-                        font-size: 1rem;
+                        font-size: 15px;
                         line-height: 2rem;
+                        color: $white-color;
+                        font-family: $font-Mont;
                     }
-
+    
                     input{
-                        margin-top: 0;
+                        width: 100%;
+                        height: 3rem;
+                        margin-top: 1rem;
+                        font-size: 14px;
+                        font-family: $font-Noto;
+                        border: none;
+                        border-bottom: 2px solid rgba(255,255,255,0.5);
+                        background: none;
+                        font-weight: bold;
+                        color: $white-color;
+    
+                        &:focus{
+                            outline: none;
+                            border-bottom: 2px solid rgb(255,255,255);
+                        }
                     }
                 }
     
                 .Email-Field{
-                    height: 7rem;
+                    display: block;
+                    width: 100%;
+                    height: 6rem;
+                    margin-bottom: 1rem;
     
                     h2{
+                        width: 100%;
                         height: 2rem;
-                        font-size: 1.2rem;
+                        font-size: 15px;
+                        color: $white-color;
+                        font-family: $font-Mont;
                         line-height: 2rem;
                     }
-
+    
                     input{
-                        margin-top: 0;
+                        width: 100%;
+                        height: 3rem;
+                        margin-top: 1rem;
+                        font-size: 14px;
+                        font-family: $font-Noto;
+                        font-weight: bold;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 2px solid rgba(255,255,255,0.5);
+                        color: $white-color;
+    
+                        &:focus{
+                            outline: none;
+                            border-bottom: 2px solid rgb(255,255,255);
+                        }
                     }
                 }
     
                 .Message-Field{
-                    height: 23rem;
+                    display: block;
+                    width: 100%;
+                    height: 15rem;
+                    margin-bottom: 1rem;
     
                     h2{
+                        width: 100%;
                         height: 2rem;
                         line-height: 2rem;
                         font-size: 1rem;
+                        color: $white-color;
+                        font-family: $font-Mont;
                     }
     
                     textarea{
-                        height: 15rem;
+                        width: 100%;
+                        height: 12rem;
                         margin-top: 1rem;
                         font-size: 1rem;
+                        font-family: $font-Noto;
+                        font-weight: bold;
+                        background-color: transparent;
+                        border: 2px solid rgba(255,255,255,0.5);
+                        color: $white-color;
                     }
                 }
     
                 .submit-button{
-                    font-size: 12px;
+                    display: block;
+                    width: 100%;
+                    height: 2.5rem;
+                    background-color: $darkMode-button;
+                    font-size: 14px;
+                    font-family: $font-Mont;
+                    font-weight: bold;
+                    border: none;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    color: $white-color;
+                    transition: $ease-out;
+    
+                    &:hover{
+                        background-color: $button-hover;
+                        transition: $ease-in;
+                    }
                 }
             }
         }
@@ -406,6 +486,188 @@
     }
 }
 
+@include verticalTablet {
+    .Contact-container{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 3.125rem;
+    
+        .Contact-Box{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 65rem;
+    
+            .Contact-titleBox{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 100%;
+                height: 30rem;
+    
+                .Contact-title{
+                    width: 100%;
+                    height: 5rem;
+                    line-height: 5rem;
+    
+                    h1{
+                        font-size: 1.5rem;
+                        color: $white-color;
+                        text-transform: uppercase;
+                        font-family: $font-Mont;
+                    }
+                }
+    
+                .Contact-subTxt{
+                    width: 100%;
+                    height: 12rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    color: $white-color;
+                    font-family: $font-Noto;
+    
+                    h2{
+                        font-size: 13px;
+                        font-weight: bold;
+                    }
+    
+                    p{
+                        width: 80%;
+                        font-weight: 100;
+                        font-size: 12px;
+                    }
+                }
+    
+                .Contact-info{
+                    width: 100%;
+                    height: 6rem;
+    
+                    h3{
+                        font-size: 13px;
+                        line-height: 3rem;
+                        font-family: $font-Mont;
+                        color: $white-color;
+                    }
+                }
+            }
+    
+            .Contact-Form{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 100%;
+                height: 30rem;
+    
+                .Name-Field{
+                    display: block;
+                    width: 100%;
+                    height: 5rem;
+                    margin-bottom: 1rem;
+    
+                    h2{
+                        width: 100%;
+                        height: 2rem;
+                        font-size: 13px;
+                        line-height: 2rem;
+                        color: $white-color;
+                        font-family: $font-Mont;
+                    }
+    
+                    input{
+                        width: 100%;
+                        height: 2rem;
+                        margin-top: 1rem;
+                        font-size: 12px;
+                        font-family: $font-Noto;
+                        border: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        border-bottom: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        background: none;
+                        font-weight: bold;
+                        color: $white-color;
+                        padding: 1rem;
+    
+                        &:focus{
+                            outline: none;
+                            border-bottom: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        }
+                    }
+                }
+    
+                .Email-Field{
+                    display: block;
+                    width: 100%;
+                    height: 5rem;
+                    margin-bottom: 1rem;
+    
+                    h2{
+                        width: 100%;
+                        height: 2rem;
+                        font-size: 13px;
+                        color: $white-color;
+                        font-family: $font-Mont;
+                        line-height: 2rem;
+                    }
+    
+                    input{
+                        width: 100%;
+                        height: 2rem;
+                        margin-top: 1rem;
+                        font-size: 12px;
+                        font-family: $font-Noto;
+                        border: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        border-bottom: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        background: none;
+                        font-weight: bold;
+                        color: $white-color;
+                        padding: 1rem;
+    
+                        &:focus{
+                            outline: none;
+                            border-bottom: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        }
+                    }
+                }
+    
+                .Message-Field{
+                    height: 15rem;
+                    margin-bottom: 1rem;
+    
+                    h2{
+                        height: 2rem;
+                        line-height: 2rem;
+                        font-size: 13px;
+                    }
+    
+                    textarea{
+                        height: 12rem;
+                        font-size: 1rem;
+                        border: 2px solid rgba(255,255,255,0.3);
+                        color: $white-color;
+
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+    
+                .submit-button{
+                    display: block;
+                    width: 100%;
+                    height: 3rem;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
 @include mobile {
     .Contact-container{
         position: relative;
@@ -432,11 +694,11 @@
                 .Contact-title{
                     width: 100%;
                     height: 2rem;
-                    font-size: 1rem;
                     line-height: 2rem;
-                    color: #fff;
-                    text-transform: uppercase;
-                    font-family: $font-Mont;
+
+                    h1{
+                        font-size: 1.2rem;
+                    }
                 }
     
                 .Contact-subTxt{
@@ -446,7 +708,7 @@
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: space-between;
-                    color: #fff;
+                    color: $white-color;
                     font-family: $font-Noto;
     
                     h2{
@@ -468,7 +730,7 @@
                         font-size: 12px;
                         line-height: 2rem;
                         font-family: $font-Mont;
-                        color: #fff;
+                        color: $white-color;
                         margin-bottom: 1rem;
 
                         &:nth-child(2){
@@ -542,7 +804,7 @@
                         font-weight: bold;
                         background-color: transparent;
                         border: 2px solid rgba(255,255,255,0.5);
-                        color: #fff;
+                        color: $white-color;
                     }
                 }
     

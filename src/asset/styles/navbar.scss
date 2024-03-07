@@ -1,5 +1,5 @@
 @import '../variables';
-@import '../mixin/mixin';
+@import '../ResponsiveMixin/mixin';
 
 .Main-Nav{
     position: fixed;
@@ -24,7 +24,7 @@
         h2{
             width: 80%;
             height: max-content;
-            font-size: 1rem;
+            font-size: 12px;
             font-family: $font-Mont;
             font-weight: bold;
             text-transform: uppercase;
@@ -33,9 +33,13 @@
         }
 
         img{
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
         }
+    }
+
+    .menu-svgIcon{
+        font-size: 1.8rem;
     }
 }
 
@@ -134,18 +138,19 @@
 
 @include macbook {
     .Main-Nav{
+        height: 5rem;
     
         .Static-title{
-            width: 20rem;
+            width: 18rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 4rem;
     
             h2{
-                width: 15rem;
+                width: 13rem;
                 height: max-content;
-                font-size: 15px;
+                font-size: 12px;
                 font-family: $font-Mont;
                 font-weight: bold;
                 text-transform: uppercase;
@@ -154,8 +159,8 @@
             }
     
             img{
-                width: 30px;
-                height: 30px;
+                width: 25px;
+                height: 25px;
             }
         }
     }
@@ -167,7 +172,7 @@
 
 @include horizontalTablet {
     .Main-Nav{
-        padding : 0 3rem;
+        padding : 0 3.125rem;
     
         .Static-title{
             width: 20rem;
@@ -185,6 +190,37 @@
                 text-transform: uppercase;
                 color: #fff;
                 word-break: keep-all;
+            }
+        }
+    }
+
+    .Responsive-Menu{
+        display: flex;
+    }
+}
+
+@include verticalTablet {
+    .Main-Nav{
+        height: 5rem;
+        padding : 0 3.125rem;
+    
+        .Static-title{
+            width: 18rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+    
+            h2{
+                width: 15rem;
+                height: max-content;
+                font-size: 10px;
+                font-family: $font-Mont;
+            }
+
+            img{
+                width: 25px;
+                height: 25px;
             }
         }
     }

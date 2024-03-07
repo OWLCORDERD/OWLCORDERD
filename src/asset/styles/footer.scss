@@ -24,7 +24,7 @@
             margin: 0 2rem;
             
             h2{
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-family: $font-Mont;
                 color: #fff;
             }
@@ -54,37 +54,6 @@
 @media screen and (max-width : 1440px){
     .footer-container{
     
-        .Next-Chapter{
-    
-            .NextChapter-Index{
-                width: 100%;
-                height: 5rem;
-    
-                p{
-                    font-size: 1.2rem;
-                    line-height: 5rem;
-                }
-            }
-    
-            .NextChapter-title{
-    
-                h2{
-                    font-size: 4rem;
-                }
-    
-                p{
-                    font-size: 1rem;
-                }
-            }
-    
-            .NextChapter-info{
-    
-                span{
-                    font-size: 1rem;
-                }
-            }
-        }
-    
         .footer-subMenu{
     
             .footer-copyright{
@@ -94,7 +63,7 @@
                 margin: 0;
                 
                 h2{
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                 }
             }
     
@@ -127,10 +96,6 @@
         height : max-content;
         background-color: #000;
         padding: 0;
-    
-        .Next-Chapter{
-            display: none;
-        }
     
         .footer-subMenu{
             display: flex;

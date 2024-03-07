@@ -71,7 +71,7 @@ function Developer() {
     <section className="Introduce-container" ref={ctnRef}>
       <div className="Introduce-infoBox">
         <div className="Introduce-info">
-          <h2>트렌드를 찾아보고 시도해보는 퍼블리싱 프론트앤드 개발자 임민혁입니다.</h2>
+          <h1>트렌드를 찾아보고 시도해보는 퍼블리싱 프론트앤드 개발자 임민혁입니다.</h1>
           <p>
             웹 퍼블리싱부터 프론트앤드 개발까지 발돋움을 진행중인 개발자 임민혁입니다. 저는 개발을 하면서 계속해서
             새로운 기술들을 배우며 더 나은 사이트를 만들어가는 그 과정이 아름답고 재밌다고 느낍니다.

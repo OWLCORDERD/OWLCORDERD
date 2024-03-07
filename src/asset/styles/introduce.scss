@@ -1,5 +1,5 @@
 @import '../variables';
-@import '../mixin/mixin';
+@import '../ResponsiveMixin/mixin';
 
 .Introduce-container{
     position: relative;
@@ -26,13 +26,13 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-between;
-            width: 45%;
+            width: 40%;
             height: 100%;
 
-            h2{
-                width: 60%;
+            h1{
+                width: 20rem;
                 word-break: keep-all;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
                 font-family: $font-Noto;
                 color: #fff;
             }
@@ -44,7 +44,7 @@
                 color: #fff;
                 font-family: $font-Noto;
                 font-weight: 100;
-                font-size: 15px;
+                font-size: 14px;
                 word-break: keep-all;
             }
 
@@ -53,10 +53,10 @@
                 color: #fff;
                 background-color: #2e2e2e;
                 text-align: center;
-                width: 25rem;
+                width: 28rem;
                 height: 2.5rem;
                 font-family: $font-Noto;
-                font-size: 15px;
+                font-size: 14px;
                 font-weight: bold;
                 line-height: 2.5rem;
                 cursor: pointer;
@@ -73,7 +73,7 @@
         .Advantages-list{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            width: 55%;
+            width: 60%;
             height: 100%;
             gap : 3rem 6.25rem;
 
@@ -116,7 +116,7 @@
                     height: 30%;
 
                     p{
-                        width: 100%;
+                        width: 80%;
                         height: 100%;
                         text-align: center;
                         font-family: $font-Noto;
@@ -141,35 +141,40 @@
             .Introduce-info{
                 width: 40%;
     
-                h2{
-                    width: 80%;
-                    font-size: 1.2rem;
+                h1{
+                    width: 60%;
+                    font-size: 1rem;
                 }
     
                 p{
                     width : 80%;
-                    font-size: 14px;
+                    font-size: 12px;
                 }
     
                 .view-report{
+                    width: 25rem;
                     font-size: 12px;
                 }
             }
     
             .Advantages-list{
                 width: 50%;
+                gap : 3.125rem;
     
                 .Advantage-item{
     
+                    .Advantage-titleBox{
+    
+                        .title{
+                            font-size: 14px;
+                        }
+                    }
+    
                     .Advantage-info{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 100%;
-                        height: 30%;
     
                         p{
-                            font-size: 11px;
+                            width: 90%;
+                            font-size: 10px;
                         }
                     }
                 }
@@ -182,6 +187,7 @@
 @include horizontalTablet {
     .Introduce-container{
         padding: 3rem;
+        height: 40rem;
     
         .Introduce-infoBox{
             height: 28rem;
@@ -189,14 +195,14 @@
             .Introduce-info{
                 width: 40%;
     
-                h2{
+                h1{
                     width: 80%;
-                    font-size: 1rem;
+                    font-size: 14px;
                 }
     
                 p{
                     width : 80%;
-                    font-size: 11px;
+                    font-size: 10px;
                 }
     
                 .view-report{
@@ -223,7 +229,7 @@
                             width: 100%;
                             color: #fff;
                             font-family: $font-Mont;
-                            font-size: 15px;
+                            font-size: 12px;
                             text-transform: uppercase;
                             text-align: center;
                         }
@@ -253,6 +259,77 @@
                             color: #fff;
                             font-size: 10px;
                             word-break: keep-all;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include verticalTablet {
+    .Introduce-container{
+        position: relative;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 90rem;
+        padding: 3.125rem;
+    
+        .Introduce-infoBox{
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            flex-direction: column;
+            width : 100%;
+            height: 100%;
+    
+            .Introduce-info{
+                align-items: center;
+                width: 100%;
+                height: 35rem;
+    
+                h1{
+                    width: 18rem;
+                    font-size: 15px;
+                    text-align: center;
+                }
+    
+                p{
+                    width : 75%;
+                    text-align: center;
+                    height : max-content;
+                    font-size: 13px;
+                }
+    
+                .view-report{
+                    text-align: center;
+                    width: 80%;
+                    height: 2.5rem;
+                    font-size: 13px;
+                }
+            }
+    
+            .Advantages-list{
+                width: 100%;
+                height: 40rem;
+                gap : 2rem;
+    
+                .Advantage-item{
+    
+                    .Advantage-titleBox{
+    
+                        .title{
+                            font-size: 12px;
+                        }
+                    }
+    
+                    .Advantage-info{
+    
+                        p{
+                            width: 100%;
+                            font-size: 10px;
                         }
                     }
                 }
@@ -291,7 +368,7 @@
                 width: 100%;
                 height: 30rem;
     
-                h2{
+                h1{
                     width: 100%;
                     word-break: keep-all;
                     font-size: 1rem;

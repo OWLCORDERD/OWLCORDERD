@@ -63,7 +63,7 @@ function Technology() {
         <div className="DevelopSkill-header">
           <div className="DevelopSkill-Index">
             <div className="Index-title">
-              <h2>Development Skills</h2>
+              <h1>Development Skills</h1>
             </div>
           </div>
 
