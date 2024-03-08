@@ -386,7 +386,7 @@
     .Contact-container{
         position: relative;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         padding: 3rem;
     
         .Contact-Box{
@@ -394,23 +394,25 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            height: 90%;
+            height: 30rem;
     
             .Contact-titleBox{
     
                 .Contact-title{
-                    font-size: 1.1rem;
+                    h1{
+                        font-size: 1.2rem;
+                    }
                 }
     
                 .Contact-subTxt{
                     height: 12rem;
     
                     h2{
-                        font-size: 14px;
+                        font-size: 12px;
                     }
     
                     p{
-                        font-size: 12px;
+                        font-size: 10px;
                     }
                 }
     
@@ -418,7 +420,7 @@
                     height: 6rem;
     
                     h3{
-                        font-size: 1rem;
+                        font-size: 12px;
                         line-height: 3rem;
                     }
                 }
@@ -479,7 +481,7 @@
     
                 .submit-button{
                     height: 2.5rem;
-                    font-size: 14px;
+                    font-size: 12px;
                 }
             }
         }
@@ -755,7 +757,7 @@
     
                     h2{
                         height: 2rem;
-                        font-size: 1rem;
+                        font-size: 13px;
                         line-height: 2rem;
                     }
     
@@ -763,6 +765,13 @@
                         height: 2rem;
                         margin-top: 1rem;
                         font-size: 12px;
+                        padding: 0 10px;
+                        border : 2px solid rgba($color: #fff, $alpha: 0.5);
+
+                        &:focus{
+                            border-bottom : 2px solid rgba($color: #fff, $alpha: 0.8);
+                            border : 2px solid rgba($color: #fff, $alpha: 0.8);
+                        }
                     }
                 }
     
@@ -773,7 +782,7 @@
     
                     h2{
                         height: 2rem;
-                        font-size: 1rem;
+                        font-size: 13px;
                         line-height: 2rem;
                     }
     
@@ -781,6 +790,13 @@
                         height: 2rem;
                         margin-top: 1rem;
                         font-size: 12px;
+                        padding: 0 10px;
+                        border : 2px solid rgba($color: #fff, $alpha: 0.5);
+
+                        &:focus{
+                            border-bottom : 2px solid rgba($color: #fff, $alpha: 0.8);
+                            border : 2px solid rgba($color: #fff, $alpha: 0.8);
+                        }
                     }
                 }
     

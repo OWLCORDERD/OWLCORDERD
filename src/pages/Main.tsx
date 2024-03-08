@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import 'asset/styles/main.scss';
-import { useLocation } from 'react-router-dom';
 import Navbar from 'Components/Navigator/navbar';
 import ResponsiveMenu from 'Components/Navigator/MobileResponsive/ResponsiveMenu';
 import { Helmet } from 'react-helmet-async';
 import Project from 'Components/About/Project';
+import ScrollToTop from 'CustomHook/ScrollToTop';
 import Footer from '../Components/Footer/Footer';
 import Technology from '../Components/About/Technology';
 import Contact from '../Components/Contact/Contact';
@@ -12,16 +12,9 @@ import Developer from '../Components/About/Developer';
 import Banner from '../Components/Banner/Banner';
 
 function Main() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname === '/') {
-      window.scrollTo(0, 0);
-    }
-  }, [location.pathname]);
-
   return (
     <>
+      <ScrollToTop />
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
