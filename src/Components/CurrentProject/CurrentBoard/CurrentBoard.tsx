@@ -15,15 +15,15 @@ function CurrentBoard({ currentData }: titleProps) {
   useEffect(() => {
     ScrollTrigger.create({
       trigger: mainRef.current,
-      start: 'top top',
+      start: '-5% top',
       end: 'bottom 5%',
       toggleClass: { targets: '.mainPage', className: 'active' },
     });
 
     ScrollTrigger.create({
       trigger: subRef.current,
-      start: 'top top',
-      end: 'bottom 5%',
+      start: '-5% top',
+      end: 'bottom bottom',
       toggleClass: { targets: '.subPage', className: 'active' },
     });
   }, []);

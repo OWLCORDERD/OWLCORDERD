@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'asset/styles/main.scss';
 import Navbar from 'Components/Navigator/navbar';
 import ResponsiveMenu from 'Components/Navigator/MobileResponsive/ResponsiveMenu';
