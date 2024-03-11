@@ -734,8 +734,10 @@
             .card-List{
     
                 .Project-card{
+                    
     
                     .Project-Banner{
+                        padding: 0 1rem;
     
                         .Project-titleBox{
                             width: 80%;
@@ -748,7 +750,7 @@
     
                             .subTitle{
                                 line-height: 2rem;
-                                font-size: 12px;
+                                font-size: 10px;
                             }
                         }
     
@@ -763,7 +765,7 @@
                         }
     
                         .view-button{
-                            right: 1rem;
+                            right: 10px;
                             top: 2rem;
                             
                             svg{
