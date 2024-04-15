@@ -17,6 +17,7 @@ export interface TechnologyType {
 }
 
 export interface ProjectType {
+  id: number;
   title: string;
   subTitle: string;
   info: string;
@@ -37,6 +38,7 @@ export interface ProjectType {
   sub_Part3: string | undefined;
   sub_Part4: string | undefined;
   figmaUrl: string;
+  siteUrl: string;
 }
 
 export async function getAdvantage() {
@@ -97,6 +99,7 @@ export async function getProject() {
 
   querySnapShot.forEach(doc => {
     const docData = {
+      id: doc.data().id,
       title: doc.data().title,
       subTitle: doc.data().subTitle,
       info: doc.data().info,
@@ -117,6 +120,7 @@ export async function getProject() {
       sub_Part3: doc.data().sub_Part3 ? doc.data().sub_Part3 : undefined,
       sub_Part4: doc.data().sub_Part4 ? doc.data().sub_Part4 : undefined,
       figmaUrl: doc.data().figmaUrl,
+      siteUrl: doc.data().siteUrl,
     };
 
     projectData.push(docData);

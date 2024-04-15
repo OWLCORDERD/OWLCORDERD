@@ -12,11 +12,8 @@ function CurrentBanner({ currentData }: propsDataType) {
     image: '',
     type: '',
     info: '',
+    siteUrl: '',
   });
-
-  /*
-  const [loading, setLoading] = useState<boolean>(true);
-  */
 
   useEffect(() => {
     if (currentData) {
@@ -26,20 +23,15 @@ function CurrentBanner({ currentData }: propsDataType) {
         image: currentData.main_Banner,
         type: currentData.type,
         info: currentData.info,
+        siteUrl: currentData.siteUrl,
       });
     }
-
-    /*
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-    */
   }, [currentData]);
 
   return (
     <div className="CurrentInfo-container">
       <div className="Project-ImgBox">
-        <img src={currentProject.image} alt="mainImg" />
+        <img src={currentProject.image} alt={`${currentProject.title} 프로젝트 메인 이미지`} />
       </div>
 
       <div className="Project-infoBox">
@@ -49,6 +41,10 @@ function CurrentBanner({ currentData }: propsDataType) {
         </h1>
 
         <p className="Project-info">{currentProject.info}</p>
+
+        <a href={currentProject.siteUrl} target="_blank" rel="noreferrer" className="viewPage-button">
+          페이지 접속
+        </a>
       </div>
     </div>
   );

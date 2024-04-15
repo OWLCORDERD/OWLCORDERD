@@ -20,11 +20,11 @@ function Banner(): JSX.Element {
 
   const TxtBoxAnimation = {
     initial: {
-      display: 'none',
+      opacity: 0,
     },
 
     animate: {
-      display: 'flex',
+      opacity: 1,
       transition: {
         staggerChildren: 0.5,
         delayChildren: 1,
@@ -130,7 +130,7 @@ function Banner(): JSX.Element {
         <div className="Banner-imgBox">
           <div className="Developer-imgBox">
             <motion.img
-              src={`${process.env.PUBLIC_URL}/Image/프로필 사진.jpg`}
+              src={`${process.env.PUBLIC_URL}/Image/프로필 사진.webp`}
               alt="프로필 이미지"
               initial="initial"
               animate="animate"

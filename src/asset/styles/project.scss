@@ -189,7 +189,7 @@
             .Project-infoBox{
                 margin-top: 2rem;
                 width: 100%;
-                height: 20rem;
+                height: 21rem;
                 color: #fff;
                 font-family: $font-Noto;
 
@@ -210,10 +210,28 @@
                 .Project-info{
                     width: 80%;
                     margin-top: 2rem;
-                    height: 8rem;
+                    height: 6rem;
                     word-break: keep-all;
                     font-size: 14px;
                     color: #b4b4b4;
+                }
+
+                .viewPage-button {
+                    display: block;
+                    width: 15rem;
+                    line-height: 3rem;
+                    text-align: center;
+                    color: #fff;
+                    background-color: $darkMode-button;
+                    font-weight: bold;
+                    font-family: $font-Noto;
+                    font-size: 14px;
+                    transition: all 0.5s ease-out;
+
+                    &:hover{
+                        transition: all 0.5s ease-in;
+                        background-color: $button-hover;
+                    }
                 }
             }
         }

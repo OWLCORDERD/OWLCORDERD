@@ -28,7 +28,7 @@ function Project() {
       <div className="Project-List">
         <div className="card-List">
           {projectDB.map(project => (
-            <div className="Project-card">
+            <div className="Project-card" key={project.id}>
               <div className="Project-Banner">
                 <div className="Project-titleBox">
                   <h2 className="title">{project.title}</h2>
