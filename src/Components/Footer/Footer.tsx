@@ -29,11 +29,6 @@ function Footer() {
               <SiGmail />
             </a>
           </li>
-          <li>
-            <a href="https://www.instagram.com/min_telligent/" target="_blank" rel="noreferrer">
-              <SiInstagram />
-            </a>
-          </li>
         </ul>
       </div>
     </footer>

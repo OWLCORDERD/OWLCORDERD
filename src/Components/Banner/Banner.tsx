@@ -2,18 +2,22 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import 'asset/styles/banner.scss';
 import { TfiMouse } from 'react-icons/tfi';
 import { motion } from 'framer-motion';
+import { Oval } from 'react-loader-spinner';
 
-function Banner(): JSX.Element {
-  const ImgBoxAnimation = {
+interface loadingState {
+  loading: boolean;
+}
+
+function Banner({ loading }: loadingState): JSX.Element {
+  const loadingAnimation = {
     initial: {
-      width: 0,
+      opacity: 1,
     },
 
     animate: {
-      width: '100%',
-      opacity: 1,
+      opacity: 0,
       transition: {
-        duration: 1,
+        duration: 1.5,
       },
     },
   };
@@ -27,9 +31,8 @@ function Banner(): JSX.Element {
       opacity: 1,
       transition: {
         staggerChildren: 0.5,
-        delayChildren: 1,
-        duration: 2,
-        delay: 1,
+        delayChildren: 0.5,
+        duration: 1,
       },
     },
   };
@@ -129,21 +132,36 @@ function Banner(): JSX.Element {
 
         <div className="Banner-imgBox">
           <div className="Developer-imgBox">
-            <motion.img
+            <img
               src={`${process.env.PUBLIC_URL}/Image/프로필 사진.webp`}
               alt="프로필 이미지"
-              initial="initial"
-              animate="animate"
-              variants={ImgBoxAnimation}
+              className={loading === false ? 'view' : ''}
             />
+            <motion.div className="image-loading" initial="initial" animate="animate" variants={loadingAnimation}>
+              <Oval
+                width={50}
+                height={50}
+                color="#fff"
+                visible
+                ariaLabel="oval-loading"
+                secondaryColor="rgba(255,255,255,0.3)"
+                strokeWidth={2}
+                strokeWidthSecondary={2}
+              />
+            </motion.div>
           </div>
         </div>
       </div>
 
-      <div className="scroll-down">
+      <motion.div
+        className="scroll-down"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+      >
         <TfiMouse className="scroll-icon" />
         <h2>Scroll Down</h2>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -20,8 +20,9 @@ export interface ProjectType {
   id: number;
   title: string;
   subTitle: string;
+  date: string;
   info: string;
-  bannerImg: string;
+  projectBanner: string;
   type: string;
   useTech1: string;
   useTech2: string;
@@ -29,16 +30,10 @@ export interface ProjectType {
   useTech4: string | undefined;
   useTech5: string | undefined;
   useTech6: string | undefined;
-  main_Banner: string;
-  main_Part1: string;
-  main_Part2: string;
-  main_Part3: string | undefined;
-  sub_Part1: string;
-  sub_Part2: string;
-  sub_Part3: string | undefined;
-  sub_Part4: string | undefined;
+  video: string;
   figmaUrl: string;
   siteUrl: string;
+  images: [];
 }
 
 export async function getAdvantage() {
@@ -102,8 +97,9 @@ export async function getProject() {
       id: doc.data().id,
       title: doc.data().title,
       subTitle: doc.data().subTitle,
+      date: doc.data().date,
       info: doc.data().info,
-      bannerImg: doc.data().bannerImg,
+      projectBanner: doc.data().projectBanner,
       type: doc.data().type,
       useTech1: doc.data().useTech1,
       useTech2: doc.data().useTech2,
@@ -111,16 +107,10 @@ export async function getProject() {
       useTech4: doc.data().useTech4 ? doc.data().useTech4 : undefined,
       useTech5: doc.data().useTech5 ? doc.data().useTech5 : undefined,
       useTech6: doc.data().useTech6 ? doc.data().useTech6 : undefined,
-      main_Banner: doc.data().main_Banner,
-      main_Part1: doc.data().main_Part1,
-      main_Part2: doc.data().main_Part2,
-      main_Part3: doc.data().main_Part3 ? doc.data().main_Part3 : undefined,
-      sub_Part1: doc.data().sub_Part1,
-      sub_Part2: doc.data().sub_Part2,
-      sub_Part3: doc.data().sub_Part3 ? doc.data().sub_Part3 : undefined,
-      sub_Part4: doc.data().sub_Part4 ? doc.data().sub_Part4 : undefined,
       figmaUrl: doc.data().figmaUrl,
       siteUrl: doc.data().siteUrl,
+      video: doc.data().video,
+      images: doc.data().images,
     };
 
     projectData.push(docData);

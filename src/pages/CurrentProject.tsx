@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react';
 import 'asset/styles/project.scss';
 import { ScrollTrigger, gsap } from 'gsap/all';
 import { useLocation } from 'react-router-dom';
-import CurrentInfo from 'Components/CurrentProject/CurrentInfo/CurrentInfo';
+import ProjectInfo from 'Components/CurrentProject/ProjectInfo/ProjectInfo';
 import Navbar from 'Components/Navigator/navbar';
 import ResponsiveMenu from 'Components/Navigator/MobileResponsive/ResponsiveMenu';
 import { Helmet } from 'react-helmet-async';
 import { ProjectType } from 'api/CommonService';
 import Footer from 'Components/Footer/Footer';
 import Loading from 'CustomHook/Loading';
-import ProjectSkills from '../Components/CurrentProject/ProjectSkills/ProjectSkills';
-import CurrentBoard from '../Components/CurrentProject/CurrentBoard/CurrentBoard';
+import ProjectBoard from '../Components/CurrentProject/ProjectBoard/ProjectBoard';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function DevelopProject() {
   const location = useLocation();
@@ -19,7 +20,7 @@ function DevelopProject() {
 
   const [loading, setLoading] = useState<boolean>(true);
 
-  gsap.registerPlugin(ScrollTrigger);
+  const [openVideo, setOpenVideo] = useState<boolean>(false);
 
   useEffect(() => {
     if (projectDB !== undefined) {
@@ -28,6 +29,24 @@ function DevelopProject() {
       }, 1000);
     }
   }, [projectDB]);
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+
+    if (openVideo === true && body) {
+      body.style.overflow = 'hidden';
+    }
+
+    if (openVideo === false && body) {
+      body.style.removeProperty('overflow');
+    }
+  }, [openVideo]);
+
+  const closeVideo = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    setOpenVideo(!openVideo);
+  };
 
   return (
     <div className="container">
@@ -52,14 +71,25 @@ function DevelopProject() {
 
       {!loading ? (
         <main>
-          <section className="CurrentProject-container">
-            <div className="Current-Banner">
-              <CurrentInfo currentData={projectDB} />
-              <ProjectSkills currentData={projectDB} />
+          <div className="currentProject-container">
+            {openVideo === true ? (
+              <div className="video-popup">
+                <button type="button" className="close-button" onClick={closeVideo}>
+                  close
+                </button>
+
+                <div className="project-video">
+                  <video controls src={projectDB.video} autoPlay muted loop />
+                </div>
+              </div>
+            ) : null}
+
+            <div className="project-banner">
+              <ProjectInfo currentData={projectDB} setOpen={setOpenVideo} open={openVideo} />
             </div>
 
-            <CurrentBoard currentData={projectDB} />
-          </section>
+            <ProjectBoard currentData={projectDB} />
+          </div>
 
           <Footer />
         </main>

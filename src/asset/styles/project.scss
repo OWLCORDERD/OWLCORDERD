@@ -1,6 +1,7 @@
 @import '../variables';
 @import '../ResponsiveMixin/mixin';
 
+/* main page project container */
 .Project-container{
     position: relative;
     width: 100%;
@@ -56,6 +57,11 @@
                 width: 100%;
                 height: 100%;
                 background-color: $darkMode-button;
+                border : 2px solid transparent;
+
+                &:hover {
+                    border: 2px solid rgba(255,255,255,0.5);
+                }
 
                 .Project-Banner{
                     position: relative;
@@ -101,27 +107,6 @@
                             word-break: keep-all;
                         }
                     }
-
-                    .view-button{
-                        position: absolute;
-                        width: 50px;
-                        height: 50px;
-                        right: 2rem;
-                        bottom: 2rem;
-
-                        svg{
-                            position: absolute;
-                            top: 0;
-                            left: 0;    
-                        }
-
-                        &:hover{
-                            cursor: pointer;
-                            svg{
-                                transform: scale(1.1);
-                            }
-                        }
-                    }
                 }
 
                 .Banner-imgBox{
@@ -154,288 +139,317 @@
     }
 }
 
-.CurrentProject-container {
+.currentProject-container {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding : 6.25rem 6.25rem 0 6.25rem;
+    padding : 6.25rem 0 0 0;
 
-    .Current-Banner{
+    .video-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
         display: flex;
-        justify-content: space-between;
-        width: 100%;
-        height: 60rem;
-        padding: 2rem 0 0 0;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        z-index: 110;
+        transition: all 0.5s ease-out;
+        animation : openAnimation .5s forwards;
+            
+            @keyframes openAnimation {
+                0%{
+                    opacity: 0;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
 
-        .CurrentInfo-container{
-            width: 55%;
-            height: 100%;
-
-            .Project-ImgBox{
-                position: relative;
-                width: 100%;
-                height: 32rem;
-
-                img{
-                    position: absolute;
+                100% {
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                    opacity: 1;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
                 }
             }
 
-            .Project-infoBox{
-                margin-top: 2rem;
-                width: 100%;
-                height: 21rem;
-                color: #fff;
-                font-family: $font-Noto;
-
-                .Project-subTitle{
-                    width: 100%;
-                    line-height: 2rem;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                }
-
-                .Project-title{
-                    width: 100%;
-                    font-size: 1.2rem;
-                    line-height: 8rem;
-                    font-weight: 300;
-                }
-
-                .Project-info{
-                    width: 80%;
-                    margin-top: 2rem;
-                    height: 6rem;
-                    word-break: keep-all;
-                    font-size: 14px;
-                    color: #b4b4b4;
-                }
-
-                .viewPage-button {
-                    display: block;
-                    width: 15rem;
-                    line-height: 3rem;
-                    text-align: center;
-                    color: #fff;
-                    background-color: $darkMode-button;
-                    font-weight: bold;
-                    font-family: $font-Noto;
-                    font-size: 14px;
-                    transition: all 0.5s ease-out;
-
-                    &:hover{
-                        transition: all 0.5s ease-in;
-                        background-color: $button-hover;
-                    }
-                }
-            }
+        .close-button {
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+            width: 10rem;
+            background-color: transparent;
+            border: none;
+            line-height: 2rem;
+            color: #fff;
+            font-weight: bold;
+            font-family: $font-Mont;
+            text-transform: uppercase;
+            font-size: 1rem;
+            cursor: pointer;
         }
 
-        .ProjectSkills-container{
-            position: sticky;
-            top: 6.25rem;
-            right: 0;
-            width: 40%;
-            height: 30rem;
+        .project-video {
+            position: relative;
+            width: 70rem;
+            height: 35rem;
+            overflow: hidden;
 
-            .Design-menu{
-                position: relative;
+            video {
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
-                height: 15rem;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
 
-                .menu-title{
+    .project-banner{
+        width: 100%;
+        height: calc(35rem + 100vh);
+
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+
+            .project-detail {
+                width: 900px;
+                height: 30rem;
+                margin: 0 auto;
+
+                .detail-info {
                     width: 100%;
-                    height: 5rem;
+                    height: 18rem;
 
-                    h2{
-                        line-height: 5rem;
-                        font-size: 1rem;
-                        color: #fff;
-                        text-transform: uppercase;
-                        font-family: $font-Mont;
+                    .detail-item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        height: calc(18rem / 5);
+
+                        .title {
+                            width: 30%;
+                            height: 100%;
+
+                            h1 {
+                                height: calc(18rem / 5);
+                                font-family: $font-Mont;
+                                color: #fff;
+                                font-size: 15px;
+                                text-transform: uppercase;
+                            }
+                        }
+
+                        .detail-txt {
+                            display: flex;
+                            align-items: flex-start;
+                            width: 70%;
+                            height: 100%;
+
+                            p {
+                                height: calc(18rem / 5);
+                                color: #fff;
+                                font-family: $font-Mont;
+                                font-size: 15px;
+                            }
+
+                            a {
+                                height: calc(18rem / 5);
+                                color: #fff;
+                                font-family: $font-Mont;
+                                font-size: 15px;
+                                font-weight: bold;
+                            }
+                        }
                     }
                 }
 
-                .menu-button{
+                .project-desc {
                     display: flex;
+                    justify-content: flex-start;
                     align-items: center;
-                    justify-content: center;
                     width: 100%;
-                    height: 3rem;
-                    background-color: rgba($color: #3d3d3d, $alpha: 0.8);
-                    transition: all 0.3s ease-out;
+                    height: 12rem;
 
-                    span{
-                        margin-left: 2rem;
-                        font-size: 14px;
+                    p {
+                        word-break: keep-all;
                         color: #fff;
-                        text-transform: uppercase;
-                        font-family: $font-Mont;
-                        font-weight: bold;
-                    }
-
-                    &:hover{
-                        background-color: #F24E1E;
-                        transition: all 0.3s ease-in;
+                        font-family: $font-Noto;
+                        font-size: 15px;
                     }
                 }
             }
 
-            .Skill-menu{
+            .banner-img {
+                position: relative;
                 width: 100%;
-                height : 15rem;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-                .menu-title{
-                    width: 100%;
-                    height: 5rem;
+                .play-button {
+                    width: 10rem;
+                    height: max-content;
+                    padding: 1rem;
+                    border-radius: 30px;
+                    z-index: 10;
+                    cursor: pointer;
+                    border: none;
+                    opacity: 0;
+                    background-color: rgba(0,0,0,0.8);
 
-                    h2{
-                        font-size: 1rem;
-                        color: #fff;
+                    span {
+                        opacity: 1;
+                        font-size: 14px;
+                        font-weight: 700;
                         font-family: $font-Mont;
                         text-transform: uppercase;
-                        line-height: 5rem;
+                        transition: all 0.5s ease-in-out;
+                        color: $white-color;
+                    }
+
+                    .play-icon {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: $centerTL;
+                        font-size: 2rem;
+                        opacity: 0;
+                        transition: all 0.5s ease-in-out;
+                        color: #fff;
+                    }
+
+                    &:hover {
+                        .play-icon {
+                            transition: all 0.5s ease-in-out;
+                            transition-delay: 0.5s;
+                            opacity: 1;
+                        }
+
+                        span {
+                            transition: all 0.5s ease-in-out;
+                            opacity: 0;
+                        }
                     }
                 }
 
-                .Skill-list{
-                    width: 100%;
-                    height: 10rem;
-
-                    li{
-                        display: inline-block;
-                        width: max-content;
-                        height: 3rem;
-                        margin-top: 1rem;
-                        margin-right: 2rem;
-
-                        .Skill-item{
-                            width: max-content;
-                            height: 2.5rem;
-                            padding : 0 1rem;
-                            background-color: $darkMode-button;
-
-                            span{
-                                font-family: $font-Mont;
-                                text-transform: uppercase;
-                                font-weight: bold;
-                                line-height: 2.5rem;
-                                color: rgba($color: #fff, $alpha: 0.7);
-                                font-size: 13px;
-                            }
-
-                            &:hover{
-                                background-color: $rgba-white;
-                                color: #fff;
-                                cursor: pointer;
-                            }
-                        }
+                .project-img {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 50%;
+                    height: 100%;
+    
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                     }
                 }
             }
         }
     }
 
-    .CurrentBoard-container{
-        position: relative;
-        display: flex;
+    .project-Board {
         width: 100%;
         height: 100%;
-        margin: 5rem 0;
+        padding: 6.25rem;
 
-        .Project-category{
-            position: relative;
-            top: 0;
-            left: 0;
-            height: 300rem;
-            flex : 2;
+        .project-Skills {
+            width: 60rem;
+            height: 20rem;
+            margin : 0 auto;
 
-            ul{
-                position: sticky;
-                top: 6.25rem;
-                left: 0;
+            .title {
+                width: 20rem;
+                height: 3rem;
+                margin-bottom: 2rem;
+                
+                h2{
+                    font-size: 1.2rem;
+                    color: #fff;
+                    font-family: $font-Mont;
+                    text-transform : uppercase;
+                }
+            }
+
+            .Skills-list {
                 width: 100%;
                 height: 15rem;
 
-                li{
-                    width: 100%;
-                    height: 5rem;
-                    
-                    a{
-                        font-size: 1rem;
-                        font-family: $font-Mont;
-                        color: rgb(107, 107, 107);
-                        text-transform: uppercase;
-                        font-weight: bold;
-                        line-height: 5rem;
+                li {
+                    display: inline-block;
+                    width: max-content;
+                    height: 3.125rem;
+                    margin : 0 1rem 1rem 0;
 
-                        &.active{
-                            color: #fff;
+                    .Skill-item {
+                        width: 100%;
+                        height: 100%;
+                        background-color: $darkMode-button;
+
+                        &:hover {
+                            background-color: $button-hover;
                         }
-                    }
 
-                    span{
-                        font-size: 1.2rem;
-                        font-family: $font-Mont;
-                        color: #fff;
-                        text-transform: uppercase;
-                        font-weight: bold;
-                        line-height: 5rem;
+                        span {
+                            line-height: 3.125rem;
+                            color: #fff;
+                            font-family: $font-Mont;
+                            font-size: 14px;
+                            font-weight: bold;
+                            padding: 1rem;
+                            text-transform: uppercase;
+                        }
                     }
                 }
             }
         }
 
-        .Project-Board{
-            flex : 8;
-            height: 100%;
+        .page-detail {
+            position: relative;
+            width: 80rem;
+            height: max-content;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 0 auto;
+            gap : 2rem;
 
-            .Main-Board,.Sub-Board{
+            .detail-img {
+                position: relative;
                 width: 100%;
-                height: 100%;
-                padding : 0 5rem;
+                height: 20rem;
+                overflow: hidden;
 
-                .Main-title{
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                     width: 100%;
-                    line-height: 5rem;
-                    margin-bottom: 2rem;
-                    text-transform: uppercase;
-                    font-family: $font-Mont;
-                    color: #fff;
-                    font-size: 1.5rem;
+                    height: 100%;
+                    object-fit: cover;
                 }
 
-                .Board-item{
-                    width: 100%;
-                    height: 35rem;
-                    margin-bottom: 2rem;
-
-                    .page-info{
-                        width: 100%;
-                        height: 3rem;
-                        line-height: 3rem;
-                        text-transform: uppercase;
-                        font-family: $font-Mont;
-                        color: rgba($color: #fff, $alpha: 0.7);
-                        font-size: 12px;
-                    }
-
-                    .page-ImgBox{
-                        margin-top: 2rem;
-                        width: max-content;
-                        height: 28rem;
-
-                        img{
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                    }
+                &:nth-child(1) {
+                    height: 40rem;
+                    grid-column: 1/3;      
                 }
             }
         }
@@ -495,29 +509,6 @@
                                 font-size: 10px;
                             }
                         }
-    
-                        .view-button{
-                            position: absolute;
-                            width: 30px;
-                            height: 30px;
-                            right: 2rem;
-                            bottom: 3rem;
-    
-                            svg{
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 35px;
-                                height: 35px;
-                            }
-    
-                            &:hover{
-                                cursor: pointer;
-                                svg{
-                                    transform: scale(1.1);
-                                }
-                            }
-                        }
                     }
     
                     .Banner-imgBox{
@@ -550,178 +541,130 @@
         }
     }
 
-    .CurrentProject-container {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding : 5rem 6.25rem 0 6.25rem;
+    .currentProject-container {
+        padding : 5rem 0 0 0;
     
-        .Current-Banner{
-            height: 45rem;
+        .video-popup {
     
-            .CurrentInfo-container{
-                width: 50%;
-                height: 100%;
-    
-                .Project-ImgBox{
-                    height: 20rem;
-                }
-    
-                .Project-infoBox{
-                    margin-top: 2rem;
-                    height: 19.5rem;
-    
-                    .Project-subTitle{
-                        line-height: 2rem;
-                        font-size: 12px;
-                    }
-    
-                    .Project-title{
-                        font-size: 1.2rem;
-                        line-height: 8rem;
-                        font-weight: 300;
-                    }
-    
-                    .Project-info{
-                        margin-top: 1rem;
-                        height: 6rem;
-                        font-size: 12px;
-                    }
-
-                    .viewPage-button {
-                        line-height: 2.5rem;
-                        text-align: center;
-                        color: #fff;
-                        background-color: $darkMode-button;
-                        font-weight: bold;
-                        font-family: $font-Noto;
-                        font-size: 12px;
-                        transition: all 0.5s ease-out;
-                    }
-                }
+            .close-button {
+                line-height: 2rem;
+                font-size: 13px;
             }
     
-            .ProjectSkills-container{
-                position: sticky;
-                top: 5rem;
-                right: 0;
-                width: 40%;
+            .project-video {
+                width: 50rem;
                 height: 25rem;
+            }
+        }
     
-                .Design-menu{
-                    height: 12.5rem;
+        .project-banner{
+            height: calc(35rem + 100vh);
     
-                    .menu-title{
-                        height: 5rem;
+            .project-info {
     
-                        h2{
-                            line-height: 3rem;
-                            font-size: 1rem;
-                        }
-                    }
+                .project-detail {
+                    width: 42rem;
+                    height: 30rem;
     
-                    .menu-button{
-                        height: 2.5rem;
-    
-                        span{
-                            font-size: 14px;
-                        }
-                    }
-                }
-    
-                .Skill-menu{
-                    height: 12.5rem;
-    
-                    .menu-title{
-                        height: 2.5rem;
-    
-                        h2{
-                            line-height: 2.5rem;
-                            font-size: 1rem;
-                        }
-                    }
-    
-                    .Skill-list{
+                    .detail-info {
                         width: 100%;
-                        height: 10rem;
+                        height: 18rem;
     
-                        li{
+                        .detail-item {
     
-                            .Skill-item{
+                            .title {
     
-                                span{
+                                h1 {
+                                    line-height: calc(18rem / 5);
+                                    font-size: 14px;
+                                }
+                            }
+    
+                            .detail-txt {
+    
+                                p {
+                                    line-height: calc(18rem / 5);
+                                    font-size: 13px;
+                                }
+    
+                                a {
+                                    line-height: calc(18rem / 5);
                                     font-size: 13px;
                                 }
                             }
+                        }
+                    }
+    
+                    .project-desc {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        width: 80%;
+                        height: 12rem;
+    
+                        p {
+                            font-size: 13px;
                         }
                     }
                 }
             }
         }
     
-        .CurrentBoard-container{
-            position: relative;
-            display: flex;
+        .project-Board {
             width: 100%;
             height: 100%;
-            margin: 5rem 0;
+            padding: 6.25rem;
     
-            .Project-category{
-                position: relative;
-                top: 0;
-                left: 0;
-                height: 250rem;
-                flex : 2;
+            .project-Skills {
+                width: 50rem;
+                height: 20rem;
+                margin : 0 auto;
     
-                ul{
+                .title {
+                    width: 20rem;
+                    height: 3rem;
+                    margin-bottom: 2rem;
+                    
+                    h2{
+                        font-size: 1rem;
+                        color: #fff;
+                        font-family: $font-Mont;
+                        text-transform : uppercase;
+                    }
+                }
     
-                    li{
-                        width: 100%;
-                        height: 5rem;
-                        
-                        a{
-                            font-size: 1rem;
-                        }
+                .Skills-list {
+                    width: 100%;
+                    height: 15rem;
     
-                        span{
-                            font-size: 1.2rem;
+                    li {
+                        display: inline-block;
+                        width: max-content;
+                        height: 3.125rem;
+                        margin : 0 1rem 1rem 0;
+    
+                        .Skill-item {
+    
+                            span {
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
             }
     
-            .Project-Board{
-                flex : 8;
-                width: 100%;
-                height: max-content;
+            .page-detail {
+                width: 80%;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap : 2rem;
     
-                .Main-Board,.Sub-Board{
-                    padding : 0;
+                .detail-img {
+                    height: 30rem;
     
-                    .Main-title{
-                        font-size: 1.3rem;
-                    }
-    
-                    .Board-item{
-                        width: 100%;
+                    &:nth-child(1) {
                         height: 30rem;
-                        margin-bottom: 2rem;
-    
-                        .page-info{
-                            width: 100%;
-                            height: 3rem;
-                            line-height: 3rem;
-                            text-transform: uppercase;
-                            font-family: $font-Mont;
-                            color: rgba($color: #fff, $alpha: 0.7);
-                            font-size: 12px;
-                        }
-    
-                        .page-ImgBox{
-                            height: 25rem;
-                        }
+                        grid-column: auto;      
                     }
                 }
             }
@@ -793,187 +736,130 @@
                                 font-size: 10px;
                             }
                         }
-    
-                        .view-button{
-                            right: 10px;
-                            top: 2rem;
-                            
-                            svg{
-                                width: 30px;
-                                height: 30px;
-                            }
-                        }
                     }
                 }
             }
         }
     }
 
-    .CurrentProject-container{
-        padding : 6.25rem 3.125rem 0 3.125rem;
+    .currentProject-container {
+        padding : 5rem 0 0 0;
     
-        .Current-Banner{
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            height: 73rem;
-            padding: 0;
+        .video-popup {
     
-            .CurrentInfo-container{
-                width: 100%;
-                height: 48rem;
-    
-                .Project-ImgBox{
-                    position: relative;
-                    width: 100%;
-                    height: 25rem;
-                }
-    
-                .Project-infoBox{
-                    margin-top: 2rem;
-                    width: 100%;
-                    height: 18.5rem;
-                    color: #fff;
-                    font-family: $font-Noto;
-    
-                    .Project-subTitle{
-                        line-height: 2rem;
-                        font-size: 12px;
-                    }
-    
-                    .Project-title{
-                        width: 100%;
-                        font-size: 1rem;
-                        line-height: 5rem;
-                        font-weight: 300;
-                    }
-    
-                    .Project-info{
-                        height: 6rem;
-                        font-size: 12px;
-                    }
-
-                    .viewPage-button {
-                        line-height: 2.5rem;
-                        font-size: 12px;
-                        transition: all 0.5s ease-out;
-                    }
-                }
+            .close-button {
+                line-height: 2rem;
+                font-size: 13px;
             }
     
-            .ProjectSkills-container{
-                position: relative;
-                top: 0;
-                right: 0;
-                width: 100%;
-                height: 23rem;
+            .project-video {
+                width: 50rem;
+                height: 25rem;
+            }
+        }
     
-                .Design-menu{
-                    height: 10rem;
+        .project-banner{
+            height: calc(35rem + 100vh);
     
-                    .menu-title{
+            .project-info {
     
-                        h2{
-                            font-size: 14px;
-                        }
-                    }
+                .project-detail {
+                    width: 80%;
+                    height: 30rem;
     
-                    .menu-button{
-                        height: 2.5rem;
-    
-                        span{
-                            font-size: 13px;
-                        }
-                    }
-                }
-    
-                .Skill-menu{
-                    width: 100%;
-                    height : 13rem;
-    
-                    .menu-title{
-    
-                        h2{
-                            font-size: 14px;
-                        }
-                    }
-    
-                    .Skill-list{
+                    .detail-info {
                         width: 100%;
-                        height: 8rem;
+                        height: 18rem;
     
-                        li{
-                            height: 2rem;
-                            margin-top: 1rem;
-                            margin-right: 1rem;
+                        .detail-item {
     
-                            .Skill-item{
-                                height: 2rem;
+                            .title {
     
-                                span{
-                                    line-height: 2rem;
-                                    font-size: 10px;
+                                h1 {
+                                    line-height: calc(18rem / 5);
+                                    font-size: 12px;
                                 }
                             }
+    
+                            .detail-txt {
+    
+                                p {
+                                    line-height: calc(18rem / 5);
+                                    font-size: 12px;
+                                }
+    
+                                a {
+                                    line-height: calc(18rem / 5);
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .project-desc {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        width: 80%;
+                        height: 12rem;
+    
+                        p {
+                            font-size: 12px;
                         }
                     }
                 }
             }
         }
     
-        .CurrentBoard-container{
-            margin: 3rem 0;
+        .project-Board {
+            width: 100%;
+            height: 100%;
+            padding: 6.25rem;
     
-            .Project-category{
-                display: none;
-            }
-    
-            .Project-Board{
-                flex : none;
+            .project-Skills {
                 width: 100%;
-                height: 100%;
+                height: 20rem;
+                margin : 0 auto;
     
-                .Main-Board,.Sub-Board{
+                .title {
                     width: 100%;
-                    height: 100%;
-                    padding : 0;
-    
-                    .Main-title{
-                        width: 100%;
-                        line-height: 5rem;
-                        margin-bottom: 2rem;
-                        text-transform: uppercase;
-                        font-family: $font-Mont;
+                    height: 3rem;
+                    margin-bottom: 2rem;
+                    
+                    h2{
+                        font-size: 14px;
                         color: #fff;
-                        font-size: 1rem;
+                        font-family: $font-Mont;
+                        text-transform : uppercase;
                     }
+                }
     
-                    .Board-item{
-                        width: 100%;
-                        height: max-content;
-                        margin-bottom: 2rem;
+                .Skills-list {
     
-                        .page-info{
-                            width: 100%;
-                            height: 3rem;
-                            line-height: 3rem;
-                            text-transform: uppercase;
-                            font-family: $font-Mont;
-                            color: rgba($color: #fff, $alpha: 0.7);
-                            font-size: 10px;
-                        }
+                    li {
     
-                        .page-ImgBox{
-                            margin-top: 2rem;
-                            width: max-content;
-                            height: 20rem;
+                        .Skill-item {
     
-                            img{
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
+                            span {
+                                font-size: 12px;
                             }
                         }
+                    }
+                }
+            }
+    
+            .page-detail {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap : 5rem;
+    
+                .detail-img {
+                    height: 25rem;
+    
+                    &:nth-child(1) {
+                        height: 25rem;
+                        grid-column: auto;      
                     }
                 }
             }
@@ -1050,29 +936,6 @@
                                 font-size: 10px;
                             }
                         }
-    
-                        .view-button{
-                            position: absolute;
-                            top: 2rem;
-                            right: 3rem;
-                            width: 30px;
-                            height: 30px;
-    
-                            svg{
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 30px;
-                                height: 30px;
-                            }
-    
-                            &:hover{
-                                cursor: pointer;
-                                svg{
-                                    transform: scale(1.1);
-                                }
-                            }
-                        }
                     }
 
                     .Banner-imgBox{
@@ -1083,196 +946,137 @@
         }
     }
 
-    .CurrentProject-container {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding : 5rem 6.25rem 0 6.25rem;
+    .currentProject-container {
+        padding : 5rem 0 0 0;
     
-        .Current-Banner{
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            width: 100%;
-            height: 63rem;
-            padding: 2rem 0 0 0;
+        .video-popup {
     
-            .CurrentInfo-container{
-                width: 100%;
-                height: 33rem;
-    
-                .Project-ImgBox{
-                    height: 15rem;
-                }
-    
-                .Project-infoBox{
-                    margin-top: 2rem;
-                    width: 100%;
-                    height: 17.5rem;
-    
-                    .Project-subTitle{
-                        width: 100%;
-                        line-height: 2rem;
-                        font-size: 12px;
-                    }
-    
-                    .Project-title{
-                        width: 100%;
-                        font-size: 1rem;
-                        line-height: 6rem;
-                        font-weight: 300;
-                    }
-    
-                    .Project-info{
-                        width: 80%;
-                        margin-top: 1rem;
-                        height: 6rem;
-                        font-size: 12px;
-                    }
-
-                    .viewPage-button {
-                        line-height: 2rem;
-                        font-size: 12px;
-                    }
-                }
+            .close-button {
+                line-height: 2rem;
+                font-size: 13px;
             }
     
-            .ProjectSkills-container{
-                position: relative;
-                top: 0;
-                right: 0;
-                width: 100%;
-                height: 23rem;
+            .project-video {
+                width: 35rem;
+                height: 20rem;
+            }
+        }
     
-                .Design-menu{
-                    position: relative;
-                    width: 100%;
-                    height: 10rem;
+        .project-banner{
+            height: calc(35rem + 100vh);
     
-                    .menu-title{
+            .project-info {
+    
+                .project-detail {
+                    width: 80%;
+                    height: 30rem;
+    
+                    .detail-info {
                         width: 100%;
-                        height: 5rem;
+                        height: 18rem;
     
-                        h2{
-                            line-height: 5rem;
-                            font-size: 1rem;
-                            color: #fff;
-                            text-transform: uppercase;
-                            font-family: $font-Mont;
-                        }
-                    }
+                        .detail-item {
     
-                    .menu-button{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 100%;
-                        height: 2.5rem;
-                        background-color: rgba($color: #3d3d3d, $alpha: 0.8);
-                        transition: all 0.5s ease-out;
+                            .title {
     
-                        span{
-                            margin-left: 2rem;
-                            font-size: 1rem;
-                            color: #fff;
-                            text-transform: uppercase;
-                            font-family: $font-Mont;
-                            font-weight: bold;
-                        }
+                                h1 {
+                                    line-height: calc(18rem / 5);
+                                    font-size: 14px;
+                                }
+                            }
     
-                        &:hover{
-                            background-color: #F24E1E;
-                            transition: all 0.5s ease-in;
-                        }
-                    }
-                }
+                            .detail-txt {
     
-                .Skill-menu{
-                    width: 100%;
-                    height : 13rem;
+                                p {
+                                    line-height: calc(18rem / 5);
+                                    font-size: 13px;
+                                }
     
-                    .menu-title{
-                        height: 3rem;
-    
-                        h2{
-                            font-size: 1rem;
-                        }
-                    }
-    
-                    .Skill-list{
-                        height: 10rem;
-    
-                        li{
-                            height: 2.5rem;
-                            margin-top: 1rem;
-                            margin-right: 2rem;
-    
-                            .Skill-item{
-                                height: 2.5rem;
-    
-                                span{
-                                    line-height: 2.5rem;
+                                a {
+                                    line-height: calc(18rem / 5);
                                     font-size: 13px;
                                 }
                             }
                         }
                     }
+    
+                    .project-desc {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        width: 100%;
+                        height: 12rem;
+    
+                        p {
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .banner-img {
+    
+                    .project-img {
+                        width: 80%;
+                    }
                 }
             }
         }
     
-        .CurrentBoard-container{
-            position: relative;
-            display: flex;
+        .project-Board {
             width: 100%;
             height: 100%;
-            margin: 3rem 0;
+            padding: 6.25rem;
     
-            .Project-category{
-                display: none;
+            .project-Skills {
+                width: 30rem;
+                height: 20rem;
+                margin : 0 auto;
+    
+                .title {
+                    width: 20rem;
+                    height: 3rem;
+                    margin-bottom: 2rem;
+                    
+                    h2{
+                        font-size: 1rem;
+                        color: #fff;
+                        font-family: $font-Mont;
+                        text-transform : uppercase;
+                    }
+                }
+    
+                .Skills-list {
+                    width: 100%;
+                    height: 15rem;
+    
+                    li {
+                        display: inline-block;
+                        width: max-content;
+                        height: 3.125rem;
+                        margin : 0 1rem 1rem 0;
+    
+                        .Skill-item {
+    
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
             }
     
-            .Project-Board{
-                flex : none;
-                height: 100%;
+            .page-detail {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap : 5rem;
     
-                .Main-Board,.Sub-Board{
-                    width: 100%;
-                    height: 100%;
-                    padding : 0;
+                .detail-img {
+                    height: 20rem;
     
-                    .Main-title{
-                        width: 100%;
-                        line-height: 5rem;
-                        margin-bottom: 2rem;
-                        text-transform: uppercase;
-                        font-family: $font-Mont;
-                        color: #fff;
-                        font-size: 1.2rem;
-                    }
-    
-                    .Board-item{
-                        width: 100%;
+                    &:nth-child(1) {
                         height: 20rem;
-                        margin-bottom: 2rem;
-    
-                        .page-info{
-                            width: 100%;
-                            height: 3rem;
-                            line-height: 3rem;
-                            text-transform: uppercase;
-                            font-family: $font-Mont;
-                            color: rgba($color: #fff, $alpha: 0.7);
-                            font-size: 12px;
-                        }
-    
-                        .page-ImgBox{
-                            margin-top: 2rem;
-                            width: max-content;
-                            height: 15rem;
-                        }
+                        grid-column: auto;      
                     }
                 }
             }
@@ -1333,7 +1137,7 @@
                 height: 100%;
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
-                gap : 50px;
+                gap : 5rem;
     
                 .Project-card{
                     position: relative;
@@ -1387,29 +1191,6 @@
                                 word-break: keep-all;
                             }
                         }
-    
-                        .view-button{
-                            position: absolute;
-                            width: 35px;
-                            height: 35px;
-                            right: 2rem;
-                            top: 2rem;
-    
-                            svg{
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 35px;
-                                height: 35px;
-                            }
-    
-                            &:hover{
-                                cursor: pointer;
-                                svg{
-                                    transform: scale(1.1);
-                                }
-                            }
-                        }
                     }
     
                     .Banner-imgBox{
@@ -1442,195 +1223,131 @@
         }
     }
     
-    .CurrentProject-container {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding : 5rem 3.125rem 0 3.125rem;
+    .currentProject-container {
+        padding : 5rem 0 0 0;
     
-        .Current-Banner{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 100%;
-            height: 60rem;
-            padding: 2rem 0 0 0;
+        .video-popup {
     
-            .CurrentInfo-container{
-                width: 100%;
-                height: 35rem;
-    
-                .Project-ImgBox{
-                    position: relative;
-                    width: 100%;
-                    height: 10rem;
-    
-                    img{
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
-    
-                .Project-infoBox{
-                    margin-top: 2rem;
-                    width: 100%;
-                    height: 18.5rem;
-                    color: #fff;
-                    font-family: $font-Noto;
-    
-                    .Project-subTitle{
-                        width: 100%;
-                        line-height: 3rem;
-                        font-size: 12px;
-                        text-transform: uppercase;
-                    }
-    
-                    .Project-title{
-                        width: 100%;
-                        height: 6rem;
-                        line-height: 2rem;
-                        font-size: 15px;
-                        font-weight: 300;
-                    }
-    
-                    .Project-info{
-                        width: 100%;
-                        margin-top: 1rem;
-                        height: 6rem;
-                        word-break: keep-all;
-                        font-size: 10px;
-                        color: #b4b4b4;
-                    }
-
-                    .viewPage-button {
-                        line-height: 2.5rem;
-                        font-size: 12px;
-                    }
-                }
+            .close-button {
+                width: 8rem;
+                right: 1rem;
+                line-height: 2rem;
+                font-size: 12px;
             }
     
-            .ProjectSkills-container{
-                position: relative;
-                top: 0;
-                right: 0;
-                width: 100%;
-                height: 25rem;
+            .project-video {
+                width: 20rem;
+                height: 13rem;
+            }
+        }
     
-                .Design-menu{
-                    position: relative;
+        .project-banner{
+            height: calc(30rem + 50vh);
+    
+            .project-info {
+    
+                .project-detail {
                     width: 100%;
-                    height: 10rem;
+                    height: 26rem;
+                    margin: 0 auto;
+                    padding: 0 2rem;
     
-                    .menu-title{
+                    .detail-info {
                         width: 100%;
-                        height: 3rem;
-                        margin-bottom: 2rem;
+                        height: 18rem;
     
-                        h2{
-                            line-height: 3rem;
-                            font-size: 1rem;
-                            color: #fff;
-                            text-transform: uppercase;
-                            font-family: $font-Mont;
-                        }
-                    }
+                        .detail-item {
     
-                    .menu-button{
-                        height: 2.5rem;
+                            .title {
+                                width: 40%;
     
-                        span{
-                            font-size: 12px;
-                        }
-                    }
-                }
+                                h1 {
+                                    font-size: 10px;
+                                }
+                            }
     
-                .Skill-menu{
-                    width: 100%;
-                    height : 15rem;
+                            .detail-txt {
+                                width: 60%;
     
-                    .menu-title{
-                        height: 3rem;
-                        margin-bottom: 2rem;
+                                p {
+                                    font-size: 10px;
+                                }
     
-                        h2{
-                            font-size: 1rem;
-                        }
-                    }
-    
-                    .Skill-list{
-                        width: 100%;
-                        height: 10rem;
-    
-                        li{
-                            height: 2rem;
-                            margin-top: 10px;
-                            margin-right: 10px;
-    
-                            .Skill-item{
-                                height: 2rem;
-    
-                                span{
-                                    line-height: 2rem;
+                                a {
+                                    height: calc(18rem/5);
                                     font-size: 10px;
                                 }
                             }
                         }
                     }
+    
+                    .project-desc {
+                        height: 8rem;
+    
+                        p {
+                            font-size: 10px;
+                        }
+                    }
+                }
+
+                .banner-img {
+                    height: 50vh;
+    
+                    .project-img {
+                        width: 100%;
+                    }
                 }
             }
         }
     
-        .CurrentBoard-container{
-            position: relative;
-            display: block;
+        .project-Board {
             width: 100%;
             height: 100%;
-            margin: 2rem 0;
+            padding: 6.25rem 2rem;
     
-            .Project-category{
-                display: none;
+            .project-Skills {
+                width: 100%;
+                height: 20rem;
+                margin : 0 auto;
+    
+                .title {
+                    width: 100%;
+                    height: 3rem;
+                    margin-bottom: 2rem;
+                    
+                    h2{
+                        line-height: 3rem;
+                        font-size: 14px;
+                    }
+                }
+    
+                .Skills-list {
+    
+                    li {
+    
+                        .Skill-item {
+    
+                            span {
+                                padding: 10px;
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
             }
     
-            .Project-Board{
-                flex : none;
-                height: 100%;
+            .page-detail {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap : 5rem;
     
-                .Main-Board,.Sub-Board{
-                    width: 100%;
-                    height: 100%;
-                    padding : 0;
+                .detail-img {
+                    height: 12rem;
     
-                    .Main-title{
-                        width: 100%;
-                        line-height: 5rem;
-                        margin-bottom: 2rem;
-                        text-transform: uppercase;
-                        font-family: $font-Mont;
-                        color: #fff;
-                        font-size: 1rem;
-                    }
-    
-                    .Board-item{
-                        width: 100%;
-                        height: 15rem;
-                        margin-bottom: 2rem;
-    
-                        .page-info{
-                            width: 100%;
-                            height: 3rem;
-                            line-height: 3rem;
-                            font-size: 10px;
-                        }
-    
-                        .page-ImgBox{
-                            margin-top: 2rem;
-                            width: 100%;
-                            height: 10rem;
-                        }
+                    &:nth-child(1) {
+                        height: 12rem;
+                        grid-column: auto;      
                     }
                 }
             }

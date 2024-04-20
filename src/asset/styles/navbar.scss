@@ -6,7 +6,7 @@
     top : 0;
     left : 0;
     width : 100%;
-    height: 6.25rem;
+    height: 5rem;
     padding: 0 6.25rem;
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 4rem;
+        height: 2rem;
 
         h2{
             width: 80%;
@@ -232,15 +232,15 @@
 
 @include mobile{
     .Main-Nav{
-        height: 5rem;
-        padding : 0 3.125rem;
+        height: 4rem;
+        padding : 0 2rem;
     
         .Static-title{
-            width: 12rem;
+            width: 10rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 4rem;
+            height: 2rem;
 
             img{
                 width: 20px;
@@ -248,7 +248,7 @@
             }
     
             h2{
-                width: 10rem;
+                width: 70%;
                 height: max-content;
                 font-size: 9px;
                 font-family: $font-Mont;

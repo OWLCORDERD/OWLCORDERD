@@ -28,7 +28,7 @@ function Project() {
       <div className="Project-List">
         <div className="card-List">
           {projectDB.map(project => (
-            <div className="Project-card" key={project.id}>
+            <Link to="/CurrentProject" state={{ projectDB: project }} className="Project-card" key={project.id}>
               <div className="Project-Banner">
                 <div className="Project-titleBox">
                   <h2 className="title">{project.title}</h2>
@@ -38,22 +38,12 @@ function Project() {
                 <div className="Project-info">
                   <p>{project.info}</p>
                 </div>
-
-                <Link to="/CurrentProject" state={{ projectDB: project }} className="view-button">
-                  <svg width="50" height="50" viewBox="0 0 92 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="35" cy="35" r="34" stroke="white" strokeWidth="2" />
-                    <path
-                      d="M91.7071 35.7071C92.0976 35.3166 92.0976 34.6834 91.7071 34.2929L85.3431 27.9289C84.9526 27.5384 84.3195 27.5384 83.9289 27.9289C83.5384 28.3195 83.5384 28.9526 83.9289 29.3431L89.5858 35L83.9289 40.6569C83.5384 41.0474 83.5384 41.6805 83.9289 42.0711C84.3195 42.4616 84.9526 42.4616 85.3431 42.0711L91.7071 35.7071ZM35 36H91V34H35V36Z"
-                      fill="white"
-                    />
-                  </svg>
-                </Link>
               </div>
 
               <div className="Banner-imgBox">
-                <img src={project.bannerImg} alt={`${project.title} 프로젝트 이미지`} />
+                <img src={project.projectBanner} alt={`${project.title} 프로젝트 이미지`} />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

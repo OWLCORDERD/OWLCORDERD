@@ -21,9 +21,7 @@ function MainNav() {
       <div className="Static-title">
         <img src={`${process.env.PUBLIC_URL}/Image/logo/logo.png`} alt="페이지 로고" />
 
-        <h2>
-          Web Publishing <br /> Front End Developer
-        </h2>
+        <h2>Lim Min Hyeok, Owlcoderd</h2>
       </div>
 
       <GiHamburgerMenu color="#fff" cursor="pointer" className="menu-svgIcon" />
