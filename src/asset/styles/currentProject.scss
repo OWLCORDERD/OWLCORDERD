@@ -1,0 +1,795 @@
+@import "asset/_variables";
+@import "asset/ResponsiveMixin/_mixin";
+
+.currentProject-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding : 6.25rem 0 0 0;
+
+    .video-popup {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        z-index: 110;
+        transition: all 0.5s ease-out;
+
+        .close-button {
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+            width: 10rem;
+            background-color: transparent;
+            border: none;
+            line-height: 2rem;
+            color: #fff;
+            font-weight: bold;
+            font-family: $font-Mont;
+            text-transform: uppercase;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .project-video {
+            position: relative;
+            width: 70rem;
+            height: 35rem;
+            overflow: hidden;
+
+            video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .project-banner{
+        width: 100%;
+        height: calc(35rem + 100vh);
+
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+
+            .project-detail {
+                width: 60rem;
+                height: 30rem;
+                margin: 0 auto;
+
+                .detail-info {
+                    width: 100%;
+                    height: 18rem;
+
+                    .detail-item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        height: calc(18rem / 5);
+
+                        .title {
+                            width: 30%;
+                            height: 100%;
+
+                            h1 {
+                                height: calc(18rem / 5);
+                                font-family: $font-Mont;
+                                color: #fff;
+                                font-size: 15px;
+                                text-transform: uppercase;
+                            }
+                        }
+
+                        .detail-txt {
+                            display: flex;
+                            align-items: flex-start;
+                            width: 70%;
+                            height: 100%;
+
+                            p {
+                                height: 100%;
+                                color: #fff;
+                                font-family: $font-Mont;
+                                font-size: 15px;
+                            }
+
+                            a {
+                                height: 100%;
+                                color: #fff;
+                                font-family: $font-Mont;
+                                font-size: 15px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+                .project-desc {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+                    height: 12rem;
+
+                    p {
+                        width: 100%;
+                        word-break: keep-all;
+                        color: #fff;
+                        font-family: $font-Noto;
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .banner-img {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .play-button {
+                    width: 10rem;
+                    height: max-content;
+                    padding: 1rem;
+                    border-radius: 30px;
+                    z-index: 10;
+                    cursor: pointer;
+                    border: none;
+                    opacity: 0;
+                    background-color: rgba(0,0,0,0.8);
+
+                    span {
+                        opacity: 1;
+                        font-size: 14px;
+                        font-weight: 700;
+                        font-family: $font-Mont;
+                        text-transform: uppercase;
+                        transition: all 0.5s ease-in-out;
+                        color: $white-color;
+                    }
+
+                    .play-icon {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: $centerTL;
+                        font-size: 2rem;
+                        opacity: 0;
+                        transition: all 0.5s ease-in-out;
+                        color: #fff;
+                    }
+
+                    &:hover {
+                        .play-icon {
+                            transition: all 0.5s ease-in-out;
+                            transition-delay: 0.5s;
+                            opacity: 1;
+                        }
+
+                        span {
+                            transition: all 0.5s ease-in-out;
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .project-img {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60rem;
+                    height: 100%;
+    
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    .project-Board {
+        width: 100%;
+        height: 100%;
+        padding: 5rem 0;
+
+        .project-Skills {
+            width: 60rem;
+            height: 12rem;
+            margin : 2rem auto;
+
+            .title {
+                width: 100%;
+                height: 4rem;
+                
+                h2{
+                    font-size: 1.2rem;
+                    color: #fff;
+                    font-family: $font-Mont;
+                    text-transform : uppercase;
+                }
+            }
+
+            .Skills-list {
+                width: 100%;
+                height: 8rem;
+
+                li {
+                    display: inline-block;
+                    width: max-content;
+                    height: 3rem;
+                    margin : 0 1rem 1rem 0;
+
+                    .Skill-item {
+                        width: 100%;
+                        height: 100%;
+                        background-color: $darkMode-button;
+
+                        &:hover {
+                            background-color: $button-hover;
+                        }
+
+                        span {
+                            line-height: 3rem;
+                            color: #fff;
+                            font-family: $font-Mont;
+                            font-size: 14px;
+                            font-weight: bold;
+                            padding: 1rem;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-detail {
+            position: relative;
+            width: 60rem;
+            height: max-content;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 0 auto;
+            gap : 1rem;
+
+            .detail-img {
+                position: relative;
+                width: 100%;
+                height: 15rem;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &:nth-child(1) {
+                    height: 30rem;
+                    grid-column: 1/3;      
+                }
+            }
+        }
+    }
+}
+
+@include macbook {
+    .currentProject-container {
+    
+        .video-popup {
+    
+            .project-video {
+                position: relative;
+                width: 50rem;
+                height: 25rem;
+                overflow: hidden;
+            }
+        }
+    
+        .project-banner{
+            width: 100%;
+            height: calc(30rem + 100vh);
+    
+            .project-info {
+    
+                .project-detail {
+                    width: 50rem;
+                    height: 25rem;
+    
+                    .detail-info {
+                        height: 15rem;
+    
+                        .detail-item {
+                            height : calc(15rem / 5);
+
+                            .title {
+                                width: 30%;
+                                height: 100%;
+    
+                                h1 {
+                                    font-size: 13px;
+                                }
+                            }
+    
+                            .detail-txt {
+    
+                                p {
+                                    font-size: 13px;
+                                }
+    
+                                a {
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .project-desc { 
+                        height: 10rem;
+    
+                        p {
+                            width: 100%;
+                            font-size: 13px;
+                        }
+                    }
+                }
+    
+                .banner-img {
+                    .project-img {
+                        width: 50rem;
+                    }
+                }
+            }
+        }
+    
+        .project-Board {
+    
+            .project-Skills {
+                width: 50rem;
+    
+                .title {
+                    
+                    h2{
+                        font-size: 1rem;
+                    }
+                }
+    
+                .Skills-list {
+    
+                    li {
+    
+                        .Skill-item {
+    
+                            span {
+                                line-height: 3rem;
+                                color: #fff;
+                                font-family: $font-Mont;
+                                font-size: 12px;
+                                font-weight: bold;
+                                padding: 1rem;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .page-detail {
+                width: 50rem;
+    
+                .detail-img {
+                    height: 12rem;
+    
+                    &:nth-child(1) {
+                        height: 25rem;   
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include horizontalTablet {
+    .currentProject-container {
+    
+        .video-popup {
+
+            .close-button {
+                font-size: 14px;
+            }
+    
+            .project-video {
+                position: relative;
+                width: 42rem;
+                height: 25rem;
+                overflow: hidden;
+            }
+        }
+    
+        .project-banner{
+            width: 100%;
+            height: calc(30rem + 100vh);
+    
+            .project-info {
+    
+                .project-detail {
+                    width: 42rem;
+                    height: 25rem;
+    
+                    .detail-info {
+                        height: 15rem;
+    
+                        .detail-item {
+                            height : calc(15rem / 5);
+
+                            .title {
+                                width: 30%;
+                                height: 100%;
+    
+                                h1 {
+                                    font-size: 12px;
+                                }
+                            }
+    
+                            .detail-txt {
+    
+                                p {
+                                    font-size: 12px;
+                                }
+    
+                                a {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .project-desc {
+                        height: 10rem; 
+    
+                        p {
+                            width: 100%;
+                            font-size: 12px;
+                        }
+                    }
+                }
+    
+                .banner-img {
+                    .project-img {
+                        width: 42rem;
+                    }
+                }
+            }
+        }
+    
+        .project-Board {
+    
+            .project-Skills {
+                width: 42rem;
+    
+                .title {
+                    
+                    h2{
+                        font-size: 1rem;
+                    }
+                }
+    
+                .Skills-list {
+    
+                    li {
+    
+                        .Skill-item {
+    
+                            span {
+                                line-height: 3rem;
+                                color: #fff;
+                                font-family: $font-Mont;
+                                font-size: 12px;
+                                font-weight: bold;
+                                padding: 1rem;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .page-detail {
+                width: 42rem;
+                grid-template-columns: repeat(1, 1fr);
+    
+                .detail-img {
+                    height: 20rem;
+    
+                    &:nth-child(1) {
+                        height: 20rem;
+                        grid-column: auto;   
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include verticalTablet {
+    .currentProject-container {
+    
+        .video-popup {
+
+            .close-button {
+                font-size: 14px;
+            }
+    
+            .project-video {
+                position: relative;
+                width: 80%;
+                height: 20rem;
+                overflow: hidden;
+            }
+        }
+    
+        .project-banner{
+            width: 100%;
+            height: calc(30rem + 100vh);
+    
+            .project-info {
+    
+                .project-detail {
+                    width: 100%;
+                    height: 25rem;
+                    padding: 0 3rem;
+    
+                    .detail-info {
+                        height: 15rem;
+    
+                        .detail-item {
+                            height : calc(15rem / 5);
+
+                            .title {
+                                width: 30%;
+                                height: 100%;
+    
+                                h1 {
+                                    font-size: 12px;
+                                }
+                            }
+    
+                            .detail-txt {
+    
+                                p {
+                                    font-size: 12px;
+                                }
+    
+                                a {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .project-desc {
+                        height: 10rem; 
+    
+                        p {
+                            width: 100%;
+                            font-size: 12px;
+                        }
+                    }
+                }
+    
+                .banner-img {
+                    .project-img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    
+        .project-Board {
+            padding: 5rem 3rem;
+    
+            .project-Skills {
+                width: 100%;
+    
+                .title {
+                    
+                    h2{
+                        font-size: 1rem;
+                    }
+                }
+    
+                .Skills-list {
+                    height: 9rem;
+    
+                    li {
+                        height: 2rem;
+    
+                        .Skill-item {
+    
+                            span {
+                                line-height: 2rem;
+                                color: #fff;
+                                font-family: $font-Mont;
+                                font-size: 11px;
+                                font-weight: bold;
+                                padding: 1rem;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .page-detail {
+                width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+    
+                .detail-img {
+                    height: 15rem;
+    
+                    &:nth-child(1) {
+                        height: 15rem;
+                        grid-column: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .currentProject-container {
+        padding: 3rem 0 0 0;
+    
+        .video-popup {
+
+            .close-button {
+                font-size: 14px;
+            }
+    
+            .project-video {
+                position: relative;
+                width: 80%;
+                height: 16rem;
+                overflow: hidden;
+            }
+        }
+    
+        .project-banner{
+            width: 100%;
+            height: calc(30rem * 2);
+    
+            .project-info {
+    
+                .project-detail {
+                    width: 100%;
+                    height: 25rem;
+                    padding: 0 2rem;
+    
+                    .detail-info {
+                        height: 15rem;
+    
+                        .detail-item {
+                            height : calc(15rem / 5);
+
+                            .title {
+                                width: 30%;
+                                height: 100%;
+    
+                                h1 {
+                                    font-size: 10px;
+                                }
+                            }
+    
+                            .detail-txt {
+    
+                                p {
+                                    font-size: 10px;
+                                }
+    
+                                a {
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .project-desc {
+                        height: 10rem; 
+    
+                        p {
+                            width: 100%;
+                            font-size: 10px;
+                        }
+                    }
+                }
+    
+                .banner-img {
+                    height: 30rem;
+                    .project-img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    
+        .project-Board {
+            padding: 5rem 2rem;
+    
+            .project-Skills {
+                width: 100%;
+                height: 13rem;
+    
+                .title {
+                    
+                    h2{
+                        font-size: 15px;
+                    }
+                }
+    
+                .Skills-list {
+                    height: 9rem;
+    
+                    li {
+                        height: 2rem;
+    
+                        .Skill-item {
+    
+                            span {
+                                line-height: 2rem;
+                                color: #fff;
+                                font-family: $font-Mont;
+                                font-size: 10px;
+                                font-weight: bold;
+                                padding: 1rem;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .page-detail {
+                width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+    
+                .detail-img {
+                    height: 11rem;
+    
+                    &:nth-child(1) {
+                        height: 11rem;
+                        grid-column: auto;
+                    }
+                }
+            }
+        }
+    }
+}

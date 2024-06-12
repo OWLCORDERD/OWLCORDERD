@@ -9,11 +9,12 @@ interface propsDataType {
   currentData: ProjectType | null;
   setOpen: React.Dispatch<SetStateAction<boolean>>;
   open: boolean;
+  responsiveMatches: boolean;
 }
 
 gsap.registerPlugin(ScrollTrigger);
 
-function CurrentBanner({ currentData, setOpen, open }: propsDataType) {
+function CurrentBanner({ currentData, setOpen, open, responsiveMatches }: propsDataType) {
   const [currentProject, setCurrentProject] = useState({
     title: '',
     subTitle: '',
@@ -51,7 +52,7 @@ function CurrentBanner({ currentData, setOpen, open }: propsDataType) {
   }, [currentData]);
 
   useEffect(() => {
-    if (window.innerWidth > 480) {
+    if (!responsiveMatches) {
       if (infoRef.current && imgRef.current) {
         gsap.to(imgRef.current, {
           width: '100%',

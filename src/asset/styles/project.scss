@@ -4,21 +4,22 @@
 /* main page project container */
 .Project-container{
     position: relative;
-    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     height: 100%;
-    padding: 5rem 6.25rem;
+    padding: 5rem 0;
 
     .Project-header{
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         width: 100%;
-        height: 15rem;
+        height: 10rem;
         margin-bottom: 2rem;
 
         .Project-titleBox{
-            width: 40%;
-            height: max-content;
+            width: 60%;
+            height: 10rem;
 
             span{
                 width: 100%;
@@ -37,38 +38,39 @@
                 text-transform: uppercase;
             }
         }
+
+        .Project-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 7rem;
+            height: 7rem;
+
+            svg {
+                width: 60px;
+                height: 50px;
+            }
+        }
     }
 
     .Project-List{
-        position: relative;
-        width: 100%;
-        height: 90rem;
 
         .card-List{
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap : 50px;
+            display: block;
+            margin: 0 -15px;
 
             .Project-card{
-                position: relative;
-                width: 100%;
-                height: 100%;
+                width: calc(1430px / 2 - 30px) !important;
+                height: 40rem;
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 15px;
                 background-color: $darkMode-button;
-                border : 2px solid transparent;
-
-                &:hover {
-                    border: 2px solid rgba(255,255,255,0.5);
-                }
+                margin-bottom: 2rem;
 
                 .Project-Banner{
-                    position: relative;
-                    top: 0;
-                    left: 0;
                     width: 100%;
-                    height: 50%;
+                    height: 20rem;
                     padding: 0 50px;
 
                     .Project-titleBox{
@@ -112,7 +114,7 @@
                 .Banner-imgBox{
                     position: relative;
                     width: 100%;
-                    height: 50%;
+                    height: 20rem;
 
                     img{
                         position: absolute;
@@ -139,330 +141,12 @@
     }
 }
 
-.currentProject-container {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding : 6.25rem 0 0 0;
-
-    .video-popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #000;
-        z-index: 110;
-        transition: all 0.5s ease-out;
-        animation : openAnimation .5s forwards;
-            
-            @keyframes openAnimation {
-                0%{
-                    opacity: 0;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-
-                100% {
-                    width: 100%;
-                    opacity: 1;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-            }
-
-        .close-button {
-            position: absolute;
-            right: 2rem;
-            top: 2rem;
-            width: 10rem;
-            background-color: transparent;
-            border: none;
-            line-height: 2rem;
-            color: #fff;
-            font-weight: bold;
-            font-family: $font-Mont;
-            text-transform: uppercase;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .project-video {
-            position: relative;
-            width: 70rem;
-            height: 35rem;
-            overflow: hidden;
-
-            video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-
-    .project-banner{
-        width: 100%;
-        height: calc(35rem + 100vh);
-
-        .project-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            width: 100%;
-            height: 100%;
-
-            .project-detail {
-                width: 900px;
-                height: 30rem;
-                margin: 0 auto;
-
-                .detail-info {
-                    width: 100%;
-                    height: 18rem;
-
-                    .detail-item {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        width: 100%;
-                        height: calc(18rem / 5);
-
-                        .title {
-                            width: 30%;
-                            height: 100%;
-
-                            h1 {
-                                height: calc(18rem / 5);
-                                font-family: $font-Mont;
-                                color: #fff;
-                                font-size: 15px;
-                                text-transform: uppercase;
-                            }
-                        }
-
-                        .detail-txt {
-                            display: flex;
-                            align-items: flex-start;
-                            width: 70%;
-                            height: 100%;
-
-                            p {
-                                height: calc(18rem / 5);
-                                color: #fff;
-                                font-family: $font-Mont;
-                                font-size: 15px;
-                            }
-
-                            a {
-                                height: calc(18rem / 5);
-                                color: #fff;
-                                font-family: $font-Mont;
-                                font-size: 15px;
-                                font-weight: bold;
-                            }
-                        }
-                    }
-                }
-
-                .project-desc {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    width: 100%;
-                    height: 12rem;
-
-                    p {
-                        word-break: keep-all;
-                        color: #fff;
-                        font-family: $font-Noto;
-                        font-size: 15px;
-                    }
-                }
-            }
-
-            .banner-img {
-                position: relative;
-                width: 100%;
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .play-button {
-                    width: 10rem;
-                    height: max-content;
-                    padding: 1rem;
-                    border-radius: 30px;
-                    z-index: 10;
-                    cursor: pointer;
-                    border: none;
-                    opacity: 0;
-                    background-color: rgba(0,0,0,0.8);
-
-                    span {
-                        opacity: 1;
-                        font-size: 14px;
-                        font-weight: 700;
-                        font-family: $font-Mont;
-                        text-transform: uppercase;
-                        transition: all 0.5s ease-in-out;
-                        color: $white-color;
-                    }
-
-                    .play-icon {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: $centerTL;
-                        font-size: 2rem;
-                        opacity: 0;
-                        transition: all 0.5s ease-in-out;
-                        color: #fff;
-                    }
-
-                    &:hover {
-                        .play-icon {
-                            transition: all 0.5s ease-in-out;
-                            transition-delay: 0.5s;
-                            opacity: 1;
-                        }
-
-                        span {
-                            transition: all 0.5s ease-in-out;
-                            opacity: 0;
-                        }
-                    }
-                }
-
-                .project-img {
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 50%;
-                    height: 100%;
-    
-                    img {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
-            }
-        }
-    }
-
-    .project-Board {
-        width: 100%;
-        height: 100%;
-        padding: 6.25rem;
-
-        .project-Skills {
-            width: 60rem;
-            height: 20rem;
-            margin : 0 auto;
-
-            .title {
-                width: 20rem;
-                height: 3rem;
-                margin-bottom: 2rem;
-                
-                h2{
-                    font-size: 1.2rem;
-                    color: #fff;
-                    font-family: $font-Mont;
-                    text-transform : uppercase;
-                }
-            }
-
-            .Skills-list {
-                width: 100%;
-                height: 15rem;
-
-                li {
-                    display: inline-block;
-                    width: max-content;
-                    height: 3.125rem;
-                    margin : 0 1rem 1rem 0;
-
-                    .Skill-item {
-                        width: 100%;
-                        height: 100%;
-                        background-color: $darkMode-button;
-
-                        &:hover {
-                            background-color: $button-hover;
-                        }
-
-                        span {
-                            line-height: 3.125rem;
-                            color: #fff;
-                            font-family: $font-Mont;
-                            font-size: 14px;
-                            font-weight: bold;
-                            padding: 1rem;
-                            text-transform: uppercase;
-                        }
-                    }
-                }
-            }
-        }
-
-        .page-detail {
-            position: relative;
-            width: 80rem;
-            height: max-content;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            margin: 0 auto;
-            gap : 2rem;
-
-            .detail-img {
-                position: relative;
-                width: 100%;
-                height: 20rem;
-                overflow: hidden;
-
-                img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-
-                &:nth-child(1) {
-                    height: 40rem;
-                    grid-column: 1/3;      
-                }
-            }
-        }
-    }
-}
-
 /* 노트북 ~ 맥북 반응형 */
 @include macbook {
     .Project-container{
         position: relative;
-        width: 100%;
-        height: 100%;
-        padding: 3rem 6.25rem;
+        max-width: 1200px;
+        padding: 3rem 0;
 
         .Project-header{
     
@@ -480,33 +164,58 @@
         }
     
         .Project-List{
-            height: 80rem;
-    
+
             .card-List{
+                display: block;
+                margin: 0 -15px;
     
                 .Project-card{
+                    width:  calc(1230px / 2 - 30px) !important;
+                    height: 37rem;
+                    display: inline-block;
+                    margin: 0 15px;
+                    background-color: $darkMode-button;
+                    margin-bottom: 2rem;
     
                     .Project-Banner{
-                        height: 50%;
+                        width: 100%;
+                        height: 17rem;
                         padding: 0 50px;
     
                         .Project-titleBox{
+                            width: 100%;
+                            height: 8rem;
+                            margin-bottom: 2rem;
     
                             .title{
+                                width: 100%;
+                                line-height: 6rem;
+                                color: #fff;
+                                font-family: $font-Mont;
                                 font-size: 1.5rem;
+                                text-transform: uppercase;
                             }
     
                             .subTitle{
+                                width: 100%;
+                                line-height: 2rem;
+                                color: #fff;
+                                font-family: $font-Noto;
                                 font-size: 13px;
                             }
                         }
     
                         .Project-info{
-                            height: max-content;
+                            width: 100%;
+                            height: 7rem;
     
                             p{
-                                width: 90%;
+                                width: 70%;
+                                height: 100%;
+                                font-family: $font-Noto;
+                                color: $white-color;
                                 font-size: 10px;
+                                word-break: keep-all;
                             }
                         }
                     }
@@ -514,157 +223,7 @@
                     .Banner-imgBox{
                         position: relative;
                         width: 100%;
-                        height: 50%;
-    
-                        img{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-    
-                        &::before{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            content: '';
-                            background-color: rgba($color: #000000, $alpha: 0.3);
-                            z-index: 1;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .currentProject-container {
-        padding : 5rem 0 0 0;
-    
-        .video-popup {
-    
-            .close-button {
-                line-height: 2rem;
-                font-size: 13px;
-            }
-    
-            .project-video {
-                width: 50rem;
-                height: 25rem;
-            }
-        }
-    
-        .project-banner{
-            height: calc(35rem + 100vh);
-    
-            .project-info {
-    
-                .project-detail {
-                    width: 42rem;
-                    height: 30rem;
-    
-                    .detail-info {
-                        width: 100%;
-                        height: 18rem;
-    
-                        .detail-item {
-    
-                            .title {
-    
-                                h1 {
-                                    line-height: calc(18rem / 5);
-                                    font-size: 14px;
-                                }
-                            }
-    
-                            .detail-txt {
-    
-                                p {
-                                    line-height: calc(18rem / 5);
-                                    font-size: 13px;
-                                }
-    
-                                a {
-                                    line-height: calc(18rem / 5);
-                                    font-size: 13px;
-                                }
-                            }
-                        }
-                    }
-    
-                    .project-desc {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        width: 80%;
-                        height: 12rem;
-    
-                        p {
-                            font-size: 13px;
-                        }
-                    }
-                }
-            }
-        }
-    
-        .project-Board {
-            width: 100%;
-            height: 100%;
-            padding: 6.25rem;
-    
-            .project-Skills {
-                width: 50rem;
-                height: 20rem;
-                margin : 0 auto;
-    
-                .title {
-                    width: 20rem;
-                    height: 3rem;
-                    margin-bottom: 2rem;
-                    
-                    h2{
-                        font-size: 1rem;
-                        color: #fff;
-                        font-family: $font-Mont;
-                        text-transform : uppercase;
-                    }
-                }
-    
-                .Skills-list {
-                    width: 100%;
-                    height: 15rem;
-    
-                    li {
-                        display: inline-block;
-                        width: max-content;
-                        height: 3.125rem;
-                        margin : 0 1rem 1rem 0;
-    
-                        .Skill-item {
-    
-                            span {
-                                font-size: 12px;
-                            }
-                        }
-                    }
-                }
-            }
-    
-            .page-detail {
-                width: 80%;
-                display: grid;
-                grid-template-columns: repeat(1, 1fr);
-                gap : 2rem;
-    
-                .detail-img {
-                    height: 30rem;
-    
-                    &:nth-child(1) {
-                        height: 30rem;
-                        grid-column: auto;      
+                        height: 20rem;
                     }
                 }
             }
@@ -675,191 +234,85 @@
 /* 테블릿 가로 ~ 노트북 반응형 */
 @include horizontalTablet {
     .Project-container{
-        padding: 1rem 3rem;
-    
+        position: relative;
+        width: 100%;
+        padding: 3rem;
+
         .Project-header{
-            width: 100%;
-            height: 12rem;
-            margin-bottom: 1rem;
     
             .Project-titleBox{
+                width: 70%;
     
                 span{
                     font-size: 12px;
                 }
     
                 h1{
-                    line-height: 7rem;
                     font-size: 1.5rem;
                 }
-            }
-
-            svg{
-                width: 60px;
             }
         }
     
         .Project-List{
-            position: relative;
-            width: 100%;
-            height: 60rem;
-    
+            margin: 0 auto;
+
             .card-List{
+                display: block;
     
                 .Project-card{
-                    
+                    width:  calc(50% - 30px) !important;
+                    height: 27rem;
+                    display: inline-block;
+                    margin: 0 15px;
+                    margin-bottom: 2rem;
     
                     .Project-Banner{
-                        padding: 0 1rem;
+                        width: 100%;
+                        height: 15rem;
+                        padding: 0 50px;
     
                         .Project-titleBox{
-                            width: 80%;
-                            height: 6rem;
+                            width: 100%;
+                            height: 7rem;
+                            margin-bottom: 2rem;
     
                             .title{
-                                line-height: 4rem;
+                                width: 100%;
+                                line-height: 5rem;
+                                color: #fff;
+                                font-family: $font-Mont;
                                 font-size: 1.2rem;
+                                text-transform: uppercase;
                             }
     
                             .subTitle{
+                                width: 100%;
                                 line-height: 2rem;
-                                font-size: 10px;
+                                color: #fff;
+                                font-family: $font-Noto;
+                                font-size: 13px;
                             }
                         }
     
                         .Project-info{
                             width: 100%;
-                            height: max-content;
+                            height: 6rem;
     
                             p{
-                                width: 100%;
+                                width: 90%;
+                                height: 100%;
+                                font-family: $font-Noto;
+                                color: $white-color;
                                 font-size: 10px;
+                                word-break: keep-all;
                             }
                         }
                     }
-                }
-            }
-        }
-    }
-
-    .currentProject-container {
-        padding : 5rem 0 0 0;
     
-        .video-popup {
-    
-            .close-button {
-                line-height: 2rem;
-                font-size: 13px;
-            }
-    
-            .project-video {
-                width: 50rem;
-                height: 25rem;
-            }
-        }
-    
-        .project-banner{
-            height: calc(35rem + 100vh);
-    
-            .project-info {
-    
-                .project-detail {
-                    width: 80%;
-                    height: 30rem;
-    
-                    .detail-info {
+                    .Banner-imgBox{
+                        position: relative;
                         width: 100%;
-                        height: 18rem;
-    
-                        .detail-item {
-    
-                            .title {
-    
-                                h1 {
-                                    line-height: calc(18rem / 5);
-                                    font-size: 12px;
-                                }
-                            }
-    
-                            .detail-txt {
-    
-                                p {
-                                    line-height: calc(18rem / 5);
-                                    font-size: 12px;
-                                }
-    
-                                a {
-                                    line-height: calc(18rem / 5);
-                                    font-size: 12px;
-                                }
-                            }
-                        }
-                    }
-    
-                    .project-desc {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        width: 80%;
                         height: 12rem;
-    
-                        p {
-                            font-size: 12px;
-                        }
-                    }
-                }
-            }
-        }
-    
-        .project-Board {
-            width: 100%;
-            height: 100%;
-            padding: 6.25rem;
-    
-            .project-Skills {
-                width: 100%;
-                height: 20rem;
-                margin : 0 auto;
-    
-                .title {
-                    width: 100%;
-                    height: 3rem;
-                    margin-bottom: 2rem;
-                    
-                    h2{
-                        font-size: 14px;
-                        color: #fff;
-                        font-family: $font-Mont;
-                        text-transform : uppercase;
-                    }
-                }
-    
-                .Skills-list {
-    
-                    li {
-    
-                        .Skill-item {
-    
-                            span {
-                                font-size: 12px;
-                            }
-                        }
-                    }
-                }
-            }
-    
-            .page-detail {
-                width: 100%;
-                display: grid;
-                grid-template-columns: repeat(1, 1fr);
-                gap : 5rem;
-    
-                .detail-img {
-                    height: 25rem;
-    
-                    &:nth-child(1) {
-                        height: 25rem;
-                        grid-column: auto;      
                     }
                 }
             }
@@ -871,212 +324,68 @@
     .Project-container{
         position: relative;
         width: 100%;
-        height: 100%;
-        padding: 3.125rem;
-    
+        padding: 3rem;
+
         .Project-header{
-            height: 10rem;
     
             .Project-titleBox{
                 width: 70%;
-                height: max-content;
     
                 span{
-                    line-height: 2rem;
                     font-size: 12px;
                 }
     
                 h1{
-                    line-height: 7rem;
                     font-size: 1.5rem;
                 }
-            }
-
-            svg{
-                width: 60px;
             }
         }
     
         .Project-List{
-            height: 100rem;
-    
+
             .card-List{
-                grid-template-columns: repeat(1, 1fr);
-                gap : 3.125rem 1rem;
+                display: block;
+                margin: 0;
     
                 .Project-card{
+                    width: 100% !important;
+                    height: 31rem;
+                    display: block;
+                    margin: 0;
+                    margin-bottom: 2rem;
     
                     .Project-Banner{
-                        height: 60%;
-                        padding: 0 2rem;
+                        width: 100%;
+                        height: 16rem;
+                        padding: 0 50px;
     
                         .Project-titleBox{
                             width: 100%;
-                            height: 6rem;
-                            margin-bottom: 2rem;
     
                             .title{
-                                line-height: 4rem;
-                                font-size: 1rem;
+                                font-size: 1.2rem;
                             }
     
                             .subTitle{
-                                line-height: 2rem;
-                                font-size: 10px;
+                                font-size: 12px;
                             }
                         }
     
                         .Project-info{
                             width: 100%;
-                            height: max-content;
+                            height: 6rem;
     
                             p{
-                                width: 100%;
-                                height: 100%;
+                                width: 90%;
                                 font-size: 10px;
                             }
                         }
                     }
-
+    
                     .Banner-imgBox{
-                        height: 40%;
-                    }
-                }
-            }
-        }
-    }
-
-    .currentProject-container {
-        padding : 5rem 0 0 0;
-    
-        .video-popup {
-    
-            .close-button {
-                line-height: 2rem;
-                font-size: 13px;
-            }
-    
-            .project-video {
-                width: 35rem;
-                height: 20rem;
-            }
-        }
-    
-        .project-banner{
-            height: calc(35rem + 100vh);
-    
-            .project-info {
-    
-                .project-detail {
-                    width: 80%;
-                    height: 30rem;
-    
-                    .detail-info {
+                        position: relative;
                         width: 100%;
-                        height: 18rem;
-    
-                        .detail-item {
-    
-                            .title {
-    
-                                h1 {
-                                    line-height: calc(18rem / 5);
-                                    font-size: 14px;
-                                }
-                            }
-    
-                            .detail-txt {
-    
-                                p {
-                                    line-height: calc(18rem / 5);
-                                    font-size: 13px;
-                                }
-    
-                                a {
-                                    line-height: calc(18rem / 5);
-                                    font-size: 13px;
-                                }
-                            }
-                        }
-                    }
-    
-                    .project-desc {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        width: 100%;
-                        height: 12rem;
-    
-                        p {
-                            font-size: 13px;
-                        }
-                    }
-                }
-
-                .banner-img {
-    
-                    .project-img {
-                        width: 80%;
-                    }
-                }
-            }
-        }
-    
-        .project-Board {
-            width: 100%;
-            height: 100%;
-            padding: 6.25rem;
-    
-            .project-Skills {
-                width: 30rem;
-                height: 20rem;
-                margin : 0 auto;
-    
-                .title {
-                    width: 20rem;
-                    height: 3rem;
-                    margin-bottom: 2rem;
-                    
-                    h2{
-                        font-size: 1rem;
-                        color: #fff;
-                        font-family: $font-Mont;
-                        text-transform : uppercase;
-                    }
-                }
-    
-                .Skills-list {
-                    width: 100%;
-                    height: 15rem;
-    
-                    li {
-                        display: inline-block;
-                        width: max-content;
-                        height: 3.125rem;
-                        margin : 0 1rem 1rem 0;
-    
-                        .Skill-item {
-    
-                            span {
-                                font-size: 12px;
-                            }
-                        }
-                    }
-                }
-            }
-    
-            .page-detail {
-                width: 100%;
-                display: grid;
-                grid-template-columns: repeat(1, 1fr);
-                gap : 5rem;
-    
-                .detail-img {
-                    height: 20rem;
-    
-                    &:nth-child(1) {
-                        height: 20rem;
-                        grid-column: auto;      
+                        height: 15rem;
                     }
                 }
             }
@@ -1088,80 +397,68 @@
     .Project-container{
         position: relative;
         width: 100%;
-        height: 100%;
-        padding: 2rem 3.125rem;
-    
+        padding: 3rem 2rem;
+
         .Project-header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             width: 100%;
-            height: 8rem;
+            height: 7rem;
             margin-bottom: 2rem;
     
             .Project-titleBox{
-                width: 100%;
-                height: 8rem;
+                width: 70%;
+                height: 7rem;
     
                 span{
-                    width: 100%;
                     line-height: 2rem;
-                    color: #fff;
-                    font-family: $font-Noto;
-                    font-size: 12px;
+                    font-size: 10px;
                 }
     
                 h1{
-                    width: 100%;
-                    line-height: 6rem;
-                    color: #fff;
-                    font-family: $font-Mont;
-                    font-size: 1.2rem;
-                    text-transform: uppercase;
+                    line-height: 5rem;
+                    font-size: 14px;
                 }
             }
-
-            svg{
-                width: 60px;
+    
+            .Project-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: max-content;
+                height: 5rem;
+    
+                svg {
+                    width: 50px;
+                    height: 40px;
+                }
             }
         }
     
         .Project-List{
-            position: relative;
-            width: 100%;
-            height: 100rem;
-    
+
             .card-List{
-                position: relative;
-                width: 100%;
-                height: 100%;
-                display: grid;
-                grid-template-columns: repeat(1, 1fr);
-                gap : 5rem;
+                display: block;
+                margin: 0;
     
                 .Project-card{
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    background-color: $darkMode-button;
+                    width: 100% !important;
+                    height: 25rem;
+                    display: block;
+                    margin: 0;
+                    margin-bottom: 2rem;
     
                     .Project-Banner{
-                        position: relative;
-                        top: 0;
-                        left: 0;
                         width: 100%;
-                        height: 60%;
-                        padding: 0;
+                        height: 15rem;
+                        padding: 0 50px;
     
                         .Project-titleBox{
                             width: 100%;
-                            height: 5rem;
-                            padding: 0 2rem;
-                            margin-bottom: 2rem;
+                            height: 7rem;
+                            margin-bottom: 1rem;
     
                             .title{
                                 width: 100%;
-                                line-height: 3rem;
+                                line-height: 4rem;
                                 color: #fff;
                                 font-family: $font-Mont;
                                 font-size: 1rem;
@@ -1170,24 +467,19 @@
     
                             .subTitle{
                                 width: 100%;
-                                line-height: 2rem;
-                                color: #fff;
-                                font-family: $font-Noto;
-                                font-size: 8px;
+                                height: 3rem;
+                                line-height: initial;
+                                font-size: 10px;
                             }
                         }
     
                         .Project-info{
                             width: 100%;
-                            height: 10rem;
-                            padding: 0 2rem;
+                            height: 7rem;
     
                             p{
                                 width: 100%;
-                                height: 100%;
-                                font-family: $font-Noto;
-                                color: $white-color;
-                                font-size: 8px;
+                                font-size: 9px;
                                 word-break: keep-all;
                             }
                         }
@@ -1196,181 +488,7 @@
                     .Banner-imgBox{
                         position: relative;
                         width: 100%;
-                        height: 40%;
-    
-                        img{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-    
-                        &::before{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            content: '';
-                            background-color: rgba($color: #000000, $alpha: 0.3);
-                            z-index: 1;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    .currentProject-container {
-        padding : 5rem 0 0 0;
-    
-        .video-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #000;
-            z-index: 110;
-            transition: all 0.5s ease-out;
-            animation : openMobilePopup .5s forwards;
-            opacity: 0;
-            
-            @keyframes openMobilePopup {
-                0%{
-                    opacity: 0;
-                }
-
-                100% {
-                    opacity: 1;
-                }
-            }
-    
-            .close-button {
-                width: 8rem;
-                right: 1rem;
-                line-height: 2rem;
-                font-size: 12px;
-            }
-    
-            .project-video {
-                width: 20rem;
-                height: 13rem;
-            }
-        }
-    
-        .project-banner{
-            height: calc(30rem + 50vh);
-    
-            .project-info {
-    
-                .project-detail {
-                    width: 100%;
-                    height: 26rem;
-                    margin: 0 auto;
-                    padding: 0 2rem;
-    
-                    .detail-info {
-                        width: 100%;
-                        height: 18rem;
-    
-                        .detail-item {
-    
-                            .title {
-                                width: 40%;
-    
-                                h1 {
-                                    font-size: 10px;
-                                }
-                            }
-    
-                            .detail-txt {
-                                width: 60%;
-    
-                                p {
-                                    font-size: 10px;
-                                }
-    
-                                a {
-                                    height: calc(18rem/5);
-                                    font-size: 10px;
-                                }
-                            }
-                        }
-                    }
-    
-                    .project-desc {
-                        height: 8rem;
-    
-                        p {
-                            font-size: 10px;
-                        }
-                    }
-                }
-
-                .banner-img {
-                    height: 50vh;
-    
-                    .project-img {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-    
-        .project-Board {
-            width: 100%;
-            height: 100%;
-            padding: 6.25rem 2rem;
-    
-            .project-Skills {
-                width: 100%;
-                height: 20rem;
-                margin : 0 auto;
-    
-                .title {
-                    width: 100%;
-                    height: 3rem;
-                    margin-bottom: 2rem;
-                    
-                    h2{
-                        line-height: 3rem;
-                        font-size: 14px;
-                    }
-                }
-    
-                .Skills-list {
-    
-                    li {
-    
-                        .Skill-item {
-    
-                            span {
-                                padding: 10px;
-                                font-size: 10px;
-                            }
-                        }
-                    }
-                }
-            }
-    
-            .page-detail {
-                width: 100%;
-                display: grid;
-                grid-template-columns: repeat(1, 1fr);
-                gap : 5rem;
-    
-                .detail-img {
-                    height: 12rem;
-    
-                    &:nth-child(1) {
-                        height: 12rem;
-                        grid-column: auto;      
+                        height: 10rem;
                     }
                 }
             }

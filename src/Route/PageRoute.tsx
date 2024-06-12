@@ -8,7 +8,7 @@ function PageRoute() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/CurrentProject" element={<CurrentProject />} />
+        <Route path="/Project/:id" element={<CurrentProject />} />
       </Routes>
     </BrowserRouter>
   );

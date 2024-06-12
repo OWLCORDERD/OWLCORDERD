@@ -8,11 +8,11 @@ function Advantage() {
   }, []);
 
   return (
-    <div className="Advantages-list">
+    <ul className="Advantages-list">
       {advantageDB.map(item => (
-        <div className="Advantage-item" key={item.id}>
+        <li className="Advantage-item" key={item.id}>
           <div className="Advantage-icon">
-            <img src={item.svgIcon} width={50} height={50} alt="개발 역량 이미지" />
+            <img src={item.svgIcon} width={40} height={40} alt="개발 역량 이미지" />
           </div>
           <div className="Advantage-titleBox">
             <h2 className="title">{item.title}</h2>
@@ -21,9 +21,9 @@ function Advantage() {
           <div className="Advantage-info">
             <p>{item.info}</p>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

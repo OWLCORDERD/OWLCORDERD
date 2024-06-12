@@ -59,7 +59,7 @@ function Banner({ loading }: loadingState): JSX.Element {
     const dynamicTxt = dynamicTxts[typingRef.current].split('');
 
     const stillRun = () => {
-      if (DynamicRef.current?.innerHTML !== undefined) {
+      if (DynamicRef.current) {
         DynamicRef.current.innerHTML += dynamicTxt.shift();
       }
 

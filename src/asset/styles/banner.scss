@@ -6,16 +6,18 @@
     position: relative;
     width : 100%;
     height : 100vh;
-    padding : 0 6.25rem;
+    padding : 0;
+    margin-bottom: 3rem;
     
     .Banner-Index{
         position: relative;
         top : 50%;
-        width : 100%;
-        height : 30rem;
+        width : 1400px;
+        height : 25rem;
         transform: translateY(-50%);
+        margin: 0 auto;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
 
         .Index-contentBox{
@@ -30,10 +32,10 @@
 
             .Index-title{
                 width: 100%;
+                height: 6.25rem;
 
                 h1{
-                    font-size: 2.2rem;
-                    line-height: 150px;
+                    font-size: 1.5rem;
                     font-family: $font-Mont;
                     font-weight: bold;
                     text-transform: uppercase;
@@ -43,17 +45,16 @@
             .Dynamic-TxtBox{
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
                 width: 100%;
-                height: 150px;
+                height: 3rem;
 
                 .Dynamic-txt{
                     display: block;
                     width: 50%;
-                    height: 150px;
-                    line-height: 150px;
+                    height: 3rem;
+                    line-height: 3rem;
                     overflow: hidden;
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                     font-family: $font-Mont;
                     font-weight: 500;
                     text-transform: uppercase;
@@ -70,11 +71,11 @@
                     align-items: flex-end;
                     justify-content: flex-end;
                     width : 50%;
-                    height: 100%;
+                    height: 3rem;
 
                     h2{
                         width : 100%;
-                        line-height: 150px;
+                        line-height: 3rem;
                         font-size: 1rem;
                         font-family: $font-Noto;
                         font-weight: 100;
@@ -85,7 +86,8 @@
 
         .Banner-imgBox{
             position: relative;
-            width : 25%;
+            width : 30%;
+            margin-left: 10%;
             height: 100%;
 
             .Developer-imgBox{
@@ -177,44 +179,38 @@
 /* 맥북 반응형 */
 @include macbook {
     .Main-Banner{
+        padding: 0 6.25rem;
     
         .Banner-Index{
             position: relative;
             top : 50%;
             width : 100%;
-            height : 22rem;
+            height : 20rem;
             transform: translateY(-50%);
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
 
             .Index-contentBox{
-                width : 75%;
+                width : 70%;
 
                 .Index-title{
                     width: 100%;
-                    height: 120px;
-                    line-height: 120px;
 
                     h1{
-                        font-size: 2rem;
+                        font-size: 1.8rem;
                     }
                 }
 
                 .Dynamic-TxtBox{
-                    height: 120px;
 
                     .Dynamic-txt{
-                        height: 120px;
-                        line-height: 120px;
                         font-size: 1.2rem;
                     }
 
                     .Static-txt{
 
                         h2{
-                            width : 100%;
-                            line-height: 120px;
                             font-size: 1rem;
                         }
                     }
@@ -256,10 +252,11 @@
 @include horizontalTablet {
     .Main-Banner{
         padding: 0 3rem;
-        height: 50rem;
+        height: 40rem;
     
         .Banner-Index{
-            height : 50%;
+            width: 100%;
+            height : 20rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -270,24 +267,19 @@
                 .Index-title{
 
                     h1{
-                        line-height: 100px;
                         font-size: 1.5rem;
                     }
                 }
 
                 .Dynamic-TxtBox{
-                    height: 100px;
 
                     .Dynamic-txt{
-                        height: 100px;
-                        line-height: 100px;
                         font-size: 1.2rem;
                     }
 
                     .Static-txt{
 
                         h2{
-                            line-height: 100px;
                             font-size: 15px;
                         }
                     }
@@ -544,6 +536,7 @@
                 position: relative;
                 width : 100%;
                 height: 40%;
+                margin-left: 0;
 
                 &::before{
                     position: absolute;

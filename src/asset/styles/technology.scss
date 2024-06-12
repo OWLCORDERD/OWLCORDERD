@@ -1,178 +1,173 @@
 @import '../variables';
 @import '../ResponsiveMixin/mixin';
 
-/*Technology 최상위 부모 container*/
-.Technology-container{
-    position: relative;
-    width : 100%;
-    height : 100%;
-    background-color: $black-color;
-    overflow: hidden;
-    padding : 5rem 6.25rem;
-
-    /*Development Skills container*/
+/*Development Skills container*/
     .DevelopSkills-container{
         position: relative;
-        width : 100%;
-        height : 50rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        width: 100%;
+        height : 52rem;
+        padding: 3rem 0;
 
-        /*Development Skills Index & tabMenu*/
-        .DevelopSkill-header{
+        .DevelopSkills-wrap {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            height: 10rem;
+            flex-direction: column;
+            justify-content: space-between;            
+            margin: 0 auto;
+            max-width: 1400px;
+            height: 46rem;
 
-            .DevelopSkill-Index{
-                width: 40%;
-                height: 100%;
-                font-family: $font-Mont;
-                color: $white-color;
-
-                .Index-title{
-                    width: 100%;
-                    line-height: 10rem;
-                    text-transform: uppercase;
-
-                    h1{
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-
-            .Skills-TabMenu{
+            /*Development Skills Index & tabMenu*/
+            .DevelopSkill-header{
                 display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                width : max-content;
-                height: 2.5rem;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 100%;
+                height: 6rem;
 
-                ul{
-                    width: 20rem;
-                    height: 100%;
+                .DevelopSkill-Index{
+                    width: 40%;
+                    height: 6rem;
+                    font-family: $font-Mont;
+                    color: $white-color;
 
-                    li{
-                        display: inline-block;
-                        width: calc(18rem / 2);
+                    .Index-title{
+                        width: 100%;
+                        text-transform: uppercase;
+
+                        h1{
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                .Skills-TabMenu{
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    width : max-content;
+                    height: 2.5rem;
+
+                    ul{
+                        width: 20rem;
                         height: 100%;
-                        text-align: center;
-                        margin-left: 2rem;
 
-                        button{
-                            display: block;
-                            width: 100%;
+                        li{
+                            display: inline-block;
+                            width: calc(18rem / 2);
                             height: 100%;
-                            color: $rgba-white;
-                            font-weight: bold;
-                            font-family: $font-Mont;
-                            background : $darkMode-button;
-                            font-size: 13px;
-                            border : none;
-                            cursor: pointer;
-                            text-transform: uppercase;
-                            transition: $ease-out;
-                        }
+                            text-align: center;
+                            margin-left: 2rem;
 
-                        &:nth-child(1){
-                            margin-left: 0;
-                        }
+                            button{
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                color: $rgba-white;
+                                font-weight: bold;
+                                font-family: $font-Mont;
+                                background : $darkMode-button;
+                                font-size: 13px;
+                                border : none;
+                                cursor: pointer;
+                                text-transform: uppercase;
+                                transition: $ease-out;
+                            }
 
-                        &.active button{
-                            background-color: $white-color;
-                            color: $black-color;
-                            transition: $ease-in;
+                            &:nth-child(1){
+                                margin-left: 0;
+                            }
+
+                            &.active button{
+                                background-color: $white-color;
+                                color: $black-color;
+                                transition: $ease-in;
+                            }
                         }
                     }
                 }
             }
-        }
 
-        /*Development skill Develop&Design Items container*/
-        .DevelopSkill-contents{
-            position: relative;
-            width: 100%;
-            height: 34rem;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            place-items: initial;
-            gap : 3rem;
-
-            .skill-item{
+            /*Development skill Develop&Design Items container*/
+            .DevelopSkill-contents{
                 position: relative;
                 width: 100%;
-                height: 100%;
-                border : 2px solid transparent;
-                background-color: $darkMode-button;
+                height: 37rem;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                place-items: initial;
+                gap : 1rem;
 
-                &:hover{
-                    border : 2px solid $rgba-white;
-                }
-
-                h2{
-                    position: absolute;
-                    top: 0;
+                .skill-item{
+                    position: relative;
                     width: 100%;
-                    height: 5rem;
-                    font-size: 1rem;
-                    text-align: center;
-                    font-family: $font-Mont;
-                    color: #fff;
-                    line-height: 5rem;
-                }
+                    height: 18rem;
+                    border : 2px solid transparent;
+                    background-color: $darkMode-button;
 
-                img{
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50% ,-50%);
-                    width: 60px;
-                    height: 60px;
-                }
+                    &:hover{
+                        border : 2px solid $rgba-white;
+                    }
 
-                p{
-                    position: absolute;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    bottom: 0;
-                    width: 100%;
-                    color: #fff;
-                    height: 3rem;
-                    text-align: center;
-                    font-weight: 100;
-                    font-family: $font-Mont;
-                    font-size: 13px;
+                    h2{
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        height: 5rem;
+                        font-size: 1rem;
+                        text-align: center;
+                        font-family: $font-Mont;
+                        color: #fff;
+                        line-height: 5rem;
+                    }
+
+                    img{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50% ,-50%);
+                        width: 60px;
+                        height: 60px;
+                    }
+
+                    p{
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 0;
+                        width: 100%;
+                        color: #fff;
+                        height: 3rem;
+                        text-align: center;
+                        font-weight: 100;
+                        font-family: $font-Mont;
+                        font-size: 13px;
+                    }
                 }
             }
         }
     }
-}
 
 /* 맥북 반응형 */
 @include macbook {
-    /*Technology 최상위 부모 container*/
-    .Technology-container{
-        padding : 0 6.25rem;
+    /*Development Skills container*/
+    .DevelopSkills-container{
+        height : 44rem;
+        padding: 3rem 6.25rem;
 
-        /*Development Skills container*/
-        .DevelopSkills-container{
-            height : 40rem;
+        .DevelopSkills-wrap {
+            max-width : 100%;
+            height: 38rem;
+            margin: 0;
 
         /*Development Skills Index & tabMenu*/
         .DevelopSkill-header{
-            height: 6rem;
 
             .DevelopSkill-Index{
 
                 .Index-title{
-                    width: 100%;
-                    line-height: 6rem;
 
                     h1{
-                        font-size: 1.5rem;
+                        font-size: 1.2rem;
                     }
                 }
             }
@@ -196,10 +191,10 @@
 
         /*Development skill Develop&Design Items container*/
         .DevelopSkill-contents{
-            height: 28rem;
-            gap : 2rem;
+            height: 29rem;
 
             .skill-item{
+                height: 14rem;
 
                 h2{
                     height: 3rem;
@@ -221,21 +216,21 @@
                 }
             }
         }
-
-        }
+    }
     }
 }
 
 /* 테블릿 가로 ~ 노트북 반응형 */
 @include horizontalTablet {
-    /*Technology 최상위 부모 container*/
-    .Technology-container{
-        padding : 3rem;
-        height: 100%;
+    /*Development Skills container*/
+    .DevelopSkills-container{
+        height : 41rem;
+        padding: 3rem;
 
-        /*Development Skills container*/
-        .DevelopSkills-container{
-            height : 32rem;
+        .DevelopSkills-wrap {
+            max-width: 100%;
+            height: 35rem;
+            margin: 0;
 
             .DevelopSkill-header{
                 width: 100%;
@@ -247,10 +242,9 @@
                     height: 5rem;
     
                     .Index-title{
-                        line-height: 5rem;
 
                         h1 {
-                            font-size: 1rem;
+                            font-size: 1.2rem;
                         }
                     }
                 }
@@ -274,10 +268,10 @@
 
                 /*Development skill Develop&Design Items container*/
             .DevelopSkill-contents{
-                height: 23rem;
-                gap : 2rem;
+                height: 27rem;
 
                 .skill-item{
+                    height: 13rem;
 
                     h2{
                         height: 3rem;
@@ -304,24 +298,21 @@
 }
 
 @include verticalTablet {
-    /*Technology 최상위 부모 container*/
-    .Technology-container{
-        position: relative;
-        width : 100%;
-        height : 100%;
-        background-color: $black-color;
-        overflow: hidden;
-        padding : 3.125rem;
+    /*Development Skills container*/
+    .DevelopSkills-container{
+        height : 86rem;
+        padding: 3rem;
 
-        /*Development Skills container*/
-        .DevelopSkills-container{
-            position: relative;
-            width : 100%;
-            height : 75rem;
+        .DevelopSkills-wrap{
+            max-width: 100%;
+            margin: 0;
+            height: 80rem;
 
             /*Development Skills Index & tabMenu*/
             .DevelopSkill-header{
-                height: 5rem;
+                height: 8rem;
+                flex-direction: column;
+                align-items: center;
 
                 .DevelopSkill-Index{
                     width: 100%;
@@ -334,6 +325,7 @@
 
                         h1{
                             font-size: 1rem;
+                            text-align: center;
                         }
                     }
                 }
@@ -357,45 +349,42 @@
                 }
             }
 
-            /*Development skill Develop&Design Items container*/
-        .DevelopSkill-contents{
-            height: 65rem;
-            grid-template-columns: repeat(2, 1fr);
-            gap : 2rem;
+                /*Development skill Develop&Design Items container*/
+            .DevelopSkill-contents{
+                height: 67rem;
+                grid-template-columns: repeat(2, 1fr);
 
-            .skill-item{
+                .skill-item{
+                    height: 16rem;
 
-                h2{
-                    font-size: 14px;
-                }
+                    h2{
+                        font-size: 14px;
+                    }
 
-                img{
-                    width: 50px;
-                    height: 50px;
-                }
+                    img{
+                        width: 50px;
+                        height: 50px;
+                    }
 
-                p{
-                    font-size: 12px;
+                    p{
+                        font-size: 12px;
+                    }
                 }
             }
-        }
         }
     }
 }
 
 @include mobile {
-    /*Technology 최상위 부모 container*/
-    .Technology-container{
-        position: relative;
-        width : 100%;
-        height : 100%;
-        background-color: $black-color;
-        overflow: hidden;
-        padding : 2rem 3.125rem;
-
         /*Development Skills container*/
-        .DevelopSkills-container{
-            height : 55rem;
+    .DevelopSkills-container{
+        height : 59rem;
+        padding: 2rem;
+
+        .DevelopSkills-wrap{
+            max-width: 100%;
+            height: 55rem;
+            margin: 0;
 
             /*Development Skills Index & tabMenu*/
             .DevelopSkill-header{
@@ -415,7 +404,7 @@
 
                         h1{
                             text-align: center;
-                            font-size: 1.2rem;
+                            font-size: 1rem;
                         }
                     }
                 }
@@ -425,15 +414,15 @@
                     height: 2rem;
 
                     ul{
-                        width: 12rem;
+                        width: 10rem;
                         height: 100%;
 
                         li{
                             display: inline-block;
-                            width: calc(10rem / 2);
+                            width: calc(8rem / 2);
 
                             button{
-                                font-size: 10px;
+                                font-size: 8px;
                             }
                         }
                     }

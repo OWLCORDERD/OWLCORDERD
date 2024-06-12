@@ -58,8 +58,8 @@ function Technology() {
   }, []);
 
   return (
-    <section className="Technology-container">
-      <div className="DevelopSkills-container">
+    <section className="DevelopSkills-container">
+      <div className="DevelopSkills-wrap">
         <div className="DevelopSkill-header">
           <div className="DevelopSkill-Index">
             <div className="Index-title">
