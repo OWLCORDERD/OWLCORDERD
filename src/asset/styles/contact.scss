@@ -591,7 +591,7 @@
                     }
     
                     p{
-                        width: 80%;
+                        width: 100%;
                         font-weight: 100;
                         font-size: 12px;
                     }
@@ -694,7 +694,7 @@
     
                     textarea{
                         height: 12rem;
-                        font-size: 1rem;
+                        font-size: 12px;
                         border: 2px solid rgba(255,255,255,0.3);
                         color: $white-color;
 
@@ -717,7 +717,10 @@
 
 @include mobile {
     .Contact-container{
-        padding: 2rem;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 3.125rem;
     
         .Contact-Box{
             display: flex;
@@ -725,7 +728,7 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            height: 60rem;
+            height: 68rem;
     
             .Contact-titleBox{
                 display: flex;
@@ -733,14 +736,17 @@
                 justify-content: space-between;
                 align-items: flex-start;
                 width: 100%;
-                height: 23rem;
+                height: 28rem;
     
                 .Contact-title{
                     width: 100%;
-                    height: 2rem;
-
+                    height: 5rem;
+    
                     h1{
                         font-size: 1.2rem;
+                        color: $white-color;
+                        text-transform: uppercase;
+                        font-family: $font-Mont;
                     }
                 }
     
@@ -760,6 +766,7 @@
                     }
     
                     p{
+                        width: 100%;
                         font-weight: 100;
                         font-size: 10px;
                     }
@@ -767,18 +774,13 @@
     
                 .Contact-info{
                     width: 100%;
-                    height: 5rem;
+                    height: 6rem;
     
                     h3{
                         font-size: 12px;
-                        line-height: 2rem;
+                        line-height: 3rem;
                         font-family: $font-Mont;
                         color: $white-color;
-                        margin-bottom: 1rem;
-
-                        &:nth-child(2){
-                            margin-bottom: 0;
-                        }
                     }
                 }
             }
@@ -797,20 +799,29 @@
                     height: 5rem;
     
                     h2{
+                        width: 100%;
                         height: 2rem;
                         font-size: 13px;
+                        color: $white-color;
+                        font-family: $font-Mont;
                     }
     
                     input{
+                        width: 100%;
                         height: 2rem;
                         margin-top: 1rem;
                         font-size: 12px;
-                        padding: 0 10px;
-                        border : 2px solid rgba($color: #fff, $alpha: 0.5);
-
+                        font-family: $font-Noto;
+                        border: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        border-bottom: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        background: none;
+                        font-weight: bold;
+                        color: $white-color;
+                        padding: 1rem;
+    
                         &:focus{
-                            border-bottom : 2px solid rgba($color: #fff, $alpha: 0.8);
-                            border : 2px solid rgba($color: #fff, $alpha: 0.8);
+                            outline: none;
+                            border-bottom: 2px solid rgba($color: #fff, $alpha: 0.3);
                         }
                     }
                 }
@@ -821,28 +832,35 @@
                     height: 5rem;
     
                     h2{
+                        width: 100%;
                         height: 2rem;
                         font-size: 13px;
+                        color: $white-color;
+                        font-family: $font-Mont;
                     }
     
                     input{
+                        width: 100%;
                         height: 2rem;
                         margin-top: 1rem;
                         font-size: 12px;
-                        padding: 0 10px;
-                        border : 2px solid rgba($color: #fff, $alpha: 0.5);
-
+                        font-family: $font-Noto;
+                        border: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        border-bottom: 2px solid rgba($color: #fff, $alpha: 0.3);
+                        background: none;
+                        font-weight: bold;
+                        color: $white-color;
+                        padding: 1rem;
+    
                         &:focus{
-                            border-bottom : 2px solid rgba($color: #fff, $alpha: 0.8);
-                            border : 2px solid rgba($color: #fff, $alpha: 0.8);
+                            outline: none;
+                            border-bottom: 2px solid rgba($color: #fff, $alpha: 0.3);
                         }
                     }
                 }
     
                 .Message-Field{
-                    display: block;
-                    width: 100%;
-                    height: 18rem;
+                    height: 15rem;
     
                     h2{
                         height: 2rem;
@@ -850,21 +868,22 @@
                     }
     
                     textarea{
-                        width: 100%;
-                        height: 15rem;
-                        margin-top: 1rem;
-                        font-size: 1rem;
-                        font-family: $font-Noto;
-                        font-weight: bold;
-                        background-color: transparent;
-                        border: 2px solid rgba(255,255,255,0.5);
+                        height: 12rem;
+                        font-size: 12px;
+                        border: 2px solid rgba(255,255,255,0.3);
                         color: $white-color;
+
+                        &:focus{
+                            outline: none;
+                        }
                     }
                 }
     
                 .submit-button{
-                    height: 2.5rem;
-                    font-size: 13px;
+                    display: block;
+                    width: 100%;
+                    height: 3rem;
+                    font-size: 12px;
                 }
             }
         }
