@@ -14,7 +14,7 @@ import ProjectBoard from '../Components/CurrentProject/ProjectBoard/ProjectBoard
 
 gsap.registerPlugin(ScrollTrigger);
 
-function DevelopProject() {
+function CurrentProject() {
   const location = useLocation();
 
   const projectDB: ProjectType = location.state ? location.state.projectDB : undefined;
@@ -136,4 +136,4 @@ function DevelopProject() {
   );
 }
 
-export default DevelopProject;
+export default CurrentProject;

@@ -14,6 +14,10 @@ function Contact() {
     message: '',
   });
 
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const textRef = useRef<HTMLTextAreaElement>(null);
+
   const InputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     const afterInputs = { ...inputs, [name]: value };
@@ -44,12 +48,17 @@ function Contact() {
 
     if (formRef.current && inputs.user_name !== '' && inputs.user_email !== '' && inputs.message !== '') {
       emailjs.sendForm('service_k0hnyfp', 'template_5a2kqd9', formRef.current, 'UhbB3PcGFHDMDqlgt').then(
-        result => {
-          alert(`메일을 성공적으로 보냈습니다. [Post Status : ${result.text}]`);
+        res => {
+          alert('메일을 성공적으로 보냈습니다. 3일 내에 회신 드리겠습니다.');
+          if (nameRef.current && emailRef.current && textRef.current) {
+            nameRef.current.value = '';
+            emailRef.current.value = '';
+            textRef.current.value = '';
+          }
           navigate('/');
         },
-        error => {
-          alert(error.text);
+        rej => {
+          alert(rej.text);
         },
       );
     }
@@ -92,17 +101,29 @@ function Contact() {
         <form className="Contact-Form" ref={formRef} onSubmit={sendEmail}>
           <div className="Name-Field">
             <h2>Name</h2>
-            <input type="text" name="user_name" placeholder="이름을 입력해주세요." onChange={e => InputChange(e)} />
+            <input
+              type="text"
+              name="user_name"
+              placeholder="이름을 입력해주세요."
+              onChange={e => InputChange(e)}
+              ref={nameRef}
+            />
           </div>
 
           <div className="Email-Field">
             <h2>email</h2>
-            <input type="email" name="user_email" placeholder="이메일을 입력해주세요." onChange={e => InputChange(e)} />
+            <input
+              type="email"
+              name="user_email"
+              placeholder="이메일을 입력해주세요."
+              onChange={e => InputChange(e)}
+              ref={emailRef}
+            />
           </div>
 
           <div className="Message-Field">
             <h2>Message</h2>
-            <textarea name="message" onChange={e => TextChange(e)} />
+            <textarea name="message" onChange={e => TextChange(e)} ref={textRef} />
           </div>
           <input type="submit" value="Send Content" className="submit-button" />
         </form>

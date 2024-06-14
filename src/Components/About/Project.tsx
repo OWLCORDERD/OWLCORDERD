@@ -32,7 +32,12 @@ function Project() {
         <ul className="card-List">
           {projectDB.map(project => (
             <li className="Project-card">
-              <Link to={`/Project/${project.id}`} state={{ projectDB: project }} key={project.id}>
+              <Link
+                to={`/Project/${project.id}`}
+                state={{ projectDB: project }}
+                key={project.id}
+                onClick={() => sessionStorage.setItem('scrollY', window.pageYOffset.toString())}
+              >
                 <div className="Project-Banner">
                   <div className="Project-titleBox">
                     <h2 className="title">{project.title}</h2>
