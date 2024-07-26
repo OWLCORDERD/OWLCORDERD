@@ -1,6 +1,5 @@
 import Page404 from 'Components/404Page/Page404';
 import Navbar from 'Components/Navigator/navbar';
-import ResponsiveMenu from 'Components/Navigator/MobileResponsive/ResponsiveMenu';
 import React from 'react';
 
 function WorkSpace() {
@@ -9,8 +8,6 @@ function WorkSpace() {
       <header>
         <Navbar />
       </header>
-
-      <ResponsiveMenu />
 
       <main>
         <div className="container" id="container">

@@ -9,62 +9,12 @@
     height: 100%;
     padding : 6.25rem 0 0 0;
 
-    .video-popup {
-        position: fixed;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #000;
-        z-index: 110;
-        transition: all 0.5s ease-out;
-
-        .close-button {
-            position: absolute;
-            right: 2rem;
-            top: 2rem;
-            width: 10rem;
-            background-color: transparent;
-            border: none;
-            line-height: 2rem;
-            color: #fff;
-            font-weight: bold;
-            font-family: $font-Mont;
-            text-transform: uppercase;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .project-video {
-            position: relative;
-            width: 70rem;
-            height: 35rem;
-            overflow: hidden;
-
-            video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-
     .project-banner{
         width: 100%;
-        height: calc(35rem + 100vh);
+        height: 100%;
+        padding-top: 3rem;
 
         .project-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
             width: 100%;
             height: 100%;
 
@@ -138,69 +88,32 @@
                 }
             }
 
-            .banner-img {
-                position: relative;
-                width: 100%;
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            .project-video {
+                width: 60rem;
+                height: 100%;
+                margin: 3rem auto 0 auto;
 
-                .play-button {
-                    width: 10rem;
-                    height: max-content;
-                    padding: 1rem;
-                    border-radius: 30px;
-                    z-index: 10;
-                    cursor: pointer;
-                    border: none;
-                    opacity: 0;
-                    background-color: rgba(0,0,0,0.8);
+                .title {
+                    width: 100%;
+                    height: 6.25rem;
 
-                    span {
-                        opacity: 1;
-                        font-size: 14px;
-                        font-weight: 700;
+                    h1 {
                         font-family: $font-Mont;
                         text-transform: uppercase;
-                        transition: all 0.5s ease-in-out;
-                        color: $white-color;
-                    }
-
-                    .play-icon {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: $centerTL;
-                        font-size: 2rem;
-                        opacity: 0;
-                        transition: all 0.5s ease-in-out;
                         color: #fff;
-                    }
-
-                    &:hover {
-                        .play-icon {
-                            transition: all 0.5s ease-in-out;
-                            transition-delay: 0.5s;
-                            opacity: 1;
-                        }
-
-                        span {
-                            transition: all 0.5s ease-in-out;
-                            opacity: 0;
-                        }
+                        font-size: 1.2rem;
                     }
                 }
 
-                .project-img {
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 60rem;
-                    height: 100%;
+                .project-banner {
+                    position: relative;
+                    width: 100%;
+                    height: 30rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
     
-                    img {
+                    video {
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -268,33 +181,101 @@
             }
         }
 
-        .page-detail {
-            position: relative;
+        .page-preview {
             width: 60rem;
-            height: max-content;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            height: 40rem;
             margin: 0 auto;
-            gap : 1rem;
 
-            .detail-img {
-                position: relative;
+            .preview-titleWrap {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
                 width: 100%;
-                height: 15rem;
-                overflow: hidden;
+                height: 6.25rem;
 
-                img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
+                .title {
+                    width: max-content;
                     height: 100%;
-                    object-fit: cover;
+
+                    h1 {
+                        line-height: 3rem;
+                        color: #fff;
+                        font-family: $font-Mont;
+                        font-size: 1.2rem;
+                        text-transform: uppercase;
+                    }
                 }
 
-                &:nth-child(1) {
-                    height: 30rem;
-                    grid-column: 1/3;      
+                .slide-control {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 10rem;
+                    height: 3rem;
+
+                    .prev-button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 3rem;
+                        height: 3rem;
+                        cursor: pointer;
+                        background-color: rgba(119, 119, 119, 0.3);
+                        border-radius: 50%;
+
+                        &:hover {
+                            background-color: rgba(255, 255, 255, 0.5);
+                        }
+
+                        svg {
+                            font-size: 1.2rem;
+                            color: #fff;
+                        }
+                    }
+
+                    .next-button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 3rem;
+                        height: 3rem;
+                        cursor: pointer;
+                        background-color: rgba(119, 119, 119, 0.3);
+                        border-radius: 50%;
+
+                        &:hover {
+                            background-color: rgba(255, 255, 255, 0.5);
+                        }
+
+                        svg {
+                            font-size: 1.2rem;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .preview-slider {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90vw;
+                height: 30rem;
+                overflow: hidden;
+                padding : 0 40%;
+
+                .preview-image {
+                    width: 100%;
+                    height: 100%;
+                    border: 3px solid rgba(119, 119, 119, 0.3);
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
         }
@@ -303,39 +284,25 @@
 
 @include macbook {
     .currentProject-container {
-    
-        .video-popup {
-    
-            .project-video {
-                position: relative;
-                width: 50rem;
-                height: 25rem;
-                overflow: hidden;
-            }
-        }
+        padding : 5rem 0 0 0;
     
         .project-banner{
-            width: 100%;
-            height: calc(30rem + 100vh);
     
             .project-info {
     
                 .project-detail {
                     width: 50rem;
-                    height: 25rem;
+                    height: 28rem;
+                    margin: 0 auto;
     
                     .detail-info {
-                        height: 15rem;
     
                         .detail-item {
-                            height : calc(15rem / 5);
-
+    
                             .title {
-                                width: 30%;
-                                height: 100%;
     
                                 h1 {
-                                    font-size: 13px;
+                                    font-size: 14px;
                                 }
                             }
     
@@ -352,19 +319,31 @@
                         }
                     }
     
-                    .project-desc { 
+                    .project-desc {
                         height: 10rem;
     
                         p {
-                            width: 100%;
                             font-size: 13px;
                         }
                     }
                 }
     
-                .banner-img {
-                    .project-img {
-                        width: 50rem;
+                .project-video {
+                    width: 50rem;
+                    height: 100%;
+                    margin: 3rem auto 0 auto;
+    
+                    .title {
+                        width: 100%;
+                        height: 6.25rem;
+    
+                        h1 {
+                            font-size: 1rem;
+                        }
+                    }
+    
+                    .project-banner {
+                        height: 25rem;
                     }
                 }
             }
@@ -387,29 +366,73 @@
                     li {
     
                         .Skill-item {
+                            width: 100%;
+                            height: 100%;
+                            background-color: $darkMode-button;
+    
+                            &:hover {
+                                background-color: $button-hover;
+                            }
     
                             span {
-                                line-height: 3rem;
-                                color: #fff;
-                                font-family: $font-Mont;
                                 font-size: 12px;
-                                font-weight: bold;
-                                padding: 1rem;
-                                text-transform: uppercase;
                             }
                         }
                     }
                 }
             }
     
-            .page-detail {
+            .page-preview {
                 width: 50rem;
+                height: 30rem;
     
-                .detail-img {
-                    height: 12rem;
+                .preview-titleWrap {
     
-                    &:nth-child(1) {
-                        height: 25rem;   
+                    .title {
+                        width: max-content;
+                        height: 100%;
+    
+                        h1 {
+                            font-size: 1rem;
+                            line-height: 2.5rem;
+                        }
+                    }
+    
+                    .slide-control {
+    
+                        .prev-button {
+                            width: 2.5rem;
+                            height: 2.5rem;
+                        }
+    
+                        .next-button {
+                            width: 2.5rem;
+                            height: 2.5rem;
+                        }
+                    }
+                }
+    
+                .preview-slider {
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80vw;
+                    height: 20rem;
+                    overflow: hidden;
+                    padding : 0 30%;
+    
+                    .preview-image {
+                        width: 100%;
+                        height: 100%;
+                        border: 3px solid rgba(119, 119, 119, 0.3);
+                        border-radius: 10px;
+                        overflow: hidden;
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
                 }
             }
@@ -419,43 +442,27 @@
 
 @include horizontalTablet {
     .currentProject-container {
-    
-        .video-popup {
-
-            .close-button {
-                font-size: 14px;
-            }
-    
-            .project-video {
-                position: relative;
-                width: 42rem;
-                height: 25rem;
-                overflow: hidden;
-            }
-        }
+        padding : 5rem 0 0 0;
     
         .project-banner{
-            width: 100%;
-            height: calc(30rem + 100vh);
     
             .project-info {
     
                 .project-detail {
-                    width: 42rem;
-                    height: 25rem;
+                    width: 70%;
+                    height: 28rem;
+                    margin: 0 auto;
     
                     .detail-info {
-                        height: 15rem;
+                        width: 100%;
+                        height: 18rem;
     
                         .detail-item {
-                            height : calc(15rem / 5);
-
+    
                             .title {
-                                width: 30%;
-                                height: 100%;
     
                                 h1 {
-                                    font-size: 12px;
+                                    font-size: 13px;
                                 }
                             }
     
@@ -473,18 +480,41 @@
                     }
     
                     .project-desc {
-                        height: 10rem; 
+                        height: 10rem;
     
                         p {
-                            width: 100%;
-                            font-size: 12px;
+                            font-size: 13px;
                         }
                     }
                 }
     
-                .banner-img {
-                    .project-img {
-                        width: 42rem;
+                .project-video {
+                    width: 45rem;
+                    height: 100%;
+                    margin: 3rem auto 0 auto;
+    
+                    .title {
+                        width: 100%;
+                        height: 6.25rem;
+    
+                        h1 {
+                            font-size: 1rem;
+                        }
+                    }
+    
+                    .project-banner {
+                        position: relative;
+                        width: 100%;
+                        height: 22rem;
+        
+                        video {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
                 }
             }
@@ -493,7 +523,7 @@
         .project-Board {
     
             .project-Skills {
-                width: 42rem;
+                width: 45rem;
     
                 .title {
                     
@@ -507,32 +537,68 @@
                     li {
     
                         .Skill-item {
+                            width: 100%;
+                            height: 100%;
+                            background-color: $darkMode-button;
+    
+                            &:hover {
+                                background-color: $button-hover;
+                            }
     
                             span {
-                                line-height: 3rem;
-                                color: #fff;
-                                font-family: $font-Mont;
                                 font-size: 12px;
-                                font-weight: bold;
-                                padding: 1rem;
-                                text-transform: uppercase;
                             }
                         }
                     }
                 }
             }
     
-            .page-detail {
-                width: 42rem;
-                grid-template-columns: repeat(1, 1fr);
+            .page-preview {
+                width: 80%;
+                height: 30rem;
+                margin: 5rem auto 0 auto;
     
-                .detail-img {
-                    height: 20rem;
+                .preview-titleWrap {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
     
-                    &:nth-child(1) {
-                        height: 20rem;
-                        grid-column: auto;   
+                    .title {
+    
+                        h1 {
+                            line-height: 2.5rem;
+                            font-size: 1rem;
+                        }
                     }
+    
+                    .slide-control {
+                        width: 10rem;
+                        height: 2.5rem;
+    
+                        .prev-button {
+                            width: 2.5rem;
+                            height: 2.5rem;
+    
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.5);
+                            }
+                        }
+    
+                        .next-button {
+                            width: 2.5rem;
+                            height: 2.5rem;
+    
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.5);
+                            }
+                        }
+                    }
+                }
+    
+                .preview-slider {
+                    width: 80vw;
+                    height: 21rem;
+                    padding : 0 15%;
                 }
             }
         }
@@ -541,41 +607,24 @@
 
 @include verticalTablet {
     .currentProject-container {
-    
-        .video-popup {
-
-            .close-button {
-                font-size: 14px;
-            }
-    
-            .project-video {
-                position: relative;
-                width: 80%;
-                height: 20rem;
-                overflow: hidden;
-            }
-        }
+        padding : 5rem 0 0 0;
     
         .project-banner{
-            width: 100%;
-            height: calc(30rem + 100vh);
     
             .project-info {
     
                 .project-detail {
-                    width: 100%;
-                    height: 25rem;
-                    padding: 0 3rem;
+                    width: 80%;
+                    height: 28rem;
+                    margin: 0 auto;
     
                     .detail-info {
-                        height: 15rem;
+                        width: 100%;
+                        height: 18rem;
     
                         .detail-item {
-                            height : calc(15rem / 5);
-
+    
                             .title {
-                                width: 30%;
-                                height: 100%;
     
                                 h1 {
                                     font-size: 12px;
@@ -585,36 +634,60 @@
                             .detail-txt {
     
                                 p {
-                                    font-size: 12px;
+                                    font-size: 10px;
                                 }
     
                                 a {
-                                    font-size: 12px;
+                                    font-size: 10px;
                                 }
                             }
                         }
                     }
     
                     .project-desc {
-                        height: 10rem; 
+                        height: 10rem;
     
                         p {
-                            width: 100%;
                             font-size: 12px;
                         }
                     }
                 }
     
-                .banner-img {
-                    .project-img {
+                .project-video {
+                    width: 80%;
+                    height: 100%;
+                    margin: 3rem auto 0 auto;
+    
+                    .title {
                         width: 100%;
+                        height: 6.25rem;
+    
+                        h1 {
+                            font-size: 1rem;
+                        }
+                    }
+    
+                    .project-banner {
+                        position: relative;
+                        width: 100%;
+                        height: 20rem;
+        
+                        video {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
                 }
             }
         }
     
         .project-Board {
-            padding: 5rem 3rem;
+            width: 80%;
+            margin: 0 auto;
     
             .project-Skills {
                 width: 100%;
@@ -627,38 +700,72 @@
                 }
     
                 .Skills-list {
-                    height: 9rem;
     
                     li {
-                        height: 2rem;
     
                         .Skill-item {
+                            width: 100%;
+                            height: 100%;
+                            background-color: $darkMode-button;
+    
+                            &:hover {
+                                background-color: $button-hover;
+                            }
     
                             span {
-                                line-height: 2rem;
-                                color: #fff;
-                                font-family: $font-Mont;
-                                font-size: 11px;
-                                font-weight: bold;
-                                padding: 1rem;
-                                text-transform: uppercase;
+                                font-size: 12px;
                             }
                         }
                     }
                 }
             }
     
-            .page-detail {
-                width: 100%;
-                grid-template-columns: repeat(1, 1fr);
+            .page-preview {
+                width: 35rem;
+                height: 25rem;
+                margin: 5rem auto 0 auto;
     
-                .detail-img {
-                    height: 15rem;
+                .preview-titleWrap {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
     
-                    &:nth-child(1) {
-                        height: 15rem;
-                        grid-column: auto;
+                    .title {
+    
+                        h1 {
+                            line-height: 2.5rem;
+                            font-size: 1rem;
+                        }
                     }
+    
+                    .slide-control {
+                        width: 10rem;
+                        height: 2.5rem;
+    
+                        .prev-button {
+                            width: 2.5rem;
+                            height: 2.5rem;
+    
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.5);
+                            }
+                        }
+    
+                        .next-button {
+                            width: 2.5rem;
+                            height: 2.5rem;
+    
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.5);
+                            }
+                        }
+                    }
+                }
+    
+                .preview-slider {
+                    width: 80vw;
+                    height: 16rem;
+                    padding : 0 15%;
                 }
             }
         }
@@ -667,101 +774,155 @@
 
 @include mobile {
     .currentProject-container {
-        padding: 3rem 0 0 0;
-    
-        .video-popup {
-
-            .close-button {
-                font-size: 14px;
-            }
-    
-            .project-video {
-                position: relative;
-                width: 80%;
-                height: 16rem;
-                overflow: hidden;
-            }
-        }
+        padding : 4rem 0 0 0;
     
         .project-banner{
-            width: 100%;
-            height: calc(30rem * 2);
     
             .project-info {
     
                 .project-detail {
                     width: 100%;
-                    height: 25rem;
-                    padding: 0 2rem;
+                    height: 26rem;
+                    margin: 0 auto;
+                    padding: 0 1rem;
     
                     .detail-info {
-                        height: 15rem;
+                        width: 100%;
+                        height: 16rem;
     
                         .detail-item {
-                            height : calc(15rem / 5);
-
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+                            height: calc(16rem / 5);
+    
                             .title {
-                                width: 30%;
+                                width: 50%;
                                 height: 100%;
     
                                 h1 {
+                                    height: calc(16rem / 5);
+                                    font-family: $font-Mont;
+                                    color: #fff;
                                     font-size: 10px;
+                                    text-transform: uppercase;
                                 }
                             }
     
                             .detail-txt {
+                                display: flex;
+                                align-items: flex-start;
+                                width: 50%;
+                                height: 100%;
     
                                 p {
+                                    height: 100%;
+                                    color: #fff;
+                                    font-family: $font-Mont;
                                     font-size: 10px;
                                 }
     
                                 a {
+                                    height: 100%;
+                                    color: #fff;
+                                    font-family: $font-Mont;
                                     font-size: 10px;
+                                    font-weight: bold;
                                 }
                             }
                         }
                     }
     
                     .project-desc {
-                        height: 10rem; 
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        width: 100%;
+                        height: 10rem;
     
                         p {
-                            width: 100%;
-                            font-size: 10px;
+                            font-size: 9px;
                         }
                     }
                 }
     
-                .banner-img {
-                    height: 30rem;
-                    .project-img {
+                .project-video {
+                    width: 100%;
+                    height: 100%;
+                    margin: 3rem auto 0 auto;
+                    padding: 0 1rem;
+    
+                    .title {
                         width: 100%;
+                        height: 6.25rem;
+    
+                        h1 {
+                            font-family: $font-Mont;
+                            text-transform: uppercase;
+                            color: #fff;
+                            font-size: 1rem;
+                        }
+                    }
+    
+                    .project-banner {
+                        position: relative;
+                        width: 100%;
+                        height: 14rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+        
+                        video {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
                 }
             }
         }
     
         .project-Board {
-            padding: 5rem 2rem;
+            width: 100%;
+            height: 100%;
+            padding: 3rem 1.5rem;
     
             .project-Skills {
                 width: 100%;
-                height: 13rem;
+                height: 12rem;
+                margin : 2rem auto;
     
                 .title {
+                    width: 100%;
+                    height: 4rem;
                     
                     h2{
-                        font-size: 15px;
+                        font-size: 1rem;
                     }
                 }
     
                 .Skills-list {
-                    height: 9rem;
+                    width: 100%;
+                    height: 8rem;
     
                     li {
+                        display: inline-block;
+                        width: max-content;
                         height: 2rem;
+                        margin : 0 10px 10px 0;
     
                         .Skill-item {
+                            width: 100%;
+                            height: 100%;
+                            background-color: $darkMode-button;
+    
+                            &:hover {
+                                background-color: $button-hover;
+                            }
     
                             span {
                                 line-height: 2rem;
@@ -777,17 +938,89 @@
                 }
             }
     
-            .page-detail {
+            .page-preview {
                 width: 100%;
-                grid-template-columns: repeat(1, 1fr);
+                height: 20rem;
+                margin: 3rem auto 0 auto;
+                overflow: hidden;
     
-                .detail-img {
-                    height: 11rem;
+                .preview-titleWrap {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    width: 100%;
+                    height: 6.25rem;
     
-                    &:nth-child(1) {
-                        height: 11rem;
-                        grid-column: auto;
+                    .title {
+                        width: max-content;
+                        height: 100%;
+    
+                        h1 {
+                            line-height: 2rem;
+                            color: #fff;
+                            font-family: $font-Mont;
+                            font-size: 1rem;
+                            text-transform: uppercase;
+                        }
                     }
+    
+                    .slide-control {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 6rem;
+                        height: 2rem;
+    
+                        .prev-button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 2rem;
+                            height: 2rem;
+                            cursor: pointer;
+                            background-color: rgba(119, 119, 119, 0.3);
+                            border-radius: 50%;
+    
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.5);
+                            }
+    
+                            svg {
+                                font-size: 1rem;
+                                color: #fff;
+                            }
+                        }
+    
+                        .next-button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 2rem;
+                            height: 2rem;
+                            cursor: pointer;
+                            background-color: rgba(119, 119, 119, 0.3);
+                            border-radius: 50%;
+    
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.5);
+                            }
+    
+                            svg {
+                                font-size: 1rem;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+    
+                .preview-slider {
+                    position: relative;
+                    left: 0;
+                    transform: translateX(0);
+                    width: 100%;
+                    height: 11rem;
+                    overflow: hidden;
+                    padding : 0 1rem;
                 }
             }
         }

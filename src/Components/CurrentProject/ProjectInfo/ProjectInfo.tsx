@@ -1,40 +1,22 @@
-import React, { useState, useEffect, useRef, SetStateAction } from 'react';
-import { ProjectType } from 'api/CommonService';
+import React, { useState, useEffect } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { IoPlayCircle } from 'react-icons/io5';
+import { ProjectType } from 'types/data';
 
 interface propsDataType {
   currentData: ProjectType | null;
-  setOpen: React.Dispatch<SetStateAction<boolean>>;
-  open: boolean;
-  responsiveMatches: boolean;
 }
 
-gsap.registerPlugin(ScrollTrigger);
-
-function CurrentBanner({ currentData, setOpen, open, responsiveMatches }: propsDataType) {
+function CurrentBanner({ currentData }: propsDataType) {
   const [currentProject, setCurrentProject] = useState({
     title: '',
     subTitle: '',
-    image: '',
     type: '',
     info: '',
     siteUrl: '',
     date: '',
     figmaUrl: '',
+    video: '',
   });
-
-  const infoRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
-  const playRef = useRef<HTMLButtonElement>(null);
-
-  const openVideo = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
-    setOpen(!open);
-  };
 
   useEffect(() => {
     if (currentData) {
@@ -42,47 +24,17 @@ function CurrentBanner({ currentData, setOpen, open, responsiveMatches }: propsD
         title: currentData.title,
         subTitle: currentData.subTitle,
         date: currentData.date,
-        image: currentData.projectBanner,
         type: currentData.type,
         info: currentData.info,
         siteUrl: currentData.siteUrl,
         figmaUrl: currentData.figmaUrl,
+        video: currentData.video,
       });
     }
   }, [currentData]);
 
-  useEffect(() => {
-    if (!responsiveMatches) {
-      if (infoRef.current && imgRef.current) {
-        gsap.to(imgRef.current, {
-          width: '100%',
-
-          scrollTrigger: {
-            trigger: infoRef.current,
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1,
-          },
-        });
-      }
-    }
-
-    if (playRef.current) {
-      gsap.to(playRef.current, {
-        opacity: 1,
-
-        scrollTrigger: {
-          trigger: infoRef.current,
-          start: '20% top',
-          end: 'bottom bottom',
-          scrub: 1,
-        },
-      });
-    }
-  }, []);
-
   return (
-    <div className="project-info" ref={infoRef}>
+    <div className="project-info">
       <div className="project-detail">
         <div className="detail-info">
           <div className="detail-item">
@@ -142,15 +94,13 @@ function CurrentBanner({ currentData, setOpen, open, responsiveMatches }: propsD
         </div>
       </div>
 
-      <div className="banner-img">
-        <div className="project-img" ref={imgRef}>
-          <img src={currentProject.image} alt={`${currentProject.title} 프로젝트 배너 이미지`} />
+      <div className="project-video">
+        <div className="title">
+          <h1>{currentProject.title} Project Video</h1>
         </div>
-
-        <button type="button" className="play-button" ref={playRef} onClick={openVideo}>
-          <span>play video</span>
-          <IoPlayCircle className="play-icon" />
-        </button>
+        <div className="project-banner">
+          <video src={currentProject.video} muted loop controls />
+        </div>
       </div>
     </div>
   );

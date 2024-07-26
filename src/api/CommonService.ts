@@ -1,41 +1,8 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './firebase';
+import { ProjectType, TechnologyType, advantageType } from 'types/data';
 
-export interface advantageType {
-  id: string;
-  title: string;
-  info: string;
-  svgIcon: string;
-}
-
-export interface TechnologyType {
-  id: string;
-  title: string;
-  info: string;
-  svgIcon: string;
-  type: string;
-}
-
-export interface ProjectType {
-  id: number;
-  title: string;
-  subTitle: string;
-  date: string;
-  info: string;
-  projectBanner: string;
-  type: string;
-  useTech1: string;
-  useTech2: string;
-  useTech3: string;
-  useTech4: string | undefined;
-  useTech5: string | undefined;
-  useTech6: string | undefined;
-  video: string;
-  figmaUrl: string;
-  siteUrl: string;
-  images: [];
-}
-
+/* Firestore Advantage 컬렉션 데이터 패칭 비동기 함수 */
 export async function getAdvantage() {
   const querySnapShot = await getDocs(collection(db, 'Advantage'));
 
@@ -59,6 +26,7 @@ export async function getAdvantage() {
   return advantageData;
 }
 
+/* Firestore Technology 컬렉션 데이터 패칭 비동기 함수 */
 export async function getTechnology() {
   const querySnapShot = await getDocs(collection(db, 'Technology'));
 
@@ -83,6 +51,7 @@ export async function getTechnology() {
   return TechData;
 }
 
+/* Firestore Project 컬렉션 데이터 패칭 비동기 함수 */
 export async function getProject() {
   const querySnapShot = await getDocs(collection(db, 'Project'));
 
@@ -101,12 +70,7 @@ export async function getProject() {
       info: doc.data().info,
       projectBanner: doc.data().projectBanner,
       type: doc.data().type,
-      useTech1: doc.data().useTech1,
-      useTech2: doc.data().useTech2,
-      useTech3: doc.data().useTech3,
-      useTech4: doc.data().useTech4 ? doc.data().useTech4 : undefined,
-      useTech5: doc.data().useTech5 ? doc.data().useTech5 : undefined,
-      useTech6: doc.data().useTech6 ? doc.data().useTech6 : undefined,
+      useTech: doc.data().useTech,
       figmaUrl: doc.data().figmaUrl,
       siteUrl: doc.data().siteUrl,
       video: doc.data().video,

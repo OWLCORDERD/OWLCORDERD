@@ -2,26 +2,8 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import 'asset/styles/banner.scss';
 import { TfiMouse } from 'react-icons/tfi';
 import { motion } from 'framer-motion';
-import { Oval } from 'react-loader-spinner';
 
-interface loadingState {
-  loading: boolean;
-}
-
-function Banner({ loading }: loadingState): JSX.Element {
-  const loadingAnimation = {
-    initial: {
-      opacity: 1,
-    },
-
-    animate: {
-      opacity: 0,
-      transition: {
-        duration: 1.5,
-      },
-    },
-  };
-
+function Banner() {
   const TxtBoxAnimation = {
     initial: {
       opacity: 0,
@@ -132,23 +114,7 @@ function Banner({ loading }: loadingState): JSX.Element {
 
         <div className="Banner-imgBox">
           <div className="Developer-imgBox">
-            <img
-              src={`${process.env.PUBLIC_URL}/Image/프로필 사진.webp`}
-              alt="프로필 이미지"
-              className={loading === false ? 'view' : ''}
-            />
-            <motion.div className="image-loading" initial="initial" animate="animate" variants={loadingAnimation}>
-              <Oval
-                width={50}
-                height={50}
-                color="#fff"
-                visible
-                ariaLabel="oval-loading"
-                secondaryColor="rgba(255,255,255,0.3)"
-                strokeWidth={2}
-                strokeWidthSecondary={2}
-              />
-            </motion.div>
+            <img src={`${process.env.PUBLIC_URL}/Image/프로필 사진.webp`} alt="프로필 이미지" />
           </div>
         </div>
       </div>

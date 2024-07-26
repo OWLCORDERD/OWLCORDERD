@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { advantageType, getAdvantage } from 'api/CommonService';
+import useSWR from 'swr';
+import FetchLoading from 'CustomHook/FetchLoading';
+import { getAdvantage } from 'api/CommonService';
+import { advantageType } from 'types/data';
 
 function Advantage() {
-  const [advantageDB, setAdvantageDB] = useState<advantageType[]>([]);
-  useEffect(() => {
-    getAdvantage().then(res => setAdvantageDB(res));
-  }, []);
+  const fetcher = async () => {
+    const data = await getAdvantage();
+
+    return data;
+  };
+  const { data, isLoading, error } = useSWR<advantageType[]>('api/advantage', fetcher);
+
+  if (isLoading)
+    return (
+      <ul className="Advantages-list">
+        <FetchLoading />
+      </ul>
+    );
 
   return (
     <ul className="Advantages-list">
-      {advantageDB.map(item => (
+      {data?.map(item => (
         <li className="Advantage-item" key={item.id}>
           <div className="Advantage-icon">
             <img src={item.svgIcon} width={40} height={40} alt="개발 역량 이미지" />

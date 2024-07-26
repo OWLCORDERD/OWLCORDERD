@@ -1,30 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import 'asset/styles/currentProject.scss';
-import { motion } from 'framer-motion';
-import { ScrollTrigger, gsap } from 'gsap/all';
 import { useLocation } from 'react-router-dom';
+import { ScrollYContext, scrollYContext } from 'context/ScrollYContext';
+import { history } from 'CustomHook/History';
 import ProjectInfo from 'Components/CurrentProject/ProjectInfo/ProjectInfo';
 import Navbar from 'Components/Navigator/navbar';
-import ResponsiveMenu from 'Components/Navigator/MobileResponsive/ResponsiveMenu';
 import { Helmet } from 'react-helmet-async';
-import { ProjectType } from 'api/CommonService';
 import Footer from 'Components/Footer/Footer';
 import Loading from 'CustomHook/Loading';
 import ScrollToTop from 'CustomHook/ScrollToTop';
+import { ProjectType } from 'types/data';
 import ProjectBoard from '../Components/CurrentProject/ProjectBoard/ProjectBoard';
 
-gsap.registerPlugin(ScrollTrigger);
-
 function CurrentProject() {
+  const { scrollY, updateScrollY } = ScrollYContext();
   const location = useLocation();
 
   const projectDB: ProjectType = location.state ? location.state.projectDB : undefined;
 
   const [loading, setLoading] = useState<boolean>(true);
-
-  const [responsiveMatches, setResponsiveMatches] = useState<boolean>(false);
-
-  const [openVideo, setOpenVideo] = useState<boolean>(false);
 
   useEffect(() => {
     if (projectDB !== undefined) {
@@ -33,51 +27,16 @@ function CurrentProject() {
   }, [projectDB]);
 
   useEffect(() => {
-    const body = document.querySelector('body');
-
-    if (openVideo && body) {
-      body.style.overflow = 'hidden';
+    if (history.action === 'POP') {
+      const beforeScrollY = Number(sessionStorage.getItem('scrollY'));
+      updateScrollY(beforeScrollY);
     }
-
-    if (!openVideo && body) {
-      body.style.removeProperty('overflow');
-    }
-  }, [openVideo]);
-
-  useEffect(() => {
-    /* 해상도가 768px 이상일 시, MediaQueryList 상태값 false로 업데이트하여
-    이미지 배너 크기를 키우는 gsap scrollTrigger 이벤트 효과 부여 */
-    const mql = window.matchMedia('screen and (max-width : 768px)');
-
-    if (mql.matches) {
-      setResponsiveMatches(mql.matches);
-    }
-  }, []);
-
-  const closeVideo = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
-    setOpenVideo(!openVideo);
-  };
-
-  const videoContainerOpen = {
-    initial: {
-      width: responsiveMatches ? '100%' : 0,
-      opacity: 0,
-    },
-
-    animate: {
-      width: '100%',
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
+  }, [history.action]);
 
   return (
     <>
       <ScrollToTop />
+
       <div className="container">
         <Helmet>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -96,45 +55,21 @@ function CurrentProject() {
           <Navbar />
         </header>
 
-        <ResponsiveMenu />
-
         {!loading ? (
           <main>
             <div className="currentProject-container">
-              {openVideo === true ? (
-                <motion.div className="video-popup" variants={videoContainerOpen} initial="initial" animate="animate">
-                  <button type="button" className="close-button" onClick={closeVideo}>
-                    close
-                  </button>
-
-                  <motion.div
-                    className="project-video"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1, duration: 1 }}
-                  >
-                    <video controls src={projectDB.video} autoPlay muted loop />
-                  </motion.div>
-                </motion.div>
-              ) : null}
-
               <div className="project-banner">
-                <ProjectInfo
-                  currentData={projectDB}
-                  setOpen={setOpenVideo}
-                  open={openVideo}
-                  responsiveMatches={responsiveMatches}
-                />
+                <ProjectInfo currentData={projectDB} />
               </div>
 
               <ProjectBoard currentData={projectDB} />
             </div>
-
-            <Footer />
           </main>
         ) : (
           <Loading />
         )}
+
+        <Footer />
       </div>
     </>
   );

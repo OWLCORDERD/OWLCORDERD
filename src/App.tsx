@@ -1,38 +1,22 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import './App.css';
-import PageRoute from 'Route/PageRoute';
-import { Provider } from 'react-redux';
 import { HelmetProvider } from 'react-helmet-async';
-import { store } from './store/index';
-
-interface menuActiveType {
-  responsiveMenuActive?: boolean;
-  clickMenuActive?: React.MouseEventHandler;
-}
-
-export const MenuActiveContext = React.createContext<menuActiveType>({});
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Main from 'pages/Main';
+import CurrentProject from 'pages/CurrentProject';
+import ScrollYProvider from 'context/ScrollYContext';
 
 function App() {
-  const [responsiveMenuActive, setResponsiveMenuActive] = useState<boolean>(false);
-
-  const clickMenuActive = useCallback(() => {
-    setResponsiveMenuActive(!responsiveMenuActive);
-  }, [responsiveMenuActive]);
-
-  const contextValue = React.useMemo(
-    () => ({
-      responsiveMenuActive,
-      clickMenuActive,
-    }),
-    [responsiveMenuActive, clickMenuActive],
-  );
   return (
     <HelmetProvider>
-      <Provider store={store}>
-        <MenuActiveContext.Provider value={contextValue}>
-          <PageRoute />
-        </MenuActiveContext.Provider>
-      </Provider>
+      <BrowserRouter>
+        <ScrollYProvider>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/Project/:id" element={<CurrentProject />} />
+          </Routes>
+        </ScrollYProvider>
+      </BrowserRouter>
     </HelmetProvider>
   );
 }

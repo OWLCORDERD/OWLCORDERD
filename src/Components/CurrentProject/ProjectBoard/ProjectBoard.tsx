@@ -1,18 +1,19 @@
-import { ProjectType } from 'api/CommonService';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'asset/styles/swiper/swiper.css';
+import { IoIosArrowBack } from 'react-icons/io';
+import { IoIosArrowForward } from 'react-icons/io';
+import { Navigation } from 'swiper/modules';
+import { ProjectType } from 'types/data';
 
 interface propsDataType {
   currentData: ProjectType | null;
 }
 
 function ProjectBoard({ currentData }: propsDataType) {
-  const [pageImages, setPageImages] = useState([]);
+  const prevRef = useRef<HTMLDivElement>(null);
+  const nextRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (currentData) {
-      setPageImages(currentData.images);
-    }
-  }, [currentData]);
   return (
     <div className="project-Board">
       <div className="project-Skills">
@@ -20,54 +21,51 @@ function ProjectBoard({ currentData }: propsDataType) {
           <h2>use Develop Skills</h2>
         </div>
         <ul className="Skills-list">
-          <li>
-            <div className="Skill-item">
-              <span>{currentData?.useTech1}</span>
-            </div>
-          </li>
-
-          <li>
-            <div className="Skill-item">
-              <span>{currentData?.useTech2}</span>
-            </div>
-          </li>
-
-          <li>
-            <div className="Skill-item">
-              <span>{currentData?.useTech3}</span>
-            </div>
-          </li>
-
-          <li>
-            <div className="Skill-item">
-              <span>{currentData?.useTech4}</span>
-            </div>
-          </li>
-
-          {currentData?.useTech5 ? (
+          {currentData?.useTech.map(tech => (
             <li>
               <div className="Skill-item">
-                <span>{currentData?.useTech5}</span>
+                <span>{tech}</span>
               </div>
             </li>
-          ) : null}
-
-          {currentData?.useTech6 ? (
-            <li>
-              <div className="Skill-item">
-                <span>{currentData?.useTech6}</span>
-              </div>
-            </li>
-          ) : null}
+          ))}
         </ul>
       </div>
 
-      <div className="page-detail">
-        {pageImages.map(image => (
-          <div className="detail-img" key={image}>
-            <img src={image} alt="페이지 이미지" />
+      <div className="page-preview">
+        <div className="preview-titleWrap">
+          <div className="title">
+            <h1>Page Preview</h1>
           </div>
-        ))}
+
+          <div className="slide-control">
+            <div className="prev-button" ref={prevRef}>
+              <IoIosArrowBack />
+            </div>
+            <div className="next-button" ref={nextRef}>
+              <IoIosArrowForward />
+            </div>
+          </div>
+        </div>
+
+        <div className="preview-slider">
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={1}
+            centeredSlides
+            loop
+            loopAdditionalSlides={2}
+            navigation={{ nextEl: '.next-button', prevEl: '.prev-button' }}
+            modules={[Navigation]}
+          >
+            {currentData?.images.map(imageUrl => (
+              <SwiperSlide>
+                <div className="preview-image">
+                  <img src={imageUrl} alt={`${currentData?.title} 프로젝트 페이지 이미지`} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </div>
   );
