@@ -1,6 +1,6 @@
+import { ProjectType, TechnologyType, advantageType } from 'types/data';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './firebase';
-import { ProjectType, TechnologyType, advantageType } from 'types/data';
 
 /* Firestore Advantage 컬렉션 데이터 패칭 비동기 함수 */
 export async function getAdvantage() {
