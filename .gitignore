@@ -20,3 +20,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 config.json
+
+#환경 변수 파일
+.env
