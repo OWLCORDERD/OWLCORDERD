@@ -5,7 +5,6 @@
     .DevelopSkills-container{
         position: relative;
         width: 100%;
-        height : 52rem;
         padding: 3rem 0;
 
         .DevelopSkills-wrap {
@@ -14,7 +13,6 @@
             justify-content: space-between;            
             margin: 0 auto;
             max-width: 1400px;
-            height: 46rem;
 
             /*Development Skills Index & tabMenu*/
             .DevelopSkill-header{
@@ -91,7 +89,6 @@
             .DevelopSkill-contents{
                 position: relative;
                 width: 100%;
-                height: 37rem;
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 place-items: initial;
@@ -151,12 +148,12 @@
 @include macbook {
     /*Development Skills container*/
     .DevelopSkills-container{
-        height : 44rem;
+        height : 100%;
         padding: 3rem 6.25rem;
 
         .DevelopSkills-wrap {
             max-width : 100%;
-            height: 38rem;
+            height: 100%;
             margin: 0;
 
         /*Development Skills Index & tabMenu*/
@@ -191,7 +188,7 @@
 
         /*Development skill Develop&Design Items container*/
         .DevelopSkill-contents{
-            height: 29rem;
+            height: max-content;
 
             .skill-item{
                 height: 14rem;
@@ -224,12 +221,11 @@
 @include horizontalTablet {
     /*Development Skills container*/
     .DevelopSkills-container{
-        height : 41rem;
+        height : 100%;
         padding: 3rem;
 
         .DevelopSkills-wrap {
             max-width: 100%;
-            height: 35rem;
             margin: 0;
 
             .DevelopSkill-header{
@@ -268,7 +264,7 @@
 
                 /*Development skill Develop&Design Items container*/
             .DevelopSkill-contents{
-                height: 27rem;
+                height: max-content;
 
                 .skill-item{
                     height: 13rem;
@@ -300,19 +296,20 @@
 @include verticalTablet {
     /*Development Skills container*/
     .DevelopSkills-container{
-        height : 86rem;
+        height : 100%;
         padding: 3rem;
 
         .DevelopSkills-wrap{
             max-width: 100%;
             margin: 0;
-            height: 80rem;
+            height: max-content;
 
             /*Development Skills Index & tabMenu*/
             .DevelopSkill-header{
                 height: 8rem;
                 flex-direction: column;
                 align-items: center;
+                margin-bottom: 40px;
 
                 .DevelopSkill-Index{
                     width: 100%;
@@ -351,7 +348,7 @@
 
                 /*Development skill Develop&Design Items container*/
             .DevelopSkill-contents{
-                height: 67rem;
+                height: max-content;
                 grid-template-columns: repeat(2, 1fr);
 
                 .skill-item{
@@ -378,7 +375,7 @@
 @include mobile {
         /*Development Skills container*/
     .DevelopSkills-container{
-        height : 59rem;
+        height : 100%;
         padding: 2rem;
 
         .DevelopSkills-wrap{
@@ -433,7 +430,7 @@
             .DevelopSkill-contents{
                 position: relative;
                 width: 100%;
-                height: 44rem;
+                height: max-content;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 place-items: initial;
