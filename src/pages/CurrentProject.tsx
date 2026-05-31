@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import 'asset/styles/currentProject.scss';
 import { useLocation } from 'react-router-dom';
-import { ScrollYContext, scrollYContext } from 'context/ScrollYContext';
-import { history } from 'CustomHook/History';
+import { ScrollYContext } from 'context/ScrollYContext';
 import ProjectInfo from 'Components/CurrentProject/ProjectInfo/ProjectInfo';
 import Navbar from 'Components/Navigator/navbar';
 import { Helmet } from 'react-helmet-async';
@@ -17,7 +16,6 @@ function CurrentProject() {
   const location = useLocation();
 
   const projectDB: ProjectType = location.state ? location.state.projectDB : undefined;
-
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -27,11 +25,11 @@ function CurrentProject() {
   }, [projectDB]);
 
   useEffect(() => {
-    if (history.action === 'POP') {
+    window.addEventListener('popstate', () => {
       const beforeScrollY = Number(sessionStorage.getItem('scrollY'));
       updateScrollY(beforeScrollY);
-    }
-  }, [history.action]);
+    });
+  }, []);
 
   return (
     <>

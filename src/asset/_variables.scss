@@ -2,8 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 
+@font-face {
+    font-family: 'The_Jamsil_R';
+    src: url('../asset/fonts/The_Jamsil/Regular.ttf');
+};
+
+@font-face {
+    font-family: 'The_Jamsil_B';
+    src: url('../asset/fonts/The_Jamsil/Bold.ttf');
+}
+
+@font-face {
+    font-family: 'The_Jamsil_L';
+    src: url('../asset/fonts/The_Jamsil/Light.ttf');
+}
+
 $font-Mont: 'Montserrat', sans-serif;
 $font-Noto: 'Noto Sans KR', sans-serif;
+$font-Jamsil-R: 'The_Jamsil_R', sans-serif;
+$font-Jamsil-B: 'The_Jamsil_B', sans-serif;
+$font-Jamsil-L: 'The_Jamsil_L', sans-serif;
 
 /* element color variables */
 $white-color: #fff;

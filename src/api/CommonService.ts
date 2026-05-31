@@ -1,5 +1,5 @@
 import { ProjectType, TechnologyType, advantageType } from 'types/data';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { db } from './firebase';
 
 /* Firestore Advantage 컬렉션 데이터 패칭 비동기 함수 */
@@ -53,7 +53,8 @@ export async function getTechnology() {
 
 /* Firestore Project 컬렉션 데이터 패칭 비동기 함수 */
 export async function getProject() {
-  const querySnapShot = await getDocs(collection(db, 'Project'));
+  const selectQuery = query(collection(db, 'Project'), orderBy('index', 'asc'));
+  const querySnapShot = await getDocs(selectQuery);
 
   if (querySnapShot.empty) {
     return [];
@@ -63,7 +64,7 @@ export async function getProject() {
 
   querySnapShot.forEach(doc => {
     const docData = {
-      id: doc.data().id,
+      id: doc.id,
       title: doc.data().title,
       subTitle: doc.data().subTitle,
       date: doc.data().date,
@@ -82,3 +83,7 @@ export async function getProject() {
 
   return projectData;
 }
+
+// export const getCurrentProjectHistory = async (currentId: string) => {
+//   const docRef = collection(db, 'Projec);
+// }

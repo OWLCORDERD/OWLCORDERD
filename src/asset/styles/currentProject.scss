@@ -9,7 +9,7 @@
     height: 100%;
     padding : 6.25rem 0 0 0;
 
-    .project-banner{
+    .project-banner {
         width: 100%;
         height: 100%;
         padding-top: 3rem;
@@ -19,13 +19,14 @@
             height: 100%;
 
             .project-detail {
-                width: 60rem;
-                height: 30rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                max-width: 1440px;
                 margin: 0 auto;
 
                 .detail-info {
-                    width: 100%;
-                    height: 18rem;
+                    width: 700px;
 
                     .detail-item {
                         display: flex;
@@ -34,13 +35,58 @@
                         width: 100%;
                         height: calc(18rem / 5);
 
+                        // 기술 스택 영역
+                        &.skills {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            height: 12rem;
+
+                            .title {
+                                height: 3rem;
+                            }
+
+                            .Skills-list {
+                                width: 100%;
+                                height: 8rem;
+                
+                                li {
+                                    display: inline-block;
+                                    width: max-content;
+                                    height: 3rem;
+                                    margin : 0 1rem 1rem 0;
+                
+                                    .Skill-item {
+                                        width: 100%;
+                                        height: 100%;
+                                        background-color: $darkMode-button;
+                
+                                        &:hover {
+                                            background-color: $button-hover;
+                                        }
+                
+                                        span {
+                                            line-height: 3rem;
+                                            color: #fff;
+                                            font-family: $font-Mont;
+                                            font-size: 14px;
+                                            font-weight: bold;
+                                            padding: 1rem;
+                                            text-transform: uppercase;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
                         .title {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
                             width: 30%;
                             height: 100%;
 
                             h1 {
-                                height: calc(18rem / 5);
-                                font-family: $font-Mont;
+                                font-family: $font-Jamsil-B;
                                 color: #fff;
                                 font-size: 15px;
                                 text-transform: uppercase;
@@ -49,77 +95,87 @@
 
                         .detail-txt {
                             display: flex;
-                            align-items: flex-start;
+                            align-items: center;
+                            justify-content: flex-start;
                             width: 70%;
                             height: 100%;
 
                             p {
-                                height: 100%;
                                 color: #fff;
-                                font-family: $font-Mont;
+                                font-family: $font-Jamsil-L;
                                 font-size: 15px;
                             }
 
                             a {
                                 height: 100%;
                                 color: #fff;
-                                font-family: $font-Mont;
+                                font-family: $font-Jamsil-R;
                                 font-size: 15px;
                                 font-weight: bold;
+                                text-transform: uppercase;
+                            }
+                        }
+
+                        &.desc {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            height: 12rem;
+
+                            .title {
+                                height: 3rem;
+                            }
+
+                            .detail-txt {
+                                width: 100%;
+                                height: 8rem;
                             }
                         }
                     }
                 }
 
-                .project-desc {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    width: 100%;
-                    height: 12rem;
-
-                    p {
-                        width: 100%;
-                        word-break: keep-all;
-                        color: #fff;
-                        font-family: $font-Noto;
-                        font-size: 15px;
-                    }
-                }
-            }
-
-            .project-video {
-                width: 60rem;
-                height: 100%;
-                margin: 3rem auto 0 auto;
-
-                .title {
-                    width: 100%;
-                    height: 6.25rem;
-
-                    h1 {
-                        font-family: $font-Mont;
-                        text-transform: uppercase;
-                        color: #fff;
-                        font-size: 1.2rem;
-                    }
-                }
-
-                .project-banner {
-                    position: relative;
-                    width: 100%;
-                    height: 30rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                .project-video {
+                    width: 650px;
+                    height: 100%;
     
-                    video {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
+                    .title {
                         width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                        height: 5rem;
+    
+                        h1 {
+                            font-family: $font-Jamsil-B;
+                            text-transform: uppercase;
+                            text-decoration: underline;
+                            text-underline-offset: 4px;
+                            color: #fff;
+                            font-size: 1.2rem;
+                        }
+                    }
+    
+                    .project-banner {
+                        position: relative;
+                        width: 100%;
+                        height: 25rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+        
+                        video {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
                 }
             }
@@ -131,60 +187,10 @@
         height: 100%;
         padding: 5rem 0;
 
-        .project-Skills {
-            width: 60rem;
-            height: 12rem;
-            margin : 2rem auto;
-
-            .title {
-                width: 100%;
-                height: 4rem;
-                
-                h2{
-                    font-size: 1.2rem;
-                    color: #fff;
-                    font-family: $font-Mont;
-                    text-transform : uppercase;
-                }
-            }
-
-            .Skills-list {
-                width: 100%;
-                height: 8rem;
-
-                li {
-                    display: inline-block;
-                    width: max-content;
-                    height: 3rem;
-                    margin : 0 1rem 1rem 0;
-
-                    .Skill-item {
-                        width: 100%;
-                        height: 100%;
-                        background-color: $darkMode-button;
-
-                        &:hover {
-                            background-color: $button-hover;
-                        }
-
-                        span {
-                            line-height: 3rem;
-                            color: #fff;
-                            font-family: $font-Mont;
-                            font-size: 14px;
-                            font-weight: bold;
-                            padding: 1rem;
-                            text-transform: uppercase;
-                        }
-                    }
-                }
-            }
-        }
-
         .page-preview {
             width: 60rem;
-            height: 40rem;
-            margin: 0 auto;
+            height: 100%;
+            margin: 0 auto 5rem auto;
 
             .preview-titleWrap {
                 display: flex;
@@ -255,6 +261,23 @@
                 }
             }
 
+            .no-preview {
+                width: 100%;
+                height: 12rem;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-family: $font-Jamsil-B;
+                font-size: 18px;
+
+                svg {
+                    font-size: 5rem;
+                }
+            }
+
             .preview-slider {
                 position: relative;
                 left: 50%;
@@ -275,6 +298,92 @@
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        .history-list {
+            max-width: 1440px;
+            margin: 0 auto;
+
+            .title-wrap {
+                width: 100%;
+                height: 6.25rem;
+
+                .title {
+                    display: block;
+                    font-size: 1.5rem;
+                    font-family: $font-Jamsil-B;
+                    color: #fff;
+                    margin-bottom: 20px;
+                }
+
+                .count {
+                    font-size: 16px;
+                    font-family: $font-Jamsil-R;
+                    color: #fff;
+                }
+            }
+
+            .history-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+
+                .history-item {
+                    width: 100%;
+                    padding: 40px 20px;
+                    border: 3px solid transparent;
+                    border-radius: 10px;
+                    background: rgba(44, 44, 44, 0.5);
+                    border-radius: 20px;
+                    overflow: hidden;
+
+                    .history-download {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        height: 100px;
+
+                        .pdf-icon {
+                            width: 100px;
+                            height: 100px;
+                            color: #fff;
+                        }
+
+                        .download-button {
+                            border: none;
+                            background-color: transparent;
+                            color: #fff;
+                            font-family: $font-Jamsil-R;
+                            font-size: 14px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            text-decoration: underline;
+                            text-underline-offset: 5px;
+                        }
+                    }
+
+                    .history-info {
+                        margin-top: 30px;
+                        color: #fff;
+
+                        &-title {
+                            font-family: $font-Jamsil-B;
+                            font-size: 1.5rem;
+                        }
+
+                        &-desc {
+                            display: -webkit-box;
+                            margin-top: 30px;
+                            text-overflow: ellipsis;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;
+                            overflow: hidden;
+                            font-family: $font-Jamsil-L;
+                            font-size: 14px;
+                        }
                     }
                 }
             }

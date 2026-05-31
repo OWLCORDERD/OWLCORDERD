@@ -16,7 +16,7 @@ export interface TechnologyType {
 }
 
 export interface ProjectType {
-  id: number;
+  id: string;
   title: string;
   subTitle: string;
   date: string;
@@ -28,4 +28,12 @@ export interface ProjectType {
   figmaUrl: string;
   siteUrl: string;
   images: [];
+}
+
+export interface HistoryType {
+  projectDocId: string;
+  title: string;
+  info: string;
+  technology: string[];
+  filePath: string;
 }
