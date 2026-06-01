@@ -117,14 +117,15 @@ function ProjectBoard({ currentData }: propsDataType) {
             <li className="history-item">
               <div className="history-download">
                 <FaFilePdf className="pdf-icon" />
-                <button type="button" className="download-button">
-                  기술 문서 다운로드
-                </button>
               </div>
               <div className="history-info">
                 <h3 className="history-info-title">{history.title}</h3>
                 <p className="history-info-desc">{history.info}</p>
               </div>
+
+              <button type="button" className="download-button" onClick={() => window.open(history.filePath)}>
+                문서 바로가기 📃
+              </button>
             </li>
           ))}
         </ul>
