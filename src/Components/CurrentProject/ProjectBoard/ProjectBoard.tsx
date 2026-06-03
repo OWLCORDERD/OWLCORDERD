@@ -9,6 +9,7 @@ import { collection, getDoc, doc, getDocs } from 'firebase/firestore';
 import { db } from 'api/firebase';
 import { AiFillPicture } from 'react-icons/ai';
 import { FaFilePdf } from 'react-icons/fa';
+import { IoDocumentsSharp } from 'react-icons/io5';
 
 interface propsDataType {
   currentData: ProjectType | null;
@@ -112,23 +113,30 @@ function ProjectBoard({ currentData }: propsDataType) {
           </span>
         </div>
 
-        <ul className="history-grid">
-          {historyList.map(history => (
-            <li className="history-item">
-              <div className="history-download">
-                <FaFilePdf className="pdf-icon" />
-              </div>
-              <div className="history-info">
-                <h3 className="history-info-title">{history.title}</h3>
-                <p className="history-info-desc">{history.info}</p>
-              </div>
+        {historyList.length > 0 ? (
+          <ul className="history-grid">
+            {historyList.map(history => (
+              <li className="history-item">
+                <div className="history-download">
+                  <FaFilePdf className="pdf-icon" />
+                </div>
+                <div className="history-info">
+                  <h3 className="history-info-title">{history.title}</h3>
+                  <p className="history-info-desc">{history.info}</p>
+                </div>
 
-              <button type="button" className="download-button" onClick={() => window.open(history.filePath)}>
-                문서 바로가기 📃
-              </button>
-            </li>
-          ))}
-        </ul>
+                <button type="button" className="download-button" onClick={() => window.open(history.filePath)}>
+                  문서 바로가기 📃
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="no-history">
+            <IoDocumentsSharp className="no-history-icon" />
+            <p>주요 기여 이력이 없습니다.</p>
+          </div>
+        )}
       </div>
     </div>
   );
