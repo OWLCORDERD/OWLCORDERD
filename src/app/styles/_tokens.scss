@@ -1,0 +1,142 @@
+/* Hallmark · shape: Stage + Index (kept sections, new hero) · genre: modern-minimal · theme: Cobalt (deal 3/3, seed frontend-developer-portfolio-interactive-5b36·3dee5b53·2026-11-13·r0) · redesign: full
+ * hero: Stage (head and project index on columns 1 to 5, the active capture in true colour on 6 to 12) · nav: full-bleed sticky bar, hairline under · footer: colophon block · imagery: the product (project captures from Firestore, true colour) · signature: the project index switches the large true-colour capture beside it on hover/focus
+ * axes: light/grotesk-sans/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: E, the ASCII field is left out because a portfolio has no traffic to map; the dot grid on the 8 by 16 cell stands in */
+/* Hallmark · waive 37 · Familjen Grotesk and IBM Plex Sans have no Hangul, Pretendard carries the Korean copy as the same grotesk build · the page is written in Korean */
+/* Hallmark · waive 44c (/) · the capture is centred on the head and the index together, the two halves of the hero it previews */
+/* Hallmark · waive 44c, 77, 83 (/Project/[id]) · a case page is the project's own screens and notes; title length and screen count come from Firestore */
+
+// ---------------------------------------------------------------------------
+// 전역 디자인 토큰 (테마: Cobalt)
+// - 색·서체·간격·크기·모션·레이어 값은 모두 여기 CSS 커스텀 프로퍼티로 선언하고,
+//   styled-components는 var(--*)로만 참조한다. (색상·폰트 리터럴 금지)
+// - 브레이크포인트는 SCSS 맵으로 두고, styled-components용 값은
+//   src/shared/styles/media.ts 가 같은 숫자를 쓴다.
+// ---------------------------------------------------------------------------
+
+@use "sass:map";
+
+$breakpoints: (
+  md: 60rem,
+  sm: 40rem,
+);
+
+:root {
+  color-scheme: light;
+
+  // ---- color (Cobalt) -------------------------------------------------------
+  --color-paper: oklch(98.6% 0.005 250);
+  --color-paper-2: oklch(96.2% 0.008 252);
+  --color-paper-3: oklch(93% 0.011 252);
+  --color-ink: oklch(21% 0.028 262);
+  --color-ink-2: oklch(36% 0.022 260);
+  --color-muted: oklch(50% 0.018 258);
+  --color-rule: oklch(90% 0.009 252);
+  --color-rule-2: oklch(83% 0.012 252);
+  --color-graphite: oklch(21% 0.024 262);
+  --color-graphite-2: oklch(26.5% 0.026 262);
+  --color-graphite-ink: oklch(93% 0.01 250);
+  --color-graphite-muted: oklch(69% 0.022 256);
+  --color-accent: oklch(52% 0.19 258);
+  --color-accent-2: oklch(76% 0.13 254);
+  --color-accent-wash: oklch(95% 0.028 256);
+  --color-accent-ink: oklch(98.6% 0.005 250);
+  --color-accent-deep: oklch(43% 0.2 262);
+  --color-accent-edge: oklch(39% 0.16 260);
+  --color-focus: oklch(52% 0.19 258);
+  --color-glyph-1: oklch(89% 0.025 254);
+  --color-glyph-2: oklch(81% 0.045 255);
+  --color-key-face: oklch(99.4% 0.003 250);
+  --color-key-edge: oklch(80% 0.016 254);
+  --color-error: oklch(52% 0.19 27);
+  --color-success: oklch(50% 0.13 150);
+  --color-bar: oklch(98.6% 0.005 250 / 0.92);
+
+  // ---- type -------------------------------------------------------------------
+  // --font-familjen / --font-plex 은 next/font(app/layout.tsx)가 <html>에 주입한다.
+  // 두 서체 모두 한글이 없어 Pretendard가 한글 글리프를 받는다.
+  --font-display: var(--font-familjen), 'Pretendard Variable', Pretendard, ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-plex), 'Pretendard Variable', Pretendard, ui-sans-serif, system-ui, sans-serif;
+  --display-weight: 600;
+  --title-weight: 500;
+  --tracking-display: -0.028em;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-display-s: clamp(2.25rem, 3.6vw + 0.5rem, 3.5rem);
+  --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.25rem);
+  --text-title: clamp(1.125rem, 0.6vw + 0.875rem, 1.5rem);
+  --text-lead: clamp(1.0625rem, 0.35vw + 1rem, 1.25rem);
+
+  // ---- space ------------------------------------------------------------------
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 144px;
+
+  // ---- layout -----------------------------------------------------------------
+  --container: 1440px;
+  --gutter: 64px;
+  --gap-columns: 32px;
+  --section-gap-s: 120px;
+  --section-gap: 144px;
+  --section-gap-l: 176px;
+  --nav-height: 64px;
+  --cell-w: 8px;
+  --cell-h: 16px;
+
+  // ---- surface ----------------------------------------------------------------
+  --radius-card: 8px;
+  --radius-input: 6px;
+  --cut: 8px;
+  --cut-l: 16px;
+  --rule-hair: 1px;
+  --shadow-card: 0 1px 2px oklch(21% 0.028 262 / 0.06);
+  --shadow-frame: 0 1px 2px oklch(21% 0.028 262 / 0.06), 0 24px 48px -28px oklch(21% 0.028 262 / 0.28);
+  --shadow-key: 0 3px 0 0 var(--color-key-edge), 0 6px 8px -4px oklch(21% 0.028 262 / 0.28), inset 0 1px 0 oklch(100% 0 0 / 0.9);
+  --shadow-key-accent: 0 3px 0 0 var(--color-accent-edge), 0 6px 8px -4px oklch(30% 0.12 260 / 0.45), inset 0 1px 0 oklch(100% 0 0 / 0.22);
+  --shadow-key-press: inset 0 1px 2px oklch(21% 0.028 262 / 0.14);
+
+  // ---- motion -----------------------------------------------------------------
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  // ---- z-index ----------------------------------------------------------------
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+
+  @media (max-width: map.get($breakpoints, md)) {
+    --gutter: 24px;
+    --section-gap-s: 80px;
+    --section-gap: 96px;
+    --section-gap-l: 120px;
+    --nav-height: 56px;
+  }
+
+  @media (max-width: map.get($breakpoints, sm)) {
+    --gutter: 16px;
+    --gap-columns: 16px;
+    --section-gap-s: 56px;
+    --section-gap: 72px;
+    --section-gap-l: 96px;
+  }
+}

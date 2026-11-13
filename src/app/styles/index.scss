@@ -1,0 +1,4 @@
+// 전역 스타일 진입점. 토큰과 애니메이션만 SCSS로 관리하고,
+// 리셋·기본 요소 스타일은 styled-components GlobalStyle(src/app/styles/GlobalStyle.ts)이 담당한다.
+@use 'tokens';
+@use 'animation';

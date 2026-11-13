@@ -30,3 +30,43 @@ https://owlcoderd.netlify.app
 <br/>
 <br/>
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=Figma&logoColor=white"/> <img src="https://img.shields.io/badge/Adobe Photoshop-31A8FF?style=flat-square&logo=Adobe Photoshop&logoColor=white"/>
+
+## 개발 환경 (v3, Next.js)
+
+- Next.js 16 (App Router) · React 19 · styled-components 6 (SSR 레지스트리) · SCSS(전역 토큰·애니메이션만)
+- 데이터: Firestore → 빌드/ISR 재생성 시점에 서버에서 조회 (1시간 주기, `/api/revalidate`로 즉시 갱신)
+- TypeScript: `tsc`는 7.0(`@typescript/native` 별칭), Next·typescript-eslint는 TS 6 API(`typescript` 별칭)
+
+```bash
+cp .env.example .env.local   # 값 채우기
+npm install
+npm run dev                  # http://localhost:3001
+npm run build && npm start
+```
+
+### 디렉터리 (FSD)
+
+```
+app/                    Next 라우팅 전용 (layout, page, Project/[id], api/revalidate, sitemap, robots)
+src/app/                FSD app 레이어: 프로바이더, styled-components 레지스트리, 전역 스타일(_tokens, _animation)
+src/views/              페이지 레이어(Next pages 디렉터리와 이름 충돌을 피해 views): 페이지 조립 + 데이터 파이프라인
+src/widgets/            화면 블록: 헤더, 프로젝트 목록, 대표 사례, 소개, 기술 스택, 연락, 상세 개요·미리보기·기여 이력
+src/features/           사용자 동작: 메일 문의 보내기, 기술 분류 전환
+src/entities/           도메인: project, technology, strength(Advantage), engineering-note — 타입·Firestore 조회·UI
+src/shared/             Firebase 클라이언트, ISR 캐시 헬퍼, 설정, 공통 UI
+```
+
+슬라이스마다 `index.ts`(클라이언트에서도 import 가능한 공개 API)와 `server.ts`(서버 전용 조회, `server-only`)를 나눠 둡니다.
+
+### 데이터 즉시 갱신
+
+Firestore를 수정한 뒤:
+
+```bash
+curl -X POST https://<도메인>/api/revalidate \
+  -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+  -H "content-type: application/json" \
+  -d '{"tags":["firestore:Project"]}'   # 본문 생략 시 전체 컬렉션
+```
+
+태그: `firestore:Project`, `firestore:Technology`, `firestore:Advantage`, `firestore:EngineeringNotes`

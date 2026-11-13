@@ -1,0 +1,63 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Stage + Index",
+  "theme": "cobalt",
+  "axes": "light/grotesk-sans/cool",
+  "hero": "Stage",
+  "nav": "full-bleed sticky bar",
+  "footer": "colophon block",
+  "imagery": "product",
+  "photos": [],
+  "entry": "settle",
+  "fingerprint": "5b36",
+  "sections": [
+   "Stage hero + index",
+   "Bento case",
+   "Statement+Rows",
+   "Switcher",
+   "Form",
+   "Colophon"
+  ],
+  "signature": "the project index switches the large true-colour capture beside it",
+  "waived": [
+   "37",
+   "44c",
+   "77",
+   "83"
+  ],
+  "prompt": "developer portfolio, technical, crisp vivid color",
+  "date": "2026-11-13"
+ },
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Bento Grid",
+  "theme": "midnight",
+  "axes": "dark/grotesk-sans/cool",
+  "hero": "Index",
+  "nav": "floating bar",
+  "footer": "colophon block",
+  "imagery": "product",
+  "photos": [],
+  "entry": "settle",
+  "fingerprint": "9e5728",
+  "sections": [
+   "Index hero",
+   "Bento case",
+   "Statement+Rows",
+   "Switcher",
+   "Form",
+   "Colophon"
+  ],
+  "signature": "project index lights its capture on hover/focus",
+  "waived": [
+   "37"
+  ],
+  "prompt": "developer portfolio, technical",
+  "date": "2026-11-13"
+ }
+]

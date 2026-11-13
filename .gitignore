@@ -23,3 +23,17 @@ config.json
 
 #환경 변수 파일
 .env
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+.vercel
+
+# hallmark 작업 기록(스크린샷 등)
+/.hallmark/before/
+/.hallmark/after/
+/.claude/skills/hallmark/references/
+/.claude/skills/hallmark/scripts/
+/.agents/skills/hallmark/references/
+/.agents/skills/hallmark/scripts/

@@ -1,0 +1,49 @@
+// ---------------------------------------------------------------------------
+// 전역 애니메이션
+// - Midnight 테마 원칙: 페이지 진입 시 한 번만 "가라앉는(settle)" 모션, 그 외에는
+//   사용자 동작에 대한 응답(hover/focus)만 움직인다. 반복·패럴랙스·커서 추적 없음.
+// - transform / opacity 만 애니메이션한다.
+// - 모든 키프레임의 시작 상태도 콘텐츠가 보이는 값이라 JS·애니메이션 없이도 읽힌다.
+// ---------------------------------------------------------------------------
+
+@keyframes settle {
+  from {
+    opacity: 0.6;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0.6;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+// 히어로 텍스트: 한 번만, 보이는 상태에서 시작
+.settle {
+  animation: settle var(--dur-long) var(--ease-out) both;
+}
+
+// 히어로 하위 요소 순차 등장. --i 로 30~50ms 간격, 총 500ms 이내
+.settle-rise {
+  animation: rise var(--dur-long) var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 40ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *:not(.keep-motion),
+  *:not(.keep-motion)::before,
+  *:not(.keep-motion)::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
