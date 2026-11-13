@@ -6,8 +6,8 @@ import ProjectInfo from 'Components/CurrentProject/ProjectInfo/ProjectInfo';
 import Navbar from 'Components/Navigator/navbar';
 import { Helmet } from 'react-helmet-async';
 import Footer from 'Components/Footer/Footer';
-import Loading from 'CustomHook/Loading';
-import ScrollToTop from 'CustomHook/ScrollToTop';
+import Loading from 'hook/Loading';
+import ScrollToTop from 'hook/ScrollToTop';
 import { ProjectType } from 'types/data';
 import ProjectBoard from '../Components/CurrentProject/ProjectBoard/ProjectBoard';
 

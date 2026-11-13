@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
 import 'asset/styles/main.scss';
 import { ScrollYContext } from 'context/ScrollYContext';
-import Loading from 'CustomHook/Loading';
+import Loading from 'hook/Loading';
 import Navbar from 'Components/Navigator/navbar';
 import Project from 'Components/About/Project';
-import ScrollToTop from 'CustomHook/ScrollToTop';
+import ScrollToTop from 'hook/ScrollToTop';
 import Footer from '../Components/Footer/Footer';
 import Technology from '../Components/About/Technology';
 import Contact from '../Components/Contact/Contact';

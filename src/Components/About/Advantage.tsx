@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useSWR from 'swr';
-import FetchLoading from 'CustomHook/FetchLoading';
+import FetchLoading from 'hook/FetchLoading';
 import { getAdvantage } from 'api/CommonService';
 import { advantageType } from 'types/data';
 

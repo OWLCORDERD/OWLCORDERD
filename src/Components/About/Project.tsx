@@ -3,7 +3,7 @@ import { getProject } from 'api/CommonService';
 import { Link } from 'react-router-dom';
 import 'asset/styles/project.scss';
 import useSWR from 'swr';
-import FetchLoading from 'CustomHook/FetchLoading';
+import FetchLoading from 'hook/FetchLoading';
 import { ProjectType } from 'types/data';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';

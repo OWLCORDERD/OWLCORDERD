@@ -3,7 +3,7 @@ import '../../asset/styles/technology.scss';
 import { TechnologyType } from 'types/data';
 import { getTechnology } from 'api/CommonService';
 import useSWR from 'swr';
-import FetchLoading from 'CustomHook/FetchLoading';
+import FetchLoading from 'hook/FetchLoading';
 
 function Technology() {
   const fetcher = async () => {
