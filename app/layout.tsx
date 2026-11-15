@@ -49,7 +49,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ko" className={`${familjen.variable} ${plex.variable}`}>
+    <html lang="ko" data-scroll-behavior="smooth" className={`${familjen.variable} ${plex.variable}`}>
       <head>
         {/* Pretendard: 사용하는 글자 범위만 내려받는 dynamic subset (한글 본문용) */}
         <link

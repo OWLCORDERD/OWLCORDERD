@@ -4,15 +4,18 @@ import { ProjectOverview } from '@/widgets/project-overview';
 import { SiteFooter } from '@/widgets/site-footer';
 import { SiteHeader } from '@/widgets/site-header';
 import type { ProjectDetailData } from '../model/loadProjectDetail';
+import ScrollToTopOnMount from './ScrollToTopOnMount';
 
 export function ProjectDetailPage({ project, notes }: ProjectDetailData) {
   return (
     <>
+      <ScrollToTopOnMount id={project.id} />
       <SiteHeader />
       <main>
         <ProjectOverview project={project} />
         <ProjectGallery title={project.title} images={project.images} />
-        <EngineeringNotes notes={notes} />
+        {/* 회사 프로젝트만 주요 기여 이력 노출 */}
+        {project.type === 'company' && <EngineeringNotes notes={notes} />}
       </main>
       <SiteFooter />
     </>

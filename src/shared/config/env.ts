@@ -2,9 +2,10 @@ import 'server-only';
 
 /**
  * 서버 전용 환경 변수. 빌드/ISR 재생성 시점에만 읽는다.
- * 기존 CRA의 REACT_APP_* 이름도 이전 기간 동안 함께 읽어 배포 환경 전환을 쉽게 한다.
+ * 기존 CRA/netlify 배포환경 REACT_APP_* 레거시 삭제
+ *  vercel 배포 환경 FIREBASE_* 변경
  */
-const read = (key: string) => process.env[`FIREBASE_${key}`] ?? process.env[`REACT_APP_FIREBASE_${key}`];
+const read = (key: string) => process.env[`FIREBASE_${key}`]
 
 export const firebaseEnv = {
   apiKey: read('API_KEY'),
